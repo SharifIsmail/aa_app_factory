@@ -1,0 +1,430 @@
+<script setup lang="ts">
+defineOptions({
+  name: 'DataSourcesArchitecture',
+});
+</script>
+
+<template>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" class="h-full w-full">
+    <rect width="900" height="500" fill="#f8f9fa" rx="10" ry="10" />
+    <circle cx="448.94" cy="217.769" r="70" fill="#bbdefb" stroke="#1976d2" stroke-width="3" />
+    <text
+      x="450"
+      y="240"
+      font-family="Arial, sans-serif"
+      font-size="18"
+      font-weight="bold"
+      text-anchor="middle"
+      fill="#0d47a1"
+      style="white-space: pre"
+      transform="matrix(0.920002, 0, 0, 0.938672, 37.6527, -23.5563)"
+    >
+      Supplier Risk
+    </text>
+    <text
+      x="450"
+      y="265"
+      font-family="Arial, sans-serif"
+      font-size="18"
+      font-weight="bold"
+      text-anchor="middle"
+      fill="#0d47a1"
+      style="white-space: pre"
+      transform="matrix(0.920002, 0, 0, 0.938672, 37.6527, -23.5563)"
+    >
+      Assessment
+    </text>
+    <text
+      x="450"
+      y="290"
+      font-family="Arial, sans-serif"
+      font-size="18"
+      font-weight="bold"
+      text-anchor="middle"
+      fill="#0d47a1"
+      style="white-space: pre"
+      transform="matrix(0.920002, 0, 0, 0.938672, 37.6527, -23.5563)"
+    >
+      System
+    </text>
+    <rect
+      x="28.94"
+      y="47.769"
+      width="320"
+      height="340"
+      rx="15"
+      ry="15"
+      fill="#e8f5e9"
+      stroke="#388e3c"
+      stroke-width="2"
+    />
+    <text
+      x="188.94"
+      y="77.769"
+      font-family="Arial, sans-serif"
+      font-size="20"
+      font-weight="bold"
+      text-anchor="middle"
+      fill="#1b5e20"
+      style="white-space: pre; font-size: 20px"
+    >
+      Human-Curated Sources
+    </text>
+    <text
+      x="188.94"
+      y="102.769"
+      font-family="Arial, sans-serif"
+      font-size="14"
+      font-style="italic"
+      text-anchor="middle"
+      fill="#1b5e20"
+      style="white-space: pre; font-size: 14px"
+    >
+      Structured, verified data repositories
+    </text>
+    <rect
+      x="548.94"
+      y="47.769"
+      width="320"
+      height="340"
+      rx="15"
+      ry="15"
+      fill="#fff3e0"
+      stroke="#f57c00"
+      stroke-width="2"
+    />
+    <text
+      x="708.94"
+      y="77.769"
+      font-family="Arial, sans-serif"
+      font-size="20"
+      font-weight="bold"
+      text-anchor="middle"
+      fill="#e65100"
+      style="white-space: pre; font-size: 20px"
+    >
+      Unstructured Data Sources
+    </text>
+    <text
+      x="708.94"
+      y="102.769"
+      font-family="Arial, sans-serif"
+      font-size="14"
+      font-style="italic"
+      text-anchor="middle"
+      fill="#e65100"
+      style="white-space: pre; font-size: 14px"
+    >
+      Dynamic, unstructured information
+    </text>
+    <path d="M 348.94 217.769 L 378.94 217.769" stroke="#1976d2" stroke-width="3" />
+    <polygon points="378.94 217.769 368.94 212.769 368.94 222.769" fill="#1976d2" />
+    <path d="M 548.94 217.769 L 518.94 217.769" stroke="#1976d2" stroke-width="3" />
+    <polygon points="518.94 217.769 528.94 212.769 528.94 222.769" fill="#1976d2" />
+    <circle cx="80.94" cy="141.769" r="25" fill="#c8e6c9" stroke="#388e3c" stroke-width="2" />
+    <text
+      x="80.94"
+      y="146.769"
+      font-family="Arial, sans-serif"
+      font-size="16"
+      font-weight="bold"
+      text-anchor="middle"
+      fill="#1b5e20"
+      style="white-space: pre; font-size: 16px"
+    >
+      🏛️
+    </text>
+    <text
+      x="108.94"
+      y="136.769"
+      font-family="Arial, sans-serif"
+      font-size="14"
+      font-weight="bold"
+      text-anchor="start"
+      fill="#333"
+      style="white-space: pre; font-size: 14px"
+    >
+      Government Registries
+    </text>
+    <text
+      x="108.94"
+      y="156.769"
+      font-family="Arial, sans-serif"
+      font-size="12"
+      text-anchor="start"
+      fill="#555"
+      style="white-space: pre; font-size: 12px"
+    >
+      + Many more regulatory databases
+    </text>
+    <circle cx="80.94" cy="211.769" r="25" fill="#c8e6c9" stroke="#388e3c" stroke-width="2" />
+    <text
+      x="80.94"
+      y="216.769"
+      font-family="Arial, sans-serif"
+      font-size="16"
+      font-weight="bold"
+      text-anchor="middle"
+      fill="#1b5e20"
+      style="white-space: pre; font-size: 16px"
+    >
+      📊
+    </text>
+    <text
+      x="108.94"
+      y="206.769"
+      font-family="Arial, sans-serif"
+      font-size="14"
+      font-weight="bold"
+      text-anchor="start"
+      fill="#333"
+      style="white-space: pre; font-size: 14px"
+    >
+      Global Indices
+    </text>
+    <text
+      x="108.94"
+      y="226.769"
+      font-family="Arial, sans-serif"
+      font-size="12"
+      text-anchor="start"
+      fill="#555"
+      style="white-space: pre; font-size: 12px"
+    >
+      + Risk ratings &amp; compliance metrics
+    </text>
+    <circle cx="80.94" cy="281.769" r="25" fill="#c8e6c9" stroke="#388e3c" stroke-width="2" />
+    <text
+      x="80.94"
+      y="286.769"
+      font-family="Arial, sans-serif"
+      font-size="16"
+      font-weight="bold"
+      text-anchor="middle"
+      fill="#1b5e20"
+      style="white-space: pre; font-size: 16px"
+    >
+      ⚖️
+    </text>
+    <text
+      x="108.94"
+      y="276.769"
+      font-family="Arial, sans-serif"
+      font-size="14"
+      font-weight="bold"
+      text-anchor="start"
+      fill="#333"
+      style="white-space: pre; font-size: 14px"
+    >
+      Legal Records
+    </text>
+    <text
+      x="108.94"
+      y="296.769"
+      font-family="Arial, sans-serif"
+      font-size="12"
+      text-anchor="start"
+      fill="#555"
+      style="white-space: pre; font-size: 12px"
+    >
+      + Sanctions lists &amp; certification systems
+    </text>
+    <circle
+      cx="80.94"
+      cy="351.769"
+      r="25"
+      fill="#c8e6c9"
+      stroke="#388e3c"
+      stroke-width="2"
+      stroke-dasharray="4,2"
+    />
+    <text
+      x="80.94"
+      y="356.769"
+      font-family="Arial, sans-serif"
+      font-size="16"
+      font-weight="bold"
+      text-anchor="middle"
+      fill="#1b5e20"
+      style="white-space: pre; font-size: 16px"
+    >
+      +
+    </text>
+    <text
+      x="108.94"
+      y="356.769"
+      font-family="Arial, sans-serif"
+      font-size="14"
+      font-style="italic"
+      text-anchor="start"
+      fill="#1b5e20"
+      style="white-space: pre; font-size: 14px"
+    >
+      Continuously expanding sources
+    </text>
+    <circle cx="608.94" cy="147.769" r="25" fill="#ffe0b2" stroke="#f57c00" stroke-width="2" />
+    <text
+      x="608.94"
+      y="152.769"
+      font-family="Arial, sans-serif"
+      font-size="16"
+      font-weight="bold"
+      text-anchor="middle"
+      fill="#e65100"
+      style="white-space: pre; font-size: 16px"
+    >
+      📰
+    </text>
+    <text
+      x="642.94"
+      y="142.769"
+      font-family="Arial, sans-serif"
+      font-size="14"
+      font-weight="bold"
+      text-anchor="start"
+      fill="#333"
+      style="white-space: pre; font-size: 14px"
+    >
+      News Media
+    </text>
+    <text
+      x="642.94"
+      y="162.769"
+      font-family="Arial, sans-serif"
+      font-size="12"
+      text-anchor="start"
+      fill="#555"
+      style="white-space: pre; font-size: 12px"
+    >
+      + Press releases &amp; announcements
+    </text>
+    <circle cx="608.94" cy="217.769" r="25" fill="#ffe0b2" stroke="#f57c00" stroke-width="2" />
+    <text
+      x="608.94"
+      y="222.769"
+      font-family="Arial, sans-serif"
+      font-size="16"
+      font-weight="bold"
+      text-anchor="middle"
+      fill="#e65100"
+      style="white-space: pre; font-size: 16px"
+    >
+      🔍
+    </text>
+    <text
+      x="642.94"
+      y="212.769"
+      font-family="Arial, sans-serif"
+      font-size="14"
+      font-weight="bold"
+      text-anchor="start"
+      fill="#333"
+      style="white-space: pre; font-size: 14px"
+    >
+      NGO Reports
+    </text>
+    <text
+      x="642.94"
+      y="232.769"
+      font-family="Arial, sans-serif"
+      font-size="12"
+      text-anchor="start"
+      fill="#555"
+      style="white-space: pre; font-size: 12px"
+    >
+      + Investigations &amp; monitoring
+    </text>
+    <circle cx="608.94" cy="287.769" r="25" fill="#ffe0b2" stroke="#f57c00" stroke-width="2" />
+    <text
+      x="608.94"
+      y="292.769"
+      font-family="Arial, sans-serif"
+      font-size="16"
+      font-weight="bold"
+      text-anchor="middle"
+      fill="#e65100"
+      style="white-space: pre; font-size: 16px"
+    >
+      🌐
+    </text>
+    <text
+      x="642.94"
+      y="282.769"
+      font-family="Arial, sans-serif"
+      font-size="14"
+      font-weight="bold"
+      text-anchor="start"
+      fill="#333"
+      style="white-space: pre; font-size: 14px"
+    >
+      Web Content
+    </text>
+    <text
+      x="642.94"
+      y="302.769"
+      font-family="Arial, sans-serif"
+      font-size="12"
+      text-anchor="start"
+      fill="#555"
+      style="white-space: pre; font-size: 12px"
+    >
+      + Corporate sites &amp; industry resources
+    </text>
+    <circle
+      cx="608.94"
+      cy="357.769"
+      r="25"
+      fill="#ffe0b2"
+      stroke="#f57c00"
+      stroke-width="2"
+      stroke-dasharray="4,2"
+    />
+    <text
+      x="608.94"
+      y="362.769"
+      font-family="Arial, sans-serif"
+      font-size="16"
+      font-weight="bold"
+      text-anchor="middle"
+      fill="#e65100"
+      style="white-space: pre; font-size: 16px"
+    >
+      +
+    </text>
+    <text
+      x="642.94"
+      y="362.769"
+      font-family="Arial, sans-serif"
+      font-size="14"
+      font-style="italic"
+      text-anchor="start"
+      fill="#e65100"
+      style="white-space: pre; font-size: 14px"
+    >
+      Infinitely expandable sources
+    </text>
+    <rect
+      x="248.94"
+      y="407.769"
+      width="400"
+      height="40"
+      rx="20"
+      ry="20"
+      fill="#e3f2fd"
+      stroke="#1976d2"
+      stroke-width="2"
+    />
+    <text
+      x="448.94"
+      y="432.769"
+      font-family="Arial, sans-serif"
+      font-size="14"
+      font-weight="bold"
+      text-anchor="middle"
+      fill="#0d47a1"
+      style="white-space: pre; font-size: 14px"
+    >
+      Designed for extensibility with new data sources
+    </text>
+  </svg>
+</template>

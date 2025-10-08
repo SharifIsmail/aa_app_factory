@@ -1,0 +1,1004 @@
+# Law Titles for Manual Review
+# ===========================
+#
+# Instructions:
+# 1. All titles are commented out by default (prefixed with #)
+# 2. Remove the # prefix from titles that are relevant to your use case
+# 3. Keep irrelevant titles commented out (with # prefix)
+# 4. You can add notes after the title using #
+# 5. Save the file and use it with add_ground_truth_labels.py
+#
+
+# 2025-01-22T00:00:00 (22 titles)
+#=======================================
+# Publication of an approved standard amendment to a product specification of a protected designation of origin or protected geographical indication in the sector of agricultural products and foodstuffs, as referred to in Article 6b(2) and (3) of Commission Delegated Regulation (EU) No 664/2014
+
+# Publication of a communication of approval of a standard amendment to a product specification for a name in the wine sector, as referred to in Article 17(2) and (3) of Commission Delegated Regulation (EU) 2019/33
+
+# Publication of an approved standard amendment to a product specification of a protected designation of origin or protected geographical indication in the sector of agricultural products and foodstuffs, as referred to in Article 6b(2) and (3) of Commission Delegated Regulation (EU) No 664/2014
+
+# Council Decision (CFSP) 2025/129 of 21 January 2025 on an assistance measure under the European Peace Facility to support the Lebanese Armed Forces
+
+# Commission Implementing Regulation (EU) 2025/96 of 21 January 2025 approving the basic substance Vitis vinifera L. seed extract (grape seed extract) in accordance with Regulation (EC) No 1107/2009 of the European Parliament and of the Council, and amending Commission Implementing Regulation (EU) No 540/2011
+
+# Publication of an application for registration of a name pursuant to Article 50(2), point (a), of Regulation (EU) No 1151/2012 of the European Parliament and of the Council on quality schemes for agricultural products and foodstuffs
+
+# Commission Implementing Regulation (EU) 2025/102 of 21 January 2025 approving the active substance Pythium oligandrum B301 in accordance with Regulation (EC) No 1107/2009 of the European Parliament and of the Council and amending Commission Implementing Regulation (EU) No 540/2011
+
+# Commission notice concerning the application of the Regional Convention on pan-Euro-Mediterranean preferential rules of origin or the protocols on rules of origin providing for diagonal cumulation between the Contracting Parties to this Convention
+
+# New national side of euro coins intended for circulation
+
+# Commission Regulation (EU) 2025/115 of 21 January 2025 amending Annexes II and III to Regulation (EC) No 396/2005 of the European Parliament and of the Council as regards maximum residue levels for fluxapyroxad, lambda-cyhalothrin, metalaxyl, and nicotine in or on certain products
+
+# Berichtigung der Durchführungsverordnung (EU) 2024/250 der Kommission vom 10. Januar 2024 zur Änderung der Durchführungsverordnung (EU) 2015/2447 in Bezug auf Formate und Codes für die gemeinsamen Datenanforderungen für die Zwecke des Austauschs und der Speicherung bestimmter Informationen im Rahmen der zollrechtlichen Vorschriften (ABl. L, 2024/250, 12.2.2024)
+
+Regulation (EU) 2025/40 of the European Parliament and of the Council of 19 December 2024 on packaging and packaging waste, amending Regulation (EU) 2019/1020 and Directive (EU) 2019/904, and repealing Directive 94/62/EC (Text with EEA relevance)
+
+# Commission Implementing Regulation (EU) 2025/99 of 21 January 2025 amending Implementing Regulation (EU) No 540/2011 as regards the extension of the approval periods of the active substances Aureobasidium pullulans (strains DSM 14940 and DSM 14941), Bacillus amyloliquefaciens subsp. plantarum D747, benalaxyl-M, cyprodinil, dichlorprop-P, formetanate, fosetyl, halosulfuron-methyl, imazamox, milbemectin, phenmedipham, pirimicarb, Pseudomonas sp. strain DSMZ 13134, pyrimethanil, pyriofenone, pyroxsulam, spinosad, sulphur, Trichoderma harzianum Rifai strains T-22 and ITEM 908, Trichoderma asperellum (formerly T. harzianum) strains ICC012, T-25 and TV-1, Trichoderma atroviride (formerly T. harzianum) strain T11, Trichoderma gamsii (formerly T. viride) strain ICC080, triticonazole and ziram
+
+# Administrative Commission on Social Security for Migrant Workers – Rates for conversion of currencies pursuant to Council Regulation (EEC) No 574/72
+
+# Prior notification of a concentration (Case M.11827 – LDC / VITERRA ASSETS) – Candidate case for simplified procedure
+
+# Commission Implementing Decision (EU) 2025/123 of 21 January 2025 on the request for registration, pursuant to Regulation (EU) 2019/788 of the European Parliament and of the Council, of the European citizens’ initiative entitled HouseEurope! Power to Renovation
+
+# Commission Implementing Regulation (EU) 2025/97 of 21 January 2025 amending Implementing Regulation (EU) 2017/2470 as regards the conditions of use and the specifications of the novel food isomalto-oligosaccharide
+
+# Regulation (EU) 2025/41 of the European Parliament and of the Council of 19 December 2024 on import, export and transit measures for firearms, essential components and ammunition, implementing Article 10 of the United Nations Protocol against the illicit manufacturing of and trafficking in firearms, their parts and components and ammunition, supplementing the United Nations Convention against Transnational Organised Crime (UN Firearms Protocol) (recast)
+
+# Euro exchange rates – 21 January 2025
+
+# Prior notification of a concentration (Case M.11795 – YUNEX / VVP / ASCENDI / TRIANGLE JV) – Candidate case for simplified procedure
+
+# Authorisation for State aid pursuant to Articles 107 and 108 of the Treaty on the Functioning of the European Union – Cases where the Commission raises no objections – SA.103325
+
+# New national side of euro coins intended for circulation
+
+
+# 2025-01-27T00:00:00 (92 titles)
+#=======================================
+# Case C-686/24, Nidec Asi and Ceisis: Request for a preliminary ruling from the Consiglio di Stato (Italy) lodged on 17 October 2024 – Nidec Asi SpA, Ceisis SpA Sistemi Impiantistici Integrati v Ministero per gli Affari europei, le Politiche di coesione e il Piano nazionale di ripresa e resilienza and Others
+
+# Council Decision of 21 January 2025 replacing a member of the Advisory Committee on Safety and Health at Work for France
+
+# Summary of European Commission Decisions on authorisations for the placing on the market for the use and/or for use of substances listed in Annex XIV to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) (Published pursuant to Article 64(9) of Regulation (EC) No 1907/2006)
+
+# Authorisation for State aid pursuant to Articles 107 and 108 TFEU – Cases where the Commission raises no objections – SA.100716
+
+# Case T-585/24: Action brought on 14 November 2024 – Doors Bulgaria v EUIPO – Top ten (Doors)
+
+Council Decision (CFSP) 2025/171 of 27 January 2025 amending Decision (CFSP) 2019/797 concerning restrictive measures against cyber-attacks threatening the Union or its Member States
+
+# Case T-592/24: Action brought on 20 November 2024 – EFFAS v EUIPO – CFA Institute (CEFA Certified European Financial Analyst)
+
+# Commission Implementing Regulation (EU) 2025/117 of 24 January 2025 laying down rules for the application of Regulation (EU) 2021/2282 with regard to the procedures for joint scientific consultations on medical devices and in vitro diagnostic medical devices
+
+# Case C-80/23, Ministerstvo na vatreshnite raboti (Recording of biometric and genetic data II): Judgment of the Court (Fifth Chamber) of 28 November 2024 (request for a preliminary ruling from the Sofiyski gradski sad – Bulgaria) – Criminal proceedings against V.S. (Reference for a preliminary ruling – Protection of natural persons with regard to the processing of personal data – Directive (EU) 2016/680 – Article 4(1)(a) to (c) – Article 8(1) and (2) – Article 10 – Accused person – Police record containing biometric and genetic data – Enforcement – Objectives of prevention and detection of criminal offences – Interpretation of the judgment of 26 January 2023, Ministerstvo na vatreshnite raboti (Recording of biometric and genetic data by the police) (C-205/21, EU:C:2023:49) – Obligation to interpret national law in conformity with EU law – Assessment of whether it is strictly necessary for the competent authorities to process sensitive data – Role of the competent authorities)
+
+# Case C-763/24, Mibone: Request for a preliminary ruling from the Tribunale di Palermo (Italy) lodged on 6 November 2024 – Questore di Agrigento – Ministero dell’interno v MT
+
+# Council Decision (EU) 2025/156 of 21 January 2025 appointing four members and five alternate members, proposed by Hungary, of the Committee of the Regions
+
+# Case C-769/24 P: Appeal brought on 6 November 2024 by OT against the judgment of the General Court (First Chamber) delivered on 11 September 2024 in Case T-286/23, OT v Council
+
+# Case T-313/24: Action brought on 27 September 2024 – XH v Commission
+
+# Authorisation for State aid pursuant to Articles 107 and 108 TFEU – Cases where the Commission raises no objections – SA.101234
+
+# Communication from the Commission on the exemptions used by Croatia under Article 2(3) and 2(6) of Regulation (EU) 2023/1805 of the European Parliament and of the Council on the use of renewable and low-carbon fuels in maritime transport
+
+# Summary of European Commission Decisions on authorisations for the placing on the market for the use and/or for use of substances listed in Annex XIV to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) (Published pursuant to Article 64(9) of Regulation (EC) No 1907/2006)
+
+# Case C-568/24, Sof Medica: Request for a preliminary ruling from the Curtea de Apel Cluj (Romania) lodged on 23 August 2024 – Sof Medica S.A. v Spitalul Clinic Județean de Urgență Cluj-Napoca
+
+# New national side of euro coins intended for circulation
+
+# Case C-324/24 P: Appeal brought on 1 May 2024 by AG against the order of the General Court (Sixth Chamber) made on 5 March 2024 in Case T-1073/23, AG v European Commission
+
+# Case C-826/24 P: Appeal brought on 3 December 2024 by European Commission against the judgment of the General Court (Tenth Chamber, Extended Composition) delivered on 18 September 2024 in Case T-334/19, Google and Alphabet v Commission (Google AdSense for Search)
+
+# Prior notification of a concentration (Case M.11831 – BNPP LCTIEF / MET 6 / ARKOLIA) – Candidate case for simplified procedure
+
+# Case C-779/24 P: Appeal brought on 12 November 2024 by Samer Kamal Al-Assad against the judgment of the General Court (Ninth Chamber) delivered on 4 September 2024 in Case T-370/23, Al-Assad v Council
+
+# Summary of European Commission Decisions on authorisations for the placing on the market for the use and/or for use of substances listed in Annex XIV to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) (Published pursuant to Article 64(9) of Regulation (EC) No 1907/2006)
+
+# Case T-591/24: Action brought on 20 November 2024 – Sandoz v EUIPO – Be Healthy (ARYUNA)
+
+# Summary of European Commission Decisions on authorisations for the placing on the market for the use and/or for use of substances listed in Annex XIV to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) (Published pursuant to Article 64(9) of Regulation (EC) No 1907/2006)
+
+# Case C-293/23, ENGIE Deutschland: Judgment of the Court (Fifth Chamber) of 28 November 2024 (request for a preliminary ruling from the Bundesgerichtshof – Germany) – ENGIE Deutschland GmbH v Landesregulierungsbehörde beim Sächsischen Staatsministerium für Wirtschaft, Arbeit und Verkehr (Reference for a preliminary ruling – Internal market for electricity – Directive (EU) 2019/944 – Points 28 and 29 of Article 2 – Concept of distribution – Concept of distribution system operator – Concept of distribution system – Articles 30 to 39 – Distribution system operation – Undertaking operating an energy facility comprising a combined heat and power plant and an electric wiring system, supplying heat, hot water and electricity to the tenants of a residential complex – Simultaneous sale of the electricity generated – National legislation exempting the operator of such a facility from the obligations of distribution system operators under that directive)
+
+# Council Decision of 21 January 2025 replacing an alternate member of the Advisory Committee on Safety and Health at Work for Denmark
+
+# Case C-622/23, rhtb: Judgment of the Court (Seventh Chamber) of 28 November 2024 (request for a preliminary ruling from the Oberster Gerichtshof – Austria) – rhtb: projekt gmbh v Parkring 14-16 Immobilienverwaltung GmbH (Reference for a preliminary ruling – Common system of value added tax (VAT) – Directive 2006/112/EC – Article 2(1)(c) – Scope – Taxable transactions – Contract for services for the carrying out of a building project – Termination of the contract by the customer – Concept of remuneration – Characterisation – Obligation to pay the total amount agreed after deduction of the costs saved by the supplier – Article 73 – Taxable amount)
+
+# Case C-758/24, Alace: Request for a preliminary ruling from the Tribunale ordinario di Roma (Italy) lodged on 4 November 2024 – LC v Commissione Territoriale per il riconoscimento della Protezione Internazionale di Roma – Sezione procedure alla frontiera II
+
+# Case T-588/24: Action brought on 14 November 2024 – OT v Council
+
+# Case C-764/24, Capurteli: Request for a preliminary ruling from the Tribunale di Palermo (Italy) lodged on 6 November 2024 – Questore di Agrigento – Ministero dell’interno v GC
+
+# Case T-579/24: Action brought on 13 November 2024 – Kantor v Council
+
+# Case T-547/24: Action brought on 21 October 2024 – Novartis Europharm v Commission
+
+# Case C-818/24 P: Appeal brought on 27 November 2024 by Belarusian Potash Company AAT against the judgment of the General Court (Fourth Chamber) delivered on 18 September 2024 in Case T-534/22, Belarusian Potash Company v Council
+
+# Summary of European Commission Decisions on authorisations for the placing on the market for the use and/or for use of substances listed in Annex XIV to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) (Published pursuant to Article 64(9) of Regulation (EC) No 1907/2006)
+
+# Summary of European Commission Decisions on authorisations for the placing on the market for the use and/or for use of substances listed in Annex XIV to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) (Published pursuant to Article 64(9) of Regulation (EC) No 1907/2006)
+
+# Communication from the Commission on the exemptions used by Cyprus under Article 2(5) of Regulation (EU) 2023/1805 of the European Parliament and of the Council on the use of renewable and low-carbon fuels in maritime transport
+
+# Prior notification of a concentration (Case M.11744 – PINNACLE MEDIA / REDBIRD / NAI / PARAMOUNT) – Candidate case for simplified procedure
+
+# Publication of an application for registration of a name pursuant to Article 50(2)(a) of Regulation (EU) No 1151/2012 of the European Parliament and of the Council on quality schemes for agricultural products and foodstuffs
+
+# Commission Implementing Decision (EU) 2025/126 of 24 January 2025 Correcting Implementing Decision (EU) 2024/2767 as regards the determination of reference values for certain producers and importers for the period from 1 January 2025 to 31 December 2026 (notified under document C(2025) 390)
+
+Council Implementing Regulation (EU) 2025/173 of 27 January 2025 implementing Regulation (EU) 2019/796 concerning restrictive measures against cyber-attacks threatening the Union or its Member States
+
+# Summary of European Commission Decisions on authorisations for the placing on the market for the use and/or for use of substances listed in Annex XIV to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) (Published pursuant to Article 64(9) of Regulation (EC) No 1907/2006)
+
+# Summary of European Commission Decisions on authorisations for the placing on the market for the use and/or for use of substances listed in Annex XIV to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) (Published pursuant to Article 64(9) of Regulation (EC) No 1907/2006)
+
+# Case C-169/23, Másdi: Judgment of the Court (Third Chamber) of 28 November 2024 (request for a preliminary ruling from the Kúria – Hungary) – Nemzeti Adatvédelmi és Információszabadság Hatóság v UC (Reference for a preliminary ruling – Protection of natural persons with regard to the processing of personal data and the free movement of such data – Regulation (EU) 2016/679 – Data processed when drawing up a COVID-19 certificate – Data not collected from the data subject – Information to be provided – Exception to the obligation to provide information – Article 14(5)(c) – Data generated by the controller in the context of its own processes – Right to complain – Competence of the supervisory authority – Article 77(1) – Appropriate measures to protect the data subject’s legitimate interests provided for by the Member State law to which the controller is subject – Measures relating to the security of data processing – Article 32)
+
+# Case C-398/23, PT II (Agreement concluded between the prosecutor and the perpetrator of an offence): Judgment of the Court (Eighth Chamber) of 28 November 2024 (request for a preliminary ruling from the Sofiyski gradski sad – Bulgaria) – Criminal proceedings against PT (Reference for a preliminary ruling – Area of freedom, security and justice – Judicial cooperation in criminal matters – Criminal offences and penalties in the field of illicit drug trafficking and the fight against organised crime – Framework Decision 2004/757/JHA – Articles 4 and 5 – Framework Decision 2008/841/JHA – Articles 3 and 4 – National legislation not implementing EU law – Article 51(1) of the Charter of Fundamental Rights of the European Union – Right to information in criminal proceedings – Directive 2012/13/EU – Articles 1 and 6 – Right of a person to be informed of the charges against him or her – Effective judicial protection – First paragraph of Article 47 and Article 52(1) of the Charter of Fundamental Rights – Criminal proceedings against several persons – Agreement for settlement of the case entered into by one of the defendants and the public prosecutor – Consent of the other defendants)
+
+# Case C-750/24, Ortera: Request for a preliminary ruling from the Tribunale ordinario di Bologna (Italy) lodged on 29 October 2024 – AP v Commissione Territoriale per il riconoscimento della Protezione Internazionale di Bologna – Sezione Forlì Cesena – Ministero Interno
+
+# Summary of European Commission Decisions on authorisations for the placing on the market for the use and/or for use of substances listed in Annex XIV to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) (Published pursuant to Article 64(9) of Regulation (EC) No 1907/2006)
+
+# Summary of European Commission Decisions on authorisations for the placing on the market for the use and/or for use of substances listed in Annex XIV to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) (Published pursuant to Article 64(9) of Regulation (EC) No 1907/2006)
+
+# Summary of European Commission Decisions on authorisations for the placing on the market for the use and/or for use of substances listed in Annex XIV to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) (Published pursuant to Article 64(9) of Regulation (EC) No 1907/2006)
+
+# Commission Implementing Regulation (EU) 2025/119 of 24 January 2025 amending Implementing Regulation (EU) No 540/2011 as regards the conditions of approval of the low-risk active substance aqueous extract from the germinated seeds of sweet Lupinus albus
+
+# Case C-679/24, UniCredit Bank and Momentum Credit: Request for a preliminary ruling from the Fővárosi Törvényszék (Hungary) lodged on 15 October 2024 – HL v UniCredit Bank Zrt. and Momentum Credit Zrt.
+
+# Case T-607/24: Action brought on 25 November 2024 – SBK Art v Council
+
+# Publication of a communication of approval of a standard amendment to a product specification for a name in the wine sector referred to in Article 17(2) and (3) of Commission Delegated Regulation (EU) 2019/33
+
+# Council Decision of 21 January 2025 replacing a member of the Advisory Committee on freedom of movement for workers for Cyprus
+
+# Summary of European Commission Decisions on authorisations for the placing on the market for the use and/or for use of substances listed in Annex XIV to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) (Published pursuant to Article 64(9) of Regulation (EC) No 1907/2006)
+
+# Case C-699/24, Kołama: Request for a preliminary ruling from the Sąd Okręgowy w Warszawie (Poland) lodged on 21 October 2024 – mBank S.A. v AZ and MZ
+
+# Case C-582/24 P: Appeal brought on 5 September 2024 by PB against the judgment of the General Court (Tenth Chamber) delivered on 26 June 2024 in Case T-789/22, PB v SRB
+
+# Summary of European Commission Decisions on authorisations for the placing on the market for the use and/or for use of substances listed in Annex XIV to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) (Published pursuant to Article 64(9) of Regulation (EC) No 1907/2006)
+
+# Joined Cases C-758/22 and C-759/22, Bayerische Ärzteversorgung and Others: Judgment of the Court (Fifth Chamber) of 28 November 2024 (requests for a preliminary ruling from the Bundesverwaltungsgericht – Germany) – Bayerische Ärzteversorgung and Others (C-758/22), Sächsische Ärzteversorgung (C-759/22) v Deutsche Bundesbank (References for a preliminary ruling – Economic and monetary policy – European system of national and regional accounts – Statistical reporting requirements applicable to pension funds – Special pension schemes for the professions – Compulsory membership and contributions)
+
+# Case T-611/24: Action brought on 26 November 2024 – Homestar v EUIPO – General Sanitary (THERMATEC)
+
+# Case C-526/23, VariusSystems: Judgment of the Court (Second Chamber) of 28 November 2024 (request for a preliminary ruling from the Oberster Gerichtshof – Austria) – VariusSystems digital solutions GmbH v GR, owner of the undertaking B & G (Reference for a preliminary ruling – Judicial cooperation in civil matters – Jurisdiction and the recognition and enforcement of judgments – Regulation (EU) No 1215/2012 – Special jurisdiction – Claim in matters relating to a contract – Second indent of Article 7(1)(b) – Contract for the provision of services – Software developed in one Member State and adapted to the needs of a customer residing in another Member State – Place of performance)
+
+# Case C-759/24, Canpelli: Request for a preliminary ruling from the Tribunale ordinario di Roma (Italy) lodged on 5 November 2024 – CP v Commissione Territoriale per il riconoscimento della Protezione Internazionale di Roma – Sezione procedure alla frontiera II
+
+# Non-opposition to a notified concentration (Case M.11783 – LUXSHARE / PIERER / LEONI)
+
+# Summary of European Commission Decisions on authorisations for the placing on the market for the use and/or for use of substances listed in Annex XIV to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) (Published pursuant to Article 64(9) of Regulation (EC) No 1907/2006)
+
+# Case C-756/24, Jelgavas autobusu parks: Request for a preliminary ruling from the Augstākā tiesa (Senāts) (Latvia) lodged on 31 October 2024 – Sabiedrisko pakalpojumu regulēšanas komisija v SIA JELGAVAS AUTOBUSU PARKS
+
+# Case C-718/24, Aleb: Request for a preliminary ruling from the Administrativen sad Sofia-grad (Bulgaria) lodged on 22 October 2024 – NP v Predsedatel na Darzhavna agentsia za bezhantsite
+
+# Decision No 3/2024 of the EU-CTC Joint Committee of 5 November 2024 as regards the amendment of Appendices III and IIIa to the Convention on a common transit procedure concerning the accession of Georgia [2025/174]
+
+# Case C-816/24 P: Appeal brought on 27 November 2024 by Belaruskali AAT against the judgment of the General Court (Fourth Chamber, Extended Composition) delivered on 18 September 2024 in Case T-528/22, Belaruskali v Council
+
+# Case T-584/24: Action brought on 13 November 2024 – Tkach v Council
+
+# Case C-817/24 P: Appeal brought on 27 November 2024 by Ivan Ivanovich Golovaty against the judgment of the General Court (Fourth Chamber) delivered on 18 September 2024 in Case T-521/22, Golovaty v Council
+
+# CaseC-336/24, SINHRON INVEST: Order of the Court (Eighth Chamber) of 22 November 2024 (request for a preliminary ruling from the Sofiyski gradski sad – Bulgaria) – SINHRON INVEST EOOD v Sofiyska gradska prokuratura (Reference for a preliminary ruling – Article 99 of the Rules of Procedure of the Court of Justice – Questions referred for a preliminary ruling that are identical to questions on which the Court has already ruled – Article 48 of the Charter of Fundamental Rights of the European Union – Presumption of innocence and rights of the defence – Imposition of a criminal penalty on a legal person for an offence relating to value added tax (VAT) committed by the representative of that legal person – Parallel criminal proceedings against that representative that have not been concluded)
+
+# Council Decision of 21 January 2025 replacing an alternate member of the Management Board of the European Agency for Safety and Health at Work for France
+
+# Case C-432/22, PT (Agreement concluded between the prosecutor and the perpetrator of an offence): Judgment of the Court (Third Chamber) of 28 November 2024 (request for a preliminary ruling from the Spetsializiran nakazatelen sad – Bulgaria) – Criminal proceedings against PT (Reference for a preliminary ruling – Area of freedom, security and justice – Judicial cooperation in criminal matters – Criminal offences and penalties in the field of illicit drug trafficking and the fight against organised crime – Possibility to reduce applicable penalties – Scope – Framework Decision 2004/757/JHA – Articles 4 and 5 – Framework Decision 2008/841/JHA – Articles 3 and 4 – National legislation not implementing EU law – Article 51(1) of the Charter of Fundamental Rights of the European Union – Effective judicial protection – Second subparagraph of Article 19(1) TEU – Criminal proceedings against several persons – Agreement for settlement of the case provided for in national law – Approval by an ad hoc court – Consent of the other defendants)
+
+# Euro exchange rates – 24 January 2025
+
+# Case T-601/24: Action brought on 25 November 2024 – Ignatova v Council
+
+# Case T-586/24: Action brought on 14 November 2024 – Doors Bulgaria v EUIPO – Top ten (Doors)
+
+# Case C-795/24 P: Appeal brought on 15 November 2024 by Andrey Anatolyevich Kozitsyn against the judgment of the General Court (First Chamber) delivered on 18 September 2024 in Joined Cases T-607/22 and T-731/22, Kozitsyn v Council
+
+# Case T-575/24, Digipolis: Request for a preliminary ruling from the Hof van beroep te Antwerpen (Belgium) lodged on 22 October 2024 – Belgische Staat/Federale Overheidsdienst Financiën v Digipolis Antwerpen AG and District09 AG
+
+# Corrigendum to Authorisation for State aid pursuant to Articles 107 and 108 of the Treaty on the Functioning of the European Union –Cases where the Commission raises no objections – SA.114922 (OJ C, C/2024/6169, 15.10.2024)
+
+# Case C-661/24, Académie Fiscale and Others: Request for a preliminary ruling from the Cour constitutionnelle (Belgium) lodged on 9 October 2024 – Ordre des barreaux francophones et germanophone, Académie Fiscale ASBL, UA, vzw Liga voor Mensenrechten, Ligue des droits humains ASBL, JU, LV, Ministry of Privacy v Premier ministre/ Eerste Minister
+
+# Summary of European Commission Decisions on authorisations for the placing on the market for the use and/or for use of substances listed in Annex XIV to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) (Published pursuant to Article 64(9) of Regulation (EC) No 1907/2006)
+
+# Case C-669/24, Verbraucherzentrale Bundesverband: Request for a preliminary ruling from the Oberlandesgericht Düsseldorf (Germany) lodged on 11 October 2024 – Bundesverband der Verbraucherzentralen und Verbraucherverbände – Verbraucherzentrale Bundesverband e. V. v Vodafone GmbH
+
+# Summary of European Commission Decisions on authorisations for the placing on the market for the use and/or for use of substances listed in Annex XIV to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) (Published pursuant to Article 64(9) of Regulation (EC) No 1907/2006)
+
+# Joined Cases C-269/23 P and C-272/23 P: Judgment of the Court (Second Chamber) of 28 November 2024 – Hengshi Egypt Fiberglass Fabrics SAE (C-269/23 P) and Jushi Egypt for Fiberglass Industry SAE (C-269/23 P and C-272/23 P) v European Commission (Appeal – Common commercial policy – Protection against subsidised imports from third countries – Agreement on Subsidies and Countervailing Measures of the World Trade Organization (WTO) – Articles 1 and 2 – Regulation (EU) 2016/1037 – Articles 2 to 4 – Concepts of subsidy, government, specificity and benefit – Financial contributions granted by Chinese public bodies to undertakings incorporated under Egyptian law owned by Chinese entities established in the China-Egypt Suez Economic and Trade Cooperation Zone – Possibility of classifying such financial contributions as subsidies granted by the Government of Egypt, having regard to that government’s own conduct – Whether permissible – Conditions – Financial contribution consisting in forgoing government revenue that is otherwise due – Benefit conferred on the recipient undertakings – Choice of the relevant reference situation for the purpose of characterising the existence of that financial contribution and that benefit – Articles 5 and 6 – Calculation of the benefit – Concepts of recipient and undertaking)
+
+# Case T-596/24, CIT Coin Invest: Request for a preliminary ruling from the Verwaltungsgerichtshof (Austria) lodged on 8 November 2024 – CIT Coin Invest AG v Zollamt Österreich
+
+# Summary of European Commission Decisions on authorisations for the placing on the market for the use and/or for use of substances listed in Annex XIV to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) (Published pursuant to Article 64(9) of Regulation (EC) No 1907/2006)
+
+# Authorisation for State aid pursuant to Articles 107 and 108 of the Treaty on the Functioning of the European Union – Cases where the Commission raises no objections – SA.115961
+
+# Summary of European Commission Decisions on authorisations for the placing on the market for the use and/or for use of substances listed in Annex XIV to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) (Published pursuant to Article 64(9) of Regulation (EC) No 1907/2006)
+
+# Summary of European Commission Decisions on authorisations for the placing on the market for the use and/or for use of substances listed in Annex XIV to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) (Published pursuant to Article 64(9) of Regulation (EC) No 1907/2006)
+
+# Joined Cases C-129/23 and C-567/23, BG Technik and Others: Judgment of the Court (Eighth Chamber) of 28 November 2024 (requests for a preliminary ruling from the Nejvyšší správní soud and the Krajský soud v Ostravě – Czech Republic) – BG Technik cs a.s. v Generální ředitelství cel (Reference for a preliminary ruling – Customs union – Common Customs Tariff – Combined Nomenclature – Classification of goods – Tariff heading 8703 – Motor cars and other motor vehicles principally designed for the transport of persons – Tariff heading 8713 – Carriages for disabled persons – Regulation (EC) No 718/2009 – Implementing Regulation (EU) 2021/1367 – SELVO 4800 vehicle – Concept of disabled persons)
+
+# Non-opposition to a notified concentration (Case M.11789 – APOLLO / BARNES GROUP)
+
+# Publication of an approved standard amendment to the product specification of a protected designation of origin or protected geographical indication in the agricultural products and foodstuffs sector, as referred to in Article 6b(2) and (3) of Commission Delegated Regulation (EU) No 664/2014
+
+
+# 2025-02-14T00:00:00 (27 titles)
+#=======================================
+# COMMUNICATION FROM THE COMMISSION – New national side of euro coins intended for circulation
+
+# Minutes of the sitting of 23 November 2023
+
+# Verbatim report of proceedings of 23 November 2023
+
+# Berichtigung der Delegierten Verordnung (EU) 2024/1681 der Kommission vom 6. März 2024 zur Ergänzung der Verordnung (EU) Nr. 305/2011 des Europäischen Parlaments und des Rates durch die Festlegung von Leistungsklassen in Bezug auf den Feuerwiderstand von Bauprodukten (ABl. L, 2024/1681, 13.6.2024)
+
+# Authorisation for State aid pursuant to Articles 107 and 108 of the Treaty on the Functioning of the European Union – Cases where the Commission raises no objections – SA.107046
+
+# Common catalogue of varieties of vegetable species Supplement H 2024/13
+
+# Commission Notice – Guidance on a framework for developing methodologies to monitor high-diversity landscape features pursuant to Article 14(7) of the Nature Restoration Regulation (Regulation (EU) 2024/1991)
+
+# Verbatim report of proceedings of 22 November 2023
+
+# Non-opposition to a notified concentration (Case M.11865 – NISSAN / MITSUBISHI / JV)
+
+# Minutes of the sitting of 20 November 2023
+
+Commission Implementing Decision (EU) 2025/286 of 13 February 2025 amending Implementing Decision (EU) 2023/941 as regards the harmonised standards for hearing protectors, personal fall protection equipment and eye and face protection equipment, drafted in support of Regulation (EU) 2016/425 of the European Parliament and of the Council
+
+# Verbatim report of proceedings of 20 November 2023
+
+# Common catalogue of varieties of vegetable species Supplement H 2025/1
+
+# Common catalogue of varieties of agricultural plant species Supplement A 2025/1
+
+# Minutes of the sitting of 22 November 2023
+
+# Commission Implementing Regulation (EU) 2025/291 of 13 February 2025 imposing a provisional anti-dumping duty on imports of decor paper originating in the People’s Republic of China
+
+# Verbatim report of proceedings of 21 November 2023
+
+# Publication of a communication of approval of a standard amendment to a product specification for a name in the wine sector, as referred to in Article 17(2) and (3) of Commission Delegated Regulation (EU) 2019/33
+
+# Notice for the attention of a person and entity subject to the restrictive measures provided for in Council Decision 2014/145/CFSP and Council Regulation (EU) No 269/2014 concerning restrictive measures in respect of actions undermining or threatening the territorial integrity, sovereignty and independence of Ukraine
+
+# Minutes of the sitting of 21 November 2023
+
+# Communication of the Minister for Climate Policy and Green Growth of the Kingdom of the Netherlands under Article 3(2) of Directive 94/22/EC of the European Parliament and of the Council on the conditions for granting and using authorisations for the prospection, exploration and production of hydrocarbons
+
+# Final Report of the Hearing Officer – Case AT.39914 – Euro Interest Rate Derivatives
+
+# Euro exchange rates – 13 February 2025
+
+# Opinion of the Advisory Committee on restrictive agreements and dominant positions at its meeting on 23 June 2021 concerning a re-adoption Decision in Case T.39914 - Euro Interest Rate Derivatives – Meeting by Audio Conference – via Skype for Business – Rapporteur: Slovenia
+
+# Summary of Commission Decision of 28 June 2021 pursuant to Article 7 of Council Regulation (EC) No 1/2003 in Case AT.39914 - Euro Interest Rate Derivatives (notified under document number C(2021) 4600)
+
+# Commission Implementing Decision (EU) 2025/321 of 11 February 2025 amending the Annex to Implementing Decision (EU) 2023/2447 concerning emergency measures in relation to outbreaks of highly pathogenic avian influenza in certain Member States (notified under document C(2025) 1013)
+
+# Commission Delegated Decision (EU) 2025/318 of 27 November 2024 on the unilateral inclusion of sectors by Sweden in the emissions trading system within the Union for buildings, road transport and additional sectors pursuant to Article 30j of Directive 2003/87/EC of the European Parliament and of the Council
+
+
+# 2025-03-10T00:00:00 (81 titles)
+#=======================================
+# Non-opposition to a notified concentration (Case M.11835 – ABC TECHNOLOGIES / TI FLUID SYSTEMS)
+
+# CaseC-644/23, Stangalov: Judgment of the Court (Fourth Chamber) of 16 January 2025 (request for a preliminary ruling from the Sofiyski gradski sad – Bulgaria) – Criminal proceedings against IR (Reference for a preliminary ruling – Judicial cooperation in criminal matters – Directive (EU) 2016/343 – Article 8 – Right to be present at the trial – Information regarding the holding of the trial and the consequences of non-appearance – Inability to locate the accused person notwithstanding the reasonable efforts of the competent authorities – Possibility of a trial and a decision in absentia – Article 9 – Right to a new trial or to another legal remedy which allows a fresh determination of the merits of the case – No such right where the person concerned absconds)
+
+# Case C-376/23, BALTIC CONTAINER TERMINAL: Judgment of the Court (Fifth Chamber) of 16 January 2025 (request for a preliminary ruling from the Augstākā tiesa (Senāts) – Latvia) – BALTIC CONTAINER TERMINAL SIA v Valsts ieņēmumu dienests (Reference for a preliminary ruling – Customs Union – Regulation (EU) No 952/2013 – Union Customs Code – Delegated Regulation (EU) 2015/2446 – Implementing Regulation (EU) 2015/2447 – Free zones – Change of customs status of non-Union goods to Union goods – Records of the holder of an authorisation to carry on activities in a free zone – Legitimate expectations – Res judicata)
+
+# Case T-7/25: Action brought on 6 January 2025 – Puppan v Parliament
+
+# Case T-24/25: Action brought on 20 January 2025 – Les Éditions Albert René v EUIPO – Works 11 Michał Lubiński (Obelix)
+
+# Corrigendum to the Case T-534/24 (OJ C, C/2024/7364, 16.12.2024)
+
+# Case T-46/25: Action brought on 24 January 2025 – Land Oberösterreich v EUIPO – Norma (Genussländer)
+
+# Case T-334/22: Judgment of the General Court of 29 January 2025 – Danske Fragtmænd v Commission (Action for annulment – State aid – Postal sector – Capital contribution in favour of Post Danmark – Decision finding no State aid – Capital contribution in favour of PostNord – Decision declaring the aid incompatible with the internal market – Lack of individual concern – No substantial effect on the competitive position – Inadmissibility)
+
+# Case T-658/24: Action brought on 18 December 2024 – Warbud v Frontex
+
+# Case T-686/24, Buchgint: Request for a preliminary ruling from Finanzgericht Berlin-Brandenburg (Germany) made on 5 December 2024 – B v Hauptzollamt
+
+# Case C-719/24, Miasto stołeczne Warszawa and Others: Request for a preliminary ruling from the Sąd Najwyższy (Poland) lodged on 22 October 2024 – M.S.
+
+# Case C-48/25 P: Appeal brought on 24 January 2025 by European Commission against the judgment of the General Court (Sixth Chamber, Extended Composition) delivered on 13 November 2024 in Case T-302/21, Aboca and Others v. Commission
+
+# Case T-1093/23: Judgment of the General Court of 22 January 2025 – AH v Commission (Civil service – Members of the contract staff – Remuneration – Expatriation allowance – Refusal to grant the expatriation allowance – Calculation of the five-year reference period – Article 4(1)(a) of Annex VII to the Staff Regulations – Liability)
+
+# Case T-493/23: Judgment of the General Court of 18 December 2024 – Tauber v Council (Common Foreign and Security Policy – Restrictive measures taken in view of actions destabilising Moldova – Freezing of funds – Restrictions on entry into the territories of the Member States – Lists of persons, entities and bodies subject to the freezing of funds and to restrictions on entry into the territories of the Member States – Inclusion and maintenance of the applicant’s name on the lists – Planning and directing violent demonstrations – Article 1(1)9a)(ii) and Article 2(1)(a)(ii) of Decision (CFSP) 2023/891 and Article 2(3)(a)(ii) of Regulation (EU) 2023/888 – Obligation to state reasons – Plea of illegality – Error of assessment – Freedom to conduct a business – Right to property – Non-contractual liability)
+
+# Case T-271/22: Judgment of the General Court of 22 January 2025 – Melnichenko v Council (Common foreign and security policy – Restrictive measures adopted in respect of actions undermining or threatening the territorial integrity, sovereignty and independence of Ukraine – Freezing of funds – List of persons, entities and bodies subject to the freezing of funds and economic resources – Inclusion and maintenance of the applicant’s name on the list – Concept of leading businessperson involved in economic sectors providing a substantial source of revenue to the Government of the Russian Federation – Article 2(1)(g) of Council Decision 2014/145/CFSP – Article 3(1)(g) of Regulation (EU) No 269/2014 – Error of assessment – Proportionality – Right to property – Right to respect for private life)
+
+# Case T-127/23: Judgment of the General Court of 22 January 2025 – eClear v Commission (Access to documents – Regulation (EC) No 1049/2001 – Binding tariff information decisions – Refusal to grant access – Definition of document – Substantial investment – Exception relating to the protection of personal data – Exception relating to the protection of the commercial interests of a third party)
+
+# Case C-424/23, DYKA Plastics: Judgment of the Court (Fourth Chamber) of 16 January 2025 (request for a preliminary ruling from the ondernemingsrechtbank Gent, afdeling Gent – Belgium) – DYKA Plastics NV v Fluvius System Operator CV (Reference for a preliminary ruling – Award of public works contracts – Directive 2014/24/EU – Article 42 – Technical specifications – Formulation – Whether the list at Article 42(3) is exhaustive in nature – Invitation to tender requiring drainage work to be carried out using pipes made of vitrified clay and made of concrete – Plastic pipes excluded – Article 42(4) – Reference to a type or to a specific production – Situations in which a reference must be accompanied by the words or equivalent)
+
+Commission Implementing Regulation (EU) 2025/454 of 7 March 2025 laying down the rules for the application of Regulation (EU) 2024/1689 of the European Parliament and of the Council as regards the establishment of a scientific panel of independent experts in the field of artificial intelligence
+
+# Case C-38/25 P: Appeal brought on 22 January 2025 by European Commission against the judgment of the General Court (Sixth Chamber, Extended Composition) delivered on 13 November 2024 in Case T-189/21, Aloe Vera of Europe v Commission
+
+# Case C-400/23, VB II (Information concerning the right to a new trial): Judgment of the Court (Fourth Chamber) of 16 January 2025 (request for a preliminary ruling from the Sofiyski gradski sad – Bulgaria) – Criminal proceedings against VB (Reference for a preliminary ruling – Judicial cooperation in criminal matters – Directive (EU) 2016/343 – Right to be present at the trial – Article 8(2) – Trial resulting in a decision imposing a conviction in absentia or a decision of acquittal in absentia – Conditions – Article 8(4) – Obligation to inform the person tried in absentia of the legal remedies available – Article 9 – Right to a new trial or to another legal remedy which allows a fresh determination of the merits of the case and which may lead to the original decision being reversed – Article 10(1) – Right to an effective remedy – National legislation making the recognition of the right to a new trial subject to the submission of a request to reopen criminal proceedings to a judicial authority before which the person tried in absentia must appear)
+
+# Case T-44/25: Action brought on 23 January 2025 – Wyrębski v EUIPO – Gagatek-Woźniak and Others (BLUE BRAND CHICKEN)
+
+# Case T-22/25: Action brought on 16 January 2025 – HG v ESMA
+
+# Case C-277/23, Ministarstvo financija (Erasmus + grant): Judgment of the Court (Fifth Chamber) of 16 January 2025 (request for a preliminary ruling from the Ustavni sud – Croatia) – E. P. v Ministarstvo financija Republike Hrvatske, Samostalni sektor za drugostupanjski upravni postupak (Reference for a preliminary ruling – Citizenship of the Union – Article 21(1) TFEU – Right to move and reside freely within the territory of the Member States – Tax legislation – Income tax – Calculation of the amount of the basic personal allowance for a dependent child who has received mobility support for educational purposes in the context of the Erasmus+ programme – Regulation (EU) No 1288/2013 – Taxation of grants to support the mobility of individuals covered by that regulation – Restriction on freedom of movement – Proportionality)
+
+# Case T-1128/23: Judgment of the General Court of 29 January 2025 – Coswell v EUIPO (Biorepair) (EU trade mark – Application for the EU figurative mark Biorepair – Absolute grounds for refusal – No distinctive character – Descriptive character – Article 7(1)(b) and (c) of Regulation (EU) 2017/1001)
+
+# Case T-659/24: Action brought on 18 December 2024 – Bloom v Commission
+
+# Case T-51/25: Action brought on 24 January 2025 – HM v Commission
+
+# Case C-346/23, Banco de Santander (Representation of individual consumers): Judgment of the Court (Fourth Chamber) of 16 January 2025 (request for a preliminary ruling from the Tribunal Supremo – Spain) – Banco Santander SA, successor to Banco Banif SA v Asociación de Consumidores y Usuarios de Servicios Generales – Auge, on behalf of its members Andrea y Alberto (Reference for a preliminary ruling – Markets in financial instruments – Directive 2004/39/EC – Article 52(2) – Action brought in the interests of consumers – Consumer organisations having a legitimate interest in protecting consumers – Standing to bring legal proceedings to defend the individual interests of their members – Loss of standing in the case of investments in high-value financial products – Exemption from court fees and from the obligation to pay the costs incurred by the opposing party – Procedural autonomy – Principle of effectiveness)
+
+# Case T-23/25: Action brought on 17 January 2025 – HH v Commission
+
+# Case T-1123/23: Judgment of the General Court of 29 January 2025 – Meucci v Parliament and EEAS (Civil service – Officials – Leaving the service – Automatic retirement – Request for maintenance in service beyond the retirement age – Limitation of the duration of maintenance in service beyond the retirement age – Obligation to state reasons – Manifest error of assessment – Interest of the service – Legal certainty – Legitimate expectations – Duty to have regard for the welfare of officials)
+
+# Case C-889/24, Delve 2: Request for a preliminary ruling from the Administratīvā rajona tiesa (Latvia) lodged on 20 December 2024 – SIA DELVE 2 v Valsts ieņēmumu dienests
+
+# Case T-673/24: Action brought on 27 December 2024 – Imerys PCC France v Commission
+
+# Case T-48/25: Action brought on 23 January 2025 – NFL Properties Europe v EUIPO – Treets (SUPER BOWL)
+
+# Case C-831/24, Machski: Request for a preliminary ruling from the Sąd Rejonowy w Białymstoku (Poland) lodged on 5 December 2024 – K.J. v P.
+
+# Decision No …/2024 of the Trade Committee established by the Trade Agreement between the European Union and its Member States, of the one part, and Colombia, Peru and Ecuador, of the other part of … modifying Appendices 2, 2A and 5 to Annex II to that Agreement
+
+# Case C-547/23 P: Judgment of the Court (Tenth Chamber) of 16 January 2025 – Região Autónoma da Madeira v European Commission (Appeal – State aid – Madeira Free Zone (Portugal) – Granting of tax advantages to undertakings – Aid scheme implemented by the Portuguese Republic – Decisions C(2007) 3037 final and C(2013) 4043 final – Decision taken by the European Commission pursuant to the first subparagraph of Article 108(2) TFEU – Implementation of existing aid in breach of a condition ensuring compatibility of the aid with the internal market)
+
+# Case C-663/24, Streamz and Others: Request for a preliminary ruling from the Cour constitutionnelle (Belgium) lodged on 9 October 2024 – Google LLC, Google Ireland Ltd, Spotify Belgium SA, Spotify AB, Spotify België nv, Meta Platforms Ireland Limited, Streamz SRL, Sony Music Entertainment Belgium SA, Universal Music SA, Warner Music Benelux SA, Play it again Sam SRL, North East West South SA, CNR Records SA, Belgian Recorded Music associations ASBL v Premier ministre
+
+# Case T-61/25: Action brought on 28 January 2025 – Sumitomo Chemical Agro Europe v ECHA
+
+# Case T-30/23: Judgment of the General Court of 22 January 2025 – Fly Persia and Ali Barmodeh v EUIPO – Dubai Aviation (flyPersia) (EU trade mark – Opposition proceedings – Application for EU figurative mark flyPersia – Earlier EU figurative mark flydubai – Relative ground for refusal – Likelihood of confusion – Article 8(1)(b) of Regulation (EU) 2017/1001)
+
+# Case T-38/25: Action brought on 22 January 2025 – Tesla (Shanghai) v Commission
+
+# Case T-33/25: Action brought on 22 January 2025 – Quality First v EUIPO (CRAVE NO MORE)
+
+# Case T-3/25: Action brought on 2 January 2025 – Zündapp v EUIPO – Longines (Device of a stylised shield with horizontal bars)
+
+# Case C-606/24, Ministerul Finanțelor: Request for a preliminary ruling from the Tribunalul București (Romania) lodged on 17 September 2024 – XY and Others v Ministerul Finanțelor
+
+# Case T-569/23: Judgment of the General Court of 22 January 2025 – Stanecki v Commission (Civil service – Officials – Promotion – 2022 promotion exercise – Decision not to promote the applicant to grade AD 9 – Article 45 of the Staff Regulations – Existence of disciplinary proceedings – Presumption of innocence – Impartiality – Freedom of expression – Misuse of powers)
+
+# Case T-1188/23: Judgment of the General Court of 22 January 2025 – Rain Carbon Germany v EUIPO – Novaresine (NOVARESINE INNOVATION GOES GREEN) (EU trade mark – Opposition proceedings – Application for EU figurative mark NOVARESINE INNOVATION GOES GREEN – Earlier EU word mark Novares – Relative ground for refusal – Likelihood of confusion – Article 8(1)(b) of Regulation (EU) 2017/1001 – Alteration)
+
+# Case T-623/24: Action brought on 2 December 2024 – Bardella and Others v Parliament
+
+# Case T-681/24: Action brought on 27 December 2024 – Inescop v Commission
+
+# Commission Implementing Regulation (EU) 2025/441 of 6 March 2025 providing for emergency financial support for the agricultural sectors affected by adverse climatic events and natural disasters in Spain, Croatia, Cyprus, Latvia and Hungary, in accordance with Regulation (EU) No 1308/2013 of the European Parliament and of the Council
+
+# Case T-498/19: Judgment of the General Court of 22 January 2025 – Banco Cooperativo Español v SRB (2019 ex ante contributions) (Economic and Monetary Union – Banking union – Single Resolution Mechanism for credit institutions and certain investment firms (SRM) – Single Resolution Fund (SRF) – Decision of the SRB on the calculation of the ex ante contributions for the 2019 contribution period – Articles 12 and 14 of Delegated Regulation (EU) 2015/63 – Concept of change of status – Institutional protection scheme – Plea of illegality)
+
+# Case T-55/25: Action brought on 26 January 2025 – Weight Doctors v EUIPO (Endo-Sleeve)
+
+# Prior notification of a concentration (Case M.11897 – GROHE / VKB / SURU) – Candidate case for simplified procedure
+
+# Commission Regulation (EU) 2025/447 of 7 March 2025 amending Regulations (EC) No 2150/2002 and (EC) No 1552/2005 of the European Parliament and of the Council, as well as Commission Regulations (EC) No 1726/1999, (EC) No 1916/2000, (EC) No 198/2006, (EC) No 1062/2008 and (EU) No 349/2011, as regards references to the statistical classification of economic activities NACE Revision 2 established by Regulation (EC) No 1893/2006 of the European Parliament and of the Council
+
+# Case C-516/23, Qatar Airways: Judgment of the Court (Eighth Chamber) of 16 January 2025 (request for a preliminary ruling from the Landgericht Frankfurt am Main – Germany) – NW, YS v Qatar Airways (Reference for a preliminary ruling – Air transport – Regulation (EC) No 261/2004 – Article 3(3) – Travel free of charge or at a reduced fare not available directly or indirectly to the public – Passenger who has paid only charges and air transport taxes – Reservation in the context of a promotional campaign – Article 8(1)(c) – Right to re-routing at a later date – No requirement of a temporal link between the cancelled flight and the re-routing flight desired by the passenger)
+
+# Case T-5/25: Action brought on 3 January 2025 – HD and Others v European Parliament and EEAS
+
+# Case C-891/24 P: Appeal brought on 19 December 2024 by Viorel Micula, European Drinks SA, Rieni Drinks SA, Transilvania General Import-Export SRL and West Leasing SRL against the judgment of the General Court (Second Chamber, Extended Composition) delivered on 2 October 2024 in Joined Cases T-624/15 RENV,T-694/15 RENV and T-704/15 RENV, European Food and Others v Commission
+
+# Case C-890/24 P: Appeal brought on 19 December 2024 by European Food SA, Starmill SRL, Multipack SRL, Scandic Distilleries SA and Ioan Micula against the judgment of the General Court (Second Chamber, Extended Composition) delivered on 2 October 2024 in Joined Cases T-624/15 RENV,T-694/15 RENV and T-704/15 RENV, European Food and Others v Commission
+
+# Case C-45/25: Action brought on 24 January 2025 – European Commission v Kingdom of Belgium
+
+# Case T-37/25: Action brought on 22 January 2025 – CCCME and Other v Commission
+
+# Case T-685/24, Jelgratz: Request for a preliminary ruling from the Finanzgericht Berlin-Brandenburg (Germany) made on 5 December 2024 – A v Hauptzollamt
+
+# Case T-56/25: Action brought on 27 January 2025 – Rose Bikes v EUIPO (ROSE)
+
+# Prior notification of a concentration (Case M.11898 – SONACA / GOVERA INVERSIONES / ACITURRI AERONAUTICA) – Candidate case for simplified procedure
+
+# Case C-642/23, Flightright (Loyalty account): Judgment of the Court (Seventh Chamber) of 16 January 2025 (request for a preliminary ruling from the Landgericht Düsseldorf – Germany) – Flightright GmbH v Etihad Airways P.J.S.C. (Reference for a preliminary ruling – Air transport – Regulation (EC) No 261/2004 – Article 8(1)(a) – Right to reimbursement of the cost of the airline ticket in the event of cancellation of a flight – Choice between reimbursement in money or in travel vouchers – Article 7(3) – Concept of the signed agreement of the passenger – Loyalty account set up by the passenger on the air carrier’s website)
+
+# Case C-870/24, Outletico: Request for a preliminary ruling from the Administratīvā apgabaltiesa (Latvia) lodged on 17 December 2024 – Valsts ieņēmumu dienests v SIA OUTLETICO
+
+# Case C-588/23, Scai: Judgment of the Court (Tenth Chamber) of 16 January 2025 (request for a preliminary ruling from the Tribunale Amministrativo Regionale della Campania – Italy) – Scai Srl v Regione Campania (Reference for a preliminary ruling – Recovery of unlawful and incompatible aid – Regulation (EU) 2015/1589 – Article 16 – Beneficiary of individual aid identified in the European Commission recovery decision – Implementation of the recovery decision – Transfer of the aid to another undertaking after the recovery decision – Economic continuity – Assessment – Competent authority – Extension of the recovery obligation to the actual beneficiary – Audi alteram partem rule – Articles 41 and 47 of the Charter of Fundamental Rights of the European Union)
+
+# Case T-517/23: Judgment of the General Court of 22 January 2025 – Tes Electrical Electronic v EUIPO – Tes Touch Embedded Solutions (Xiamen) (TES) (EU trade mark – Revocation proceedings – European Union figurative mark TES – Partial revocation – Genuine use of the mark – Proof of genuine use – Article 58(1)(a) and (2) of Regulation (EU) 2017/1001 – Evidence adduced for the first time before the General Court)
+
+# Case T-49/25: Action brought on 24 January 2025 – Mute v EUIPO – mute-labs (mute labs)
+
+# Case C-726/22 P: Judgment of the Court (Fifth Chamber) of 16 January 2025 – European Commission v Pollinis France (Appeal – Access to documents – Regulation (EC) No 1049/2001 – Article 4(3), first subparagraph – Protection of the decision-making process – Regulation (EU) No 182/2011 – Committee procedure – Positions expressed by Member States and other Members of Committees – Refusal to grant access)
+
+# Publication of a communication of approval of a standard amendment to a product specification for a name in the wine sector, as referred to in Article 17(2) and (3) of Commission Delegated Regulation (EU) 2019/33
+
+# Case T-45/25: Action brought on 23 January 2025 – Wyrębski v EUIPO – Gagatek-Woźniak and Others (RED BRAND CHICKEN)
+
+# Case T-1053/23: Judgment of the General Court of 22 January 2025 – Tecom Master v EUIPO – Michael Kors (Switzerland) International (MK MICHAEL MICHELE) (EU trade mark – Invalidity proceedings – EU figurative mark MK MICHAEL MICHELE – Earlier EU figurative mark MK MICHAEL KORS – Genuine use of the earlier mark – Article 57(2) of Regulation (EC) No 207/2009 (now Article 64(2) of Regulation (EU) 2017/1001) – Relative ground for invalidity – Article 8(5) and Article 53(1)(a) of Regulation No 207/2009 (now Article 8(5) and Article 60(1)(a) of Regulation (EU) 2017/1001))
+
+# Case T-687/24: Action brought on 27 December 2024 – Ryanair v Commission
+
+# Case C-813/24, Smartflats: Request for a preliminary ruling from the Cour d’appel de Bruxelles (Belgium) lodged on 27 November 2024 – Smartflats SA v Région de Bruxelles-Capitale
+
+# Case C-745/24, GLOBUS Handelshof: Request for a preliminary ruling from the Landgericht Saarbrücken (Germany) lodged on 24 October 2024 – Verband Sozialer Wettbewerb eV v GLOBUS Handelshof GmbH & Co. KG
+
+# Euro exchange rates – 7 March 2025
+
+# Case T-657/24, Versãofast: Reference for a preliminary ruling from Tribunal Arbitral Tributário (Centro de Arbitragem Administrativa – CAAD) (Portugal) made on 6 December 2024 – Versãofast, Unipessoal, Lda. v Autoridade Tributária e Aduaneira
+
+# Case T-405/22: Judgment of the General Court of 22 January 2025 – UniCredit Bank v SRB (2022 ex ante contributions) (Economic and Monetary Union – Banking Union – Single Resolution Mechanism for credit institutions and certain investment firms (SRM) – Single Resolution Fund (SRF) – Decision of the SRB on the calculation of the 2022 ex ante contributions – Obligation to state reasons – Right to effective judicial protection – Plea of illegality)
+
+# Case C-25/25: Action brought on 17 January 2025 – European Commission v Republic of Bulgaria
+
+# Case T-1106/23: Judgment of the General Court of 29 January 2025 – Vinokurov v Council (Common foreign and security policy – Restrictive measures taken in respect of actions undermining or threatening the territorial integrity, sovereignty and independence of Ukraine – Freezing of funds – List of persons, entities and bodies subject to the freezing of funds and economic resources – Maintenance of the applicant’s name on the list – Plea of illegality – Article 2(1)(g) of Decision 2014/145/CFSP – Concept of businessperson involved in economic sectors providing a substantial source of revenue to the Government of the Russian Federation – Proportionality – Legal certainty – Error of assessment)
+
+# Case T-407/22: Judgment of the General Court of 22 January 2025 – Norddeutsche Landesbank – Girozentrale v SRB (2022 ex ante contributions) (Economic and Monetary Union – Banking Union – Single Resolution Mechanism for credit institutions and certain investment firms (SRM) – Single Resolution Fund (SRF) – Decision of the SRB on the calculation of the 2022 ex ante contributions – Obligation to state reasons – Equal treatment – Proportionality – SRB’s margin of discretion – Manifest error of assessment – Plea of illegality – Commission’s margin of discretion)
+
+# Case C-843/24, 24.hu: Request for a preliminary ruling from the Fővárosi Törvényszék (Hungary) lodged on 9 December 2024 – Viktor Orbán v Editorial board of 24.hu
+
+# Commission Implementing Regulation (EU) 2025/455 of 7 March 2025 granting a Union authorisation for the single biocidal product SatPax® 70/30 IPA in accordance with Regulation (EU) No 528/2012 of the European Parliament and of the Council
+
+# Case T-147/24: Judgment of the General Court of 29 January 2025 – Doorinn v EUIPO (Position of a label on a mattress) (EU trade mark – Application for the EU trade mark consisting of a position of a label on a mattress – Absolute ground for refusal – No distinctive character – Article 7(1)(b) of Regulation (EU) 2017/1001)
+
+
+# 2025-03-31T00:00:00 (91 titles)
+#=======================================
+# Council Implementing Decision (EU) 2025/607 of 27 March 2025 on the appointment of the Vice-Chair and two full-time members of the Single Resolution Board
+
+# Case T-160/24: Order of the General Court of 13 January 2025 – LU v EIB (Civil service – EIB staff – Complaint of psychological harassment – Administrative inquiry – Final report of the investigation panel – Manifest inadmissibility – Decision confirming the findings of the investigation report and recommending the reopening of disciplinary proceedings for malicious complaint – Withdrawal of the contested measure – No need to adjudicate)
+
+# Case T-123/25: Action brought on 20 February 2025 – Wazdan Innovations v EUIPO (3 Coins)
+
+# Case T-114/25: Action brought on 17 February 2025 – MAX magazín v EUIPO – RCS Mediagroup (MAX)
+
+# Case C-11/25, Jelgavas valstspilsētas pašvaldība: Request for a preliminary ruling from the Augstākā tiesa (Senāts) (Latvia) lodged on 9 January 2025 – Jelgavas valstspilsētas pašvaldība v Konkurences padome
+
+# Statement of revenue and expenditure for the 2025 financial year – European Climate, Infrastructure and Environment Executive Agency (CINEA)
+
+# Case T-122/23: Judgment of the General Court of 5 February 2025 – Ege İhracatçıları Birliği and Others v Commission (Subsidies – Imports of rainbow trout originating in Türkiye – Implementing Regulation (EU) 2022/2390 – Definitive countervailing duty – Manifest error of assessment – Pass-through analysis – Calculation of subsidy amount – Methodology differing from that used in the original investigation – Change of circumstances – Existence of a benefit – Preferential loans and tax treatment – Definition of the product concerned)
+
+# Case T-53/25: Action brought on 24 January 2025 – Public.Resource.Org and Right to Know v Commission
+
+# Statement of revenue and expenditure for the 2025 financial year – Agency for Support for BEREC (BEREC Office)
+
+# Statement of revenue and expenditure for the 2025 financial year – European Union Agency for Law Enforcement Training (CEPOL)
+
+# Case T-119/25: Action brought on 18 February 2025 – Le Sac/EUIPO – Asunción (Le SAC OUTLET)
+
+# Case C-407/24, VTL Vámügynökség: Order of the President of the Court of 20 December 2024 (request for a preliminary ruling from the Fővárosi Törvényszék – Hongrie) – VTL Vámügynökség Kft. v Nemzeti Adó- és Vámhivatal Fellebbviteli Igazgatósága
+
+# Commission Implementing Regulation (EU) 2025/623 of 28 March 2025 establishing, pursuant to Regulation (EU) 2024/573 of the European Parliament and of the Council minimum requirements for certificates of natural persons and the conditions for the mutual recognition of such certificates as regards the recovery of fluorinated greenhouse gas-based solvents from equipment and repealing Commission Regulation (EC) No 306/2008
+
+# Commission Delegated Regulation (EU) 2025/305 of 31 October 2024 supplementing Regulation (EU) 2023/1114 of the European Parliament and of the Council with regard to regulatory technical standards specifying the information to be included in an application for authorisation as a crypto-asset service provider
+
+# Case C-873/24, Marwanak: Request for a preliminary ruling from the Bundesgerichtshof (Germany) lodged on 17 December 2024 – GK and Others
+
+# Case T-124/25: Action brought on 20 February 2025 – Wazdan Innovations v EUIPO (5 Coins)
+
+# Commission Delegated Regulation (EU) 2025/83 of 17 January 2025 amending Delegated Regulation (EU) 2016/1237 as regards certain reporting requirements in hemp notifications
+
+# Case C-751/24, Girder Weiss: Request for a preliminary ruling from the Bezirksgericht für Handelssachen Wien (Austria) lodged on 29 October 2024 – Girder Weiss GmbH v Volkswagen AG
+
+# Case T-23/22: Order of the General Court of 13 January 2025 – Grail v Commission (Competition – Concentrations – Pharmaceutical industry market – Genetic sequencing systems – Acquisition by Illumina of sole control over Grail – Decision imposing interim measures pursuant to Article 8(5)(a) of Regulation (EC) No 139/2004 – Withdrawal of the contested act – Disappearance of the subject matter of the action – No need to adjudicate)
+
+# Corrigendum to the Statement of revenue and expenditure for the 2024 financial year – European Institute of Innovation and Technology (EIT) – amending budget No 2 (OJ C, C/2024/6851, 29.11.2024)
+
+# Case T-280/24: Judgment of the General Court of 5 February 2025 – ExactCut v EUIPO (exactcut) (EU trade mark – Application for the EU figurative mark exactcut – Absolute grounds for refusal – No distinctive character – Descriptive character – Article 7(1)(b) and (c) of Regulation (EU) 2017/1001)
+
+# Case T-1162/23: Order of the General Court of 15 January 2025 – Primagran v EUIPO – Primagaz (PRIMA)
+
+# Case C-158/23, Keren: Judgment of the Court (Grand Chamber) of 4 February 2025 (request for a preliminary ruling from the Raad van State – Netherlands) – T.G. v Minister van Sociale Zaken en Werkgelegenheid (Reference for a preliminary ruling – Asylum policy – Refugee status or subsidiary protection status – Directive 2011/95/EU – Article 34 – Access to integration facilities – Obligation to pass, on pain of a fine, a civic integration examination – Beneficiary of international protection who has not passed such an examination in time – Obligation to pay a fine – Obligation to bear the full costs of civic integration courses and examinations – Possibility of obtaining a loan in order to pay those costs)
+
+# Case T-187/24: Judgment of the General Court of 12 February 2025 – Biif v EUIPO – Eddies Pizza (Caprizza) (EU trade mark – Opposition proceedings – Application for the EU figurative mark CAPRIZZA – Earlier EU figurative mark capizzi GASTROPIZZA – Relative ground for refusal – Likelihood of confusion – Similarity of the services – Similarity of the signs – Article 8(1)(b) of Regulation (EU) 2017/1001)
+
+# Case T-170/24: Order of the General Court of 14 January 2025 – Ghost – Corporate Management v EUIPO – Nacomi Group (fluff) (Action for annulment – EU trade mark – Opposition proceedings – Application for EU figurative mark fluff – Earlier EU word mark FLUFF – Disregard of procedural requirements – Manifest inadmissibility)
+
+# List and description of the files of the OIV Code of Oenological Practices referred to in Article 3(2) of Commission Delegated Regulation (EU) 2019/934
+
+# Case T-195/24: Judgment of the General Court of 5 February 2025 – VistaJet v EUIPO (horizontal red stripe on a silver fuselage) (EU trade mark – Application for an EU trade mark representing a horizontal red stripe on a silver fuselage – Position mark – Absolute ground for refusal – Lack of distinctive character – Article 7(1)(b) of Regulation (EU) 2017/1001)
+
+# Euro exchange rates – 28 March 2025
+
+# Case C-877/24, Shamsi: Request for a preliminary ruling from the Raad van State (the Netherlands) lodged on 18 December 2024 – X, Minister van Asiel en Migratie, formerly Staatssecretaris van Justitie en Veiligheid; other party: Y
+
+# Case C-42/24, Emporiki Serron – Emporias kai Diathesis Agrotikon Proionton: Judgment of the Court (Sixth Chamber) of 6 February 2025 (request for a preliminary ruling from the Symvoulio tis Epikrateias – Greece) – Emporiki Serron AE – Emporias kai Diathesis Agrotikon Proionton v Ypourgos Anaptyxis kai Ependyseon, Ypourgos Agrotikis Anaptyxis kai Trofimon (Reference for a preliminary ruling – Protection of the European Union’s financial interests – Regulation (EC, Euratom) No 2988/95 – Irregularities – Article 3 – Limitation period – Duration and starting point of that period – National legislation providing for a five-year limitation period as from the time the irregularity is discovered)
+
+# Case T-171/24: Judgment of the General Court of 12 February 2025 – DH v Commission (Civil service – Members of the contract staff – Social security – Article 101(3) of the CEOS – Total and permanent invalidity – Refusal to recognise the invalidity as arising from an occupational disease – Obligation to state reasons – Medical assessments)
+
+# Decision of the High Representative of the Union for Foreign Affairs and Security Policy of 6 March 2025 on the rules regarding the handling of requests for public access to documents held by EU Special Representatives
+
+# Case C-857/24, daa e.a.: Reference for a preliminary ruling from the High Court (Ireland) made on 11 December 2024 – daa plc, formerly Dublin Airport Authority plc and Others v Irish Aviation Authority, Airport Coordination Limited
+
+# Commission Implementing Regulation (EU) 2025/627 of 28 March 2025 establishing, pursuant to Regulation (EU) 2024/573 of the European Parliament and of the Council, minimum requirements for certificates of natural persons and the conditions for the mutual recognition of such certificates, as regards the installation, maintenance or servicing, repair or decommissioning of stationary electrical switchgear containing fluorinated greenhouse gases and recovery of fluorinated greenhouse gases from stationary electrical switchgear and repealing Commission Implementing Regulation (EU) 2015/2066
+
+# Case T-406/18: Judgment of the General Court of 12 February 2025 – de Volksbank v SRB (2018 ex ante contributions) (Economic and Monetary Union – Banking Union – Single Resolution Mechanism for credit institutions and certain investment firms (SRM) – Single Resolution Fund (SRF) – Decision of the SRB on the calculation of the ex ante contributions for the 2018 contribution period – Articles 4, 14 and 16 of Delegated Regulation (EU) 2015/63 – Principle of good administration)
+
+# Case T-64/25: Action brought on 28 January 2025 – Leone and Others v EUIPO – Incom (Leone)
+
+# Case T-108/25: Action brought on 13 February 2025 – MAN Truck & Bus v EUIPO – Rolls Royce Power Systems (V12X)
+
+# Case T-45/23: Judgment of the General Court of 5 February 2025 – UG v ERCEA (Civil service – Contract staff – Reports – Appraisal reports – 2021 appraisal period – Rule of correspondence – Duty to have regard for the welfare of staff – Manifest error of assessment – Proportionality)
+
+# Case T-394/23: Judgment of the General Court of 12 February 2025 – Klein v Commission (Public health – EU regulatory framework governing medical devices – Safeguard clause – Article 8(1) and (2) of Directive 93/42/EEC – Notification by a Member State of a decision prohibiting the placing on the market of a medical device – Medical device Inhaler Broncho-Air® – Repeal of Directive 93/42 – Articles 94 to 97 of Regulation (EU) 2017/745 – Infringement of essential procedural requirements)
+
+# Case C-17/25, Società Cattolica di Assicurazione: Request for a preliminary ruling from the Corte suprema di cassazione (Italy) lodged on 15 January 2025 – LS, KV, RY, UJ, TM v Società Cattolica di Assicurazione SpA
+
+# Case T-104/25: Action brought on 12 February 2025 – Lami Packaging v EUIPO – Tetra Laval Holdings & Finance (Shape of octagonal packing)
+
+# Case T-418/22: Order of the General Court of 14 January 2025 – HSBC Continental Europe v Commission
+
+# Statement of revenue and expenditure for the 2025 financial year – European Union Agency for the Space Programme (EUSPA) – amending budget No 1
+
+# Statement of revenue and expenditure for the 2025 financial year – European Institute for Gender Equality (EIGE)
+
+# Case C-118/25 P: Appeal brought on 5 February 2025 by Nord Stream 2 AG against the judgment of the General Court (Fifth Chamber, Extended Composition) delivered on 27 November 2024 in Case T-526/19 RENV, Nord Stream 2 v Parliament and Council
+
+# Council Implementing Decision (EU) 2025/657 of 17 March 2025 establishing the satisfactory fulfilment of the conditions for the payment of the third instalment of the non-repayable financial support and of the loan support under the Ukraine Plan of the Ukraine Facility
+
+# Case C-281/24: Judgment of the Court (Seventh Chamber) of 6 February 2025 – European Commission v Slovak Republic (Failure of a Member State to fulfil obligations – Assessment and management of flood risks – Directive 2007/60/EC – Article 14(3) and Article 15(1) – Flood risk management plan – Review – Making available to the European Commission)
+
+# Authorisation for State aid pursuant to Articles 107 and 108 of the Treaty on the Functioning of the European Union – Cases where the Commission raises no objections – SA.112531
+
+# Corrigendum to the Statement of revenue and expenditure for the 2024 financial year – European Institute of Innovation and Technology (EIT) – amending budget No 3 (OJ C, C/2025/868, 28.2.2025)
+
+# Statement of revenue and expenditure for the 2025 financial year – European Labour Authority (ELA) – amending budget No 1
+
+# Case C-910/24, Calmit Hungária Mészművek: Request for a preliminary ruling from the Győri Törvényszék (Hungary) lodged on 12 December 2024 – Calmit Hungária Mészművek Kft. v Nemzeti Adó- és Vámhivatal Fellebbviteli Igazgatósága
+
+# Case C-837/24, Nova Iberomoldes: Request for a preliminary ruling from the Tribunal Arbitral Tributário (Centro de Arbitragem Administrativa – CAAD) (Portugal) lodged on 6 December 2024 – NOVA IBEROMOLDES – SGPS, S.A. v Autoridade Tributária e Aduaneira
+
+# Commission Delegated Regulation (EU) 2025/300 of 10 October 2024 supplementing Regulation (EU) 2023/1114 of the European Parliament and of the Council with regard to regulatory technical standards on information to be exchanged between competent authorities
+
+# Case C-840/24, VG Wort: Request for a preliminary ruling from the Bundesgerichtshof (Germany) lodged on 10 December 2024 – VG Wort (Verwertungsgesellschaft Wort) v TL
+
+# Case T-59/25: Action brought on 24 January 2025 – Tartu Agro v Commission
+
+# Case T-245/24: Judgment of the General Court of 12 February 2025 – Alberts v EUIPO – Techtex (Cardboard boxes [packaging]) (Community design – Invalidity proceedings – Registered Community design representing a cardboard box (packaging) – Earlier national word marks – Ground for invalidity – Use in the subsequent design of a distinctive sign the holder of which has the right to prohibit such use – Article 25(1)(e) of Regulation (EC) No 6/2002 – Article 27(2) of Delegated Regulation (EU) 2018/625 – No similarity between the goods)
+
+Commission Implementing Regulation (EU) 2025/625 of 28 March 2025 establishing, pursuant to Regulation (EU) 2024/573 of the European Parliament and of the Council, minimum requirements for certificates of natural and legal persons and the conditions for the mutual recognition of such certificates as regards stationary fire protection equipment containing certain fluorinated greenhouse gases or relevant alternatives and repealing Commission Regulation (EC) No 304/2008
+
+# Commission Delegated Regulation (EU) 2025/413 of 18 December 2024 supplementing Regulation (EU) 2023/1114 of the European Parliament and of the Council with regard to regulatory technical standards specifying the detailed content of information necessary to carry out the assessment of a proposed acquisition of a qualifying holding in an issuer of an asset-referenced token
+
+# Case C-835/24 P: Appeal brought on 5 December 2024 by PT against the judgment of the General Court (Tenth Chamber) delivered on 25 September 2024 in Case T-788/22, PT v Commission
+
+# Case T-106/25: Action brought on 12 February 2025 – Pols Erm v EUIPO – Holder (Pol’s FREEZE FRESH)
+
+# Case T-105/25: Action brought on 12 February 2025 – Kutxabank v EUIPO – Klarna Bank (K.)
+
+# Commission Delegated Regulation (EU) 2025/422 of 17 December 2024 supplementing Regulation (EU) 2023/1114 of the European Parliament and of the Council with regard to regulatory technical standards specifying the content, methodologies and presentation of information in respect of sustainability indicators in relation to adverse impacts on the climate and other environment-related adverse impacts
+
+# Guideline (EU) 2025/603 of the European Central Bank of 7 March 2025 on government finance statistics (ECB/2025/9) (recast)
+
+# Commission Delegated Regulation (EU) 2025/414 of 18 December 2024 supplementing Regulation (EU) 2023/1114 of the European Parliament and of the Council with regard to regulatory technical standards specifying the detailed content of information necessary to carry out the assessment of a proposed acquisition of a qualifying holding in a crypto-asset service provider
+
+# Council Implementing Decision (EU) 2025/653 of 27 March 2025 amending Implementing Decision (EU) 2018/1696 on the operating rules of the selection panel provided for in Article 14(3) of Regulation (EU) 2017/1939 implementing enhanced cooperation on the establishment of the European Public Prosecutor’s Office (‘the EPPO’)
+
+# Summary of European Union decisions on marketing authorisations in respect of medicinal products from 1 February 2025 to 28 February 2025 (Published pursuant to Article 13 or Article 38 of Regulation (EC) No 726/2004 of the European Parliament and of the Council or Article 5 of Regulation (EU) 2019/6 of the European Parliament and of the Council)
+
+# Case T-17/24: Judgment of the General Court of 12 February 2025 – UL and Others v EEAS (Civil service – EEAS staff – Remuneration – Family allowances – Education allowance – Article 15 of Annex X to the Staff Regulations – Application for reimbursement of nursery and school fees – Decision to refuse)
+
+# Case C-770/24, DB InfraGO and DB RegioNetz Infrastruktur: Request for a preliminary ruling from the Verwaltungsgericht Köln (Germany) lodged on 7 November 2024 – DB InfraGO AG and DB RegioNetz Infrastruktur GmbH v Bundesrepublik Deutschland
+
+# Commission Implementing Regulation (EU) 2025/82 of 17 January 2025 amending Implementing Regulation (EU) 2016/1239 as regards certain reporting requirements in hemp notifications
+
+# Case T-18/24: Judgment of the General Court of of 5 February 2025 – US v Commission (Civil service – Officials – Reports procedure – Appraisal report – 2022 appraisal procedure – Lower mark – Obligation to state reasons – Manifest error of assessment – Setting of objectives – Misuse of powers – Duty to have regard for the welfare of officials – Liability)
+
+# Cases T-830/22 and T-156/23: Judgment of the General Court of 5 February 2025 – Poland v Commission (Law governing the institutions – Partial failure to comply with an order of the Court of Justice imposing interim measures in the context of an action for failure to fulfil obligations – Periodic penalty payment – Recovery of amounts receivable by offsetting – Article 101(1) and Article 102 of Regulation (EU, Euratom) 2018/1046 – Jurisdiction of the General Court)
+
+# Case T-434/23: Judgment of the General Court of 12 February 2025 – Essity Hygiene and Health AB v EUIPO (Shape of a leaf) (EU trade mark – Application for EU figurative mark in the shape of a leaf – Absolute ground for refusal – No distinctive character – Article 7(1)(b) of Regulation (EC) No 207/2009 (now Article 7(1)(b) of Regulation (EU) 2017/1001))
+
+# Commission Implementing Regulation (EU) 2025/306 of 31 October 2024 laying down implementing technical standards for the application of Regulation (EU) 2023/1114 of the European Parliament and of the Council with regard to standard forms, templates and procedures for the information to be included in the application for authorisation as a crypto-asset service provider
+
+# Public call for expressions of interest in the appointment as Member of the Appeal Panel of the Single Resolution Board (SRB) (SRB/2025/001)
+
+# Case C-836/24 P: Appeal brought on 5 December 2024 by PT against the judgment of the General Court (Tenth Chamber) delivered on 25 September 2024 in Case T-367/22, PT v Commission
+
+# Case C-830/24, Trivium Packaging Italy: Request for a preliminary ruling from the Tribunale di Reggio Emilia (Italy) lodged on 4 December 2024 – IB v Trivium Packaging Italy Srl
+
+# Case T-109/25: Action brought on 13 February 2025 – Bulkhead/EUIPO – Ubisoft Entertainment (WARDOGS)
+
+# Statement of revenue and expenditure for the 2024 financial year – Fusion for Energy Joint Undertaking (F4E) – amending budget No 2
+
+# Statement of revenue and expenditure for the 2025 financial year – European Medicines Agency (EMA)
+
+# Non-opposition to a notified concentration (Case M.11921 – GOLDMAN SACHS / OTPP / OMEGA HEALTHCARE)
+
+# Case C-803/24, Romcab and RTZ & Partners: Request for a preliminary ruling from the Curtea de Apel Târgu Mureș (Romania) lodged on 20 November 2024 – Romcab SA, RTZ & Partners SPRL, as liquidator of Romcab SA v Banca Comercială Română SA, Banca Transilvania, CEC Bank SA – Sucursala București, Codelco Kupferhandel GmbH, Compania de Asigurări Reasigurări-Exim România (Care România) SA, Euro Alloys Ltd, MKE Mansfeld GmbH, First Bank SA, Rusal Marketing GmbH, Unicredit Leasing Corporation IFN S.A.
+
+# Commission Implementing Decision (EU) 2025/654 of 26 March 2025 concerning certain emergency measures relating to foot and mouth disease in Hungary and Slovakia and amending Implementing Decision (EU) 2025/613 (notified under document C(2025) 1957)
+
+# Commission Implementing Regulation (EU) 2025/664 of 31 March 2025 amending Implementing Regulation (EU) 2023/2882 suspending commercial policy measures concerning certain products originating in the United States of America imposed by Implementing Regulations (EU) 2018/886 and (EU) 2020/502
+
+# Case C-677/22, Przedsiębiorstwo A. (Period for payment of 120 days set by the debtor): Judgment of the Court (Third Chamber) of 6 February 2025 (request for a preliminary ruling from the Sąd Rejonowy Katowice – Wschód w Katowicach – Poland) – Przedsiębiorstwo Produkcyjno – Handlowo – Usługowe A. v P. S.A. (Reference for a preliminary ruling – Combating late payment in commercial transactions – Directive 2011/7/EU – Commercial transactions between undertakings – Article 3(5) – Obligation on Member States to ensure that the period for payment set in the contract concluded between undertakings does not exceed 60 calendar days – Possibility, for contracting parties, to set a longer period for payment – Condition for the express agreement in the contract of such a period – Condition that a contractual term is not grossly unfair to the creditor – Cumulative conditions – Contracts in which the terms are determined unilaterally by one of the parties – Contractual term by which the debtor unilaterally sets the period for payment of 120 days – Unlawfulness)
+
+# Case T-50/25: Action brought on 23 January 2025 – KD v EUIPO
+
+# Case T-122/25: Action brought on 20 February 2025 – Wazdan Innovations v EUIPO (1 Coin)
+
+# Case T-1086/23: Judgment of the General Court of 5 February 2025 – Fondazione Save The Chickens v Commission (Law governing the institutions – European citizens’ initiative – End the Slaughter Age – Collection of statements of support – Required number of statements of support not reached – Notice of closure – Article 9(7) of Regulation (EU) 2019/788)
+
+# Case C-346/24: Order of the President of the Court of 18 December 2024 – European Commission v Ireland
+
+# Case T-10/24: Judgment of the General Court of 12 February 2025 – TU and BY v Parliament (Civil service – Accredited parliamentary assistants – Psychological harassment – Administrative inquiry – Request for access to the inquiry report – Refusal of the request – Obligation to state reasons – Scope of the duty to provide assistance – Article 24 of the Staff Regulations – Principle of good administration – Article 41 of the Charter of Fundamental Rights – Liability)
+
+# Statement of revenue and expenditure for the 2025 financial year – European Research Executive Agency (REA)
+
+# Case T-743/21: Judgment of the General Court of 5 February 2025 – Ryanair v Commission (TAP II; rescue aid; COVID-19) (State aid – Portuguese air transport market – Rescue aid granted by Portugal to TAP SGPS – State loan – Decision not to raise any objections – Action for annulment – Locus standi – Admissibility – Eligibility – Point 22 of the Guidelines on State aid for rescuing and restructuring undertakings in difficulty – Company belonging to a group – Intrinsic difficulties not resulting from an arbitrary allocation of costs within the group – Difficulties which are too serious to be dealt with by the group itself – Appropriateness of the aid – Proportionality – Weighing up of the positive and negative effects – Freedom of establishment – Freedom to provide services – Equal treatment – Obligation to state reasons)
+
+
+# 2025-05-07T00:00:00 (21 titles)
+#=======================================
+# Berichtigung der Verordnung (EU) 2024/573 des Europäischen Parlaments und des Rates vom 7. Februar 2024 über fluorierte Treibhausgase, zur Änderung der Richtlinie (EU) 2019/1937 und zur Aufhebung der Verordnung (EU) Nr. 517/2014 (ABl. L, 2024/573, 20.2.2024)
+
+# Publication of an approved standard amendment to a product specification of a protected designation of origin or protected geographical indication in the agricultural products and foodstuffs sector, as referred to in Article 6b(2) and (3) of Commission Delegated Regulation (EU) No 664/2014
+
+# Commission Implementing Regulation (EU) 2025/847 of 6 May 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards reactions to security breaches of European Digital Identity Wallets
+
+# Commission Implementing Regulation (EU) 2025/842 of 6 May 2025 correcting certain language versions of Implementing Regulation (EU) 2018/2066 on the monitoring and reporting of greenhouse gas emissions pursuant to Directive 2003/87/EC of the European Parliament and of the Council
+
+# Commission Implementing Regulation (EU) 2025/849 of 6 May 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the submission of information to the Commission and to the Cooperation Group for the list of certified European Digital Identity Wallets
+
+# Prior notification of a concentration (Case M.11983 – INFLEXION / 65 EQUITY PARTNERS / KEE SAFETY) – Candidate case for simplified procedure
+
+Berichtigung der Richtlinie (EU) 2022/2464 des Europäischen Parlaments und des Rates vom 14. Dezember 2022 zur Änderung der Verordnung (EU) Nr. 537/2014 und der Richtlinien 2004/109/EG, 2006/43/EG und 2013/34/EU hinsichtlich der Nachhaltigkeitsberichterstattung von Unternehmen (ABl. L 322 vom 16.12.2022)
+
+# Commission Implementing Regulation (EU) 2025/846 of 6 May 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards cross-border identity matching of natural persons
+
+# Commission Implementing Decision (EU) 2025/871 of 30 April 2025 amending Implementing Decision (EU) 2019/450 as regards the publication of references of European Assessment Documents for insulating foils as barrier against substances with relevance to indoor air quality and polyethylene terephthalate-based foils with coating for insulating glass units and other construction products
+
+# Euro exchange rates – 6 May 2025
+
+# Authorisation for State aid pursuant to Articles 107 and 108 of the Treaty on the Functioning of the European Union – Cases where the Commission raises no objections – SA.118341
+
+# Council Decision (EU) 2025/866 of 14 April 2025 on the conclusion on behalf of the European Union of the Agreement between the European Union and Bosnia and Herzegovina on the cooperation between the European Union Agency for Criminal Justice Cooperation (Eurojust) and the authorities of Bosnia and Herzegovina competent for judicial cooperation in criminal matters
+
+# Commission Decision of 7 March 2025 instructing the central administrator to enter changes to the national allocation tables of Czechia, Germany, Croatia, Italy and Slovakia into the Union Registry
+
+# Communication from the Commission – Interpretative guidelines concerning the setting up of charges for the use of railway infrastructure
+
+# Commission Implementing Regulation (EU) 2025/848 of 6 May 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the registration of wallet-relying parties
+
+# Commission Implementing Decision (EU) 2025/859 of 30 April 2025 amending Implementing Decision (EU) 2024/2207 concerning certain emergency measures relating to sheep pox and goat pox in Greece (notified under document C(2025) 2733)
+
+# Agreement between the European Union and Bosnia and Herzegovina on the cooperation between the European Union Agency for Criminal Justice Cooperation (Eurojust) and the authorities of Bosnia and Herzegovina competent for judicial cooperation in criminal matters
+
+# Prior notification of a concentration (Case M.11944 – MMG LIMITED / ANGLO AMERICAN’S BRAZILIAN NICKEL BUSINESS) – Candidate case for simplified procedure
+
+# Non-opposition to a notified concentration (Case M.11947 – AP / LGP / GREEN EPIC TOPCO)
+
+# Amendments to the Customs Convention on the International Transport of goods under cover of TIR carnets (TIR Convention 1975)
+
+# Authorisation for State aid pursuant to Articles 107 and 108 of the Treaty on the Functioning of the European Union – Cases where the Commission raises no objections – SA.114137
+
+
+# 2025-05-28T00:00:00 (61 titles)
+#=======================================
+# Council Decision (CFSP) 2025/1096 of 27 May 2025 amending Decision 2013/255/CFSP concerning restrictive measures in view of the situation in Syria
+
+Commission Implementing Regulation (EU) 2025/1113 of 26 May 2025 amending Regulation (EC) No 1484/95 as regards fixing representative prices in the poultrymeat and egg sectors and for egg albumin
+
+# Commission Decision (EU) 2025/1050 of 19 May 2025 on the consistency of the performance targets included in the draft performance plan submitted by Hungary pursuant to Regulation (EC) No 549/2004 of the European Parliament and of the Council with the Union-wide performance targets for the fourth reference period of the Single European Sky performance and charging scheme (notified under document C(2025) 2919)
+
+# Prior notification of a concentration (Case M.11996 – EMIF II HOLDING / AC / AC LOGISTICS HOLDINGS CORPORATION) – Candidate case for simplified procedure
+
+# Commission Decision (EU) 2025/1049 of 19 May 2025 on the consistency of the performance targets included in the draft performance plan submitted by Romania pursuant to Regulation (EC) No 549/2004 of the European Parliament and of the Council with the Union-wide performance targets for the fourth reference period of the Single European Sky performance and charging scheme (notified under document C(2025) 2931)
+
+# Statement of revenue and expenditure for the 2025 financial year – European Centre for the Development of Vocational Training (Cedefop)
+
+# Opinion of the Advisory Committee on restrictive practices and dominant positions at its meeting on 15 November 2024 concerning a draft decision in case AT.40642 – Pierre Cardin – Meeting by Video Conference – via Skype for Business – Rapporteur: Hungary
+
+# Commission Decision (EU) 2025/1059 of 19 May 2025 on the consistency of the performance targets included in the draft performance plan submitted by Portugal pursuant to Regulation (EC) No 549/2004 of the European Parliament and of the Council with the Union-wide performance targets for the fourth reference period of the Single European Sky performance and charging scheme (notified under document C(2025) 2929)
+
+# Council Decision (CFSP) 2025/1107 of 27 May 2025 amending and updating Decision (CFSP) 2018/340 establishing the list of projects to be developed under PESCO
+
+# Publication of the communication of an approved standard amendment to a product specification of a geographical indication in accordance with Article 5(4) of Commission Delegated Regulation (EU) 2025/27
+
+# Commission Implementing Decision (EU) 2025/1109 of 26 May 2025 amending Implementing Decision (EU) 2025/638 concerning certain emergency measures relating to infection with peste des petits ruminants virus in Romania (notified under document C(2025) 3506)
+
+# Commission Decision (EU) 2025/1052 of 19 May 2025 on the consistency of the performance targets included in the draft performance plan of submitted by Slovenia pursuant to Regulation (EC) No 549/2004 of the European Parliament and of the Council with the Union-wide performance targets for the fourth reference period of the Single European Sky performance and charging scheme (notified under document C(2025) 2925)
+
+# Commission Decision (EU) 2025/1063 of 19 May 2025 on the consistency of the performance targets included in the draft performance plan submitted by Spain pursuant to Regulation (EC) No 549/2004 of the European Parliament and of the Council with the Union-wide performance targets for the fourth reference period of the Single European Sky performance and charging scheme (notified under document C(2025) 2943)
+
+# Summary of Commission Decision of 28 November 2024 relating to a proceeding under Article 101 of the Treaty on the Functioning of the European Union and Article 53 of the EEA Agreement (Case AT.40642 – Pierre Cardin) (notified under document number C(2024) 8150 final)
+
+# Commission Regulation (EU) 2025/1047 of 27 May 2025 amending Regulation (EU) 2023/1803 as regards International Financial Reporting Standard 9 and International Financial Reporting Standard 7
+
+# Commission Decision (EU) 2025/1058 of 19 May 2025 on the consistency of the performance targets included in the draft performance plan submitted by Italy pursuant to Regulation (EC) No 549/2004 of the European Parliament and of the Council with the Union-wide performance targets for the fourth reference period of the Single European Sky performance and charging scheme (notified under document C(2025) 2928)
+
+# Commission Implementing Regulation (EU) 2025/1042 of 27 May 2025 imposing a definitive anti-dumping duty and definitively collecting the provisional duty imposed on imports of flat-rolled products of iron or non-alloy steel plated or coated with tin originating in the People’s Republic of China
+
+# Non-opposition to a notified concentration (Case M.11983 – INFLEXION / 65 EQUITY PARTNERS / KEE SAFETY)
+
+# Commission Decision (EU) 2025/1061 of 19 May 2025 on the consistency of the performance targets included in the draft performance plan submitted by Cyprus pursuant to Regulation (EC) No 549/2004 of the European Parliament and of the Council with the Union-wide performance targets for the fourth reference period of the Single European Sky performance and charging scheme (notified under document C(2025) 2926)
+
+# Council Regulation (EU) 2025/1098 of 27 May 2025 amending Regulation (EU) No 36/2012 concerning restrictive measures in view of the situation in Syria
+
+# Summary of European Union decisions on marketing authorisations in respect of medicinal products from 1 April 2025 to 30 April 2025 (Published pursuant to Article 13 or Article 38 of Regulation (EC) No 726/2004 of the European Parliament and of the Council or Article 5 of Regulation (EU) 2019/6 of the European Parliament and of the Council)
+
+# Commission Decision (EU) 2025/1062 of 19 May 2025 on the consistency of the performance targets included in the draft performance plan submitted by Croatia pursuant to Regulation (EC) No 549/2004 of the European Parliament and of the Council with the Union-wide performance targets for the fourth reference period of the Single European Sky performance and charging scheme (notified under document C(2025) 2944)
+
+# Commission Decision (EU) 2025/1054 of 19 May 2025 on the consistency of the performance targets included in the draft performance plan submitted by Bulgaria pursuant to Regulation (EC) No 549/2004 of the European Parliament and of the Council with the Union-wide performance targets for the fourth reference period of the Single European Sky performance and charging scheme (notified under document C(2025) 2920)
+
+# Publication of the communication of an approved standard amendment to a product specification of a geographical indication in accordance with Article 5(4) of Commission Delegated Regulation (EU) 2025/27
+
+# Prior notification of a concentration (Case M.11854 – ZALANDO / ABOUT YOU)
+
+# Notice for the attention of the data subjects to whom the restrictive measures provided for in Council Decision 2013/255/CFSP, as amended by Council Decision (CFSP) 2025/1096 and as implemented by Council implementing Decision (CFSP) 2025/1095 and in Council Regulation (EU) No 36/2012 as amended by Council Regulation (EU) 2025/1098, and implemented by Council implementing Regulation (EU) 2025/1094 concerning restrictive measures in view of the situation in Syria apply
+
+# Commission Decision (EU) 2025/1055 of 19 May 2025 on the consistency of the performance targets included in the draft performance plan submitted by Sweden pursuant to Regulation (EC) No 549/2004 of the European Parliament and of the Council with the Union-wide performance targets for the fourth reference period of the Single European Sky performance and charging scheme (notified under document C(2025) 2927)
+
+# Statement of revenue and expenditure for the 2025 financial year – European Health and Digital Executive Agency (HADEA) – amending budget No 1
+
+# Commission Recommendation (EU) 2025/1099 of 21 May 2025 on the definition of small mid-cap enterprises
+
+# Notice for the attention of persons and entities subject to the restrictive measures provided for in Council Decision 2013/255/CFSP, as amended by Council Decision (CFSP) 2025/1096 and as implemented by Council implementing Decision (CFSP) 2025/1095 and in Council Regulation (EU) No 36/2012 as amended by Council Regulation (EU) 2025/1098, and implemented by Council implementing Regulation (EU) 2025/1094 concerning restrictive measures in view of the situation in Syria
+
+# Decision (EU) 2025/1114 of the European Central Bank of 20 May 2025 on the delegation of the power to take certain decisions on the publication of sanctions for failure to hold minimum reserves (ECB/2025/16)
+
+# Euro exchange rates – 27 May 2025
+
+# List of the bilateral investment agreements referred to in Article 4(1) of Regulation (EU) No 1219/2012 of the European Parliament and of the Council establishing transitional arrangements for bilateral investment agreements between Member States and third countries
+
+# Notice of cancellation of open competition EUIPO/AD/01/23 – Administrators (AD 6) in the field of intellectual property
+
+# Council Implementing Decision (CFSP) 2025/1095 of 27 May 2025 implementing Decision 2013/255/CFSP concerning restrictive measures in view of the situation in Syria
+
+# Commission Implementing Decision (EU) 2025/1083 of 22 May 2025 amending Implementing Decision (EU) 2024/2207 concerning certain emergency measures relating to sheep pox and goat pox in Greece (notified under document C(2025) 3430)
+
+# Council Decision (CFSP) 2025/1110 of 28 May 2025 amending Decision (CFSP) 2020/1999 concerning restrictive measures against serious human rights violations and abuses
+
+# Corrigendum to Statement of revenue and expenditure for the 2025 financial year — European Union Agency for the Space Programme (EUSPA) (OJ C, C/2025/964, 28.2.2025)
+
+# Council Implementing Regulation (EU) 2025/1111 of 28 May 2025 implementing Regulation (EU) 2020/1998 concerning restrictive measures against serious human rights violations and abuses
+
+# Prior notification of a concentration (Case M.12014 – STONEPEAK / REPSOL / PECOS RENEWABLES JV) – Candidate case for simplified procedure
+
+# Commission Implementing Decision (EU) 2025/1046 of 26 May 2025 recognising that the report submitted by Sweden under Article 31(2) of Directive (EU) 2018/2001 of the European Parliament and of the Council contains accurate data for the purposes of measuring the greenhouse gas emissions associated with the cultivation of barley, faba bean, rapeseed, rye, triticale, wheat and yellow pea in that Member State
+
+# Commission Implementing Regulation (EU) 2025/1041 of 27 May 2025 making imports of adipic acid originating in the People’s Republic of China subject to registration
+
+# Commission Decision (EU) 2025/1053 of 19 May 2025 on the consistency of the performance targets included in the draft performance plan submitted by the Czech Republic pursuant to Regulation (EC) No 549/2004 of the European Parliament and of the Council with the Union-wide performance targets for the fourth reference period of the Single European Sky performance and charging scheme (notified under document C(2025) 2924)
+
+# Council Recommendation of 12 May 2025 on a European quality assurance and recognition system in higher education
+
+# Council Implementing Regulation (EU) 2025/1094 of 27 May 2025 implementing Regulation (EU) No 36/2012 concerning restrictive measures in view of the situation in Syria
+
+# Final Report of the Hearing Officer – Case AT.40642 – Pierre Cardin
+
+# Notice pursuant to Article 29(2) of the Staff Regulations – Publication of a vacancy for the function of – Director Political Communication COMM.A (Grade AD 14) – Directorate-General for Communication – COM/2025/10471
+
+# Non-opposition to a notified concentration (Case M.11896 – CARNIVAL / RCCL / MSC / GBSY JV)
+
+# Corrigendum to Statement of revenue and expenditure for the 2025 financial year — European Union Agency for the Space Programme (EUSPA) — amending budget No 1 (OJ C, C/2025/1169, 31.3.2025)
+
+# Statement of revenue and expenditure for the 2025 financial year – European Food Safety Authority (EFSA) – amending budget No 1
+
+# Communication from the Government of the Republic of Poland concerning Directive 94/22/EC of the European Parliament and of the Council on the conditions for granting and using authorizations for the prospection, exploration and production of hydrocarbons
+
+# Commission Decision (EU) 2025/1051 of 19 May 2025 on the consistency of the performance targets included in the draft performance plan submitted by Poland pursuant to Regulation (EC) No 549/2004 of the European Parliament and of the Council with the Union-wide performance targets for the fourth reference period of the Single European Sky performance and charging scheme (notified under document C(2025) 2921)
+
+# Commission Regulation (EU) 2025/1108 of 23 May 2025 amending Council Regulation (EC) No 2368/2002 implementing the Kimberley Process certification scheme for the international trade in rough diamonds
+
+# Commission Decision (EU) 2025/1064 of 19 May 2025 on the consistency of the performance targets included in the draft performance plan submitted by Finland pursuant to Regulation (EC) No 549/2004 of the European Parliament and of the Council with the Union-wide performance targets for the fourth reference period of the Single European Sky performance and charging scheme (notified under document C(2025) 3005)
+
+# Commission Decision (EU) 2025/1060 of 19 May 2025 on the consistency of the performance targets included in the draft performance plan submitted by Malta pursuant to Regulation (EC) No 549/2004 of the European Parliament and of the Council with the Union-wide performance targets for the fourth reference period of the Single European Sky performance and charging scheme (notified under document C(2025) 2922)
+
+# Non-opposition to a notified concentration (Case M.11904 – MEIF 7 / BCI / RENEWI)
+
+# Non-opposition to a notified concentration (Case M.11760 – DAIMLER TRUCK / VOLVO / JV)
+
+# Commission Decision (EU) 2025/1057 of 19 May 2025 on the consistency of the performance targets included in the draft performance plan submitted by Austria pursuant to Regulation (EC) No 549/2004 of the European Parliament and of the Council with the Union-wide performance targets for the fourth reference period of the Single European Sky performance and charging scheme (notified under document C(2025) 3006)
+
+# Commission Decision (EU) 2025/1056 of 19 May 2025 on the consistency of the performance targets included in the draft performance plan submitted by Lithuania pursuant to Regulation (EC) No 549/2004 of the European Parliament and of the Council with the Union-wide performance targets for the fourth reference period of the Single European Sky performance and charging scheme (notified under document C(2025) 2933)
+
+# Council Decision of 22 May 2025 replacing a member of the Management Board of the European Centre for the Development of Vocational Training (Cedefop) for Denmark
+
+# Council Regulation (EU) 2025/1106 of 27 May 2025 establishing the Security Action for Europe (SAFE) through the Reinforcement of the European Defence Industry Instrument (Text with EEA relevance)
+
+
+# 2025-06-10T00:00:00 (90 titles)
+#=======================================
+# Publication of the communication of an approved standard amendment to a product specification of a geographical indication in accordance with Article 5(4) of Commission Delegated Regulation (EU) 2025/27
+
+# Case T-233/25, Mokoryte: Request for a preliminary ruling from the Curtea de Apel Cluj (Romania) lodged on 25 March 2025 – Mokoryte SRL v Direcția Generală Regională a Finanțelor Publice Cluj-Napoca and Others
+
+# Case T-349/24: Order of the General Court of 28 March 2025 – WS v EUIPO (Action for annulment – Law governing the institutions – Protection of personal data – Regulation (EU) 2018/1725 – Requests sent to EUIPO concerning the processing of the applicant’s personal data – Act not open to challenge – Inadmissibility)
+
+# Case T-83/20 RENV: Judgment of the General Court of 30 April 2025 – bonnanwalt v EUIPO – Bayerischer Rundfunk and Others (tagesschau) (EU trade mark – Revocation proceedings – EU word mark tagesschau – Genuine use of a mark – First subparagraph of Article 18(1), and Article 58(1)(a) and (2) of Regulation (EU) 2017/1001 – Obligation to state reasons – Right to be heard – Article 94(1) of Regulation 2017/1001)
+
+# Case T-236/25: Action brought on 13 April 2025 – Raficon Trade v Parliament and Council
+
+# Case T-779/19: Order of the General Court of 6 March 2025 – Ashtead Financing v Commission (State aid – United Kingdom tax regime relating to group financing – Annulment of the contested act by the Court of Justice – Action which has become devoid of purpose – No need to adjudicate)
+
+# Case T-786/19: Order of the General Court of 6 March 2025 – Simfer Jersey v Commission (State aid – United Kingdom tax regime relating to group financing – Annulment of the contested act by the Court of Justice – Action which has become devoid of purpose – No need to adjudicate)
+
+# Case T-253/25: Action brought on 14 April 2025 – Bionext v Commission
+
+# Case T-259/25: Action brought on 22 April 2025 – Pumpyanskiy v Council
+
+# Euro exchange rates – 6 June 2025
+
+# Case C-291/25 P: Appeal brought on 17 April 2025 by Ryanair DAC against the judgment of the General Court (Seventh Chamber) delivered on 5 February 2025 in Case T-743/21, Ryanair v Commission (TAP II; rescue aid; Covid-19)
+
+# Case T-408/24: Order of the General Court of 11 March 2025 – Intrawork and Others v eu-LISA (Action for annulment – Public supply contracts – Tendering procedure – Supply services of personnel, including temporary staff – No interest in bringing proceedings – Inadmissibility)
+
+# Case T-582/22: Order of the General Court of 20 March 2025 – British Airways v Commission
+
+# Case C-283/24, Barouk: Judgment of the Court (Fifth Chamber) of 3 April 2025 (request for a preliminary ruling from the Dioikitiko Dikastirio Diethnous Prostasias – Cyprus) – B. F. v Kypriaki Dimokratia (Reference for a preliminary ruling – Asylum policy – International protection – Directive 2013/32/EU – Article 46(3) – Requirement for a full and ex nunc examination – Article 47 of the Charter of Fundamental Rights of the European Union – Right to an effective remedy – Scope of the powers of the court or tribunal of first instance – National legislation that makes no provision for a power to order a medical examination of the applicant for international protection)
+
+# Case C-158/25, AEDT and État du Grand-Duché de Luxembourg: Request for a preliminary ruling from the Cour de cassation du Grand-Duché de Luxembourg (Luxembourg) lodged on 21 February 2025 – QJ v Administration de l’enregistrement, des domaines et de la TVA, État du Grand-duché de Luxembourg
+
+# Commission Delegated Regulation (EU) 2025/1140 of 27 February 2025 supplementing Regulation (EU) 2023/1114 of the European Parliament and of the Council with regard to regulatory technical standards specifying records to be kept of all crypto-asset services, activities, orders and transactions undertaken
+
+# Commission Implementing Regulation (EU) 2025/1128 of 6 June 2025 approving a non-minor amendment to the product specification of the protected geographical indication Ail rose de Lautrec pursuant to Regulation (EU) 2024/1143 of the European Parliament and of the Council
+
+# Case T-274/25: Action brought on 28 April 2025 – Luxair v Commission
+
+Commission Implementing Regulation (EU) 2025/1127 of 6 June 2025 laying down rules for the application of Regulation (EU) 2023/1805 of the European Parliament and of the Council as regards of identifying neighbouring container transhipment ports
+
+# Council Decision (EU) 2025/1169 of 5 June 2025 on the position to be taken on behalf of the European Union within the Committee of the Parties to the Council of Europe Convention on preventing and combating violence against women and domestic violence, at its 18th meeting, on the recommendations and conclusions addressed to certain Parties on their implementation of that Convention, with regard to matters related to institutions and public administration of the Union
+
+# Case T-246/24: Order of the General Court of 13 March 2025 – RY v Commission (Action for damages – Termination of the employment contract of a member of the temporary staff – Error in the legal basis for the action – Employment relationship of the member of staff with the institution concerned – Inadmissibility)
+
+# Case T-178/25, Flightright: Order of the President of the General Court of 27 March 2025 (request for a preliminary ruling from the Amtsgericht Königs Wusterhausen – Germany) – Flightright GmbH v Ryanair DAC (Air transport – Regulation (EC) No 261/2004 – Compensation and assistance to passengers – Long delay of a flight – Exemption from the obligation to pay compensation – Extraordinary circumstances – Allocation of delayed departure slots due to capacity problems in the airspace – Meteorological conditions)
+
+# Case T-242/25: Action brought on 13 April 2025 – Saier v Parliament and Council
+
+# Case T-375/23: Order of the General Court of 20 March 2025 – Di Prinzio v Parliament (Law governing the institutions – Single Statute for Members of the European Parliament – Members of the European Parliament elected in Italian constituencies – Adoption by the Ufficio di Presidenza della Camera dei deputati (Office of the President of the Chamber of Deputies, Italy) of Decision No 150/2022 on pensions – Change in the amounts of the pensions of members of the Italian parliament – Corresponding change, by the European Parliament, in the amount of the pensions of certain former Members of the European Parliament elected in Italy – Competence of the author of the act – Obligation to state reasons – Acquired rights – Legal certainty – Legitimate expectations – Right to property – Manifest lack of jurisdiction in part – Action in part manifestly lacking any basis in law)
+
+# Case T-245/25: Action brought on 11 April 2025 – Ella Hotels and Resorts v EUIPO – Hachette Filipacchi Presse (ELLA HOTELS AND RESORTS)
+
+# Case T-1027/23: Order of the General Court of 1 April 2025 – Fast Retailing v EUIPO – Gonarrue (GU) (EU trade mark – Opposition proceedings – Withdrawal of the opposition – No need to adjudicate)
+
+# Case T-451/24: Order of the General Court of 26 March 2025 – Messiaen and Ballegeer v Parliament and Council (Action for annulment – Regulation (EU) 2024/1624 – Prevention of the use of the financial system for the purposes of money laundering or terrorist financing – Lack of individual concern – Inadmissibility)
+
+# Case C-237/25, Mettler-Toledo: Request for a preliminary ruling from the Bundesverwaltungsgericht (Germany) lodged on 27 March 2025 – Land North Rhine-Westphalia v Mettler-Toledo GmbH
+
+# Commission Delegated Regulation (EU) 2025/1141 of 27 February 2025 supplementing Regulation (EU) 2023/1114 of the European Parliament and of the Council as regards regulatory technical standards specifying the requirements for policies and procedures on conflicts of interest for issuers of asset-referenced tokens
+
+# Case T-580/24: Order of the General Court of 20 March 2025 – Public.Resource.Org and Right to Know v Commission
+
+# Case C-462/23: Judgment of the Court (Sixth Chamber) of 3 April 2025 – Commission v Bulgaria (Mineral water) (Failure of a Member State to fulfil obligations – Consumer protection – Directive 2009/54/EC – Article 8(2) – Prohibition on marketing natural mineral water from one and the same spring under more than one trade description – Article 7(2)(b) – Article 9(4)(c) – Labelling requirements – Mandatory information – Name of the spring – Incorrect transposition)
+
+# Case T-95/24: Judgment of the General Court of 30 April 2025 – Laura Food v EUIPO – Morghati Abderrahim (THE VERT DE CHINE 4011 ALJAMAL 4011 B 552) (EU trade mark – Opposition proceedings – Application for the EU figurative mark THE VERT DE CHINE 4011 ALJAMAL 4011 B 552 – Earlier EU figurative marks 4011 B 552 and 4011 B 552 TE VERDE DI CINA – Relative ground for refusal – Likelihood of confusion – Article 8(1)(b) of Regulation (EU) 2017/1001)
+
+# Case C-743/24, Alchaster II: Judgment of the Court (Grand Chamber) of 3 April 2025 (request for a preliminary ruling from the Supreme Court – Ireland) – Criminal proceedings relating to the execution of arrest warrants issued against MA (Reference for a preliminary ruling – Trade and Cooperation Agreement between the European Union and the European Atomic Energy Community, of the one part, and the United Kingdom of Great Britain and Northern Ireland, of the other part – Surrender of a person to the United Kingdom for criminal prosecution – Risk of breach of a fundamental right – Second sentence of Article 49(1) of the Charter of Fundamental Rights of the European Union – Principle that offences and penalties must be defined by law – Changes, to the detriment of the sentenced person, to the licence regime)
+
+# Case T-356/24: Order of the General Court of 1 April 2025 – Lithuania v Commission
+
+# Case C-686/23 P: Judgment of the Court (Eighth Chamber) of 3 April 2025 – CEVA v Commission (Appeal – Specific programme for research and technological development in the field of research into living resources – SEAPURA project – Grant agreement – Audit report by the European Anti-Fraud Office (OLAF) – Discovery of fraud or financial irregularities – Claim for reimbursement of the European Union contribution – Debit note – Amount receivable by the European Union – Limitation – Contract governed by Belgian law – Opening, in France, of insolvency proceedings against the debtor – Declaration of claim by the European Commission – Regulation (EC) No 1346/2000 – Direct application – Interruption of the limitation period under Belgian law)
+
+# Case T-184/25, Veronsaajien oikeudenvalvontayksikkö: Request for a preliminary ruling from the Korkein hallinto-oikeus (Finland) made on 28 February 2025 – Veronsaajien oikeudenvalvontayksikkö v A Oy
+
+# Case C-701/23, Swiftair: Judgment of the Court (Sixth Chamber) of 3 April 2025 (request for a preliminary ruling from the tribunal judiciaire de Paris – France) – Criminal proceedings against Swiftair SA (Reference for a preliminary ruling – Principle ne bis in idem – Convention implementing the Schengen Agreement – Article 54 – Charter of Fundamental Rights of the European Union – Article 50 – Order for provisional dismissal made in a Member State in respect of natural persons deceased and previously employed by a legal person – Criminal proceedings brought against that legal person in another Member State – Inadmissibility)
+
+# Case T-266/25: Action brought on 23 April 2025 – HTG v EUIPO (DEINS)
+
+# Case C-205/25, Bayerisches Landesamt für Datenschutzaufsicht: Request for a preliminary ruling from the Bayerisches Verwaltungsgericht Ansbach (Germany) lodged on 17 March 2025 – Joachim Lindenberg v Bayerisches Landesamt für Datenschutzaufsicht
+
+# Case C-777/24 P: Appeal brought on 8 November 2024 by Răzvan-Eugen Nicolescu, Exclusive Car Trading SRL, Asociația pentru Energie Curată și Combaterea Schimbărilor Climatice against the order of the General Court (Fourth Chamber) delivered on 9 September 2024 in Case T-143/24 Nicolescu and Others v Council
+
+# Council Decision (EU) 2025/1168 of 5 June 2025 on the position to be taken on behalf of the European Union within the Committee of the Parties to the Council of Europe Convention on preventing and combating violence against women and domestic violence, at its 18th meeting, on the recommendations and conclusions addressed to certain Parties on their implementation of that Convention, with regard to matters related to judicial cooperation in criminal matters, asylum and non-refoulement
+
+# Case C-807/23, Jones Day: Judgment of the Court (Third Chamber) of 3 April 2025 (request for a preliminary ruling from the Oberster Gerichtshof – Austria) – Katharina Plavec v Rechtsanwaltskammer Wien (Reference for a preliminary ruling – Freedom of movement for workers – Article 45 TFEU – Lawyers – Lawyer training – Territorial restrictions – National legislation requiring the completion of part of the training period of a trainee lawyer with a lawyer having his or her registered office in the national territory)
+
+# Case T-650/24: Action brought on 16 December 2024 – TotalEnergies Charging Services España v CINEA
+
+# Case C-185/25, Waldfelber: Request for a preliminary ruling from the Obersten Gerichtshofs (Austria) lodged on 7 March 2025 – RS v TS
+
+# Case T-261/25: Action brought on 17 April 2025 – LM v Commission
+
+# Case T-785/19: Order of the General Court of 6 March 2025 – Anglo American International Holdings v Commission (State aid – United Kingdom tax regime relating to group financing – Annulment of the contested act by the Court of Justice – Action which has become devoid of purpose – No need to adjudicate)
+
+# Case T-244/25: Action brought on 13 April 2025 – ILIP v Parliament and Council
+
+# Case T-248/25: Action brought on 14 April 2025 – Dynaplast and Others v Parliament and Council
+
+# Case T-254/25: Action brought on 16 April 2025 – Skechers USA v EUIPO (HANDS-FREE SLIP-INS)
+
+# Case T-246/25: Action brought on 11 April 2025 – Ella Hotels and Resorts v EUIPO – Hachette Filipacchi Presse (ELLA RESORTS)
+
+# Case T-1094/23: Order of the General Court of 26 March 2025 – Evroins inshurans grup v EIOPA (Action for annulment – Request to initiate an investigation – Refusal by EIOPA – Act not open to challenge – Inadmissibility)
+
+# Council Decision of 27 May 2025 replacing a member of the Management Board of the European Agency for Safety and Health at Work for Germany
+
+# Case T-192/25: Action brought on 19 March 2025 – AW v Parliament
+
+# Commission Implementing Regulation (EU) 2025/1139 of 6 June 2025 imposing a provisional anti-dumping duty on imports of hardwood plywood from the People’s Republic of China
+
+# Case C-164/24, Cityland: Judgment of the Court (Tenth Chamber) of 3 April 2025 (request for a preliminary ruling from the Administrativen sad Veliko Tarnovo – Bulgaria) – Cityland EOOD v Direktor na Direktsia Obzhalvane i danachno-osiguritelna praktika – Veliko Tarnovo (Reference for a preliminary ruling – Common system of value added tax – Directive 2006/112/EC – Persistent failure to comply with tax obligations – Removal of the taxable person from the value added tax (VAT) identification register – Principle of proportionality)
+
+# Case T-252/25: Action brought on 12 April 2025 – FOP and Saipol v Commission
+
+# Case C-175/25, Volkswagen: Request for a preliminary ruling from the Oberster Gerichtshof (Austria) lodged on 3 March 2025 – NS v Volkswagen AG
+
+# Case C-169/25 P: Appeal brought on 26 February 2025 by PV against the judgment of the General Court (Ninth Chamber) delivered on 19 June 2024 in Case T-89/20, PV v Commission
+
+# Case C-281/25: Action brought on 11 April 2025 – European Commission v Kingdom of Belgium
+
+# Non-opposition to a notified concentration (Case M.11309 – KINGSPAN / NWG)
+
+# Commission Implementing Decision (EU) 2025/1160 of 5 June 2025 concerning certain emergency measures relating to sheep pox and goat pox in Bulgaria and repealing Implementing Decision (EU) 2025/948 (notified under document C(2025) 3705)
+
+# Case C-213/24, Grzera: Judgment of the Court (Sixth Chamber) of 3 April 2025 (request for a preliminary ruling from the Wojewódzki Sąd Administracyjny we Wrocławiu – Poland) – E. T. v Dyrektor Izby Administracji Skarbowej we Wrocławiu (Reference for a preliminary ruling – Common system of value added tax (VAT) – Directive 2006/112/EC – Article 9(1) – Concepts of taxable person and economic activity – Sale of agricultural land for residential development – Preparation for sale by an agent acting as a professional trader – Statutory joint ownership of assets between co-owning spouses)
+
+# Case T-241/25: Action brought on 13 April 2025 – Schütz and Others v Parliament and Council
+
+# Case C-228/24, Nordcurrent group: Judgment of the Court (Sixth Chamber) of 3 April 2025 (request for a preliminary ruling from the Mokestinių ginčų komisija prie Lietuvos Respublikos Vyriausybės – Lithuania) – Nordcurrent group UAB v Valstybinė mokesčių inspekcija prie Lietuvos Respublikos finansų ministerijos (Reference for a preliminary ruling – Taxation – Directive 2011/96/EU – Common system of taxation applicable in the case of parent companies and subsidiaries of different Member States – Exemption from corporation tax in respect of dividends paid by a non-resident subsidiary to a resident parent company – Article 1(2) and (3) – Anti-abuse provision – Classification of the subsidiary as a non-genuine arrangement – Steps of an arrangement – Tax advantage)
+
+# Case T-260/25: Action brought on 16 April 2025 – Leidos and Others v Commission
+
+# Case C-710/23, Ministerstvo zdravotnictví (Data concerning the representative of a legal person): Judgment of the Court (First Chamber) of 3 April 2025 (request for a preliminary ruling from the Nejvyšší správní soud – Czech Republic) – L.H. v Ministerstvo zdravotnictví (Reference for a preliminary ruling – Protection of natural persons with regard to the processing of personal data – Regulation (EU) 2016/679 – Article 4 – Definitions – Article 6 – Lawfulness of processing – Article 86 – Public access to official documents – Data concerning the representative of a legal person – Case-law of a national court imposing an obligation to inform and consult the data subject prior to disclosure of official documents containing such data)
+
+# Case T-787/19: Order of the General Court of 6 March 2025 – The Sage Group and Others v Commission (State aid – United Kingdom tax regime relating to group financing – Annulment of the contested act by the Court of Justice – Action which has become devoid of purpose – No need to adjudicate)
+
+# Case C-150/25, Marhaux: Request for a preliminary ruling from the Tribunal de première instance du Luxembourg (Belgium) lodged on 20 February 2025 – BX v État belge
+
+# Case C-881/24 P: Appeal brought on 19 December 2024 by SC against the judgment of the General Court (Fifth Chamber) delivered on 6 November 2024 in Case T-242/17 RENV-OP, SC v Eulex Kosovo
+
+# Case T-292/21: Order of the General Court of 1 April 2025 – Singapore Airlines Cargo v Commission
+
+# Case T-784/19: Order of the General Court of 6 March 2025 – William Hill and William Hill Organization v Commission (State aid – United Kingdom tax regime relating to group financing – Annulment of the contested act by the Court of Justice – Action which has become devoid of purpose – No need to adjudicate)
+
+# Case C-176/25, Steizer: Request for a preliminary ruling from the Oberlandesgericht Düsseldorf (Germany), lodged on 4 March 2025 – IU v BT
+
+# Authorisation for State aid pursuant to Articles 107 and 108 of the Treaty on the Functioning of the European Union – Cases where the Commission raises no objections – SA.116752
+
+# Case C-219/25, Kamekris: Request for a preliminary ruling from the Cour d’appel de Montpellier (France) lodged on 20 March 2025 – Criminal proceedings against KN
+
+# Council Decision of 27 May 2025 replacing an alternate member of the Management Board of the European Foundation for the improvement of living and working conditions for Spain
+
+# Case T-271/25: Action brought on 25 April 2025 – Laliya Shipping v Council
+
+# Case C-431/23, Wibra België: Judgment of the Court (Third Chamber) of 3 April 2025 (request for a preliminary ruling from the tribunal du travail de Liège – Belgium) – AE and Others v BA, acting as insolvency practitioner for WIBRA BELGIË SA and Others (Reference for a preliminary ruling – Social policy – Transfers of undertakings – Safeguarding of employees’ rights – Directive 2001/23/EC – Article 5(1) – Concept of bankruptcy proceedings – Transfer of an undertaking occurring following a declaration of insolvency after that transfer had been prepared in the context of judicial restructuring proceedings)
+
+# Case T-102/23: Judgment of the General Court of 30 April 2025 – SBK Art v Council (Common foreign and security policy – Restrictive measures taken in respect of actions undermining or threatening the territorial integrity, sovereignty and independence of Ukraine – Freezing of funds – List of persons, entities and bodies subject to the freezing of funds and economic resources – Inclusion and maintenance of the applicant’s name on the list – Concept of association – Article 2(1), in fine, of Decision 2014/145/CFSP – Article 3(1), in fine, of Regulation (EU) No 269/2014 – Obligation to state reasons – Rights of the defence – Error of assessment – Proportionality – Plea of illegality)
+
+# Case C-238/25, Bizerba: Request for a preliminary ruling from the Bundesverwaltungsgericht (Germany) lodged on 27 March 2025 – Land North Rhine-Westphalia v Bizerba SE & Co.KG
+
+# Case T-783/19: Order of the General Court of 6 March 2025 – IDS v Commission (State aid – United Kingdom tax regime relating to group financing – Annulment of the contested act by the Court of Justice – Action which has become devoid of purpose – No need to adjudicate)
+
+# Case T-240/25: Action brought on 11 April 2025 – FBSZ Egyesület v Commission
+
+# Case T-263/23: Judgment of the General Court of 30 April 2025 – Symrise v Commission (Competition – Agreements, decisions and concerted practices – Administrative procedure – Decision ordering an inspection – Article 20(4) of Regulation (EC) No 1/2003 – Subject matter and purpose of the inspection – Obligation to state reasons – Sufficiently serious indicia – Protection of privacy)
+
+# Decision (EU) 2025/1148 of the European Central Bank of 2 June 2025 amending Decision (EU) 2025/222 on access by non-bank payment service providers to Eurosystem central bank operated payment systems and central bank accounts (ECB/2025/2) (ECB/2025/18)
+
+# Case C-250/25, Like Company: Request for a preliminary ruling from the Budapest Környéki Törvényszék (Hungary) lodged on 3 April 2025 – Like Company v Google Ireland Limited
+
+# Case T-247/25: Action brought on 14 April 2025 – Ecoplastica v Parliament and Council
+
+# Case T-191/25: Action brought on 19 March 2025 – AW v Parliament
+
+# Commission Delegated Regulation (EU) 2025/1142 of 27 February 2025 supplementing Regulation (EU) 2023/1114 of the European Parliament and of the Council with regard to regulatory technical standards specifying the requirements for policies and procedures on conflicts of interest for crypto-asset service providers and the details and methodology for the content of disclosures on conflicts of interest
+
+# Euro exchange rates – 9 June 2025
+
+# Case T-249/25: Action brought on 14 April 2025 – Jokey and Others v Parliament and Council
+
+# Case T-228/25: Action brought on 7 April 2025 – Crocs v EUIPO – Gor Factory (Footwear)
+

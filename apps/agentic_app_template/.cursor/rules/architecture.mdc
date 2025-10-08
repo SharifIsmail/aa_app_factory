@@ -1,0 +1,55 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: "Application Specific instructions"
+globs: 
+alwaysApply: true
+---
+
+
+## Overview
+A multi-agent system for comprehensive supply chain due diligence and risk assessment, compliant with the German Supply Chain Due Diligence Act (LKSG - Lieferkettensorgfaltspflichtengesetz).
+## System Components
+
+## Technical Requirements and Tech stack
+- Python 3.12.8
+- Node.js (for frontend)
+- Static typing enforced by MyPY. Stick to static definitions on all generations!
+- When frontend code always prioritize the Aleph Alpha (AA) UI components over custom component generation from scratch, unless there is no option.
+- Available API keys:
+    - check service/env.sample file 
+
+### Frontend (@/ui)
+- Vue.js application with TypeScript
+- Components:
+    - list components
+
+
+### Backend (@service/src/service)
+- FastAPI-based Python service
+- Core components:
+  - `main.py`: Application entry point
+  - `routes.py`: API endpoints
+  - `persistence_service.py`: Data storage and caching
+
+
+### Agents (@src/assistant/supplier_analysis/service/src/service/lksg_core)
+- `agent_extract_company_data/`: Company data collection
+- Tools for data collection and analysis
+
+## Data Flow
+1. User initiates search through frontend
+2. Backend assigns UUID and starts background process
+3. Agents collect and analyze data
+4. Results are cached and stored
+5. Frontend displays progress and final reports
+
+## Key Features
+- Data caching and persistence
+- Real-time progress tracking
+- Comprehensive reporting
+- Configurable data sources
+

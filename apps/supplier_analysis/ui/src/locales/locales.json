@@ -1,0 +1,50 @@
+{
+  "en": {
+    "LOCALES": {
+      "title": "My Application 1",
+      "GET_STARTED": {
+        "title": "Kickstart Your Customization",
+        "subtitle": "You have successfully created a new application.",
+        "item-title-1": "Get started with Pharia-AI Application: ",
+        "item-text-1": "The official _getting_started_documentation_ provides you will all the information you need to get started building an Application.",
+        "item-title-2": "Pharia-AI CLI Tooling: ",
+        "item-text-2": "A quick _cli_guide_ to using the Pharia-AI CLI for running and deploying your applications.",
+        "item-title-3": "Build and Reuse Pharia-AI Skills: ",
+        "item-text-3": "Learn how to build and re-use Pharia-AI skills in your application to build production-optimized reusable AI logic from this _kernel_skills_documentation_.",
+        "item-title-4": "Get Support: ",
+        "item-text-4": "Find _answers_ to common questions and access resources to troubleshoot issues quickly, or contact us and share your _feedback_.",
+        "getting_started_documentation": "documentation",
+        "cli_guide": "guide",
+        "kernel_skills_documentation": "documentation",
+        "answers": "answers",
+        "feedback": "feedback"
+      },
+      "quote-generator": "Quote Generator",
+      "generate-new-quote": "Generate a new quote"
+    }
+  },
+  "de": {
+    "LOCALES": {
+      "title": "Meine Applikation 1",
+      "GET_STARTED": {
+        "title": "Starten Sie Ihre Anpassung",
+        "subtitle": "Sie haben erfolgreich eine neue Anwendung erstellt.",
+        "item-title-1": "Erste Schritte mit der Pharia-AI Anwendung: ",
+        "item-text-1": "Die offizielle _getting_started_documentation_ liefert Ihnen alle Informationen, die Sie benötigen, um mit dem Erstellen einer Anwendung zu beginnen.",
+        "item-title-2": "Pharia-AI CLI Tooling: ",
+        "item-text-2": "Eine schnelle _cli_guide_ zur Verwendung der Pharia-AI CLI für die Ausführung und Bereitstellung Ihrer Anwendungen.",
+        "item-title-3": "Pharia-AI Fähigkeiten aufbauen und wiederverwenden: ",
+        "item-text-3": "Erfahren Sie, wie Sie Pharia-AI Fähigkeiten in Ihrer Anwendung aufbauen und wiederverwenden, um anhand dieser _kernel_skills_documentation_ produktionsoptimierte, wiederverwendbare KI-Logik aufzubauen.",
+        "item-title-4": "Holen Sie sich Support: ",
+        "item-text-4": "Finden Sie _answers_ auf häufig gestellte Fragen und greifen Sie auf Ressourcen zu, um Probleme schnell zu beheben, oder kontaktieren Sie uns und teilen Sie uns Ihr _feedback_ mit.",
+        "getting_started_documentation": "Dokumentation",
+        "cli_guide": "Anleitung",
+        "kernel_skills_documentation": "Dokumentation",
+        "answers": "Antworten",
+        "feedback": "Feedback"
+      },
+      "quote-generator": "Zitatgenerator",
+      "generate-new-quote": "Ein neues Zitat erstellen"
+    }
+  }
+}

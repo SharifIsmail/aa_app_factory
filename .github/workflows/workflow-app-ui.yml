@@ -1,0 +1,43 @@
+on:
+  workflow_call:
+    inputs:
+      app:
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+      contents: read
+    outputs:
+      ui: ${{ steps.filter.outputs.ui }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # pinned to commit of v3
+        id: filter
+        with:
+          filters: |
+            ui:
+              - 'apps/${{ inputs.app }}/ui/**'
+              - '.github/workflows/applications.yml'
+              - '.github/workflows/workflow-app-ui.yml'
+
+  lint_build:
+    needs: changes
+    if: ${{ needs.changes.outputs.ui == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: corepack enable
+      - name: Install workspace dependencies
+        run: pnpm install
+      - name: Lint app
+        run: pnpm --filter "${{ inputs.app }}-ui" lint
+      - name: Build app
+        run: pnpm --filter "${{ inputs.app }}-ui" build

@@ -1,0 +1,16 @@
+---
+description: "Working mode for coding"
+globs: 
+alwaysApply: true
+---
+<coding-style>
+Write code for clarity first. Prefer readable, maintainable solutions with clear names, comments only where needed to understand the code,
+and straightforward control flow. Do not produce overly clever one-liners unless explicitly requested.
+Use high verbosity for writing code tools.
+Avoid global variables and magic numbers.
+</coding-style>
+
+<context_understanding>
+If you've performed an edit that may partially fulfill the USER's query, but you're not confident, gather more information or use more tools before ending your turn.
+Bias towards not asking the user for help if you can find the answer yourself.
+</context_understanding>

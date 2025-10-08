@@ -1,0 +1,114 @@
+# PhariaAssistant Monorepo Structure
+# This is a D2 diagram file for visualizing the monorepo architecture
+
+# Define the main repository container
+pharia_monorepo: PhariaAssistant Monorepo {
+  shape: rectangle
+  style: {
+    fill: "#f5f5f5"
+    stroke: "#000000"
+  }
+
+  # Top-level directories
+  apps: Apps Directory {
+    shape: folder
+    style: {
+      fill: "#e6f7ff"
+    }
+  }
+
+  cicd: CI/CD Directory {
+    shape: folder
+    style: {
+      fill: "#ffe6cc"
+    }
+  }
+
+  libs: Shared Libraries {
+    shape: folder
+    style: {
+      fill: "#d9f7be"
+    }
+  }
+
+  kernel: Pharia Kernel Skills {
+    shape: folder
+    style: {
+      fill: "#fff0f6"
+    }
+  }
+
+  tests: Integration Tests {
+    shape: folder
+    style: {
+      fill: "#f5f0ff"
+    }
+  }
+
+  docs: Documentation {
+    shape: folder
+    style: {
+      fill: "#f0f5ff"
+    }
+  }
+
+  # Example micro-apps
+  apps.expense_calculator: Expense Calculator {
+    shape: folder
+    style: {
+      fill: "#e6f7ff"
+      stroke-dash: 0
+    }
+  }
+
+  apps.document_analyzer: Document Analyzer {
+    shape: folder
+    style: {
+      fill: "#e6f7ff"
+      stroke-dash: 0
+    }
+  }
+
+  apps.chat_assistant: Chat Assistant {
+    shape: folder
+    style: {
+      fill: "#e6f7ff"
+      stroke-dash: 0
+    }
+  }
+
+  # App components
+  apps.expense_calculator.ui: UI {
+    shape: folder
+    style: {
+      fill: "#bae7ff"
+    }
+  }
+
+  apps.expense_calculator.service: Service {
+    shape: folder
+    style: {
+      fill: "#bae7ff"
+    }
+  }
+
+  apps.expense_calculator.tests: Tests {
+    shape: folder
+    style: {
+      fill: "#bae7ff"
+    }
+  }
+
+  # Connections
+  cicd.workflows -> apps.expense_calculator: Triggers builds
+  cicd.workflows -> apps.document_analyzer: Triggers builds
+  cicd.workflows -> apps.chat_assistant: Triggers builds
+  
+  libs -> apps.expense_calculator: Shared code
+  libs -> apps.document_analyzer: Shared code
+  libs -> apps.chat_assistant: Shared code
+  
+  kernel -> apps.expense_calculator: Skills access
+  kernel -> apps.document_analyzer: Skills access
+  kernel -> apps.chat_assistant: Skills access
+}

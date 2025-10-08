@@ -1,0 +1,30 @@
+---
+description: "Frontend-specific instructions for Vue.js application"
+globs: **/*.vue, **/*.ts, **/*.js, **/*.html, **/*.css
+alwaysApply: false
+---
+
+<frontend-requirements>
+- Vue.js application with TypeScript
+- Node.js runtime environment
+- Tailwind for CSS styling
+- Prefer Tailwind tokens from the Aleph Alpha design system over hardcoding colors or styling fonts
+- Always prioritize Aleph Alpha (AA) components from `@aleph-alpha/ds-components-vue` UI library over custom component generation from scratch, unless no suitable option exists
+</frontend-requirements>
+
+<components>
+- Use existing list components from the design system
+- Maintain TypeScript strict typing throughout
+- Follow Vue.js composition API patterns
+</components>
+
+<architecture>
+- components should not directly talk to the API
+- usually, components -> stores -> api service -> http calls
+</architecture>
+
+<styling>
+- Use Aleph Alpha design system tokens
+- Avoid hardcoded colors, fonts, or spacing values
+- Prefer utility-first approach with Tailwind CSS
+</styling>

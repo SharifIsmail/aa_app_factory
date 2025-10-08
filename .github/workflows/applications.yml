@@ -1,0 +1,37 @@
+name: Build UI and Lint Extensibility Apps
+
+on:
+  pull_request:
+    branches:
+      - main
+      - 'release/**'
+    paths:
+      - apps/**
+      - packages/**
+      - .github/workflows/applications.yml
+      - .github/workflows/workflow-app-ui.yml
+
+permissions:
+  contents: read
+  id-token: write
+  pull-requests: read
+
+jobs:
+  ui:
+    strategy:
+      matrix:
+        app: [ supplier_analysis, law_monitoring, agentic_app_template, supplier_briefing]
+    uses: ./.github/workflows/workflow-app-ui.yml
+    with:
+      app: ${{ matrix.app }}
+
+  service:
+    strategy:
+      matrix:
+        app: [ supplier_analysis, law_monitoring, agentic_app_template, supplier_briefing ]
+    uses: ./.github/workflows/workflow-app-service.yml
+    with:
+      app: ${{ matrix.app }}
+
+  shared-frontend:
+    uses: ./.github/workflows/workflow-shared-frontend.yml

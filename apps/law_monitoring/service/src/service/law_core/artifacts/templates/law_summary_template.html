@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ data.title }} - Legal Act Summary Report</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --accent-color: #6b7280;
+            --accent-light: #f3f4f6;
+            --success-color: #10b981;
+            --success-light: #d1fae5;
+            --warning-color: #f59e0b;
+            --warning-light: #fef3c7;
+            --error-color: #ef4444;
+            --error-light: #fee2e2;
+            --primary-blue: #374151;
+            --secondary-blue: #6b7280;
+            --custom-blue: rgb(63,40,235);
+            --custom-blue-light: rgba(63,40,235,0.1);
+            --border-color: #e5e7eb;
+            --text-primary: #111827;
+            --text-secondary: #374151;
+            --text-muted: #6b7280;
+            --background-main: #f8fafc;
+            --background-section: #ffffff;
+            --background-info-item: rgb(242,242,248);
+            --background-content-box: rgb(242,242,248);
+            --background-header: rgb(242,242,248);
+            --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+            --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.06);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 1.5rem auto;
+            padding: 0;
+            background: var(--background-section);
+            border-radius: 12px;
+            box-shadow: var(--shadow-medium);
+            overflow: hidden;
+        }
+
+        .report-header {
+            background: var(--background-header);
+            color: var(--text-primary);
+            padding: 2rem;
+            margin-bottom: 0;
+            border-radius: 0;
+            box-shadow: none;
+            border: 2px solid var(--custom-blue);
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+            word-wrap: break-word;
+            hyphens: auto;
+            text-align: left;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .metadata {
+            background: none;
+            padding: 0;
+            margin-top: 1rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .metadata i {
+            margin-right: 0.5rem;
+        }
+
+        .section {
+            background: none;
+            border-radius: 0;
+            margin-bottom: 0;
+            box-shadow: none;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-header {
+            background: none;
+            color: var(--text-primary);
+            padding: 0 0 0.75rem 0;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-light);
+            position: relative;
+        }
+        
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--accent-color);
+        }
+        
+        .section-header .h4 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0;
+        }
+        .section-header i {
+            font-size: 1.25rem;
+            color: var(--accent-color);
+        }
+
+        .section-content {
+            padding: 0;
+            white-space: pre-wrap;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-item {
+            background: var(--background-info-item);
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 60px;
+        }
+
+        .info-item:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
+        }
+
+        .info-value {
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-align: right;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .content-box {
+            background: var(--background-content-box);
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 0;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .role-item {
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            background: var(--background-content-box);
+        }
+
+        .penalty-item {
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--error-color);
+            background: var(--error-light);
+        }
+
+        .warning-section {
+            border-left: 4px solid var(--error-color);
+            background: var(--error-light);
+            position: relative;
+        }
+        
+        .warning-section .section-header {
+            border-bottom-color: rgba(239, 68, 68, 0.3);
+        }
+        
+        .warning-section .section-header::after {
+            background: var(--error-color);
+        }
+        
+        .warning-item {
+            background: var(--error-light);
+            border-radius: 6px;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        
+        .warning-item .info-label {
+            color: var(--error-color);
+            font-weight: 600;
+        }
+        
+        .warning-item .info-value {
+            color: var(--error-color);
+            font-weight: 600;
+        }
+
+        .link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .link:hover {
+            color: var(--primary-blue);
+        }
+
+        .link:hover .link-text {
+            text-decoration: underline;
+        }
+
+        .table {
+            margin-bottom: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+        .table th {
+            color: var(--text-primary);
+            font-weight: 600;
+            background: #f8fafc;
+            border: none;
+            border-bottom: 2px solid #e5e7eb;
+            padding: 1rem;
+        }
+        .table td {
+            color: var(--text-secondary);
+            padding: 1rem;
+            border-color: #f1f5f9;
+        }
+        .table-hover tbody tr:hover {
+            background: #f8fafc;
+        }
+
+        .alert {
+            border-radius: 8px;
+            border: none;
+            padding: 1rem 1.25rem;
+            box-shadow: var(--shadow-soft);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        .alert-danger {
+            background: var(--error-light);
+            color: var(--error-color);
+            border-left: 4px solid var(--error-color);
+        }
+        .alert-info {
+            background: var(--custom-blue-light);
+            color: var(--custom-blue);
+            border-left: 4px solid var(--custom-blue);
+        }
+
+        .subsection-spacing {
+            margin-top: 1.5rem;
+        }
+
+        .subsection-spacing:first-child {
+            margin-top: 0;
+        }
+
+        .subsection-spacing + .subsection-spacing {
+            margin-top: 0;
+        }
+
+        .table-responsive + .subsection-spacing {
+            margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0;
+                margin: 1rem;
+                border-radius: 8px;
+            }
+            
+            .report-header {
+                padding: 1.5rem;
+            }
+            
+            .section {
+                padding: 1.25rem 1.5rem;
+            }
+            
+            .info-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+                min-height: auto;
+            }
+            
+            .info-value {
+                text-align: left;
+                justify-content: flex-start;
+            }
+            
+            .title {
+                font-size: 1.4rem;
+                line-height: 1.25;
+            }
+            .section-header, .section-header .h4 {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media print {
+            body { 
+                background: white !important;
+                color: black;
+            }
+            .container { 
+                box-shadow: none; 
+                margin: 0;
+                max-width: 100%;
+                padding: 0;
+            }
+            .report-header {
+                background: #ffffff !important;
+                color: black !important;
+                border-bottom: 1px solid #ccc;
+            }
+            .section-header {
+                border-bottom-color: #ccc;
+            }
+            .section-header::after {
+                background: rgb(63,40,235) !important;
+            }
+            .link {
+                color: #007bff;
+                text-decoration: underline;
+            }
+            .status-badge, .info-item, .content-box, .alert {
+                border: 1px solid #eee;
+                background: #f9f9f9 !important;
+            }
+            .table th {
+                background: #f8fafc !important;
+                color: black !important;
+            }
+            .table td {
+                border-color: #ddd !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1 class="title">{{ data.title }}</h1>
+            <p class="subtitle">Published: {{ data.publication_date }}</p>
+            <div class="metadata">
+                <i class="bi bi-clock"></i> Generated at: {{ data.metadata.generated_at }}
+                <br><i class="bi bi-file-text"></i> Law ID: {{ data.law_id }}
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <i class="bi bi-info-circle"></i>
+                <h2 class="h4 mb-0">Basic Information</h2>
+            </div>
+            <div class="section-content">
+                <div class="info-grid">
+                    {% if data.document_date %}
+                    <div class="info-item">
+                        <div class="info-label">Document Date</div>
+                        <div class="info-value">{{ data.document_date }}</div>
+                    </div>
+                    {% else %}
+                    <div class="info-item">
+                        <div class="info-label">Document Date</div>
+                        <div class="info-value"></div>
+                    </div>
+                    {% endif %}
+                    {% if data.publication_date %}
+                    <div class="info-item">
+                        <div class="info-label">Publication Date</div>
+                        <div class="info-value">{{ data.publication_date }}</div>
+                    </div>
+                    {% else %}
+                    <div class="info-item">
+                        <div class="info-label">Publication Date</div>
+                        <div class="info-value">Not explicitly stated</div>
+                    </div>
+                    {% endif %}
+                    {% if data.date_of_effect %}
+                    <div class="info-item">
+                        <div class="info-label">Date of Effect</div>
+                        <div class="info-value">{{ data.date_of_effect }}</div>
+                    </div>
+                    {% else %}
+                    <div class="info-item">
+                        <div class="info-label">Date of Effect</div>
+                        <div class="info-value">Not explicitly stated</div>
+                    </div>
+                    {% endif %}
+                    {% if data.end_validity_date %}
+                    <div class="info-item">
+                        <div class="info-label">End of Validity</div>
+                        <div class="info-value">{{ data.end_validity_date }}</div>
+                    </div>
+                    {% else %}
+                    <div class="info-item">
+                        <div class="info-label">End of Validity</div>
+                        <div class="info-value">Not explicitly stated</div>
+                    </div>
+                    {% endif %}
+                    <div class="info-item">
+                        <div class="info-label">Document Type</div>
+                        <div class="info-value">{{ data.document_type_label or 'N/A' }}</div>
+                    </div>
+                    {% if data.oj_series_label and data.oj_series_label|string != 'Unknown' %}
+                    <div class="info-item">
+                        <div class="info-label">Journal Series</div>
+                        <div class="info-value">{{ data.oj_series_label }}</div>
+                    </div>
+                    {% endif %}
+                    <div class="info-item">
+                        <div class="info-label">Business Areas Affected</div>
+                        <div class="info-value">{{ data.business_areas_affected }}</div>
+                    </div>
+                    <div class="info-item {% if data.subject_matter.revenue_based_penalties and data.subject_matter.revenue_based_penalties.upper() == 'YES' %}warning-item{% endif %}">
+                        <div class="info-label">Revenue-Based Penalties</div>
+                        <div class="info-value">{{ data.subject_matter.revenue_based_penalties or 'N/A' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Key Stakeholder Roles</div>
+                        <div class="info-value">{{ data.subject_matter.key_stakeholder_roles or 'N/A' }}</div>
+                    </div>
+                    {% if data.source_link %}
+                    <div class="info-item">
+                        <div class="info-label">Source Link</div>
+                        <div class="info-value">
+                            <a href="{{ data.source_link }}" target="_blank" class="link">
+                                <i class="bi bi-box-arrow-up-right"></i>
+                                <span class="link-text">View Original Document</span>
+                            </a>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="section">
+            <div class="section-header">
+                <i class="bi bi-book"></i>
+                <h2 class="h4 mb-0">Subject Matter</h2>
+            </div>
+            <div class="section-content">
+                <div class="content-box">
+                    {{ data.subject_matter.scope_subject_matter_summary or 'N/A' }}
+                </div>
+            </div>
+        </div>
+
+        <div class="section {% if data.roles_penalties.has_revenue_based_penalties %}warning-section{% endif %}">
+            <div class="section-header">
+                <i class="bi bi-people"></i>
+                <h2 class="h4 mb-0">Roles, Responsibilities and Penalties</h2>
+            </div>
+            <div class="section-content">
+                <!-- Revenue-Based Penalties Indicator -->
+                {% if data.roles_penalties.revenue_based_penalties_status %}
+                    <div class="alert {% if data.roles_penalties.revenue_based_penalties_status.upper() == 'YES' %}alert-danger{% else %}alert-info{% endif %}">
+                        <strong>Revenue-Based Penalties:</strong> {{ data.roles_penalties.revenue_based_penalties_status }}
+                        {% if data.roles_penalties.revenue_based_penalties_status.upper() == 'YES' %}
+                            <br><small>This law includes penalties calculated as a percentage of company revenue/turnover.</small>
+                        {% endif %}
+                    </div>
+                {% elif 'Revenue-Based Penalties' in data.penalties_raw %}
+                    {# Fallback to existing logic if new field is not yet available #}
+                    {% set revenue_penalties_start = data.penalties_raw.find('=Revenue-Based Penalties=') %}
+                    {% if revenue_penalties_start != -1 %}
+                        {% set revenue_penalties_end = data.penalties_raw.find('\n', revenue_penalties_start) %}
+                        {% if revenue_penalties_end == -1 %}
+                            {% set revenue_penalties_end = data.penalties_raw|length %}
+                        {% endif %}
+                        {% set revenue_penalties_text = data.penalties_raw[revenue_penalties_start:revenue_penalties_end] %}
+                        {% set revenue_value = revenue_penalties_text.replace('=Revenue-Based Penalties=', '').strip() %}
+                        <div class="alert {% if revenue_value.upper() == 'YES' %}alert-danger{% else %}alert-info{% endif %}">
+                            <strong>Revenue-Based Penalties:</strong> {{ revenue_value }}
+                            {% if revenue_value.upper() == 'YES' %}
+                                <br><small>This law includes penalties calculated as a percentage of company revenue/turnover.</small>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                {% endif %}
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%">Role</th>
+                                <th style="width: 45%">Responsibilities</th>
+                                <th style="width: 30%">Penalties</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {# Ensure data.roles_matrix_raw or similar is used if data.roles_raw is changed #}
+                            {% for line in data.roles_raw.split('\n') %}
+                                {% if '|' in line and line.strip() and not line.startswith('=') %}
+                                    {% set parts = line.split('|') %}
+                                    {% if parts|length >= 3 %}
+                                        <tr>
+                                            <td class="align-top fw-semibold">{{ parts[0].strip() }}</td>
+                                            <td class="align-top">{{ parts[1].strip() | safe }}</td>
+                                            <td class="align-top">{{ parts[2].strip() | safe }}</td>
+                                        </tr>
+                                    {% elif parts|length == 2 %}
+                                        <!-- Fallback for legacy 2-column format -->
+                                        <tr>
+                                            <td class="align-top fw-semibold">{{ parts[0].strip() }}</td>
+                                            <td class="align-top" colspan="2">{{ parts[1].strip() | safe }}</td>
+                                        </tr>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- General Penalties Not Role-Specific -->
+                {% if data.roles_penalties.general_penalties_raw and data.roles_penalties.general_penalties_raw.strip() %}
+                    <div class="subsection-spacing">
+                        <h5 class="fw-semibold mb-2">
+                            General Penalties Not Role-Specific
+                        </h5>
+                        <div class="content-box">
+                            {{ data.roles_penalties.general_penalties_raw | safe }}
+                        </div>
+                    </div>
+                {%- endif %}
+                
+                <!-- Penalty Severity Assessment -->
+                {%- if data.roles_penalties.penalty_severity_assessment_raw and data.roles_penalties.penalty_severity_assessment_raw.strip() %}
+                    <div class="subsection-spacing">
+                        <h5 class="fw-semibold mb-2">
+                            Penalty Severity Assessment
+                        </h5>
+                        <div class="content-box">
+                            {{ data.roles_penalties.penalty_severity_assessment_raw | safe }}
+                        </div>
+                    </div>
+                {%- elif data.penalty_assessment and data.penalty_assessment.strip() -%}
+                    {# Fallback to existing data.penalty_assessment if new field not available #}
+                    <div class="subsection-spacing">
+                        <h5 class="fw-semibold mb-2">
+                            Penalty Severity Assessment
+                        </h5>
+                        <div class="content-box">
+                            {{ data.penalty_assessment | safe }}
+                        </div>
+                    </div>
+                {%- elif 'PENALTY SEVERITY ASSESSMENT' in data.roles_raw -%}
+                    <!-- Fallback: parse from raw if extracted version not available -->
+                    <div class="subsection-spacing">
+                        <h5 class="fw-semibold mb-2">
+                            Penalty Severity Assessment
+                        </h5>
+                        <div class="content-box">
+                            {% set severity_start = data.roles_raw.find('=PENALTY SEVERITY ASSESSMENT=') %}
+                            {% if severity_start != -1 %}
+                                {% set severity_text = data.roles_raw[severity_start:] %}
+                                {% set clean_text = severity_text.replace('=PENALTY SEVERITY ASSESSMENT=', '').strip() %}
+                                {{ clean_text | safe }}
+                            {% endif %}
+                        </div>
+                    </div>
+                {%- endif %}
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <i class="bi bi-calendar-check"></i>
+                <h2 class="h4 mb-0">Timeline for Compliance</h2>
+            </div>
+            <div class="section-content">
+                <div class="content-box">
+                    {{ data.timeline.timeline_content | safe }}
+                </div>
+            </div>
+        </div>
+
+        {% if data.full_report_link %}
+        <div class="section">
+            <div class="section-header">
+                <i class="bi bi-download"></i>
+                <h2 class="h4 mb-0">Additional Resources</h2>
+            </div>
+            <div class="section-content">
+                <div class="content-box">
+                    <a href="{{ data.full_report_link }}" target="_blank" class="link">
+                        <i class="bi bi-file-earmark-pdf"></i> <span class="link-text">Download Full PDF Report</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

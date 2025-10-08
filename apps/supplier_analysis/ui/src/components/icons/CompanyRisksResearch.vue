@@ -1,0 +1,466 @@
+<script setup lang="ts">
+defineOptions({
+  name: 'CompanyRisksResearch',
+});
+</script>
+
+<template>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" class="h-full w-full">
+    <defs>
+      <linearGradient id="primaryBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0" stop-color="#5461FF" />
+        <stop offset="1" stop-color="#3A34B3" />
+      </linearGradient>
+      <linearGradient
+        id="secondaryBlue"
+        x1="0%"
+        y1="0%"
+        x2="100%"
+        y2="100%"
+        spreadMethod="pad"
+        gradientTransform="matrix(1.144839, 0.102174, 0.155098, 1.138193, -0.10411, -0.054199)"
+      >
+        <stop offset="0" style="stop-color: rgb(67, 238, 117)" />
+        <stop offset="1" style="stop-color: rgb(114, 132, 94)" />
+      </linearGradient>
+      <linearGradient id="pinkMagenta" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0" stop-color="#f72585" />
+        <stop offset="1" stop-color="#b5179e" />
+      </linearGradient>
+      <linearGradient id="lightBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0" stop-color="#4CC9F0" />
+        <stop offset="1" stop-color="#4895EF" />
+      </linearGradient>
+      <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0" style="stop-color: rgb(150, 76, 208)" />
+        <stop offset="1" style="stop-color: rgb(165, 35, 148)" />
+      </linearGradient>
+      <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+        <feOffset dx="2" dy="2" result="offsetblur" />
+        <feComponentTransfer>
+          <feFuncA type="linear" slope="0.2" />
+        </feComponentTransfer>
+        <feMerge>
+          <feMergeNode />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+      <marker id="arrowMarker" markerWidth="13" markerHeight="13" refX="9" refY="6" orient="auto">
+        <path d="M2,2 L2,10 L9,6 L2,2" style="fill: #777777" />
+      </marker>
+    </defs>
+    <path
+      d="M 61.179 47.408 C 61.179 37.408 461.171 37.408 461.171 47.408 L 461.171 117.408 C 461.171 127.408 61.179 127.408 61.179 117.408 L 61.179 47.408 Z"
+      fill="url(#pinkMagenta)"
+      stroke="#b5179e"
+      stroke-width="2"
+      filter="url(#dropShadow)"
+      style=""
+    />
+    <path
+      d="M 171.265 47.408 C 171.265 57.408 271.31 57.408 271.31 47.408 C 271.31 37.408 171.265 37.408 171.265 47.408"
+      fill="url(#pinkMagenta)"
+      stroke="#b5179e"
+      stroke-width="2"
+    />
+    <path
+      d="M 46.159 117.001 C 46.159 107.001 146.204 107.001 146.204 117.001"
+      fill="none"
+      stroke="#ffffff"
+      stroke-width="1"
+      opacity="0.5"
+    />
+    <text
+      x="175.049"
+      y="-14.593"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="20"
+      font-weight="bold"
+      fill="white"
+      text-anchor="middle"
+      style="white-space: pre; font-size: 20px"
+      transform="matrix(1.000452, 0, 0, 1, 33.813725, 71.407562)"
+    >
+      <tspan x="175.0489959716797" dy="1em"></tspan>
+      Sources Database
+      <tspan x="175.0489959716797" dy="1em"></tspan>
+    </text>
+    <rect
+      x="100.503"
+      y="102.001"
+      width="225.782"
+      height="119.116"
+      rx="15"
+      ry="15"
+      fill="url(#secondaryBlue)"
+      filter="url(#dropShadow)"
+      style="paint-order: fill"
+    />
+    <text
+      x="80"
+      y="30"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="18"
+      font-weight="bold"
+      fill="white"
+      text-anchor="middle"
+      style="white-space: pre"
+      transform="matrix(1.000452, 0, 0, 1, 111.433495, 83.482613)"
+    >
+      <tspan x="80" dy="1em"></tspan>
+      Global Sources
+      <tspan x="80" dy="1em"></tspan>
+    </text>
+    <text
+      x="80"
+      y="55"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="14"
+      fill="white"
+      text-anchor="middle"
+      style="white-space: pre"
+      transform="matrix(1.000452, 0, 0, 1, 127.79158, 105.733528)"
+    >
+      • Transparency International
+    </text>
+    <text
+      x="80"
+      y="75"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="14"
+      fill="white"
+      text-anchor="middle"
+      style="white-space: pre"
+      transform="matrix(1.000452, 0, 0, 1, 127.79158, 105.733528)"
+    >
+      • UN Global Compact
+    </text>
+    <text
+      x="80"
+      y="95"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="14"
+      fill="white"
+      text-anchor="middle"
+      style="white-space: pre"
+      transform="matrix(1.000452, 0, 0, 1, 127.79158, 105.733528)"
+    >
+      • Global Slavery Index
+    </text>
+    <rect
+      x="331.229"
+      y="103.351"
+      width="263.773"
+      height="113.36"
+      rx="15"
+      ry="15"
+      fill="url(#lightBlue)"
+      filter="url(#dropShadow)"
+      style=""
+    />
+    <text
+      x="90"
+      y="30"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="18"
+      font-weight="bold"
+      fill="white"
+      text-anchor="middle"
+      style="white-space: pre"
+      transform="matrix(1.000452, 0, 0, 1, 351.622955, 82.305832)"
+    >
+      <tspan x="90" dy="1em"></tspan>
+      Country-Specific Sources
+      <tspan x="90" dy="1em"></tspan>
+    </text>
+    <text
+      x="90"
+      y="55"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="14"
+      fill="white"
+      text-anchor="middle"
+      style="white-space: pre"
+      transform="matrix(1.000452, 0, 0, 1, 368.728729, 104.272362)"
+    >
+      • BGMEA Compliance DB
+    </text>
+    <text
+      x="90"
+      y="75"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="14"
+      fill="white"
+      text-anchor="middle"
+      style="white-space: pre"
+      transform="matrix(1.000452, 0, 0, 1, 368.728729, 104.272362)"
+    >
+      • BELA Reports
+    </text>
+    <text
+      x="90"
+      y="95"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="14"
+      fill="white"
+      text-anchor="middle"
+      style="white-space: pre"
+      transform="matrix(1.000452, 0, 0, 1, 368.728729, 104.272362)"
+    >
+      • CPD Economic Research
+    </text>
+    <rect
+      x="53.766"
+      y="248.298"
+      width="246.898"
+      height="121.352"
+      rx="15"
+      ry="15"
+      fill="url(#primaryBlue)"
+      filter="url(#dropShadow)"
+      style=""
+    />
+    <text
+      x="172.784"
+      y="282.596"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="20"
+      font-weight="bold"
+      fill="white"
+      text-anchor="middle"
+      style="white-space: pre; font-size: 20px"
+    >
+      MetricsAnalyst Agent
+    </text>
+    <text
+      x="172.784"
+      y="307.596"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="14"
+      fill="white"
+      text-anchor="middle"
+      width="180"
+      style="white-space: pre-wrap; font-size: 14px"
+    >
+      Collects and analyzes
+    </text>
+    <text
+      x="172.784"
+      y="327.596"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="14"
+      fill="white"
+      text-anchor="middle"
+      width="180"
+      style="white-space: pre-wrap; font-size: 14px"
+    >
+      quantitative metrics
+    </text>
+    <text
+      x="172.784"
+      y="347.596"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="14"
+      fill="white"
+      text-anchor="middle"
+      width="180"
+      style="white-space: pre-wrap; font-size: 14px"
+    >
+      and statistical data
+    </text>
+    <rect
+      x="404.403"
+      y="255.08"
+      width="246.885"
+      height="116.426"
+      rx="15"
+      ry="15"
+      fill="url(#primaryBlue)"
+      filter="url(#dropShadow)"
+      style=""
+    />
+    <text
+      x="521.684"
+      y="287.8"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="20"
+      font-weight="bold"
+      fill="white"
+      text-anchor="middle"
+      style="white-space: pre; font-size: 20px"
+    >
+      EventScout Agent
+    </text>
+    <text
+      x="521.684"
+      y="312.8"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="14"
+      fill="white"
+      text-anchor="middle"
+      width="180"
+      style="white-space: pre-wrap; font-size: 14px"
+    >
+      Performs initial discovery
+    </text>
+    <text
+      x="521.684"
+      y="332.8"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="14"
+      fill="white"
+      text-anchor="middle"
+      width="180"
+      style="white-space: pre-wrap; font-size: 14px"
+    >
+      of past events and news
+    </text>
+    <text
+      x="521.684"
+      y="352.8"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="14"
+      fill="white"
+      text-anchor="middle"
+      width="180"
+      style="white-space: pre-wrap; font-size: 14px"
+    >
+      using search and tools
+    </text>
+    <rect
+      x="100.064"
+      y="434.863"
+      width="290.027"
+      height="104.271"
+      rx="15"
+      ry="15"
+      fill="url(#greenGradient)"
+      filter="url(#dropShadow)"
+      style=""
+    />
+    <text
+      x="244.583"
+      y="471.842"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="20"
+      font-weight="bold"
+      fill="white"
+      text-anchor="middle"
+      style="white-space: pre; font-size: 20px"
+    >
+      Events Processing Queue
+    </text>
+    <text
+      x="244.583"
+      y="496.842"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="14"
+      fill="white"
+      text-anchor="middle"
+      width="180"
+      style="white-space: pre-wrap; font-size: 14px"
+    >
+      Stores events waiting for
+    </text>
+    <text
+      x="244.583"
+      y="516.842"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="14"
+      fill="white"
+      text-anchor="middle"
+      width="180"
+      style="white-space: pre-wrap; font-size: 14px"
+    >
+      in-depth analysis
+    </text>
+    <rect
+      x="437.223"
+      y="439.422"
+      width="278.556"
+      height="122.101"
+      rx="15"
+      ry="15"
+      fill="url(#primaryBlue)"
+      filter="url(#dropShadow)"
+      style=""
+    />
+    <text
+      x="581.489"
+      y="476.781"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="20"
+      font-weight="bold"
+      fill="white"
+      text-anchor="middle"
+      style="white-space: pre; font-size: 20px"
+    >
+      EventInvestigator Agent
+    </text>
+    <text
+      x="581.489"
+      y="501.781"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="14"
+      fill="white"
+      text-anchor="middle"
+      width="180"
+      style="white-space: pre-wrap; font-size: 14px"
+    >
+      Conducts in-depth analysis
+    </text>
+    <text
+      x="581.489"
+      y="521.781"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="14"
+      fill="white"
+      text-anchor="middle"
+      width="180"
+      style="white-space: pre-wrap; font-size: 14px"
+    >
+      of events, assessing severity,
+    </text>
+    <text
+      x="581.489"
+      y="541.781"
+      font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      font-size="14"
+      fill="white"
+      text-anchor="middle"
+      width="180"
+      style="white-space: pre-wrap; font-size: 14px"
+    >
+      impact, and confidence
+    </text>
+    <path
+      d="M 536.206 436.543 C 536.206 406.543 436.206 406.543 386.206 436.543"
+      stroke="#777777"
+      stroke-width="3"
+      stroke-dasharray="5,3"
+      marker-end="url(#arrowMarker)"
+      fill="none"
+    />
+    <path
+      d="M 414.598 337.618 C 414.598 297.971 329.868 352.297 287.503 419.108"
+      stroke="#777777"
+      stroke-width="3"
+      stroke-dasharray="5,3"
+      marker-end="url(#arrowMarker)"
+      fill="none"
+      style="transform-box: fill-box; transform-origin: 50% 50%"
+      transform="matrix(0.956471, -0.291826, 0.291826, 0.956471, -0.000006, 0.000009)"
+    />
+    <path
+      d="M 255.047 544.09 C 237.989 571.003 356.866 572.789 433.363 546.769"
+      stroke="#777777"
+      stroke-width="3"
+      stroke-dasharray="5,3"
+      marker-end="url(#arrowMarker)"
+      fill="none"
+      style="transform-origin: 337.809px 555.522px"
+      transform="matrix(0.995909, 0.090361, -0.090361, 0.995909, 0, 0)"
+    />
+  </svg>
+</template>

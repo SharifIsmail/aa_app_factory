@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" style="font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+  <defs>
+    <filter id="shadow" x="-0.5%" y="0%" width="103%" height="105%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+    <linearGradient id="search-agent-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0" stop-color="#4361ee"/>
+      <stop offset="1" stop-color="#3a0ca3"/>
+    </linearGradient>
+    <linearGradient id="feedback-agent-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0" stop-color="#f72585"/>
+      <stop offset="1" stop-color="#b5179e"/>
+    </linearGradient>
+    <linearGradient id="integrate-agent-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0" stop-color="#4cc9f0"/>
+      <stop offset="1" stop-color="#4895ef"/>
+    </linearGradient>
+    <linearGradient id="process-gradient-1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0" stop-color="#06d6a0"/>
+      <stop offset="1" stop-color="#0cb26f"/>
+    </linearGradient>
+    <linearGradient id="process-gradient-3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0" stop-color="#fb8500"/>
+      <stop offset="1" stop-color="#ef7700"/>
+    </linearGradient>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6c757d"/>
+    </marker>
+    <linearGradient id="gradient-1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0" stop-color="#4361ee"/>
+      <stop offset="1" stop-color="#3a0ca3"/>
+    </linearGradient>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 50.069958, 47.319569)" filter="url(#shadow)">
+    <rect width="180" height="99.408" rx="12" ry="12" fill="url(#search-agent-gradient)" style=""/>
+    <text x="89.804" y="28.779" font-size="18" font-weight="bold" fill="white" text-anchor="middle" style="white-space: pre; font-size: 18px;">Search Agent</text>
+    <text x="85.133" y="48.216" font-size="12" fill="white" text-anchor="middle" style="white-space: pre; font-size: 12px;">google_search_tool</text>
+    <text x="85.133" y="63.216" font-size="12" fill="white" text-anchor="middle" style="white-space: pre; font-size: 12px;">country_search_tool</text>
+    <text x="85.133" y="78.216" font-size="12" fill="white" text-anchor="middle" style="white-space: pre; font-size: 12px;">visit_webpage_tool</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 54.424034, 160.927704)" filter="url(#shadow)">
+    <rect width="180" height="101.444" rx="12" ry="12" fill="url(#feedback-agent-gradient)" style=""/>
+    <text x="90" y="35" font-size="18" font-weight="bold" fill="white" text-anchor="middle" style="white-space: pre;">Feedback Agent</text>
+    <text x="90" y="65" font-size="12" fill="white" text-anchor="middle" style="white-space: pre;">provide_feedback_</text>
+    <text x="90" y="80" font-size="12" fill="white" text-anchor="middle" style="white-space: pre;">company_data_tool</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 44.95097, 410.368744)" filter="url(#shadow)">
+    <rect width="180" height="105.553" rx="12" ry="12" fill="url(#integrate-agent-gradient)" style=""/>
+    <text x="90" y="35" font-size="18" font-weight="bold" fill="white" text-anchor="middle" style="white-space: pre;">Integrate Agent</text>
+    <text x="90" y="65" font-size="12" fill="white" text-anchor="middle" style="white-space: pre;">integrate_feedback_</text>
+    <text x="90" y="80" font-size="12" fill="white" text-anchor="middle" style="white-space: pre;">company_data_tool</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 320.255127, 48.448696)" filter="url(#shadow)">
+    <rect width="240" height="80" rx="12" ry="12" style="fill-opacity: 1;" fill="url(#process-gradient-1)"/>
+    <text style="white-space: pre; fill-opacity: 1;" x="120" y="35" text-anchor="middle" font-weight="bold" font-size="16" fill="white">1. Initial Data Collection</text>
+    <text style="white-space: pre; fill-opacity: 1;" x="120" y="60" text-anchor="middle" font-size="12" fill="white">Extract original company data</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 321.181671, 163.214996)" filter="url(#shadow)">
+    <rect width="240" height="80" rx="12" ry="12" style="fill-opacity: 1; fill: rgb(150, 136, 103);"/>
+    <text x="120" y="35" font-size="16" font-weight="bold" fill="white" text-anchor="middle" style="white-space: pre; fill-opacity: 1;">2. Feedback Generation</text>
+    <text x="120" y="60" font-size="12" fill="white" text-anchor="middle" style="white-space: pre; fill-opacity: 1;">Identify gaps and issues</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 321.615845, 292.501404)" filter="url(#shadow)">
+    <rect width="240" height="80" rx="12" ry="12" fill="url(#process-gradient-3)" style="fill-opacity: 1;"/>
+    <text x="120" y="35" font-size="16" font-weight="bold" fill="white" text-anchor="middle" style="white-space: pre; fill-opacity: 1;">3. Targeted Data Fixing</text>
+    <text x="120" y="60" font-size="12" fill="white" text-anchor="middle" style="white-space: pre; fill-opacity: 1;">Address feedback issues</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 313.165161, 421.058228)" filter="url(#shadow)">
+    <rect width="240" height="80" rx="12" ry="12" style="fill-opacity: 1;" fill="url(#process-gradient-1)"/>
+    <text style="white-space: pre; fill-opacity: 1;" x="120" y="35" text-anchor="middle" font-weight="bold" font-size="16" fill="white">4. Data Integration</text>
+    <text style="white-space: pre; fill-opacity: 1;" x="120" y="60" text-anchor="middle" font-size="12" fill="white">Combine and correct data</text>
+  </g>
+  <g transform="translate(630, 290)" filter="url(#shadow)">
+    <rect width="200" height="176.089" rx="12" ry="12" fill="#ffffff" stroke="#ced4da" stroke-width="2" style=""/>
+    <text x="100" y="40" font-size="18" font-weight="bold" fill="#212529" text-anchor="middle" style="white-space: pre;">5. Final Output</text>
+    <rect x="25" y="60" width="150" height="30" rx="5" ry="5" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+    <text x="100" y="80" font-size="12" fill="#495057" text-anchor="middle" style="white-space: pre;">Structured Report</text>
+    <rect x="25" y="100" width="150" height="30" rx="5" ry="5" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+    <text x="100" y="120" font-size="12" fill="#495057" text-anchor="middle" style="white-space: pre;">XML Processing</text>
+    <text x="100" y="150" font-size="14" font-weight="bold" fill="#0d6efd" text-anchor="middle" style="white-space: pre;">HTML Company Report</text>
+  </g>
+  <path d="M 441.182 128.753 L 441.182 163.215" stroke="#6c757d" stroke-width="2" marker-end="url(#arrowhead)" fill="none" style=""/>
+  <path d="M 441.182 244.231 L 441.182 293.567" stroke="#6c757d" stroke-width="2" marker-end="url(#arrowhead)" fill="none" style=""/>
+  <path d="M 441.724 372.027 L 441.724 420.606" stroke="#6c757d" stroke-width="2" marker-end="url(#arrowhead)" fill="none" style=""/>
+  <g transform="matrix(1, 0, 0, 1, 55.480297, 281.178497)" filter="url(#shadow)">
+    <rect width="230.535" height="99.408" rx="12" ry="12" fill="url(#gradient-1)" style="" x="-35.593"/>
+    <text x="89.804" y="28.779" font-size="18" font-weight="bold" fill="white" text-anchor="middle" style="white-space: pre; font-size: 18px;">Feedback Fixer Agent</text>
+    <text x="85.133" y="48.216" font-size="12" fill="white" text-anchor="middle" style="white-space: pre; font-size: 12px;">google_search_tool</text>
+    <text x="85.133" y="63.216" font-size="12" fill="white" text-anchor="middle" style="white-space: pre; font-size: 12px;">country_search_tool</text>
+    <text x="85.133" y="78.216" font-size="12" fill="white" text-anchor="middle" style="white-space: pre; font-size: 12px;">visit_webpage_tool</text>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 28px;" x="-11.608" y="40.156"> </text>
+  </g>
+</svg>

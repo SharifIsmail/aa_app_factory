@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="white"/>
+  <rect width="960" height="80" fill="#2c5282"/>
+  <text x="40" y="50" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="white" style="white-space: pre;">Two Types of Risk Data Sources</text>
+  <rect x="0" y="80" width="960" height="460" fill="white"/>
+  <text font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="600" fill="#4299e1" style="white-space: pre; font-size: 24px;" x="38.797" y="134.406">Metrics-Based Sources</text>
+  <line x1="40" y1="145" x2="420" y2="145" stroke="#e2e8f0" stroke-width="2"/>
+  <g transform="matrix(1, 0, 0, 1, 312.673584, 163.107025)">
+    <circle cx="40" cy="40" r="35" fill="#EBF8FF" stroke="#4299e1" stroke-width="2"/>
+    <rect x="25" y="20" width="10" height="40" fill="#4299e1" rx="2"/>
+    <rect x="40" y="30" width="10" height="30" fill="#4299e1" rx="2"/>
+    <rect x="55" y="25" width="10" height="35" fill="#4299e1" rx="2"/>
+  </g>
+  <text font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#2d3748" style="white-space: pre; font-size: 18px;" x="52.868" y="179.996">Characteristics:</text>
+  <g transform="matrix(1, 0, 0, 1, 56.104214, 196.554321)">
+    <circle cx="8" cy="8" r="4" fill="#4299e1"/>
+    <text x="20" y="12" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#2d3748" style="white-space: pre;">Quantitative indicators</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 56.104214, 226.554321)">
+    <circle cx="8" cy="8" r="4" fill="#4299e1"/>
+    <text x="20" y="12" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#2d3748" style="white-space: pre;">Regularly updated</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 56.104214, 256.554352)">
+    <circle cx="8" cy="8" r="4" fill="#4299e1"/>
+    <text x="20" y="12" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#2d3748" style="white-space: pre;">Structured formats</text>
+  </g>
+  <rect x="150.84" y="303.149" width="255.732" height="113.242" rx="6" fill="#EBF8FF" stroke="#4299e1" stroke-width="1" style=""/>
+  <text font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#2d3748" style="white-space: pre; font-size: 14px;" x="178.61" y="325.867">• Corruption Perception Index</text>
+  <text font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#2d3748" y="350.867" style="white-space: pre; font-size: 14px;" x="178.61">• Global Slavery Index</text>
+  <text font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#2d3748" y="375.867" style="white-space: pre; font-size: 14px;" x="178.61">• World Bank Indicators</text>
+  <text font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#2d3748" y="400.867" style="white-space: pre; font-size: 14px;" x="178.61">• Country Risk Ratings</text>
+  <line x1="480" y1="110" x2="480" y2="420" stroke="#e2e8f0" stroke-width="2"/>
+  <text font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="600" fill="#38B2AC" style="white-space: pre; font-size: 24px;" x="510" y="133.006">Events-Based Sources</text>
+  <line x1="510" y1="145" x2="920" y2="145" stroke="#e2e8f0" stroke-width="2"/>
+  <g transform="matrix(1, 0, 0, 1, 739.268127, 159.553146)">
+    <circle cx="40" cy="40" r="35" fill="#E6FFFA" stroke="#38B2AC" stroke-width="2"/>
+    <g transform="translate(18, 25)">
+      <line x1="0" y1="0" x2="45" y2="0" stroke="#38B2AC" stroke-width="2"/>
+      <line x1="0" y1="10" x2="45" y2="10" stroke="#38B2AC" stroke-width="2"/>
+      <line x1="0" y1="20" x2="45" y2="20" stroke="#38B2AC" stroke-width="2"/>
+      <line x1="0" y1="30" x2="30" y2="30" stroke="#38B2AC" stroke-width="2"/>
+    </g>
+  </g>
+  <text font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#2d3748" style="white-space: pre; font-size: 18px;" x="509.741" y="180.652">Characteristics:</text>
+  <g transform="matrix(1, 0, 0, 1, 514.165833, 195.698227)">
+    <circle cx="8" cy="8" r="4" fill="#38B2AC"/>
+    <text x="20" y="12" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#2d3748" style="white-space: pre;">Qualitative incidents</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 514.165833, 225.698227)">
+    <circle cx="8" cy="8" r="4" fill="#38B2AC"/>
+    <text x="20" y="12" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#2d3748" style="white-space: pre;">Unstructured narrative</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 514.165833, 255.698227)">
+    <circle cx="8" cy="8" r="4" fill="#38B2AC"/>
+    <text x="20" y="12" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#2d3748" style="white-space: pre;">Requires verification</text>
+  </g>
+  <rect x="555.752" y="293.54" width="285.405" height="122.091" rx="6" fill="#E6FFFA" stroke="#38B2AC" stroke-width="1" style=""/>
+  <g transform="matrix(1, 0, 0, 1, 575.753174, 323.147919)">
+    <text font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#2d3748" style="white-space: pre;">• NGO Reports (HRW, Amnesty)</text>
+    <text font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#2d3748" y="25" style="white-space: pre;">• News Articles</text>
+    <text font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#2d3748" y="50" style="white-space: pre;">• Legal Cases &amp; Violations</text>
+    <text font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#2d3748" y="75" style="white-space: pre;">• Worker Complaints &amp; Testimonials</text>
+  </g>
+  <rect x="40" y="437.229" width="880" height="60" rx="6" fill="#FFFFF0" stroke="#ECC94B" stroke-width="2"/>
+  <text x="480" y="472.229" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#744210" text-anchor="middle" style="white-space: pre; font-size: 16px;">
+    Our AI system processes both data types through specialized agents for comprehensive risk assessment
+  </text>
+</svg>

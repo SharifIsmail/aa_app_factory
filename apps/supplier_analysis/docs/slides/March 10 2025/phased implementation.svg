@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="white"/>
+  <rect width="960" height="80" fill="#2c5282"/>
+  <text x="40" y="50" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="white" style="white-space: pre;">Phased Implementation with Human Oversight</text>
+  <rect x="0" y="80" width="960" height="460" fill="white"/>
+  <text x="40" y="120" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="600" fill="#2c5282" style="white-space: pre;">Strategic Phased Implementation</text>
+  <g transform="translate(40, 140)">
+    <rect x="0" y="0" width="280" height="190" rx="6" fill="#EBF8FF" stroke="#4299e1" stroke-width="2"/>
+    <text x="140" y="30" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="600" fill="#2c5282" text-anchor="middle" style="white-space: pre;">Phase 1: Step 2</text>
+    <text x="140" y="60" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#2d3748" text-anchor="middle" style="white-space: pre;">Company Data Gathering</text>
+    <g transform="translate(20, 80)">
+      <circle cx="10" cy="10" r="5" fill="#4299e1"/>
+      <text x="25" y="15" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#2d3748" style="white-space: pre;">Identify correct legal entities</text>
+      <circle cx="10" cy="40" r="5" fill="#4299e1"/>
+      <text x="25" y="45" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#2d3748" style="white-space: pre;">Locate all business operations</text>
+      <circle cx="10" cy="70" r="5" fill="#4299e1"/>
+      <text x="25" y="75" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#2d3748" style="white-space: pre;">Map corporate structures</text>
+      <circle cx="10" cy="100" r="5" fill="#4299e1"/>
+      <text x="25" y="105" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#2d3748" style="white-space: pre;">Document business relationships</text>
+    </g>
+    <rect x="320" y="0" width="280" height="190" rx="6" fill="#E6FFFA" stroke="#38B2AC" stroke-width="2"/>
+    <text x="460" y="30" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="600" fill="#2c5282" text-anchor="middle" style="white-space: pre;">Phase 2: Step 3</text>
+    <text x="460" y="60" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#2d3748" text-anchor="middle" style="white-space: pre;">Risk Factor Identification</text>
+    <g transform="translate(340, 80)">
+      <circle cx="10" cy="10" r="5" fill="#38B2AC"/>
+      <text x="25" y="15" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#2d3748" style="white-space: pre;">Assess country-level risks</text>
+      <circle cx="10" cy="40" r="5" fill="#38B2AC"/>
+      <text x="25" y="45" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#2d3748" style="white-space: pre;">Evaluate industry-specific risks</text>
+      <circle cx="10" cy="70" r="5" fill="#38B2AC"/>
+      <text x="25" y="75" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#2d3748" style="white-space: pre;">Uncover supplier violations</text>
+      <circle cx="10" cy="100" r="5" fill="#38B2AC"/>
+      <text x="25" y="105" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#2d3748" style="white-space: pre;">Quantify risk factors (1-10)</text>
+    </g>
+    <rect x="640" y="0" width="280" height="190" rx="6" fill="#f7f7f7" stroke="#a0aec0" stroke-width="2"/>
+    <text x="780" y="30" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="600" fill="#718096" text-anchor="middle" style="white-space: pre;">Future Phases</text>
+    <text x="780" y="60" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#718096" text-anchor="middle" style="white-space: pre;">Complete Assessment</text>
+    <g transform="translate(660, 80)">
+      <circle cx="10" cy="10" r="5" fill="#a0aec0"/>
+      <text x="25" y="15" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#718096" style="white-space: pre;">Calculate overall risk ratings</text>
+      <circle cx="10" cy="40" r="5" fill="#a0aec0"/>
+      <text x="25" y="45" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#718096" style="white-space: pre;">Recommend corrective actions</text>
+      <circle cx="10" cy="70" r="5" fill="#a0aec0"/>
+      <text x="25" y="75" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#718096" style="white-space: pre;">Track remediation progress</text>
+      <circle cx="10" cy="100" r="5" fill="#a0aec0"/>
+      <text x="25" y="105" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#718096" style="white-space: pre;">Monitor ongoing compliance</text>
+    </g>
+  </g>
+  <text x="40" y="370" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="600" fill="#2c5282" style="white-space: pre;">Human Oversight: Critical in Every Phase</text>
+  <g transform="translate(40, 390)">
+    <rect x="0" y="0" width="880" height="110" rx="6" fill="#FFF5F5" stroke="#FC8181" stroke-width="2"/>
+    <g transform="translate(20, 25)">
+      <circle cx="10" cy="10" r="6" fill="#FC8181"/>
+      <text x="30" y="15" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#2d3748" style="white-space: pre;">AI-Human Partnership:</text>
+      <text x="210" y="15" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre;">AI gathers and analyzes data, humans validate findings and make decisions</text>
+      <circle cx="10" cy="40" r="6" fill="#FC8181"/>
+      <text x="30" y="45" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#2d3748" style="white-space: pre;">Quality Control:</text>
+      <text x="150" y="45" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre;">Experts review AI output for accuracy, relevance, and completeness</text>
+      <circle cx="10" cy="70" r="6" fill="#FC8181"/>
+      <text x="30" y="75" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#2d3748" style="white-space: pre;">Governance:</text>
+      <text x="120" y="75" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre;">Clear review protocols and accountability measures for all AI-generated assessments</text>
+    </g>
+  </g>
+</svg>

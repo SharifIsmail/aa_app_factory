@@ -1,0 +1,50 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+.DS_Store
+dist
+dist-ssr
+coverage
+*.local
+__pycache__
+
+/cypress/videos/
+/cypress/screenshots/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+*.tsbuildinfo
+
+test-results/
+playwright-report/
+/.env
+/.python-version
+/skill/bin/pharia-skill-cli
+
+CLAUDE.md
+test_README.md
+
+# Ignore labeled evaluation dataset output
+service/evaluation/labeled_eval_dataset/
+service/evaluation/intelligence_layer_eval/evaluation_data/
+# Ignore evaluation results output
+service/evaluation/results/
+
+# Ignore evaluation config files (generated and user-edited)
+service/evaluation/config/all_titles.txt
+service/evaluation/eval_dataset/

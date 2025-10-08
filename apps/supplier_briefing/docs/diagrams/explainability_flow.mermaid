@@ -1,0 +1,66 @@
+flowchart TD
+    %% User Request Flow
+    User[User Query] --> Routes[Fast API Routes]
+    Routes --> DataQueryService[DataQueryService]
+    
+    %% Agent Initialization
+    DataQueryService --> AgentLifecycle[AgentLifecycle]
+    AgentLifecycle --> Initialization[Initialize Tools & Models]
+    AgentLifecycle --> |register_work_log| ExplainabilityService[ExplainabilityService<br/>Singleton]
+
+    %% Agent Execution
+    Initialization --> QueryAgent[Query Agent<br/>CodeAgent]
+    DataAnalysisAgentTool --> DataAnalysisAgent[Data Analysis Agent<br/>CodeAgent]
+
+    %% Register callbacks
+    Initialization --> |make_callback| StepCallback[Step Callback Function]
+    DataAnalysisAgentTool --> |make_callback| StepCallback[Step Callback Function]
+
+    %% Step Execution and Callback
+    QueryAgent --> |executes step| ActionStep[ActionStep<br/>from smolagents]
+    DataAnalysisAgent --> |executes step| ActionStep
+    ActionStep --> |triggers callback| StepCallback
+    
+    %% Explainability Processing
+    StepCallback --> |queue_memory_step| ExplainabilityService
+    
+    %% Background Processing
+    ExplainabilityService --> |queue management| ThreadPoolExecutor[ThreadPoolExecutor]
+    ThreadPoolExecutor --> |_deque_and_process_single_action_step| ExplainabilityProcessor[ExplainabilityProcessor]
+    
+    %% LLM Processing
+    ExplainabilityProcessor --> |generate_explanation| ExplainabilityClient[ExplainabilityLLMClient]
+    
+    %% Result Storage
+    ExplainabilityClient --> ExplainabilityProcessor
+    ExplainabilityProcessor --> |create explained action| ExplainedAction[ExplainedActionStep]
+    ExplainedAction --> |store in work_log| WorkLog[WorkLog.explained_steps]
+    
+    %% Status Management
+    ExplainabilityService --> |update task status| TaskManager[WorkLogManager<br/>TaskKeys.GENERATE_EXPLAINABILITY]
+    TaskManager --> |IN_PROGRESS/COMPLETED| WorkLog
+    
+    %% API Response
+    WorkLog --> |explained_steps| Routes
+    
+    %% State Management
+    subgraph "ExplainabilityService State"
+        ExecutionQueues[Per-execution queues<br/>Deque ActionStepWithId]
+        ExecutionStates[Per-execution states<br/>ExecutionState: multi-turn, inflight]
+    end
+    
+    %% Error Handling & Retry
+    ExplainabilityService --> |multi-turn advancement| ExecutionStates
+
+    %% Styling
+    classDef service fill:#e1f5fe
+    classDef agent fill:#f3e5f5
+    classDef data fill:#e8f5e8
+    classDef processing fill:#fff3e0
+    classDef storage fill:#fce4ec
+    
+    class ExplainabilityService,DataQueryService service
+    class QueryAgent,DataAnalysisAgent agent
+    class ActionStep,ActionStepWithId,ExplainedAction data
+    class ExplainabilityProcessor,ExplainabilityClient processing
+    class WorkLog,ExecutionQueues,ExecutionStates storage

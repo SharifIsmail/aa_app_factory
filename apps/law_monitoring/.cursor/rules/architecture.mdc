@@ -1,0 +1,89 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: "Application Specific instructions"
+globs: 
+alwaysApply: true
+---
+
+
+## Overview
+A multi-agent system for comprehensive law analysis and monitoring, specifically designed for German legal text analysis and summary generation. The system provides automated law text extraction, analysis, and reporting capabilities with real-time progress tracking.
+
+## System Components
+
+## Technical Requirements and Tech stack
+- Python 3.12.8
+- Node.js (for frontend)
+- Static typing enforced by MyPY. Stick to static definitions on all generations!
+- Available API keys:
+    - check service/env.sample file 
+
+### Frontend (@/ui)
+- Vue.js application with TypeScript
+- Components:
+    - `LawMonitoringHome.vue`: Main application interface
+    - `InputLaw.vue`: Law URL input and analysis initiation
+    - `WorkSummary.vue`: Summary analysis progress and results display
+    - `TaskItem.vue`: Individual task progress tracking
+    - `HowThisWorks.vue`: User guidance and documentation
+    - `AppTitleBar.vue`: Application header
+    - `SkillLayout.vue`: Layout wrapper component
+
+### Backend (@service/src/service)
+- We use uv. Run all python command using `uv run`.
+- FastAPI-based Python service
+- Core components:
+  - `main.py`: Application entry point
+  - `routes.py`: API endpoints for law analysis operations
+  - `task_execution.py`: Background task management and execution
+  - `work_log.py`: Work log management and tracking
+  - `dependencies.py`: FastAPI dependency injection
+  - `models.py`: Core data models
+  - `settings.py`: Application configuration
+
+### Agents (@service/src/service/law_core)
+- `summary_agent/`: Law text analysis and summary generation
+  - `summary_agent.py`: Main law analysis orchestration
+  - `model_tools_manager.py`: LLM model and tools initialization
+  - `summary_work_log_manager.py`: Work log creation and management
+  - `summary_prompts.py`: Analysis prompts and templates
+- `tools/`: Analysis tools and utilities
+  - `fetch_webpage_div_content.py`: Web content extraction
+  - `fix_xml_tool.py`: XML content processing
+- `persistence_service.py`: Data storage and caching
+- `models.py`: Domain-specific data models
+
+## Data Flow
+1. User inputs law URL through frontend interface
+2. Backend validates URL and assigns UUID for tracking
+3. Background task extracts law content from webpage
+4. Summary agent analyzes law text using LLM tools
+5. Extracted data (header, subject matter, penalties, roles) is stored
+6. HTML report is generated and saved
+7. Frontend displays real-time progress and final results
+8. User can view or download completed analysis reports
+
+## Key Features
+- Law text extraction from German legal websites
+- Automated law analysis with structured data extraction
+- Real-time progress tracking with detailed task logs
+- HTML report generation for analysis results
+- Data persistence and caching for performance
+- Background task execution with cancellation support
+- Comprehensive error handling and logging
+
+## API Endpoints
+- `POST /summary-start`: Initiate law analysis
+- `GET /summary-status/{uuid}`: Get analysis progress and status
+- `DELETE /summary-stop/{uuid}`: Cancel running analysis
+- `GET /reports/{uuid}`: Retrieve HTML analysis report
+- `GET /health`: Service health check
+
+## Tests
+- Tests are contained in the `tests` directory.
+- Newly created code should have tests.
+- Tests should be run with `pytest` command.

@@ -1,0 +1,30 @@
+name: Dependency Review
+
+on:
+  pull_request:
+    branches:
+      - develop-law-monitoring
+      - develop-supplier-briefing
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  dependency-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Dependency Review
+        uses: actions/dependency-review-action@v3
+        with:
+          # Fail the action if vulnerabilities with this severity or higher are found
+          fail-on-severity: high
+          # Show vulnerabilities with this severity or higher in the PR comment
+          comment-summary-in-pr: always
+          # Only allow these licenses (remove deny-licenses to avoid conflict)
+          allow-licenses: MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause, ISC, 0BSD, Unlicense
+          # Additional configuration
+          retry-on-snapshot-warnings: true

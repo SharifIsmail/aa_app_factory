@@ -1,0 +1,262 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Law Monitoring - Background Workers",
+    "tags": ["law-monitoring", "workers", "prometheus"],
+    "style": "dark",
+    "timezone": "browser",
+    "panels": [
+      {
+        "id": 1,
+        "title": "Worker Runs Status",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "sum by (worker_type, status) (law_monitoring_worker_runs_total)",
+            "legendFormat": "{{worker_type}} - {{status}}"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "displayMode": "list",
+              "orientation": "horizontal"
+            }
+          }
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": 2,
+        "title": "Active Worker Runs",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "law_monitoring_worker_active_runs",
+            "legendFormat": "{{worker_type}}"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds",
+              "thresholds": {
+                "steps": [
+                  {"color": "green", "value": 0},
+                  {"color": "yellow", "value": 1},
+                  {"color": "red", "value": 2}
+                ]
+              }
+            }
+          }
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        }
+      },
+      {
+        "id": 3,
+        "title": "Laws by Processing Status",
+        "type": "piechart",
+        "targets": [
+          {
+            "expr": "law_monitoring_laws_by_status",
+            "legendFormat": "{{status}}"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            }
+          }
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 6
+        }
+      },
+      {
+        "id": 4,
+        "title": "Worker Run Duration",
+        "type": "timeseries",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(law_monitoring_worker_run_duration_seconds_bucket[5m])) by (le, worker_type))",
+            "legendFormat": "{{worker_type}} - 95th percentile"
+          },
+          {
+            "expr": "histogram_quantile(0.50, sum(rate(law_monitoring_worker_run_duration_seconds_bucket[5m])) by (le, worker_type))",
+            "legendFormat": "{{worker_type}} - 50th percentile"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "unit": "s"
+          }
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 6
+        }
+      },
+      {
+        "id": 5,
+        "title": "Discovery Worker Performance",
+        "type": "timeseries",
+        "targets": [
+          {
+            "expr": "rate(law_monitoring_discovery_laws_found_total[5m])",
+            "legendFormat": "Laws Found Rate"
+          },
+          {
+            "expr": "rate(law_monitoring_discovery_laws_saved_total[5m])",
+            "legendFormat": "Laws Saved Rate"
+          },
+          {
+            "expr": "rate(law_monitoring_discovery_laws_skipped_total[5m])",
+            "legendFormat": "Laws Skipped Rate"
+          },
+          {
+            "expr": "rate(law_monitoring_discovery_laws_failed_total[5m])",
+            "legendFormat": "Laws Failed Rate"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "unit": "ops"
+          }
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 24,
+          "x": 0,
+          "y": 14
+        }
+      },
+      {
+        "id": 6,
+        "title": "Summary Worker Performance",
+        "type": "timeseries",
+        "targets": [
+          {
+            "expr": "rate(law_monitoring_summary_laws_processed_total{status=\"success\"}[5m])",
+            "legendFormat": "Successfully Processed"
+          },
+          {
+            "expr": "rate(law_monitoring_summary_laws_processed_total{status=\"failed_retry\"}[5m])",
+            "legendFormat": "Failed (Will Retry)"
+          },
+          {
+            "expr": "rate(law_monitoring_summary_laws_processed_total{status=\"failed_permanent\"}[5m])",
+            "legendFormat": "Failed (Permanent)"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "unit": "ops"
+          }
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 24,
+          "x": 0,
+          "y": 22
+        }
+      },
+      {
+        "id": 7,
+        "title": "Worker Execution Attempts",
+        "type": "timeseries",
+        "targets": [
+          {
+            "expr": "rate(law_monitoring_worker_executions_total{work_started=\"True\"}[5m])",
+            "legendFormat": "{{worker_type}} - Started Work"
+          },
+          {
+            "expr": "rate(law_monitoring_worker_executions_total{work_started=\"False\"}[5m])",
+            "legendFormat": "{{worker_type}} - {{exit_reason}}"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "unit": "ops"
+          }
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 30
+        }
+      },
+      {
+        "id": 8,
+        "title": "Laws by Failure Count",
+        "type": "bargauge",
+        "targets": [
+          {
+            "expr": "law_monitoring_laws_failure_count",
+            "legendFormat": "{{failure_count}} failures"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds",
+              "thresholds": {
+                "steps": [
+                  {"color": "green", "value": 0},
+                  {"color": "yellow", "value": 1},
+                  {"color": "orange", "value": 2},
+                  {"color": "red", "value": 3}
+                ]
+              }
+            }
+          }
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 30
+        }
+      }
+    ],
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "refresh": "30s",
+    "schemaVersion": 30,
+    "version": 0,
+    "graphTooltip": 1
+  }
+}

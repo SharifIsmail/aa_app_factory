@@ -1,0 +1,26 @@
+---
+description: "Backend-specific instructions for Python FastAPI service"
+globs: **/*.py, **/*.pyi
+alwaysApply: false
+---
+
+<backend-requirements>
+- Python 3.12.8
+- FastAPI-based Python service
+- Static typing enforced by MyPY - stick to static definitions on all generations
+- Avoid untyped dictionaries and prefer pydantic.BaseModel
+- Follow strict type annotations throughout the codebase
+</backend-requirements>
+
+<core-components>
+- `main.py`: Application entry point
+- `routes.py`: API endpoints
+- `query_agent_service.py`: Main method for launching the data query agent
+</core-components>
+
+<coding-standards>
+- Use pydantic.BaseModel for data validation and serialization
+- Ensure all functions have proper type hints
+- Follow FastAPI best practices for async/await patterns
+- Maintain clean separation between routes, services, and data models
+</coding-standards>

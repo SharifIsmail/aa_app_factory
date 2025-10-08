@@ -1,0 +1,363 @@
+name: Deploy Extensibility Apps
+
+on:
+  # Manual trigger only
+  workflow_dispatch:
+    inputs:
+      app_name:
+        description: 'Micro-app to deploy'
+        required: true
+        type: choice
+        options:
+          - supplier_analysis
+          - law_monitoring
+          - agentic_app_template
+          - supplier_briefing
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        type: choice
+        options:
+          - c-prod (dev)
+          - schwarz-tenant (stage)
+          - pwc (partner stage)
+      image_tag:
+        description: 'Container image tag/version'
+        required: true
+        type: string
+        default: 'main_latest'
+      visibility_info:
+        description: 'ℹ️ Usecase will be created as PRIVATE by default on first deployment. Use the update-usecase workflow to change visibility later.'
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  check-permissions:
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if user has deployment permissions
+        id: check-deployment-permissions
+        run: |
+          # Get the user's Role level
+          PERMISSION_ROLE=$(curl -s \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/collaborators/${{ github.actor }}/permission" | \
+            jq -r '.role_name')
+
+          if [[ "$PERMISSION_ROLE" != "admin" && "$PERMISSION_ROLE" != "maintain" ]]; then
+            echo "::error::User ${{ github.actor }} does not have the necessary deployment permissions"
+            echo "Current permission role: $PERMISSION_ROLE"
+            exit 1
+          fi
+          echo "User ${{ github.actor }} has deployment permissions (role: $PERMISSION_ROLE)"
+    outputs:
+      is_admin: ${{ steps.check-deployment-permissions.outcome == 'success' }}
+
+  deploy:
+    needs: [check-permissions]
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    env:
+      # Set the respective values for PHARIAOS_MANAGER_URL, PHARIA_APPS_URL, STORAGE_TYPE, and PHARIA_DATA_STAGE_NAME based on the `environment` variable.
+      PHARIAOS_MANAGER_URL: ${{ github.event.inputs.environment == 'c-prod (dev)' && vars.PHARIAOS_MANAGER_URL_DEV || github.event.inputs.environment == 'schwarz-tenant (stage)' && vars.PHARIAOS_MANAGER_URL_STAGE || github.event.inputs.environment == 'pwc (partner stage)' && vars.PHARIAOS_MANAGER_URL_PWC }}
+      PHARIA_APPS_URL: ${{ github.event.inputs.environment == 'c-prod (dev)' && vars.PHARIA_APPS_URL_DEV || github.event.inputs.environment == 'schwarz-tenant (stage)' && vars.PHARIA_APPS_URL_STAGE || github.event.inputs.environment == 'pwc (partner stage)' && vars.PHARIA_APPS_URL_PWC }}
+      PHARIA_DATA_STAGE_NAME: ${{ github.event.inputs.environment == 'c-prod (dev)' && vars.PHARIA_DATA_STAGE_NAME_DEV || github.event.inputs.environment == 'schwarz-tenant (stage)' && vars.PHARIA_DATA_STAGE_NAME_STAGE || github.event.inputs.environment == 'pwc (partner stage)' && vars.PHARIA_DATA_STAGE_NAME_PWC }}
+      STORAGE_TYPE: ${{ github.event.inputs.environment == 'c-prod (dev)' && vars.STORAGE_TYPE_DEV || github.event.inputs.environment == 'schwarz-tenant (stage)' && vars.STORAGE_TYPE_STAGE || github.event.inputs.environment == 'pwc (partner stage)' && vars.STORAGE_TYPE_PWC }}
+      # PhariaAssistant's PostgreSQL secret configuration - cluster administrator can provide this. 
+      SERVICE_POSTGRES_SECRET_NAME: ${{ github.event.inputs.environment == 'c-prod (dev)' && vars.POSTGRES_SECRET_NAME_DEV || github.event.inputs.environment == 'schwarz-tenant (stage)' && vars.POSTGRES_SECRET_NAME_STAGE || github.event.inputs.environment == 'pwc (partner stage)' && vars.POSTGRES_SECRET_NAME_PWC }}
+      SERVICE_POSTGRES_SECRET_KEY: ${{ github.event.inputs.environment == 'c-prod (dev)' && vars.POSTGRES_SECRET_KEY_DEV || github.event.inputs.environment == 'schwarz-tenant (stage)' && vars.POSTGRES_SECRET_KEY_STAGE || github.event.inputs.environment == 'pwc (partner stage)' && vars.POSTGRES_SECRET_KEY_PWC }}
+      IMAGE_REGISTRY: ${{ github.event.inputs.environment == 'c-prod (dev)' && vars.IMAGE_REGISTRY || github.event.inputs.environment == 'schwarz-tenant (stage)' && vars.IMAGE_REGISTRY || github.event.inputs.environment == 'pwc (partner stage)' && vars.IMAGE_REGISTRY_PARTNERS }}
+      APP_NAME: ${{ github.event.inputs.app_name }}
+      ENVIRONMENT: ${{ github.event.inputs.environment }}
+      IMAGE_TAG: ${{ github.event.inputs.image_tag }}
+      # Core service environment variables - injectable at deployment time for maximum flexibility across clusters
+      # These override the baked-in values in the container image, enabling environment-specific deployments
+      SERVICE_PHARIA_KERNEL_URL:  ${{ github.event.inputs.environment == 'c-prod (dev)' && vars.PHARIA_KERNEL_URL || github.event.inputs.environment == 'schwarz-tenant (stage)' && vars.PHARIA_KERNEL_URL || github.event.inputs.environment == 'pwc (partner stage)' && vars.PHARIA_KERNEL_URL_PWC }}
+      SERVICE_PHARIA_AUTH_SERVICE_URL: ${{ github.event.inputs.environment == 'c-prod (dev)' && vars.PHARIA_AUTH_SERVICE_URL || github.event.inputs.environment == 'schwarz-tenant (stage)' && vars.PHARIA_AUTH_SERVICE_URL || github.event.inputs.environment == 'pwc (partner stage)' && vars.PHARIA_AUTH_SERVICE_URL_PWC }}
+      SERVICE_PHARIA_IAM_ISSUER_URL: ${{ github.event.inputs.environment == 'c-prod (dev)' && vars.PHARIA_IAM_ISSUER_URL || github.event.inputs.environment == 'schwarz-tenant (stage)' && vars.PHARIA_IAM_ISSUER_URL || github.event.inputs.environment == 'pwc (partner stage)' && vars.PHARIA_IAM_ISSUER_URL_PWC }}
+      SERVICE_PHARIA_DATA_URL: ${{ github.event.inputs.environment == 'c-prod (dev)' && vars.PHARIA_DATA_URL || github.event.inputs.environment == 'schwarz-tenant (stage)' && vars.PHARIA_DATA_URL || github.event.inputs.environment == 'pwc (partner stage)' && vars.PHARIA_DATA_URL_PWC }}
+      SERVICE_PHARIA_STUDIO_URL: ${{ github.event.inputs.environment == 'c-prod (dev)' && vars.PHARIA_STUDIO_URL || github.event.inputs.environment == 'schwarz-tenant (stage)' && vars.PHARIA_STUDIO_URL || github.event.inputs.environment == 'pwc (partner stage)' && vars.PHARIA_STUDIO_URL_PWC }}
+      SERVICE_INFERENCE_API_URL: ${{ github.event.inputs.environment == 'c-prod (dev)' && vars.SERVICE_INFERENCE_API_URL || github.event.inputs.environment == 'schwarz-tenant (stage)' && vars.SERVICE_INFERENCE_API_URL || github.event.inputs.environment == 'pwc (partner stage)' && vars.SERVICE_INFERENCE_API_URL_PWC }}    
+      SERVICE_COMPLETION_MODEL_NAME: ${{ vars.SERVICE_COMPLETION_MODEL_NAME }}
+      SERVICE_AUTHENTICATION_TOKEN: ${{ github.event.inputs.environment == 'c-prod (dev)' && secrets.SERVICE_AUTHENTICATION_TOKEN || github.event.inputs.environment == 'schwarz-tenant (stage)' && secrets.SERVICE_AUTHENTICATION_TOKEN || github.event.inputs.environment == 'pwc (partner stage)' && secrets.SERVICE_AUTHENTICATION_TOKEN_PWC }}
+
+    outputs:
+      DEPLOYMENT_SUCCESS: ${{ steps.deploy-step.outputs.DEPLOYMENT_SUCCESS }}
+      DEPLOYMENT_ID: ${{ steps.deploy-step.outputs.DEPLOYMENT_ID }}
+      USECASE_ID: ${{ steps.deploy-step.outputs.USECASE_ID }}
+      USECASE_NAME: ${{ steps.set-usecase-name.outputs.USECASE_NAME }}
+      HEALTH_CHECK_SUCCESS: ${{ steps.health-check.outputs.HEALTH_CHECK_SUCCESS }}
+    concurrency:
+      group: deploy-${{ github.event.inputs.app_name }}-${{ github.event.inputs.environment }}
+      cancel-in-progress: true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set Usecase Name
+        id: set-usecase-name
+        run: |
+          if [ "${{ github.event.inputs.app_name }}" == "supplier_analysis" ]; then
+            USECASE_NAME="Supplier Analysis"
+          elif [ "${{ github.event.inputs.app_name }}" == "law_monitoring" ]; then
+            USECASE_NAME="Law Monitoring"
+          elif [ "${{ github.event.inputs.app_name }}" == "agentic_app_template" ]; then
+            USECASE_NAME="Deep Research"
+          elif [ "${{ github.event.inputs.app_name }}" == "supplier_briefing" ]; then
+            USECASE_NAME="Supplier Briefing"
+          fi
+          echo "USECASE_NAME=${USECASE_NAME}" >> $GITHUB_OUTPUT
+
+      - name: Publish and Deploy Application
+        id: deploy-step
+        working-directory: apps/${{ env.APP_NAME }}
+        
+        run: |
+            BASE_URL="${PHARIAOS_MANAGER_URL}/api/usecases"
+
+            # Initial values for pagination
+            page=1
+            limit=100  # Adjust this based on your API's default/preferred page size
+            has_more=true
+            all_results=()
+            
+            # Loop until there are no more pages
+            while $has_more; do
+              echo "Fetching page $page..."
+              # Make the API call for the current page
+              response=$(curl --silent --request GET \
+                --url "$BASE_URL?page=$page&limit=$limit" \
+                --header "Authorization: Bearer ${SERVICE_AUTHENTICATION_TOKEN}")
+              
+              # Check if the response is valid JSON and contains the expected structure
+              if ! echo "$response" | jq -e '.data' > /dev/null 2>&1; then
+                echo "Error: Invalid response from API"
+                echo "Response: $response"
+                exit 1
+              fi
+              
+              # Extract just the data array from this page
+              page_data=$(echo "$response" | jq '.data')
+              
+              # Check if we got any results
+              result_count=$(echo "$page_data" | jq '. | length')
+              
+              if [ "$result_count" -eq 0 ] || [ -z "$result_count" ]; then
+                has_more=false
+                echo "No more results."
+              elif [ "$(echo "$response" | jq '.status')" -eq 400 ]; then
+                echo "Error: detail: $(echo "$response" | jq -r '.detail')"
+                exit 1
+              else
+                # Add this page's data to our collection
+                all_results+=("$page_data")
+                echo "Got $result_count results on page $page"
+                page=$((page+1))
+              fi
+            done
+            # Combine all results into a single JSON array
+            if [ ${#all_results[@]} -eq 0 ]; then
+              echo "No results found"
+              exit 1
+            fi
+            
+            combined_results=$(jq -s 'add' <<< "${all_results[@]}")
+            echo "Total results: $(echo "$combined_results" | jq '. | length')"
+            # Output the combined results to a file
+            echo "$combined_results" > all_usecases.json
+            echo "All results saved to all_usecases.json"
+            
+            # Create the usecase
+            echo "Creating usecase ${{ steps.set-usecase-name.outputs.USECASE_NAME }}..."
+            response=$(curl --request POST \
+            --url "${BASE_URL}" \
+            --header "Authorization: Bearer ${SERVICE_AUTHENTICATION_TOKEN}" \
+            --header 'Content-Type: application/json' \
+            --data "{
+            \"description\": \"description of your usecase application\",
+            \"name\": \"${{ steps.set-usecase-name.outputs.USECASE_NAME }}\",
+            \"isPublic\": false
+            }")
+
+            # print the response
+            echo "Response: $(echo "$response" | jq '.')"
+
+            # If response is 409 - conflict, then the usecase already exists
+            if [ "$(echo "$response" | jq '.status')" -eq 409 ]; then
+              echo "Conflict: Usecase ${{ steps.set-usecase-name.outputs.USECASE_NAME }} already exists"
+              # extract usecase id from all_usecases.json
+              usecase_id=$(echo "$combined_results" | jq -r ".[] | select(.name == \"${{ steps.set-usecase-name.outputs.USECASE_NAME }}\") | .id")
+              echo "Usecase ID: ${usecase_id}"
+            elif [ "$(echo "$response" | jq '.status')" -eq 400 ]; then
+              echo "Error: detail: $(echo "$response" | jq -r '.detail')"
+              exit 1
+            else
+              echo "Success: Usecase ${{ steps.set-usecase-name.outputs.USECASE_NAME }} created successfully"
+              usecase_id=$(echo "$response" | jq -r '.id')
+              echo "Usecase ID: ${usecase_id}"
+            fi
+            echo "usecase_id=${usecase_id}" >> $GITHUB_OUTPUT
+          
+            # Set general env variables. Overrides baked-in vars for maximum flexibility across differentclusters
+            env_json='"SERVICE_ENABLE_CORS":"false"'
+            env_json+=',"SERVICE_PHARIA_KERNEL_URL":"'"${SERVICE_PHARIA_KERNEL_URL}"'"'
+            env_json+=',"SERVICE_PHARIA_AUTH_SERVICE_URL":"'"${SERVICE_PHARIA_AUTH_SERVICE_URL}"'"'
+            env_json+=',"SERVICE_PHARIA_IAM_ISSUER_URL":"'"${SERVICE_PHARIA_IAM_ISSUER_URL}"'"'
+            env_json+=',"SERVICE_PHARIA_DATA_URL":"'"${SERVICE_PHARIA_DATA_URL}"'"'
+            env_json+=',"SERVICE_INFERENCE_API_URL":"'"${SERVICE_INFERENCE_API_URL}"'"'
+            env_json+=',"SERVICE_COMPLETION_MODEL_NAME":"'"${SERVICE_COMPLETION_MODEL_NAME}"'"'
+            env_json+=',"SERVICE_AUTHENTICATION_TOKEN":"'"${SERVICE_AUTHENTICATION_TOKEN}"'"'
+            env_json+=',"SERVICE_PHARIA_STUDIO_URL":"'"${SERVICE_PHARIA_STUDIO_URL}"'"'
+            
+            # Set app specific env variables
+            if [ "$APP_NAME" = "law_monitoring" ]; then
+              env_json+=',"SERVICE_PHARIA_DATA_STAGE_NAME":"'"${PHARIA_DATA_STAGE_NAME}"'"'
+              env_json+=',"SERVICE_STORAGE_TYPE":"'"${STORAGE_TYPE}"'"'
+              env_json+=',"SERVICE_ENABLE_PARTNER_BUTTON":"${{ github.event.inputs.environment == 'pwc (partner stage)' && 'true' || 'false' }}"'
+            fi
+            
+            # Set app-specific API keys (injectable for customer deployments)
+            if [ "$APP_NAME" = "supplier_analysis" ] || [ "$APP_NAME" = "agentic_app_template" ]; then
+              env_json+=',"SERPER_API_KEY":"${{ github.event.inputs.environment == 'pwc (partner stage)' && secrets.SERPER_API_KEY_PWC || secrets.SERPER_API_KEY }}"'
+              env_json+=',"ABSTRACT_API_KEY":"${{ secrets.ABSTRACT_API_KEY }}"'
+            fi
+            # Set app-specific env variables for supplier_briefing
+            if [ "$APP_NAME" = "supplier_briefing" ]; then
+              env_json+=',"SERVICE_STUDIO_URL":"'"${SERVICE_STUDIO_URL}"'"'
+              env_json+=',"SERVICE_STUDIO_PROJECT_NAME":"'"${SERVICE_STUDIO_PROJECT_NAME}"'"'
+            fi
+            
+            echo "Env variables used during deployment: ${env_json}"
+
+            # Set secretEnvVars for apps that require database access
+            secret_env_vars_json=""
+            if [ "$APP_NAME" = "law_monitoring" ]; then
+              # Use environment-specific PostgreSQL secret configuration from GitHub vars
+              echo "Using database secret: ${POSTGRES_SECRET_NAME} with key: ${POSTGRES_SECRET_KEY}"
+              
+              secret_env_vars_json=',"secretEnvVars":[
+                {
+                  "name":"SERVICE_DATABASE_URL",
+                  "secret":{
+                    "name":"'"${SERVICE_POSTGRES_SECRET_NAME}"'",
+                    "key":"'"${SERVICE_POSTGRES_SECRET_KEY}"'"
+                  }
+                }
+              ]'
+            fi
+
+
+            # Deploy the usecase by calling the deploy endpoint and using the usecase id
+            # CORS must be disabled when deploying the usecase - enabled by default
+            response=$(curl --request POST \
+              --url "${BASE_URL}/${usecase_id}/deployments" \
+              --header "Authorization: Bearer ${SERVICE_AUTHENTICATION_TOKEN}" \
+              --header 'Content-Type: application/json' \
+              --data "{
+              \"config\": {
+                \"image\": {
+                  \"registry\": \"${IMAGE_REGISTRY}\",
+                  \"repository\": \"${APP_NAME}\",
+                  \"tag\": \"${IMAGE_TAG}\"
+                 },
+                 \"envVars\": { ${env_json} },
+                 \"resources\": {
+                  \"limits\": {
+                    \"cpu\": \"1000m\",
+                    \"memory\": \"2048Mi\"
+                  },
+                  \"requests\": {
+                    \"cpu\": \"500m\",
+                    \"memory\": \"1024Mi\"
+                  }
+                 },
+                 \"serviceMonitor\": {
+                    \"enabled\": true,
+                    \"scrapingInterval\": \"5s\"
+                  }${secret_env_vars_json}
+               }
+              }")
+
+            # debug
+            echo "registry: ${IMAGE_REGISTRY}"
+            echo "repository: ${APP_NAME}"
+            echo "tag: ${IMAGE_TAG}"
+            # print the response
+            echo "Response: $(echo "$response" | jq '.')"
+            
+            if deployment_id=$(echo "$response" | jq -r '.id') && [ -n "$deployment_id" ] && [ "$deployment_id" != "null" ]; then
+              echo "Deployment ID: ${deployment_id}"
+              echo "DEPLOYMENT_SUCCESS=true" >> $GITHUB_OUTPUT
+              echo "DEPLOYMENT_ID=${deployment_id}" >> $GITHUB_OUTPUT
+            elif [ "$(echo "$response" | jq '.status')" -eq 403 ]; then
+              echo "Error: detail: $(echo "$response" | jq -r '.detail')"
+              exit 1
+            else
+              echo "Deployment failed"
+              echo "Response: $(echo "$response" | jq '.')"
+              echo "DEPLOYMENT_SUCCESS=false" >> $GITHUB_OUTPUT
+              echo "DEPLOYMENT_ID=" >> $GITHUB_OUTPUT
+            fi
+
+      - name: Run Container Health Check
+        id: health-check
+        run: |
+          # retry the health check 5 times if it fails
+          for i in {1..5}; do
+            # wait for the deployment to be ready
+            sleep 60
+            if [ "${{ steps.deploy-step.outputs.DEPLOYMENT_SUCCESS }}" = "true" ]; then
+              echo "Checking ${{ env.APP_NAME }} health endpoint..."
+              http_response_code=$(curl -s -o /dev/null -H "Authorization: Bearer ${SERVICE_AUTHENTICATION_TOKEN}" -w "%{response_code}" ${{ env.PHARIA_APPS_URL }}/${{ steps.deploy-step.outputs.USECASE_ID }}/health)
+              echo "HTTP Response Code ${http_response_code}"
+              if [ "$http_response_code" -eq 200 ]; then
+                echo "Health check successful"
+                echo "HEALTH_CHECK_SUCCESS=true" >> $GITHUB_OUTPUT
+                break
+              else
+                echo "Health check failed!"
+                # if the health check fails 3 times, then exit with a failure
+                if [ $i -eq 5 ]; then
+                  echo "Deployment failed"
+                  echo "HEALTH_CHECK_SUCCESS=false" >> $GITHUB_OUTPUT
+                  echo "Container logs:"
+                  podman logs ${{ steps.deploy-step.outputs.DEPLOYMENT_ID }}
+                  exit 1
+                fi
+              fi
+            else
+              echo "Deployment was not successful, skipping health check"
+              echo "HEALTH_CHECK_SUCCESS=false" >> $GITHUB_OUTPUT
+              echo "Container logs:"
+              podman logs ${{ steps.deploy-step.outputs.DEPLOYMENT_ID }}
+              break
+            fi
+          done
+
+      - name: Set Deployment Summary
+        if: always()
+        run: |
+          echo "### Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Application: **${{ env.APP_NAME }}**" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Usecase name: **${{ steps.set-usecase-name.outputs.USECASE_NAME }}**" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Environment: **${{ env.ENVIRONMENT }}**" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Image Tag: **${{ env.IMAGE_TAG }}**" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.deploy-step.outputs.DEPLOYMENT_SUCCESS }}" = "true" ]; then
+            echo "✅ Deployment ID: **${{ steps.deploy-step.outputs.DEPLOYMENT_ID }}**" >> $GITHUB_STEP_SUMMARY
+            echo "✅ Deployed by: **${{ github.actor }}**" >> $GITHUB_STEP_SUMMARY
+            echo "✅ Deployment Time: **$(date)**" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Deployment failed" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          if [ "${{ steps.health-check.outputs.HEALTH_CHECK_SUCCESS }}" = "true" ]; then
+            echo "✅ Health Check: **Passed**, usecase id: **${{ steps.deploy-step.outputs.USECASE_ID }}**" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Health Check: **Failed** for usecase id: **${{ steps.deploy-step.outputs.USECASE_ID }}**" >> $GITHUB_STEP_SUMMARY
+          fi

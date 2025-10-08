@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <!-- Background -->
+  <rect width="960" height="540" fill="white" />
+  
+  <!-- Header -->
+  <rect width="960" height="80" fill="#172b4d" />
+  <text x="480" y="50" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="white" text-anchor="middle">Supply Chain Due Diligence: Challenge & Necessity</text>
+  
+  <!-- Content Area Background -->
+  <rect x="0" y="80" width="960" height="460" fill="white" />
+  
+  <!-- Dividing Line -->
+  <line x1="480" y1="120" x2="480" y2="450" stroke="#e2e8f0" stroke-width="2" />
+  
+  <!-- Left Section: Why Necessary -->
+  <g transform="translate(80, 150)">
+    <text font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="#2e5698">Why Necessary</text>
+    
+    <!-- Bullet Points -->
+    <g transform="translate(0, 70)">
+      <!-- Point 1 -->
+      <circle cx="15" cy="15" r="15" fill="#4a86e8" />
+      <text x="15" y="20" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">📜</text>
+      <text x="50" y="20" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#172b4d">Legal mandate (LKSG)</text>
+      
+      <!-- Point 2 -->
+      <g transform="translate(0, 70)">
+        <circle cx="15" cy="15" r="15" fill="#4a86e8" />
+        <text x="15" y="20" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">👥</text>
+        <text x="50" y="20" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#172b4d">Because every business needs</text>
+        <text x="50" y="50" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#172b4d">to know its partners!</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Right Section: Why Challenging -->
+  <g transform="translate(520, 150)">
+    <text font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="#d04423">Why Challenging</text>
+    
+    <!-- Bullet Points -->
+    <g transform="translate(0, 70)">
+      <!-- Point 1 -->
+      <circle cx="15" cy="15" r="15" fill="#e67c73" />
+      <text x="15" y="20" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">📊</text>
+      <text x="50" y="20" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#172b4d">Data volume & scattered information</text>
+      
+      <!-- Point 2 -->
+      <g transform="translate(0, 70)">
+        <circle cx="15" cy="15" r="15" fill="#e67c73" />
+        <text x="15" y="20" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">🌐</text>
+        <text x="50" y="20" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#172b4d">Mixed formats in multiple languages</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Bottom Graphic Element - Simple balance scale suggesting tension between requirements and challenges -->
+  <g transform="translate(480, 380)">
+    <line x1="-100" y1="0" x2="100" y2="0" stroke="#172b4d" stroke-width="3" />
+    <circle cx="-100" cy="0" r="8" fill="#4a86e8" />
+    <circle cx="100" cy="0" r="8" fill="#e67c73" />
+    <line x1="0" y1="0" x2="0" y2="-60" stroke="#172b4d" stroke-width="3" />
+    <circle cx="0" cy="-60" r="6" fill="#172b4d" />
+    <circle cx="0" cy="0" r="8" fill="#172b4d" />
+  </g>
+</svg>

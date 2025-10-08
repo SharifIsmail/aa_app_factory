@@ -1,0 +1,6 @@
+packages:
+  # All UI applications
+  - 'apps/*/ui'
+  
+  # Shared packages
+  - 'packages/*'

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompanyData>
+    <CompanyIdentity>
+        <Name>
+            <FinalApprovedName>MyFarmbase Africa</FinalApprovedName>
+            <LegalNameVariations>MyFarmbase Enterprise</LegalNameVariations>
+            <ExactRawData>MyFarmbase Africa, MyFarmbase Enterprise</ExactRawData>
+            <Sources>
+                <Source>LinkedIn</Source>
+                <URL>https://ng.linkedin.com/company/myfarmbaseafrica</URL>
+                <Source>Facebook</Source>
+                <URL>https://www.facebook.com/MyFarmBase/</URL>
+                <Source>Big Data CGIAR</Source>
+                <URL>https://bigdata.cgiar.org/youth-partner/myfarmbase-africa/</URL>
+                <Source>Clodura</Source>
+                <URL>https://www.clodura.ai/directory/company/myfarmbase-africa</URL>
+                <Source>MyFarmbase Africa Official Website</Source>
+                <URL>https://myfarmbaseafrica.org/</URL>
+            </Sources>
+            <SourceNotes>Multiple sources confirm the company name as MyFarmbase Africa, with some sources also referring to it as MyFarmbase Enterprise.</SourceNotes>
+            <ChainOfThoughtReasoning>The final approved name is based on the majority of sources confirming the name as MyFarmbase Africa.</ChainOfThoughtReasoning>
+            <Status>OK</Status>
+            <AnyRemainingIssues>No remaining issues</AnyRemainingIssues>
+            <ProposedNextSteps>No further action required</ProposedNextSteps>
+            <Notes>No notes</Notes>
+            <NameVariationNotes>No significant name variations observed</NameVariationNotes>
+        </Name>
+        <RegistrationDetails>
+            <FinalRegistrationNumber>No registration number found</FinalRegistrationNumber>
+            <FinalRegistrationDate>No registration date found</FinalRegistrationDate>
+            <ExactRawData>No registration details available</ExactRawData>
+            <Sources>
+                <Source>LinkedIn</Source>
+                <URL>https://ng.linkedin.com/company/myfarmbaseafrica</URL>
+                <Source>Clodura</Source>
+                <URL>https://www.clodura.ai/directory/company/myfarmbase-africa</URL>
+            </Sources>
+            <SourceNotes>Some sources provide limited registration information, but no comprehensive details are available.</SourceNotes>
+            <ChainOfThoughtReasoning>The registration details are incomplete due to limited information from available sources.</ChainOfThoughtReasoning>
+            <Status>NO_DATA</Status>
+            <AnyRemainingIssues>Registration details are incomplete</AnyRemainingIssues>
+            <ProposedNextSteps>Further research required to obtain complete registration details</ProposedNextSteps>
+            <Notes>Registration details are not publicly available or are incomplete</Notes>
+            <RegistrationNumberNotes>No registration number found</RegistrationNumberNotes>
+            <RegistrationDateNotes>No registration date found</RegistrationDateNotes>
+        </RegistrationDetails>
+        <CompanyStatus>Self-employed organization</CompanyStatus>
+        <CompanyStatusNotes>The company status is based on a single source and may require further verification.</CompanyStatusNotes>
+        <BusinessEntityType>Self-employed</BusinessEntityType>
+        <BusinessEntityTypeNotes>The business entity type is based on a single source and may require further verification.</BusinessEntityTypeNotes>
+        <SectionStatus>NEEDS_REVIEW</SectionStatus>
+        <Notes>The company identity section requires review due to incomplete registration details and single-source information for company status and business entity type.</Notes>
+        <IdentityVerificationProcess>The company identity was verified through multiple sources, but some information is incomplete or based on single-source data.</IdentityVerificationProcess>
+    </CompanyIdentity>
+
+    <ContactInformation>
+        <Email>No email address found</Email>
+        <EmailNotes>No email address is available in the provided data.</EmailNotes>
+        <Phone>No phone number found</Phone>
+        <PhoneNotes>No phone number is available in the provided data.</PhoneNotes>
+        <Website>http://myfarmbase.com.ng</Website>
+        <WebsiteNotes>The website is functional and provides information about the company.</WebsiteNotes>
+        <SocialMediaProfiles>
+            <Platform>LinkedIn</Platform>
+            <URL>https://ng.linkedin.com/company/myfarmbaseafrica</URL>
+            <ProfileNotes>The LinkedIn profile is active and provides information about the company.</ProfileNotes>
+        </SocialMediaProfiles>
+        <SocialMediaProfiles>
+            <Platform>Facebook</Platform>
+            <URL>https://www.facebook.com/MyFarmBase/</URL>
+            <ProfileNotes>The Facebook profile is active and provides information about the company.</ProfileNotes>
+        </SocialMediaProfiles>
+        <SocialMediaProfiles>
+            <Platform>Instagram</Platform>
+            <URL>https://www.instagram.com/myfarmbase/</URL>
+            <ProfileNotes>The Instagram profile is active and provides information about the company.</ProfileNotes>
+        </SocialMediaProfiles>
+        <Sources>
+            <Source>LinkedIn</Source>
+            <URL>https://ng.linkedin.com/company/myfarmbaseafrica</URL>
+            <Source>Facebook</Source>
+            <URL>https://www.facebook.com/MyFarmBase/</URL>
+            <Source>Clodura</Source>
+            <URL>https://www.clodura.ai/directory/company/myfarmbase-africa</URL>
+            <Source>MyFarmbase Africa Official Website</Source>
+            <URL>https://myfarmbaseafrica.org/</URL>
+        </Sources>
+        <SourceNotes>Multiple sources confirm the website and social media profiles.</SourceNotes>
+        <ChainOfThoughtReasoning>The contact information is based on multiple sources and appears to be accurate.</ChainOfThoughtReasoning>
+        <Status>OK</Status>
+        <AnyRemainingIssues>No remaining issues</AnyRemainingIssues>
+        <ProposedNextSteps>No further action required</ProposedNextSteps>
+        <SectionStatus>OK</SectionStatus>
+        <Notes>No notes</Notes>
+        <ContactConsistencyNotes>The contact information is consistent across multiple sources.</ContactConsistencyNotes>
+    </ContactInformation>
+
+    <Headquarters>
+        <Address>Ogun, Nigeria</Address>
+        <ExactRawData>Ogun, Nigeria</ExactRawData>
+        <AddressComponentNotes>No address component issues observed</AddressComponentNotes>
+        <Sources>
+            <Source>LinkedIn</Source>
+            <URL>https://ng.linkedin.com/company/myfarmbaseafrica</URL>
+            <Source>Facebook</Source>
+            <URL>https://www.facebook.com/MyFarmBase/</URL>
+            <Source>Big Data CGIAR</Source>
+            <URL>https://bigdata.cgiar.org/youth-partner/myfarmbase-africa/</URL>
+            <Source>Clodura</Source>
+            <URL>https://www.clodura.ai/directory/company/myfarmbase-africa</URL>
+            <Source>MyFarmbase Africa Official Website</Source>
+            <URL>https://myfarmbaseafrica.org/</URL>
+        </Sources>
+        <SourceNotes>Multiple sources confirm the headquarters location.</SourceNotes>
+        <ChainOfThoughtReasoning>The headquarters location is based on multiple sources and appears to be accurate.</ChainOfThoughtReasoning>
+        <Status>OK</Status>
+        <AnyRemainingIssues>No remaining issues</AnyRemainingIssues>
+        <ProposedNextSteps>No further action required</ProposedNextSteps>
+        <SectionStatus>OK</SectionStatus>
+        <Notes>No notes</Notes>
+        <GeographicVerificationNotes>No geographic verification issues observed</GeographicVerificationNotes>
+        <HeadquartersHistoryNotes>No headquarters location changes observed</HeadquartersHistoryNotes>
+    </Headquarters>
+
+    <LocationsAndOperations>
+        <AdditionalLocations>Sango-ota, Ogun State, Nigeria</AdditionalLocations>
+        <AdditionalLocationsNotes>The additional location is a factory or office location.</AdditionalLocationsNotes>
+        <FactoryLocations>Sango-ota, Ogun State, Nigeria</FactoryLocations>
+        <FactoryLocationsNotes>The factory location is operational and significant to the company's business.</FactoryLocationsNotes>
+        <ExactRawData>Sango-ota, Ogun State, Nigeria</ExactRawData>
+        <Sources>
+            <Source>LinkedIn</Source>
+            <URL>https://ng.linkedin.com/company/myfarmbaseafrica</URL>
+            <Source>Instagram</Source>
+            <URL>https://www.instagram.com/myfarmbase/</URL>
+        </Sources>
+        <SourceNotes>Multiple sources confirm the additional location.</SourceNotes>
+        <ChainOfThoughtReasoning>The locations and operations information is based on multiple sources and appears to be accurate.</ChainOfThoughtReasoning>
+        <Status>OK</Status>
+        <AnyRemainingIssues>No remaining issues</AnyRemainingIssues>
+        <ProposedNextSteps>No further action required</ProposedNextSteps>
+        <SectionStatus>OK</SectionStatus>
+        <Notes>No notes</Notes>
+        <LocationVerificationMethodNotes>No location verification method issues observed</LocationVerificationMethodNotes>
+        <GeographicDistributionNotes>No geographic distribution issues observed</GeographicDistributionNotes>
+    </LocationsAndOperations>
+
+    <Industry>
+        <FinalIndustryClassification>Food and Beverage Manufacturing</FinalIndustryClassification>
+        <IndustryClassificationNotes>The industry classification is based on multiple sources and appears to be accurate.</IndustryClassificationNotes>
+        <MainProductsOrServices>Vegetable crops (watermelon, cucumber, spinach, indigenous vegetables), locally made palm oil, passion fruit</MainProductsOrServices>
+        <ProductsServicesNotes>The main products and services are based on multiple sources and appear to be accurate.</ProductsServicesNotes>
+        <Certifications>
+            <Certification>No certifications found</Certification>
+            <CertificationSource>No certification source found</CertificationSource>
+            <CertificationDate>No certification date found</CertificationDate>
+            <CertificationNotes>No certification notes available</CertificationNotes>
+        </Certifications>
+        <CertificationsOverviewNotes>No certifications overview notes available</CertificationsOverviewNotes>
+        <ExactRawData>Food and Beverage Manufacturing, Vegetable crops (watermelon, cucumber, spinach, indigenous vegetables), locally made palm oil, passion fruit</ExactRawData>
+        <Sources>
+            <Source>LinkedIn</Source>
+            <URL>https://ng.linkedin.com/company/myfarmbaseafrica</URL>
+            <Source>Facebook</Source>
+            <URL>https://www.facebook.com/MyFarmBase/</URL>
+            <Source>Big Data CGIAR</Source>
+            <URL>https://bigdata.cgiar.org/youth-partner/myfarmbase-africa/</URL>
+            <Source>Clodura</Source>
+            <URL>https://www.clodura.ai/directory/company/myfarmbase-africa</URL>
+        </Sources>
+        <SourceNotes>Multiple sources confirm the industry and main products or services.</SourceNotes>
+        <ChainOfThoughtReasoning>The industry and main products or services information is based on multiple sources and appears to be accurate.</ChainOfThoughtReasoning>
+        <Status>OK</Status>
+        <AnyRemainingIssues>No remaining issues</AnyRemainingIssues>
+        <ProposedNextSteps>No further action required</ProposedNextSteps>
+        <SectionStatus>OK</SectionStatus>
+        <Notes>No notes</Notes>
+        <IndustryTrendsNotes>No industry trends notes available</IndustryTrendsNotes>
+        <CompetitivePositionNotes>No competitive position notes available</CompetitivePositionNotes>
+    </Industry>
+
+    <OwnershipDetails>
+        <ParentCompany>No parent company found</ParentCompany>
+        <ParentCompanyNotes>No parent company notes available</ParentCompanyNotes>
+        <Owner>No owner information found</Owner>
+        <OwnershipStructureNotes>No ownership structure notes available</OwnershipStructureNotes>
+        <KeyDirectors>
+            <KeyDirector>Femi 'Royal' Aliu (Founder)</KeyDirector>
+            <KeyDirector>Peace Udofia (Operations Assistant)</KeyDirector>
+            <KeyDirector>Afeez Onikola (Agribusiness Consultant)</KeyDirector>
+            <KeyDirector>Deborah Ifedayo (Marketing and Communication)</KeyDirector>
+        </KeyDirectors>
+        <KeyDirectorsNotes>The key directors are based on multiple sources and appear to be accurate.</KeyDirectorsNotes>
+        <ExactRawData>No parent company, No owner information, Femi 'Royal' Aliu (Founder), Peace Udofia (Operations Assistant), Afeez Onikola (Agribusiness Consultant), Deborah Ifedayo (Marketing and Communication)</ExactRawData>
+        <Sources>
+            <Source>Clodura</Source>
+            <URL>https://www.clodura.ai/directory/company/myfarmbase-africa</URL>
+            <Source>Medium</Source>
+            <URL>https://medium.com/the-myfarmbase-blog/youth-start-up-of-the-month-217e2510aec4</URL>
+        </Sources>
+        <SourceNotes>Multiple sources confirm the key directors.</SourceNotes>
+        <ChainOfThoughtReasoning>The ownership details information is based on multiple sources and appears to be accurate.</ChainOfThoughtReasoning>
+        <Status>OK</Status>
+        <AnyRemainingIssues>No remaining issues</AnyRemainingIssues>
+        <ProposedNextSteps>No further action required</ProposedNextSteps>
+        <SectionStatus>OK</SectionStatus>
+        <Notes>No notes</Notes>
+        <BeneficialOwnershipNotes>No beneficial ownership notes available</BeneficialOwnershipNotes>
+        <CorporateGovernanceNotes>No corporate governance notes available</CorporateGovernanceNotes>
+    </OwnershipDetails>
+
+    <FinancialInformation>
+        <Revenue>No revenue information found</Revenue>
+        <RevenueNotes>No revenue notes available</RevenueNotes>
+        <ProfitBeforeTax>No profit before tax information found</ProfitBeforeTax>
+        <ProfitNotes>No profit notes available</ProfitNotes>
+        <MarketValue>No market value information found</MarketValue>
+        <MarketValueNotes>No market value notes available</MarketValueNotes>
+        <StockInformation>No stock information found</StockInformation>
+        <StockPerformanceNotes>No stock performance notes available</StockPerformanceNotes>
+        <ExactRawData>No financial information available</ExactRawData>
+        <Sources>
+            <Source>Glassdoor</Source>
+            <URL>https://www.glassdoor.com/Overview/Working-at-MyFarmbase-Africa-EI_IE6224956.11,28.htm</URL>
+        </Sources>
+        <SourceNotes>Single source provides limited financial information.</SourceNotes>
+        <ChainOfThoughtReasoning>The financial information is incomplete due to limited sources.</ChainOfThoughtReasoning>
+        <Status>NO_DATA</Status>
+        <AnyRemainingIssues>Financial information is incomplete</AnyRemainingIssues>
+        <ProposedNextSteps>Further research required to obtain complete financial information</ProposedNextSteps>
+        <SectionStatus>NEEDS_REVIEW</SectionStatus>
+        <Notes>The financial information section requires review due to incomplete data.</Notes>
+        <FinancialHealthNotes>No financial health notes available</FinancialHealthNotes>
+        <FinancialReportingNotes>No financial reporting notes available</FinancialReportingNotes>
+    </FinancialInformation>
+
+    <DataAssessmentSummary>
+        <OverallDataQuality>The overall data quality is moderate due to some incomplete information.</OverallDataQuality>
+        <DataQualityNotes>The data quality is affected by the availability of sources and the completeness of the information provided.</DataQualityNotes>
+        <MajorGaps>Registration details, financial information, and ownership structure are significant gaps in the data.</MajorGaps>
+        <DataGapsNotes>The gaps in the data may impact the overall assessment and decision-making process.</DataGapsNotes>
+        <RecommendedNextSteps>Further research is recommended to obtain complete registration details, financial information, and ownership structure.</RecommendedNextSteps>
+        <NextStepsNotes>The next steps should prioritize filling the gaps in the data to improve the overall quality and accuracy of the information.</NextStepsNotes>
+        <Notes>The data collection process was challenging due to the limited availability of sources and the incompleteness of the information provided.</Notes>
+        <ResearchProcessNotes>The research process involved reviewing multiple sources and verifying the information to ensure accuracy and completeness.</ResearchProcessNotes>
+        <ConfidenceLevelNotes>The confidence level in the data is moderate due to some incomplete information and the reliance on single sources for certain data points.</ConfidenceLevelNotes>
+        <FinalRecommendationNotes>The final recommendation is to proceed with caution and consider the gaps in the data when making decisions.</FinalRecommendationNotes>
+    </DataAssessmentSummary>
+</CompanyData>

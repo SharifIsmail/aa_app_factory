@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nigeria Country Risk Assessment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --danger-color: #dc3545;
+            --warning-color: #ffc107;
+            --success-color: #198754;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .header-section {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 5px solid var(--primary-color);
+        }
+        .risk-card {
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        .risk-card:hover {
+            transform: translateY(-5px);
+        }
+        .risk-high {
+            border-top: 5px solid var(--danger-color);
+        }
+        .risk-significant {
+            border-top: 5px solid var(--warning-color);
+        }
+        .risk-moderate {
+            border-top: 5px solid var(--success-color);
+        }
+        .risk-score {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .score-high {
+            color: var(--danger-color);
+        }
+        .score-significant {
+            color: var(--warning-color);
+        }
+        .score-moderate {
+            color: var(--success-color);
+        }
+        .table-risk {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .highlight {
+            background-color: #fffacd;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        .conclusion-section {
+            background-color: #e9ecef;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border-left: 5px solid var(--primary-color);
+        }
+        .section-heading {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .source-link {
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-left: 5px;
+        }
+        .source-link:hover {
+            text-decoration: underline;
+        }
+        .source-badge {
+            font-size: 0.75rem;
+            vertical-align: super;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2px 5px;
+            border-radius: 3px;
+            margin-left: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <div class="container">
+            <h1 class="display-4"><i class="bi bi-shield-exclamation"></i> Nigeria Country Risk Assessment</h1>
+            <p class="lead">LKSG Compliance Framework</p>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row mb-4">
+            <div class="col-lg-12">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h2 class="card-title section-heading">Executive Summary</h2>
+                        <p class="card-text">Nigeria presents significant risks across corruption, human rights, labor practices, political stability, security, environment, economic stability, and health & safety. Businesses must adopt stringent compliance measures and continuous monitoring to mitigate exposure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-heading mb-4">Summary of Risk Ratings (1-10 scale)</h2>
+        <div class="table-responsive mb-5">
+            <table class="table table-striped table-bordered table-risk">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Risk Dimension</th>
+                        <th>Risk Score</th>
+                        <th>Key Observations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Corruption</strong></td>
+                        <td class="score-high">9 (High)</td>
+                        <td>Endemic bribery, weak enforcement, low TI CPI score. <a href="https://www.transparency.org/en/cpi/2023/index/nigeria" class="source-link" target="_blank"><i class="bi bi-link-45deg"></i> Source</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Human Rights</strong></td>
+                        <td class="score-high">8 (High)</td>
+                        <td>Protester killings, censorship, security force abuses. <a href="https://www.hrw.org/world-report/2023/country-chapters/nigeria" class="source-link" target="_blank"><i class="bi bi-link-45deg"></i> Source</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Labor Practices</strong></td>
+                        <td class="score-high">8 (High)</td>
+                        <td>Child labor, poor workplace safety, weak enforcement. <a href="https://www.dol.gov/agencies/ilab/resources/reports/child-labor/nigeria" class="source-link" target="_blank"><i class="bi bi-link-45deg"></i> Source</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Political Stability</strong></td>
+                        <td class="score-significant">7 (Significant)</td>
+                        <td>Election irregularities, policy unpredictability. <a href="https://freedomhouse.org/country/nigeria/freedom-world/2023" class="source-link" target="_blank"><i class="bi bi-link-45deg"></i> Source</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Security Threats</strong></td>
+                        <td class="score-high">9 (High)</td>
+                        <td>Terrorism, mass kidnappings, armed banditry. <a href="https://www.globalsecurity.org/military/world/war/nigeria.htm" class="source-link" target="_blank"><i class="bi bi-link-45deg"></i> Source</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Environmental Risks</strong></td>
+                        <td class="score-significant">7 (Significant)</td>
+                        <td>Floods, desertification, oil pollution. <a href="https://reliefweb.int/report/nigeria/nigeria-floods-2022-impact-assessment" class="source-link" target="_blank"><i class="bi bi-link-45deg"></i> Source</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Economic Stability</strong></td>
+                        <td class="score-moderate">6 (Moderate)</td>
+                        <td>Currency volatility, high inflation, forex challenges. <a href="https://www.imf.org/en/Countries/NGA" class="source-link" target="_blank"><i class="bi bi-link-45deg"></i> Source</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Health & Safety</strong></td>
+                        <td class="score-significant">7 (Significant)</td>
+                        <td>Weak healthcare, high disease burden, industrial accidents. <a href="https://www.who.int/countries/nga/" class="source-link" target="_blank"><i class="bi bi-link-45deg"></i> Source</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="section-heading mb-4">Key Risk Factors</h2>
+        
+        <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+            <div class="col">
+                <div class="card risk-card risk-high">
+                    <div class="card-body">
+                        <h3 class="card-title">1. Corruption <span class="risk-score score-high">(9/10)</span></h3>
+                        <p class="card-text">Corruption is systemic in Nigeria, affecting business operations at all levels. Transparency International ranks Nigeria <span class="highlight">145/180</span> in its 2023 CPI. <a href="https://www.transparency.org/en/cpi/2023/index/nigeria" class="source-link" target="_blank"><i class="bi bi-link-45deg"></i> Source</a> Bribery is common in procurement, licensing, and regulatory approvals. Companies must implement robust anti-corruption measures and third-party due diligence.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card risk-card risk-high">
+                    <div class="card-body">
+                        <h3 class="card-title">2. Human Rights <span class="risk-score score-high">(8/10)</span></h3>
+                        <p class="card-text">Security forces frequently commit abuses, including extrajudicial killings and enforced disappearances. The <span class="highlight">#EndSARS protests</span> highlighted police brutality. <a href="https://www.hrw.org/world-report/2023/country-chapters/nigeria" class="source-link" target="_blank"><i class="bi bi-link-45deg"></i> Source</a> Press freedom is declining, and digital censorship is increasing. Businesses should avoid complicity in human rights abuses.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card risk-card risk-high">
+                    <div class="card-body">
+                        <h3 class="card-title">3. Labor Practices <span class="risk-score score-high">(8/10)</span></h3>
+                        <p class="card-text">Child labor is widespread, especially in agriculture and mining. <a href="https://www.dol.gov/agencies/ilab/resources/reports/child-labor/nigeria" class="source-link" target="_blank"><i class="bi bi-link-45deg"></i> Source</a> Forced labor and human trafficking remain persistent issues. Workplace safety enforcement is weak, leading to frequent industrial accidents.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card risk-card risk-significant">
+                    <div class="card-body">
+                        <h3 class="card-title">4. Political Stability & Governance <span class="risk-score score-significant">(7/10)</span></h3>
+                        <p class="card-text">Nigeria has maintained democratic governance, but elections are frequently disputed. <a href="https://freedomhouse.org/country/nigeria/freedom-world/2023" class="source-link" target="_blank"><i class="bi bi-link-45deg"></i> Source</a> The 2023 elections saw reports of voter suppression. Policy unpredictability, such as the removal of fuel subsidies, disrupts the economy.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card risk-card risk-high">
+                    <div class="card-body">
+                        <h3 class="card-title">5. Security Threats <span class="risk-score score-high">(9/10)</span></h3>
+                        <p class="card-text">Nigeria faces terrorism from <span class="highlight">Boko Haram and ISWAP</span>, mass kidnappings, and armed banditry. <a href="https://www.globalsecurity.org/military/world/war/nigeria.htm" class="source-link" target="_blank"><i class="bi bi-link-45deg"></i> Source</a> Over 3,500 kidnappings were recorded in 2023. Crime rates remain high in urban areas. Businesses should implement strict security protocols.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card risk-card risk-significant">
+                    <div class="card-body">
+                        <h3 class="card-title">6. Environmental Risks <span class="risk-score score-significant">(7/10)</span></h3>
+                        <p class="card-text">Nigeria is vulnerable to flooding, desertification, and oil pollution. <a href="https://reliefweb.int/report/nigeria/nigeria-floods-2022-impact-assessment" class="source-link" target="_blank"><i class="bi bi-link-45deg"></i> Source</a> The <span class="highlight">Niger Delta</span> suffers from chronic oil spills, with over 3,300 tonnes of crude leaked in 2021. Gas flaring continues to worsen air pollution.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card risk-card risk-moderate">
+                    <div class="card-body">
+                        <h3 class="card-title">7. Economic Stability <span class="risk-score score-moderate">(6/10)</span></h3>
+                        <p class="card-text">Nigeria's currency lost ~40% of its value in 2023. <a href="https://www.imf.org/en/Countries/NGA" class="source-link" target="_blank"><i class="bi bi-link-45deg"></i> Source</a> Inflation remains high at ~25%. Foreign exchange shortages create challenges for imports. Despite volatility, Nigeria remains Africa's largest economy.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card risk-card risk-significant">
+                    <div class="card-body">
+                        <h3 class="card-title">8. Health & Safety <span class="risk-score score-significant">(7/10)</span></h3>
+                        <p class="card-text">Nigeria's healthcare system ranks <span class="highlight">187/191 globally</span>. <a href="https://www.who.int/countries/nga/" class="source-link" target="_blank"><i class="bi bi-link-45deg"></i> Source</a> Industrial safety is poorly regulated, leading to thousands of workplace injuries annually. Pollution-related illnesses, such as respiratory diseases, are increasing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="conclusion-section">
+            <h2 class="section-heading">Implications for LKSG Compliance</h2>
+            <p>Businesses operating in Nigeria must implement <strong>enhanced due diligence</strong>:</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item"><i class="bi bi-shield-fill-x text-danger"></i> <strong>Corruption:</strong> Zero-tolerance policies, third-party screening, and anti-bribery compliance frameworks.</li>
+                        <li class="list-group-item"><i class="bi bi-people-fill text-primary"></i> <strong>Labor Rights:</strong> Supply chain audits, independent labor inspections, and worker grievance mechanisms.</li>
+                        <li class="list-group-item"><i class="bi bi-hand-thumbs-up-fill text-primary"></i> <strong>Human Rights:</strong> Avoidance of high-risk security partnerships, commitment to human rights impact assessments.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item"><i class="bi bi-shield-lock-fill text-warning"></i> <strong>Security Measures:</strong> Personnel security training, secure transport arrangements, and emergency response plans.</li>
+                        <li class="list-group-item"><i class="bi bi-tree-fill text-success"></i> <strong>Environmental Compliance:</strong> Pollution monitoring, waste management controls, and adherence to international environmental standards.</li>
+                        <li class="list-group-item"><i class="bi bi-graph-up-arrow text-info"></i> <strong>Regulatory & Policy Risks:</strong> Active engagement with local authorities, political risk insurance, and contingency planning for economic shocks.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="alert alert-primary mt-4" role="alert">
+                <h4><i class="bi bi-info-circle-fill"></i> Conclusion</h4>
+                <p class="mb-0">Nigeria remains a <strong>high-risk but strategically important</strong> market. Companies must adopt <strong>rigorous compliance frameworks, security protocols, and regulatory adaptability</strong> to navigate the business environment effectively.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>Nigeria Country Risk Assessment</h5>
+                    <p>This assessment is part of the LKSG Compliance Framework and is intended to provide guidance for businesses operating in Nigeria.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Sources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.transparency.org/en/cpi/2023/index/nigeria" class="text-white" target="_blank">Transparency International</a></li>
+                        <li><a href="https://www.hrw.org/world-report/2023/country-chapters/nigeria" class="text-white" target="_blank">Human Rights Watch</a></li>
+                        <li><a href="https://www.dol.gov/agencies/ilab/resources/reports/child-labor/nigeria" class="text-white" target="_blank">U.S. Department of Labor</a></li>
+                        <li><a href="https://www.imf.org/en/Countries/NGA" class="text-white" target="_blank">International Monetary Fund</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>© 2023 LKSG Compliance Framework | Nigeria Country Risk Assessment</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

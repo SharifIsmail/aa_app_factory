@@ -1,0 +1,17 @@
+PREFIX cdm: <http://publications.europa.eu/ontology/cdm#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT (COUNT(DISTINCT ?work) AS ?total_count)
+WHERE {
+    # Core query - filter by specific publication date
+    ?work cdm:official-journal-act_date_publication ?publication_date .
+    FILTER(?publication_date = "2025-06-06"^^xsd:date)
+    
+    # === REQUIRED: Title in English OR German ===
+    ?expression cdm:expression_belongs_to_work ?work .
+    ?expression cdm:expression_title ?title .
+    ?expression cdm:expression_uses_language ?lang_concept .
+    ?lang_concept dc:identifier ?title_language .
+    FILTER(?title_language = "ENG" || ?title_language = "DEU")
+}

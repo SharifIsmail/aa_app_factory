@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" style="font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <filter id="shadow" x="-0.5%" y="0%" width="103%" height="105%">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+    <linearGradient id="agent-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0" stop-color="#5461FF"/>
+      <stop offset="1" stop-color="#3A34B3"/>
+    </linearGradient>
+    <linearGradient id="tool-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0" stop-color="#4361ee"/>
+      <stop offset="1" stop-color="#3a0ca3"/>
+    </linearGradient>
+    <linearGradient id="db-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0" stop-color="#f72585"/>
+      <stop offset="1" stop-color="#b5179e"/>
+    </linearGradient>
+    <linearGradient id="process-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0" stop-color="#4CD07D"/>
+      <stop offset="1" stop-color="#3CB371"/>
+    </linearGradient>
+    <pattern id="db-pattern" patternUnits="userSpaceOnUse" width="40" height="40" patternTransform="matrix(0.991776, 0.707107, -0.991776, 0.707107, -54.277258, -2.121469)">
+      <rect width="100%" height="100%" fill="url(#db-gradient)"/>
+      <rect width="100%" height="2" fill="#ffdaec" fill-opacity="0.3" y="10"/>
+      <rect width="100%" height="2" fill="#ffdaec" fill-opacity="0.3" y="20"/>
+      <rect width="100%" height="2" fill="#ffdaec" fill-opacity="0.3" y="30"/>
+    </pattern>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 614.178833, 52.849113)" filter="url(#shadow)">
+    <rect width="234.442" height="139.198" rx="20" ry="20" fill="url(#agent-gradient)" style="" y="-12.35"/>
+    <text x="122.653" y="36.248" font-size="26" font-weight="bold" fill="white" text-anchor="middle" style="white-space: pre; font-size: 26px;">Search Agent</text>
+    <text x="122.653" y="71.248" font-size="16" fill="white" text-anchor="middle" style="white-space: pre; font-size: 16px;">Selects appropriate tools</text>
+    <text x="122.653" y="96.248" font-size="16" fill="white" text-anchor="middle" style="white-space: pre; font-size: 16px;">based on company country</text>
+  </g>
+  <rect x="30.499" y="104.266" width="489.432" height="267.184" style="fill: rgb(216, 216, 216); stroke: rgba(0, 0, 0, 0.227);"/>
+  <g transform="matrix(1, 0, 0, 1, 167.936066, 280.013062)" filter="url(#shadow)">
+    <rect width="214.867" height="105.181" rx="15" ry="15" fill="url(#tool-gradient)" style="" x="-117.9" y="-144.57"/>
+    <text x="-10.058" y="-101.11" font-size="20" font-weight="bold" fill="white" text-anchor="middle" style="white-space: pre; font-size: 20px;">google_search_tool</text>
+    <text x="-10.058" y="-71.11" font-size="14" fill="white" text-anchor="middle" style="white-space: pre; font-size: 14px;">General web search API</text>
+  </g>
+  <g transform="matrix(1, 0, -0.007565, 1, 60.1717, 255.852524)" filter="url(#shadow)" style="">
+    <rect width="209.462" height="103.256" rx="15" ry="15" fill="url(#tool-gradient)" style="" x="-12.011" y="-2.278"/>
+    <text x="90.79" y="42.637" font-size="20" font-weight="bold" fill="white" text-anchor="middle" style="white-space: pre; font-size: 20px;">visit_webpage_tool</text>
+    <text x="90.79" y="72.637" font-size="14" fill="white" text-anchor="middle" style="white-space: pre; font-size: 14px;">Extracts content from URLs</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 625.052246, 256.977631)" filter="url(#shadow)">
+    <path d="M 114.033 -2.121 C 198.188 -2.121 198.188 -2.121 198.188 17.879 L 198.188 77.879 C 198.188 97.879 198.188 97.879 114.033 97.879 C 29.878 97.879 29.878 97.879 29.878 77.879 L 29.878 17.879 C 29.878 -2.121 29.878 -2.121 114.033 -2.121 Z" fill="url(#db-pattern)" style=""/>
+    <text x="120" y="38" font-size="20" font-weight="bold" fill="white" text-anchor="middle" style="white-space: pre;">Country URL</text>
+    <text x="120" y="65" font-size="20" font-weight="bold" fill="white" text-anchor="middle" style="white-space: pre;">Database</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 598.908142, 341.141479)" filter="url(#shadow)">
+    <rect width="80" height="40" rx="10" ry="10" fill="#ffdaec"/>
+    <text x="40" y="25" font-size="14" font-weight="bold" fill="#b5179e" text-anchor="middle" style="white-space: pre;">Nigeria</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 698.908142, 341.141479)" filter="url(#shadow)">
+    <rect width="80" height="40" rx="10" ry="10" fill="#ffdaec"/>
+    <text x="40" y="25" font-size="14" font-weight="bold" fill="#b5179e" text-anchor="middle" style="white-space: pre;">Kenya</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 798.908142, 341.141479)" filter="url(#shadow)">
+    <rect width="80" height="40" rx="10" ry="10" fill="#ffdaec"/>
+    <text x="40" y="25" font-size="14" font-weight="bold" fill="#b5179e" text-anchor="middle" style="white-space: pre;">Ghana</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 284.175629, 136.228439)" filter="url(#shadow)">
+    <rect width="220" height="115.321" rx="15" ry="15" fill="#4CC9F0" style=""/>
+    <text x="110" y="40" font-size="20" font-weight="bold" fill="white" text-anchor="middle" style="white-space: pre;">country_search_tool</text>
+    <text x="110" y="70" font-size="14" fill="white" text-anchor="middle" style="white-space: pre;">Dynamically configured with</text>
+    <text x="110" y="90" font-size="14" fill="white" text-anchor="middle" style="white-space: pre;">country-specific URLs</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 371.507568, 438.493713)" filter="url(#shadow)">
+    <rect width="192.065" height="102.824" rx="15" ry="15" fill="url(#process-gradient)" style="" x="-9.355" y="5.567"/>
+    <text x="90" y="40" font-size="18" font-weight="bold" fill="white" text-anchor="middle" style="white-space: pre;">Company Data</text>
+    <text x="90" y="65" font-size="14" fill="white" text-anchor="middle" style="white-space: pre;">Aggregated information</text>
+    <text x="90" y="85" font-size="14" fill="white" text-anchor="middle" style="white-space: pre;">from multiple sources</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 692.360657, 198.385193)">
+    <path d="M 0,0 L 40,15 L 0,30 Z" fill="#FFD166" filter="url(#shadow)"/>
+    <text x="93.706" y="19.49" font-size="14" fill="#333" text-anchor="middle" style="white-space: pre; font-size: 14px;">Country Decision</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 67.936058, 50.013077)">
+    <text x="0" y="0" font-size="18" font-weight="bold" fill="#333" style="white-space: pre;">Search Agent Architecture</text>
+    <text x="0" y="30" font-size="14" fill="#555" style="white-space: pre;">Dynamic tool selection based on company location</text>
+  </g>
+  <path d="M 654.623 174.733 H 699.88 L 693.88 170.233 L 716.88 175.733 L 693.88 181.233 L 699.88 176.733 H 654.623 V 174.733 Z" bx:shape="arrow 654.623 170.233 62.257 11 2 23 6 1@3ed3e9dd" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.315976, 0.948767, -0.948767, 0.315976, 611.222595, -484.149597)"/>
+  <path d="M 591.084 128.188 H 681.336 L 675.336 123.688 L 698.336 129.188 L 675.336 134.688 L 681.336 130.188 H 591.084 V 128.188 Z" bx:shape="arrow 591.084 123.688 107.252 11 2 23 6 1@2314dc57" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.764176, 0.645007, -0.645007, -0.764176, 1144.039185, -153.329605)"/>
+  <path d="M 322.922 378.185 H 394.782 L 388.782 373.685 L 411.782 379.185 L 388.782 384.685 L 394.782 380.185 H 322.922 V 378.185 Z" bx:shape="arrow 322.922 373.685 88.86 11 2 23 6 1@10feece3" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.739772, 0.672858, -0.672858, 0.739772, 357.106873, -118.593018)"/>
+  <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 22px; white-space: pre;" x="638.897" y="225.547">1</text>
+  <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 22px; white-space: pre;" x="554.669" y="153.286">2</text>
+  <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 22px; white-space: pre;" x="335.373" y="422.271">3</text>
+  <path d="M 665.744 199.197 H 690.847 L 684.847 194.697 L 707.847 200.197 L 684.847 205.697 L 690.847 201.197 H 665.744 V 199.197 Z" bx:shape="arrow 665.744 194.697 42.103 11 2 23 6 1@deff7bd7" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.330354, -0.943857, 0.943857, -0.330354, 692.432312, 917.429443)"/>
+</svg>

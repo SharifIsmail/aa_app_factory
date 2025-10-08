@@ -1,0 +1,12 @@
+{
+  "en": {
+    "LOCALES": {
+      "title": "My Application 1"
+    }
+  },
+  "de": {
+    "LOCALES": {
+      "title": "Meine Applikation 1"
+    }
+  }
+}

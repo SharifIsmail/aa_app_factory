@@ -1,0 +1,70 @@
+name: 'Fetch All Usecases'
+description: 'Fetches all usecases with pagination handling'
+inputs:
+  api_url:
+    description: 'Base API URL'
+    required: true
+  auth_token:
+    description: 'Authentication token'
+    required: true
+outputs:
+  usecases:
+    description: 'JSON string of all usecases'
+    value: ${{ steps.fetch.outputs.usecases }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Fetch all usecases with pagination
+      id: fetch
+      shell: bash
+      run: |
+        BASE_URL="${{ inputs.api_url }}/api/usecases"
+        all_usecases="[]"
+        page=1
+        
+        echo "::group::Fetching usecases with pagination"
+        while true; do
+          echo "Fetching page $page..."
+          response=$(curl -s -w "HTTPSTATUS:%{http_code}" -X GET \
+            "$BASE_URL?page=$page&limit=100" \
+            -H "Authorization: Bearer ${{ inputs.auth_token }}")
+          
+          # Extract HTTP status and body
+          http_code=$(echo "$response" | tr -d '\n' | sed -e 's/.*HTTPSTATUS://')
+          body=$(echo "$response" | sed -e 's/HTTPSTATUS:.*//g')
+          
+          if [ "$http_code" -ne 200 ]; then
+            echo "::error::API request failed with HTTP status: $http_code"
+            echo "::error::Response: $body"
+            exit 1
+          fi
+          
+          if ! echo "$body" | jq -e '.data' > /dev/null 2>&1; then
+            echo "::error::Invalid API response format"
+            echo "::error::Response: $body"
+            exit 1
+          fi
+          
+          data=$(echo "$body" | jq '.data')
+          count=$(echo "$data" | jq 'length')
+          
+          echo "Retrieved $count usecases from page $page"
+          
+          if [ "$count" -eq 0 ]; then
+            break
+          fi
+          
+          all_usecases=$(jq -s '.[0] + .[1]' <<< "$all_usecases $data")
+          page=$((page + 1))
+        done
+        echo "::endgroup::"
+        
+        total_count=$(echo "$all_usecases" | jq 'length')
+        echo "::notice::Total usecases fetched: $total_count"
+        
+        # Use unique delimiter for multi-line JSON output
+        {
+          echo "usecases<<USECASES_JSON_EOF"
+          echo "$all_usecases"
+          echo "USECASES_JSON_EOF"
+        } >> $GITHUB_OUTPUT

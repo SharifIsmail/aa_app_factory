@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Data</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --danger-color: #dc3545;
+            --warning-color: #ffc107;
+            --success-color: #198754;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .header-section {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 5px solid var(--primary-color);
+        }
+
+        .section-heading {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .subsection-title {
+            background-color: #e9ecef;
+            padding: 1rem;
+            font-weight: 600;
+            margin: 0;
+            border-left: 5px solid var(--primary-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-radius: 0.25rem;
+        }
+
+        .company-table {
+            margin-top: 10px;
+            background-color: #ffffff;
+            overflow: hidden;
+            width: 100%;
+            padding: 0px;
+        }
+
+        .company-table th {
+            font-weight: 600;
+            background-color: #fff;
+            color: #333;
+            width: 200px;
+        }
+
+        .company-table td {
+            background-color: #ffffff;
+            font-weight: normal;
+            color: #2c3e50;
+        }
+
+        .table-header {
+            background-color: #f1f3f5;
+        }
+
+        .description-row {
+            background-color: #f8f9fa;
+            color: #555;
+        }
+
+        .see-more-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
+        .see-more-link:hover {
+            text-decoration: underline;
+        }
+
+        .status-box {
+            width: 200px;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .card {
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+            margin-bottom: 20px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            font-size: 0.875rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            gap: 0.5rem;
+            width: 160px;
+        }
+
+        .status-ok {
+            background-color: #d4edda;
+            color: #155724;
+            border-left: 3px solid #28a745;
+        }
+
+        .status-needs-review {
+            background-color: #fff3cd;
+            color: #856404;
+            border-left: 3px solid #ffc107;
+        }
+
+        .status-no-data {
+            background-color: #f8f9fa;
+            color: #6c757d;
+            border-left: 3px solid #6c757d;
+        }
+
+        .status-single-source {
+            background-color: #e2e3e5;
+            color: #383d41;
+            border-left: 3px solid #383d41;
+        }
+
+        .status-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border-left: 3px solid #dc3545;
+        }
+
+        .status-icon {
+            font-size: 1rem;
+        }
+
+        .status-text {
+            vertical-align: middle;
+        }
+
+        .notes-section {
+            background-color: #fEfEfE;
+            padding: 10px 15px;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+
+        .data-label {
+            color: #555;
+            font-style: italic;
+            padding-right: 20px;
+        }
+
+        .notes-table {
+            color: #555;
+            font-style: italic;
+        }
+        
+        
+    </style>
+</head>
+{% from "_status_display.html" import display_status %}
+
+<body>
+    <div class="header-section">
+        <div class="container">
+            <h1 class="display-4"><i class="bi bi-building"></i> Company Data</h1>
+            <p class="lead">LKSG Compliance Framework</p>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <!-- Overview Section -->
+        <div class="row mb-4">
+            <div class="col-lg-12">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h2 class="card-title section-heading">Overview</h2>
+                        <table class="table company-table">
+                            <tr class="table-header">
+                                <th>Final Approved Name</th>
+                                <td>{{ company_data.CompanyIdentity.Name.FinalApprovedName }}</td>
+                                <td>
+                                    {{ display_status(company_data.CompanyIdentity.Name.Status) }}
+                                </td>
+                                <td>
+                                    <a class="see-more-link" href="#company-identity-name"><i
+                                            class="bi bi-link-45deg"></i> See More</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Legal Name Variations</th>
+                                <td>{{ company_data.CompanyIdentity.Name.LegalNameVariations }}</td>
+                                <td>
+                                    {{ display_status(company_data.CompanyIdentity.Name.Status) }}
+                                </td>
+                                <td>
+                                    <a class="see-more-link" href="#company-identity-name"><i
+                                            class="bi bi-link-45deg"></i> See More</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Registration Number</th>
+                                <td>{{ company_data.CompanyIdentity.RegistrationDetails.FinalRegistrationNumber }} / {{
+                                    company_data.CompanyIdentity.RegistrationDetails.FinalRegistrationDate }}</td>
+                                <td>
+                                    {{ display_status(company_data.CompanyIdentity.RegistrationDetails.Status) }}
+                                </td>
+                                <td>
+                                    <a class="see-more-link" href="#registration-details"><i
+                                            class="bi bi-link-45deg"></i> See More</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Company Status</th>
+                                <td>{{ company_data.CompanyIdentity.CompanyStatus }}</td>
+                                <td>
+                                    {{ display_status(company_data.CompanyIdentity.Status) }}
+                                </td>
+                                <td>
+                                    <a class="see-more-link" href="#company-identity-name"><i class="bi bi-link-45deg"></i> See
+                                        More</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Business Entity Type</th>
+                                <td>{{ company_data.CompanyIdentity.BusinessEntityType }}</td>
+                                <td>
+                                    {{ display_status(company_data.CompanyIdentity.Status) }}
+                                </td>
+                                <td>
+                                    <a class="see-more-link" href="#company-identity-name"><i
+                                            class="bi bi-link-45deg"></i> See More</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Industry Classification</th>
+                                <td>{{ company_data.Industry.FinalIndustryClassification }}</td>
+                                <td>
+                                    {{ display_status(company_data.Industry.Status) }}
+                                </td>
+                                <td>
+                                    <a class="see-more-link" href="#industry"><i class="bi bi-link-45deg"></i> See
+                                        More</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Products / Services</th>
+                                <td>{{ company_data.Industry.MainProductsOrServices }}</td>
+                                <td>
+                                    {{ display_status(company_data.Industry.Status) }}
+                                </td>
+                                <td><a class="see-more-link" href="#industry"><i class="bi bi-link-45deg"></i> See
+                                        More</a></td>
+                            </tr>
+                            <tr>
+                                <th>Owner(s)</th>
+                                <td>{{ company_data.OwnershipDetails.Owner }}</td>
+                                <td>
+                                    {{ display_status(company_data.OwnershipDetails.Status) }}
+                                </td>
+                                <td>
+                                    <a class="see-more-link" href="#ownership-details"><i class="bi bi-link-45deg"></i>
+                                        See More</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Key Directors</th>
+                                <td>{{ company_data.OwnershipDetails.KeyDirectors }}</td>
+                                <td>
+                                    {{ display_status(company_data.OwnershipDetails.Status) }}
+                                </td>
+                                <td>
+                                    <a class="see-more-link" href="#ownership-details"><i class="bi bi-link-45deg"></i>
+                                        See More</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-heading mb-4">Expanded view</h2>
+
+        <!-- 1. Company Identity -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3 id="company-identity-name"><i class="bi bi-building"></i> Company Identity</h3>
+            </div>
+            <div class="card-body">
+                <table class="table company-table">
+                    <tr>
+                        <th>Status</th>
+                        <td>
+                            {{ display_status(company_data.CompanyIdentity.Name.Status) }}
+                        </td>
+                    </tr>
+                    <tr class="table-header">
+                        <th>Final Approved Name</th>
+                        <td style="font-weight: bold;">
+                            {{ company_data.CompanyIdentity.Name.FinalApprovedName }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Legal Name Variations</th>
+                        <td>
+                            {{ company_data.CompanyIdentity.Name.LegalNameVariations }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Company Status</th>
+                        <td>{{ company_data.CompanyIdentity.CompanyStatus }}</td>
+                    </tr>
+                    <tr>
+                        <th>Business Entity Type</th>
+                        <td>{{ company_data.CompanyIdentity.BusinessEntityType }}</td>
+                    </tr>
+                    <tr>
+                        <th>Sources</th>
+                        <td>
+                            <ul>
+                                {% for source in company_data.CompanyIdentity.Name.Sources %}
+                                <li>
+                                    {{ source.Source }}: <a href="{{ source.URL }}" target="_blank">{{ source.URL
+                                        }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Reasoning</th>
+                        <td>
+                            {{ company_data.CompanyIdentity.Name.ChainOfThoughtReasoning }}
+                        </td>
+                    </tr>
+                    <tr class="description-row">
+                        <th>Copy of Source Data</th>
+                        <td>
+                            {{ company_data.CompanyIdentity.Name.ExactRawData }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Issues to Be Addressed</th>
+                        <td>
+                            {{ company_data.CompanyIdentity.Name.AnyRemainingIssues }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Proposed Next Steps</th>
+                        <td>
+                            {{ company_data.CompanyIdentity.Name.ProposedNextSteps }}
+                        </td>
+                    </tr>
+                </table>
+
+
+                <div class="notes-section">
+                    <div style="margin-bottom: 10px;"><b><i class="bi bi-info-circle"></i> Notes</b></div>
+
+                    <table class="notes-table">
+                        <tr>
+                            <td class="data-label">Company Identity</td>
+                            <td>{{ company_data.CompanyIdentity.Notes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Name</td>
+                            <td>{{ company_data.CompanyIdentity.Name.Notes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Source</td>
+                            <td>{{ company_data.CompanyIdentity.Name.SourceNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Name Variation</td>
+                            <td>{{ company_data.CompanyIdentity.Name.NameVariationNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Business Entity Type</td>
+                            <td>{{ company_data.CompanyIdentity.BusinessEntityTypeNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Identity Verification Process</td>
+                            <td>{{ company_data.CompanyIdentity.IdentityVerificationProcess }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Company Status</td>
+                            <td>{{ company_data.CompanyIdentity.CompanyStatusNotes }}</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Registration Details -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3 id="registration-details"><i class="bi bi-file-earmark-text"></i> Registration Details</h3>
+            </div>
+            <div class="card-body">
+                <table class="table company-table">
+                    <tr>
+                        <th>Status</th>
+                        <td>
+                            {{ display_status(company_data.CompanyIdentity.RegistrationDetails.Status) }}
+                        </td>
+                    </tr>
+                    <tr class="table-header">
+                        <th>Registration Number</th>
+                        <td>{{ company_data.CompanyIdentity.RegistrationDetails.FinalRegistrationNumber }}</td>
+                    </tr>
+                    <tr>
+                        <th>Registration Date</th>
+                        <td>{{ company_data.CompanyIdentity.RegistrationDetails.FinalRegistrationDate }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Sources</th>
+                        <td>
+                            <ul>
+                                {% for source in company_data.CompanyIdentity.RegistrationDetails.Sources %}
+                                <li>
+                                    {{ source.Source }}: <a href="{{ source.URL }}" target="_blank">{{ source.URL
+                                        }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Reasoning</th>
+                        <td>
+                            {{ company_data.CompanyIdentity.RegistrationDetails.ChainOfThoughtReasoning }}
+                        </td>
+                    </tr>
+                    <tr class="description-row">
+                        <th>Copy of Source Data</th>
+                        <td>
+                            {{ company_data.CompanyIdentity.RegistrationDetails.ExactRawData }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Issues to Be Addressed</th>
+                        <td>
+                            {{ company_data.CompanyIdentity.RegistrationDetails.AnyRemainingIssues }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Proposed Next Steps</th>
+                        <td>
+                            {{ company_data.CompanyIdentity.RegistrationDetails.ProposedNextSteps }}
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="notes-section">
+                    <div style="margin-bottom: 10px;"><b><i class="bi bi-info-circle"></i> Notes</b></div>
+                    
+                    <table class="notes-table">
+                        <tr>
+                            <td class="data-label">Registration Details</td>
+                            <td>{{ company_data.CompanyIdentity.RegistrationDetails.Notes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Registration Number</td>
+                            <td>{{ company_data.CompanyIdentity.RegistrationDetails.RegistrationNumberNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Registration Date</td>
+                            <td>{{ company_data.CompanyIdentity.RegistrationDetails.RegistrationDateNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Source</td>
+                            <td>{{ company_data.CompanyIdentity.RegistrationDetails.SourceNotes }}</td>
+                        </tr>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3 id="contact-information"><i class="bi bi-envelope"></i> Contact Information</h3>
+            </div>
+            <div class="card-body">
+                <table class="table company-table">
+                    <tr>
+                        <th>Status</th>
+                        <td>
+                            {{ display_status(company_data.ContactInformation.Status) }}
+                        </td>
+                    </tr>
+                    <tr class="table-header">
+                        <th>Email</th>
+                        <td>{{ company_data.ContactInformation.Email }}</td>
+                    </tr>
+                    <tr>
+                        <th>Phone</th>
+                        <td>{{ company_data.ContactInformation.Phone }}</td>
+                    </tr>
+                    <tr>
+                        <th>Website</th>
+                        <td><a href="{{ company_data.ContactInformation.Website }}" target="_blank">{{ company_data.ContactInformation.Website }}</a></td>
+                    </tr>
+                    <tr>
+                        <th>Social Media</th>
+                        <td>
+                            {% if company_data.ContactInformation.SocialMediaProfiles.Platform != "No social media profiles specified" %}
+                                {{ company_data.ContactInformation.SocialMediaProfiles.Platform }} 
+                                <a href="{{ company_data.ContactInformation.SocialMediaProfiles.URL }}" target="_blank">
+                                    {{ company_data.ContactInformation.SocialMediaProfiles.URL }}
+                                </a>
+                            {% else %}
+                                {{ company_data.ContactInformation.SocialMediaProfiles.Platform }}
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Sources</th>
+                        <td>
+                            <ul>
+                                {% for source in company_data.ContactInformation.Sources %}
+                                <li>
+                                    {{ source.Source }}: <a href="{{ source.URL }}" target="_blank">{{ source.URL }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Reasoning</th>
+                        <td>
+                            {{ company_data.ContactInformation.ChainOfThoughtReasoning }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Issues to Be Addressed</th>
+                        <td>
+                            {{ company_data.ContactInformation.AnyRemainingIssues }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Proposed Next Steps</th>
+                        <td>
+                            {{ company_data.ContactInformation.ProposedNextSteps }}
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="notes-section">
+                    <div style="margin-bottom: 10px;"><b><i class="bi bi-info-circle"></i> Notes</b></div>
+                    
+                    <table class="notes-table">
+                        <tr>
+                            <td class="data-label">Contact Information</td>
+                            <td>{{ company_data.ContactInformation.Notes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Email</td>
+                            <td>{{ company_data.ContactInformation.EmailNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Phone</td>
+                            <td>{{ company_data.ContactInformation.PhoneNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Website</td>
+                            <td>{{ company_data.ContactInformation.WebsiteNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Social Media</td>
+                            <td>{{ company_data.ContactInformation.SocialMediaProfiles.ProfileNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Source</td>
+                            <td>{{ company_data.ContactInformation.SourceNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Contact Consistency</td>
+                            <td>{{ company_data.ContactInformation.ContactConsistencyNotes }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Locations and Operations -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3 id="locations-operations"><i class="bi bi-geo-alt"></i> Locations and Operations</h3>
+            </div>
+            <div class="card-body">
+                <table class="table company-table">
+                    <tr>
+                        <th>Status</th>
+                        <td>
+                            {{ display_status(company_data.LocationsAndOperations.Status) }}
+                        </td>
+                    </tr>
+                    <tr class="table-header">
+                        <th>Headquarters</th>
+                        <td>{{ company_data.Headquarters.Address }}</td>
+                    </tr>
+                    <tr>
+                        <th>Additional Locations</th>
+                        <td>{{ company_data.LocationsAndOperations.AdditionalLocations }}</td>
+                    </tr>
+                    <tr>
+                        <th>Factory Locations</th>
+                        <td>{{ company_data.LocationsAndOperations.FactoryLocations }}</td>
+                    </tr>
+                    <tr>
+                        <th>Sources</th>
+                        <td>
+                            <ul>
+                                {% set seen_urls = [] %}
+                                
+                                {% for source in company_data.Headquarters.Sources %}
+                                    {% if source.URL not in seen_urls %}
+                                        <li>
+                                            {{ source.Source }}: <a href="{{ source.URL }}" target="_blank">{{ source.URL }}</a>
+                                        </li>
+                                        {% set _ = seen_urls.append(source.URL) %}
+                                    {% endif %}
+                                {% endfor %}
+                                
+                                {% for source in company_data.LocationsAndOperations.Sources %}
+                                    {% if source.URL not in seen_urls %}
+                                        <li>
+                                            {{ source.Source }}: <a href="{{ source.URL }}" target="_blank">{{ source.URL }}</a>
+                                        </li>
+                                        {% set _ = seen_urls.append(source.URL) %}
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Reasoning</th>
+                        <td>
+                            {{ company_data.Headquarters.ChainOfThoughtReasoning }}<br/>
+                            {{ company_data.LocationsAndOperations.ChainOfThoughtReasoning }}
+                        </td>
+                    </tr>
+                    <tr class="description-row">
+                        <th>Copy of Source Data</th>
+                        <td>
+                            {{ company_data.Headquarters.ExactRawData }}
+                            {{ company_data.LocationsAndOperations.ExactRawData }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Issues to Be Addressed</th>
+                        <td>
+                            {{ company_data.Headquarters.AnyRemainingIssues }}
+                            {{ company_data.LocationsAndOperations.AnyRemainingIssues }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Proposed Next Steps</th>
+                        <td>
+                            {{ company_data.Headquarters.ProposedNextSteps }}
+                            {{ company_data.LocationsAndOperations.ProposedNextSteps }}
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="notes-section">
+                    <div style="margin-bottom: 10px;"><b><i class="bi bi-info-circle"></i> Notes</b></div>
+                    
+                    <table class="notes-table">
+                        <tr>
+                            <td class="data-label">General Notes</td>
+                            <td>
+                                {{ company_data.Headquarters.Notes }}
+                                {{ company_data.LocationsAndOperations.Notes }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Address Details</td>
+                            <td>
+                                {{ company_data.Headquarters.AddressComponentNotes }}
+                                {{ company_data.LocationsAndOperations.AdditionalLocationsNotes }}
+                                {{ company_data.LocationsAndOperations.FactoryLocationsNotes }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Source Notes</td>
+                            <td>
+                                {{ company_data.Headquarters.SourceNotes }}
+                                {{ company_data.LocationsAndOperations.SourceNotes }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Verification Notes</td>
+                            <td>
+                                {{ company_data.Headquarters.GeographicVerificationNotes }}
+                                {{ company_data.LocationsAndOperations.LocationVerificationMethodNotes }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">History & Distribution</td>
+                            <td>
+                                {{ company_data.Headquarters.HeadquartersHistoryNotes }}
+                                {{ company_data.LocationsAndOperations.GeographicDistributionNotes }}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Industry -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3 id="industry"><i class="bi bi-bar-chart"></i> Industry</h3>
+            </div>
+            <div class="card-body">
+                <table class="table company-table">
+                    <tr>
+                        <th>Status</th>
+                        <td>
+                            {{ display_status(company_data.Industry.Status) }}
+                        </td>
+                    </tr>
+                    <tr class="table-header">
+                        <th>Industry Classification</th>
+                        <td>{{ company_data.Industry.FinalIndustryClassification }}</td>
+                    </tr>
+                    <tr>
+                        <th>Main Products/Services</th>
+                        <td>{{ company_data.Industry.MainProductsOrServices }}</td>
+                    </tr>
+                    <tr>
+                        <th>Certifications</th>
+                        <td>
+                            {% if company_data.Industry.Certifications %}
+                                {% for cert in company_data.Industry.Certifications %}
+                                    <p>
+                                        <strong>{{ cert.Certification }}</strong><br>
+                                        Source: {{ cert.CertificationSource }}<br>
+                                        Date: {{ cert.CertificationDate }}
+                                    </p>
+                                {% endfor %}
+                            {% else %}
+                                No certifications listed
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Sources</th>
+                        <td>
+                            <ul>
+                                {% set seen_urls = [] %}
+                                {% for source in company_data.Industry.Sources %}
+                                    {% if source.URL not in seen_urls %}
+                                        <li>
+                                            {{ source.Source }}: <a href="{{ source.URL }}" target="_blank">{{ source.URL }}</a>
+                                        </li>
+                                        {% set _ = seen_urls.append(source.URL) %}
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Reasoning</th>
+                        <td>
+                            {{ company_data.Industry.ChainOfThoughtReasoning }}
+                        </td>
+                    </tr>
+                    <tr class="description-row">
+                        <th>Copy of Source Data</th>
+                        <td>
+                            {{ company_data.Industry.ExactRawData }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Issues to Be Addressed</th>
+                        <td>
+                            {{ company_data.Industry.AnyRemainingIssues }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Proposed Next Steps</th>
+                        <td>
+                            {{ company_data.Industry.ProposedNextSteps }}
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="notes-section">
+                    <div style="margin-bottom: 10px;"><b><i class="bi bi-info-circle"></i> Notes</b></div>
+                    
+                    <table class="notes-table">
+                        <tr>
+                            <td class="data-label">General Notes</td>
+                            <td>{{ company_data.Industry.Notes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Industry Classification</td>
+                            <td>{{ company_data.Industry.IndustryClassificationNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Products/Services</td>
+                            <td>{{ company_data.Industry.ProductsServicesNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Certifications</td>
+                            <td>{{ company_data.Industry.CertificationsOverviewNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Source</td>
+                            <td>{{ company_data.Industry.SourceNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Industry Trends</td>
+                            <td>{{ company_data.Industry.IndustryTrendsNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Competitive Position</td>
+                            <td>{{ company_data.Industry.CompetitivePositionNotes }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ownership Details -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3 id="ownership-details"><i class="bi bi-people"></i> Ownership Details</h3>
+            </div>
+            <div class="card-body">
+                <table class="table company-table">
+                    <tr>
+                        <th>Status</th>
+                        <td>
+                            {{ display_status(company_data.OwnershipDetails.Status) }}
+                        </td>
+                    </tr>
+                    <tr class="table-header">
+                        <th>Parent Company</th>
+                        <td>{{ company_data.OwnershipDetails.ParentCompany }}</td>
+                    </tr>
+                    <tr>
+                        <th>Owner</th>
+                        <td>{{ company_data.OwnershipDetails.Owner }}</td>
+                    </tr>
+                    <tr>
+                        <th>Key Directors</th>
+                        <td>{{ company_data.OwnershipDetails.KeyDirectors }}</td>
+                    </tr>
+                    <tr>
+                        <th>Sources</th>
+                        <td>
+                            <ul>
+                                {% set seen_urls = [] %}
+                                {% for source in company_data.OwnershipDetails.Sources %}
+                                    {% if source.URL not in seen_urls %}
+                                        <li>
+                                            {{ source.Source }}: <a href="{{ source.URL }}" target="_blank">{{ source.URL }}</a>
+                                        </li>
+                                        {% set _ = seen_urls.append(source.URL) %}
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Reasoning</th>
+                        <td>
+                            {{ company_data.OwnershipDetails.ChainOfThoughtReasoning }}
+                        </td>
+                    </tr>
+                    <tr class="description-row">
+                        <th>Copy of Source Data</th>
+                        <td>
+                            {{ company_data.OwnershipDetails.ExactRawData }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Issues to Be Addressed</th>
+                        <td>
+                            {{ company_data.OwnershipDetails.AnyRemainingIssues }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Proposed Next Steps</th>
+                        <td>
+                            {{ company_data.OwnershipDetails.ProposedNextSteps }}
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="notes-section">
+                    <div style="margin-bottom: 10px;"><b><i class="bi bi-info-circle"></i> Notes</b></div>
+                    
+                    <table class="notes-table">
+                        <tr>
+                            <td class="data-label">General Notes</td>
+                            <td>{{ company_data.OwnershipDetails.Notes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Parent Company</td>
+                            <td>{{ company_data.OwnershipDetails.ParentCompanyNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Ownership Structure</td>
+                            <td>{{ company_data.OwnershipDetails.OwnershipStructureNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Key Directors</td>
+                            <td>{{ company_data.OwnershipDetails.KeyDirectorsNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Source</td>
+                            <td>{{ company_data.OwnershipDetails.SourceNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Beneficial Ownership</td>
+                            <td>{{ company_data.OwnershipDetails.BeneficialOwnershipNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Corporate Governance</td>
+                            <td>{{ company_data.OwnershipDetails.CorporateGovernanceNotes }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Financial Information -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3 id="financial-information"><i class="bi bi-cash-stack"></i> Financial Information</h3>
+            </div>
+            <div class="card-body">
+                <table class="table company-table">
+                    <tr>
+                        <th>Status</th>
+                        <td>
+                            {{ display_status(company_data.FinancialInformation.Status) }}
+                        </td>
+                    </tr>
+                    <tr class="table-header">
+                        <th>Revenue</th>
+                        <td>{{ company_data.FinancialInformation.Revenue }}</td>
+                    </tr>
+                    <tr>
+                        <th>Profit Before Tax</th>
+                        <td>{{ company_data.FinancialInformation.ProfitBeforeTax }}</td>
+                    </tr>
+                    <tr>
+                        <th>Market Value</th>
+                        <td>{{ company_data.FinancialInformation.MarketValue }}</td>
+                    </tr>
+                    <tr>
+                        <th>Stock Information</th>
+                        <td>{{ company_data.FinancialInformation.StockInformation }}</td>
+                    </tr>
+                    <tr>
+                        <th>Sources</th>
+                        <td>
+                            <ul>
+                                {% set seen_urls = [] %}
+                                {% for source in company_data.FinancialInformation.Sources %}
+                                    {% if source.URL not in seen_urls %}
+                                        <li>
+                                            {{ source.Source }}: <a href="{{ source.URL }}" target="_blank">{{ source.URL }}</a>
+                                        </li>
+                                        {% set _ = seen_urls.append(source.URL) %}
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Reasoning</th>
+                        <td>
+                            {{ company_data.FinancialInformation.ChainOfThoughtReasoning }}
+                        </td>
+                    </tr>
+                    <tr class="description-row">
+                        <th>Copy of Source Data</th>
+                        <td>
+                            {{ company_data.FinancialInformation.ExactRawData }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Issues to Be Addressed</th>
+                        <td>
+                            {{ company_data.FinancialInformation.AnyRemainingIssues }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Proposed Next Steps</th>
+                        <td>
+                            {{ company_data.FinancialInformation.ProposedNextSteps }}
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="notes-section">
+                    <div style="margin-bottom: 10px;"><b><i class="bi bi-info-circle"></i> Notes</b></div>
+                    
+                    <table class="notes-table">
+                        <tr>
+                            <td class="data-label">General Notes</td>
+                            <td>{{ company_data.FinancialInformation.Notes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Revenue</td>
+                            <td>{{ company_data.FinancialInformation.RevenueNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Profit</td>
+                            <td>{{ company_data.FinancialInformation.ProfitNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Market Value</td>
+                            <td>{{ company_data.FinancialInformation.MarketValueNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Stock Performance</td>
+                            <td>{{ company_data.FinancialInformation.StockPerformanceNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Source</td>
+                            <td>{{ company_data.FinancialInformation.SourceNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Financial Health</td>
+                            <td>{{ company_data.FinancialInformation.FinancialHealthNotes }}</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Financial Reporting</td>
+                            <td>{{ company_data.FinancialInformation.FinancialReportingNotes }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Assessment Summary -->
+        <div class="card mb-4 border-primary">
+            <div class="card-header bg-secondary text-white">
+                <h3 id="data-assessment-summary"><i class="bi bi-clipboard-check"></i> Data Assessment Summary</h3>
+            </div>
+            <div class="card-body">
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-header bg-light">
+                                <p class="mb-0 text-muted"><i class="bi bi-bar-chart"></i> Overall Data Quality</p>
+                            </div>
+                            <div class="card-body">
+                                <strong>{{ company_data.DataAssessmentSummary.OverallDataQuality }}</strong>
+                                <p class="text-muted">{{ company_data.DataAssessmentSummary.DataQualityNotes }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-header bg-light">
+                                <p class="mb-0 text-muted"><i class="bi bi-exclamation-triangle"></i> Major Gaps</p>
+                            </div>
+                            <div class="card-body">
+                                <strong>{{ company_data.DataAssessmentSummary.MajorGaps }}</strong>
+                                <p class="text-muted">{{ company_data.DataAssessmentSummary.DataGapsNotes }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-header bg-light">
+                                <p class="mb-0 text-muted"><i class="bi bi-arrow-right-circle"></i> Next Steps</p>
+                            </div>
+                            <div class="card-body">
+                                <strong>{{ company_data.DataAssessmentSummary.RecommendedNextSteps }}</strong>
+                                <p class="text-muted">{{ company_data.DataAssessmentSummary.NextStepsNotes }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 mb-4 bg-light rounded">
+                    <h5 class="border-bottom pb-2 mb-3 text-secondary"><i class="bi bi-journal-text"></i> Notes & Observations</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <p class="fw-semibold text-secondary"><i class="bi bi-check-circle"></i> General Assessment</p>
+                                <p>{{ company_data.DataAssessmentSummary.Notes }}</p>
+                            </div>
+                            <div class="mb-3">
+                                <p class="fw-semibold text-secondary"><i class="bi bi-search"></i> Research Process</p>
+                                <p>{{ company_data.DataAssessmentSummary.ResearchProcessNotes }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <p class="fw-semibold text-secondary"><i class="bi bi-shield-check"></i> Confidence Level</p>
+                                <p>{{ company_data.DataAssessmentSummary.ConfidenceLevelNotes }}</p>
+                            </div>
+                            <div class="mb-3">
+                                <p class="fw-semibold text-secondary"><i class="bi bi-flag"></i> Final Recommendation</p>
+                                <p>{{ company_data.DataAssessmentSummary.FinalRecommendationNotes }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MORE SECTIONS TO BE ADDED... -->
+
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>Company Data</h5>
+                    <p>This company assessment is part of the LKSG Compliance Framework.</p>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>© 2023 LKSG Compliance Framework | Company Data Assessment</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS + dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

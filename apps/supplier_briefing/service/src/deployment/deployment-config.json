@@ -1,0 +1,41 @@
+{
+    "image": {
+        "registry": "registry.gitlab.aleph-alpha.de",
+        "repository": "innovation/pharia-application-registry/supplier_briefing",
+        "tag": "20251001120812"
+    },
+    "resources": {
+        "limits": {
+            "cpu": "4",
+            "memory": "16Gi"
+        },
+        "requests": {
+            "cpu": "1",
+            "memory": "8Gi"
+        }
+    },
+    "envVars": {
+        "SERVICE_AUTHENTICATION_TOKEN": "${PHARIA_API_TOKEN}",
+        "SERVICE_INFERENCE_API_URL": "https://inference-api.schwarz.cus.customer.pharia.com",
+        "SERVICE_ENABLE_DATA_PREPARATION": "true",
+        "VITE_SERVICE_BASE_URL": "http://localhost:8080",
+        "SERVICE_PHARIA_AUTH_SERVICE_URL": "https://pharia-iam.schwarz.cus.customer.pharia.com",
+        "SERVICE_COMPLETION_MODEL_NAME": "gemma-3-27b-it",
+        "SERVICE_PHARIA_DATA_URL": "https://pharia-data-api.schwarz.cus.customer.pharia.com",
+        "SERVICE_STUDIO_URL": "https://pharia-studio.schwarz.cus.customer.pharia.com",
+        "SERVICE_STUDIO_PROJECT_NAME": "supplier-briefing",
+        "SERVICE_ENABLE_CORS": "false"
+    },
+    "autoscaling": {
+        "enabled": false
+    },
+    "secretEnvVars": [
+        {
+            "name": "SERVICE_VERTEX_AI_CREDENTIALS",
+            "secret": {
+                "name": "${VERTEX_SECRET_NAME}",
+                "key": "credentials"
+            }
+        }
+    ]
+}

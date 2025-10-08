@@ -1,0 +1,23 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+/.python-version
+
+# IDE
+.vscode/
+Todo.json
+.idea
+# ignore ui-artifacts folder except for the .gitkeep file
+/ui-artifacts/*
+!/ui-artifacts/.gitkeep
+
+/src/evaluation/data/il_v2/
+/src/evaluation/data/core/benchmark_results.json
+
+/llm_debug/
+/src/service/eda/duplicates

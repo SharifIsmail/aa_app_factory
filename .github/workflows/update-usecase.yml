@@ -1,0 +1,170 @@
+permissions:
+  contents: read
+
+name: Update Usecase
+
+on:
+  # Manual trigger only
+  workflow_dispatch:
+    inputs:
+      usecase_id:
+        description: 'Usecase ID to update'
+        required: true
+        type: string
+      usecase_name:
+        description: 'New usecase name'
+        required: true
+        type: string
+      description:
+        description: 'New usecase description'
+        required: true
+        type: string
+      isPublic:
+        description: 'Set usecase visibility'
+        required: true
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+      project_id:
+        description: 'Project ID to assign'
+        required: false
+        type: string
+      environment:
+        description: 'Environment to update usecase in'
+        required: true
+        type: choice
+        options:
+          - c-prod (dev)
+          - schwarz-tenant (stage)
+          - pwc (partner stage)
+
+jobs:
+  check-permissions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if user has deployment permissions
+        id: check-deployment-permissions
+        run: |
+          # Get the user's Role level
+          PERMISSION_ROLE=$(curl -s \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/collaborators/${{ github.actor }}/permission" | \
+            jq -r '.role_name')
+
+          if [[ "$PERMISSION_ROLE" != "admin" && "$PERMISSION_ROLE" != "maintain" ]]; then
+            echo "::error::User ${{ github.actor }} does not have the necessary deployment permissions"
+            echo "Current permission role: $PERMISSION_ROLE"
+            exit 1
+          fi
+          echo "User ${{ github.actor }} has deployment permissions (role: $PERMISSION_ROLE)"
+    outputs:
+      is_admin: ${{ steps.check-deployment-permissions.outcome == 'success' }}
+
+  update-usecase:
+    needs: [check-permissions]
+    runs-on: ubuntu-latest
+    env:
+      PHARIAOS_MANAGER_URL: ${{ github.event.inputs.environment == 'c-prod (dev)' && vars.PHARIAOS_MANAGER_URL_DEV || github.event.inputs.environment == 'schwarz-tenant (stage)' && vars.PHARIAOS_MANAGER_URL_STAGE || github.event.inputs.environment == 'pwc (partner stage)' && vars.PHARIAOS_MANAGER_URL_PWC }}
+      SERVICE_AUTHENTICATION_TOKEN: ${{ github.event.inputs.environment == 'c-prod (dev)' && secrets.SERVICE_AUTHENTICATION_TOKEN || github.event.inputs.environment == 'schwarz-tenant (stage)' && secrets.SERVICE_AUTHENTICATION_TOKEN || github.event.inputs.environment == 'pwc (partner stage)' && secrets.SERVICE_AUTHENTICATION_TOKEN_PWC }}
+      USECASE_ID: ${{ github.event.inputs.usecase_id }}
+      ENVIRONMENT: ${{ github.event.inputs.environment }}
+
+    outputs:
+      UPDATE_SUCCESS: ${{ steps.update-step.outputs.UPDATE_SUCCESS }}
+      UPDATED_USECASE: ${{ steps.update-step.outputs.UPDATED_USECASE }}
+
+    concurrency:
+      group: update-usecase-${{ github.event.inputs.usecase_id }}-${{ github.event.inputs.environment }}
+      cancel-in-progress: true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update Usecase
+        id: update-step
+        run: |
+          BASE_URL="${PHARIAOS_MANAGER_URL}/api/usecases"
+          
+          # Build the update payload based on provided inputs
+          update_data="{"
+          
+          # Add name (always required by API)
+          update_data+="\"name\": \"${{ github.event.inputs.usecase_name }}\""
+          
+          # Add description (always required by API)
+          update_data+=", \"description\": \"${{ github.event.inputs.description }}\""
+          
+          # Add isPublic (always provided via dropdown)
+          update_data+=", \"isPublic\": ${{ github.event.inputs.isPublic == 'true' && 'true' || 'false' }}"
+          
+          # Add projectId if provided
+          if [ -n "${{ github.event.inputs.project_id }}" ]; then
+            update_data+=", \"projectId\": \"${{ github.event.inputs.project_id }}\""
+          fi
+          
+          update_data+="}"
+          
+          echo "Update payload: $update_data"
+          
+          # Update the usecase
+          echo "Updating usecase ${USECASE_ID}..."
+          response=$(curl --request PUT \
+            --url "${BASE_URL}/${USECASE_ID}" \
+            --header "Authorization: Bearer ${SERVICE_AUTHENTICATION_TOKEN}" \
+            --header 'Content-Type: application/json' \
+            --data "$update_data")
+
+          # Print the response
+          echo "Response: $(echo "$response" | jq '.')"
+
+          # Check if the update was successful
+          if [ "$(echo "$response" | jq '.status // 200')" -eq 200 ] && echo "$response" | jq -e '.id' > /dev/null 2>&1; then
+            echo "Success: Usecase ${USECASE_ID} updated successfully"
+            echo "UPDATE_SUCCESS=true" >> $GITHUB_OUTPUT
+            echo "UPDATED_USECASE=$(echo "$response" | jq -c '.')" >> $GITHUB_OUTPUT
+          elif [ "$(echo "$response" | jq '.status')" -eq 400 ]; then
+            echo "Error: Bad Request - $(echo "$response" | jq -r '.detail // "Invalid request parameters"')"
+            echo "UPDATE_SUCCESS=false" >> $GITHUB_OUTPUT
+            exit 1
+          elif [ "$(echo "$response" | jq '.status')" -eq 404 ]; then
+            echo "Error: Usecase ${USECASE_ID} not found"
+            echo "UPDATE_SUCCESS=false" >> $GITHUB_OUTPUT
+            exit 1
+          elif [ "$(echo "$response" | jq '.status')" -eq 403 ]; then
+            echo "Error: Forbidden - $(echo "$response" | jq -r '.detail // "Insufficient permissions"')"
+            echo "UPDATE_SUCCESS=false" >> $GITHUB_OUTPUT
+            exit 1
+          else
+            echo "Update failed"
+            echo "Response: $(echo "$response" | jq '.')"
+            echo "UPDATE_SUCCESS=false" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+
+      - name: Set Update Summary
+        if: always()
+        run: |
+          echo "### Update Summary" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Usecase ID: **${USECASE_ID}**" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Environment: **${{ env.ENVIRONMENT }}**" >> $GITHUB_STEP_SUMMARY
+          if [ -n "${{ github.event.inputs.usecase_name }}" ]; then
+            echo "✅ Name: **${{ github.event.inputs.usecase_name }}**" >> $GITHUB_STEP_SUMMARY
+          fi
+          if [ -n "${{ github.event.inputs.description }}" ]; then
+            echo "✅ Description: **${{ github.event.inputs.description }}**" >> $GITHUB_STEP_SUMMARY
+          fi
+          if [ -n "${{ github.event.inputs.isPublic }}" ]; then
+            echo "✅ Visibility: **${{ github.event.inputs.isPublic == 'true' && 'Public' || 'Private' }}**" >> $GITHUB_STEP_SUMMARY
+          fi
+          if [ -n "${{ github.event.inputs.project_id }}" ]; then
+            echo "✅ Project ID: **${{ github.event.inputs.project_id }}**" >> $GITHUB_STEP_SUMMARY
+          fi
+          if [ "${{ steps.update-step.outputs.UPDATE_SUCCESS }}" = "true" ]; then
+            echo "✅ Updated by: **${{ github.actor }}**" >> $GITHUB_STEP_SUMMARY
+            echo "✅ Update Time: **$(date)**" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Update failed" >> $GITHUB_STEP_SUMMARY
+          fi

@@ -1,0 +1,251 @@
+name: 'Deploy Usecase'
+description: 'Deploys a usecase with proper configuration and error handling'
+inputs:
+  app_name:
+    description: 'Application name'
+    required: true
+  usecase_id:
+    description: 'Usecase ID to deploy'
+    required: true
+  image_tag:
+    description: 'Container image tag'
+    required: true
+  api_url:
+    description: 'Base API URL'
+    required: true
+  auth_token:
+    description: 'Authentication token'
+    required: true
+  # Core service URLs
+  kernel_url:
+    description: 'Pharia Kernel URL'
+    required: true
+  auth_service_url:
+    description: 'Pharia Auth Service URL'
+    required: true
+  iam_issuer_url:
+    description: 'Pharia IAM Issuer URL'
+    required: true
+  data_url:
+    description: 'Pharia Data URL'
+    required: true
+  studio_url:
+    description: 'Pharia Studio URL'
+    required: true
+  inference_api_url:
+    description: 'Inference API URL'
+    required: true
+  completion_model_name:
+    description: 'Completion Model Name'
+    required: true
+  image_registry:
+    description: 'Container image registry'
+    required: true
+  # App-specific inputs
+  data_stage_name:
+    description: 'Data Stage Name (for law_monitoring)'
+    required: false
+  storage_type:
+    description: 'Storage Type (for law_monitoring)'
+    required: false
+  enable_partner_button:
+    description: 'Enable Partner Button (for law_monitoring)'
+    required: false
+    default: 'false'
+  serper_api_key:
+    description: 'Serper API Key (for supplier_analysis/agentic_app_template)'
+    required: false
+  abstract_api_key:
+    description: 'Abstract API Key (for supplier_analysis/agentic_app_template)'
+    required: false
+  service_studio_url:
+    description: 'Service Studio URL (for supplier_briefing)'
+    required: false
+  service_studio_project_name:
+    description: 'Service Studio Project Name (for supplier_briefing)'
+    required: false
+  tenant_id:
+    description: 'Optional tenant ID for multi-tenant deployments'
+    required: false
+  # Database secrets
+  postgres_secret_name:
+    description: 'PostgreSQL Secret Name (for law_monitoring)'
+    required: false
+  postgres_secret_key:
+    description: 'PostgreSQL Secret Key (for law_monitoring)'
+    required: false
+outputs:
+  deployment_id:
+    description: 'Deployment ID'
+    value: ${{ steps.deploy.outputs.deployment_id }}
+  success:
+    description: 'Whether deployment was successful'
+    value: ${{ steps.deploy.outputs.success }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Build deployment configuration
+      id: build-config
+      shell: bash
+      run: |
+        APP_NAME="${{ inputs.app_name }}"
+        
+        # Build core environment variables using jq to ensure proper JSON escaping
+        env_vars=$(jq -n \
+          --arg cors "false" \
+          --arg kernel_url "${{ inputs.kernel_url }}" \
+          --arg auth_service_url "${{ inputs.auth_service_url }}" \
+          --arg iam_issuer_url "${{ inputs.iam_issuer_url }}" \
+          --arg data_url "${{ inputs.data_url }}" \
+          --arg inference_api_url "${{ inputs.inference_api_url }}" \
+          --arg completion_model_name "${{ inputs.completion_model_name }}" \
+          --arg auth_token "${{ inputs.auth_token }}" \
+          --arg studio_url "${{ inputs.studio_url }}" \
+          '{
+            "SERVICE_ENABLE_CORS": $cors,
+            "SERVICE_PHARIA_KERNEL_URL": $kernel_url,
+            "SERVICE_PHARIA_AUTH_SERVICE_URL": $auth_service_url,
+            "SERVICE_PHARIA_IAM_ISSUER_URL": $iam_issuer_url,
+            "SERVICE_PHARIA_DATA_URL": $data_url,
+            "SERVICE_INFERENCE_API_URL": $inference_api_url,
+            "SERVICE_COMPLETION_MODEL_NAME": $completion_model_name,
+            "SERVICE_AUTHENTICATION_TOKEN": $auth_token,
+            "SERVICE_PHARIA_STUDIO_URL": $studio_url
+          }')
+        
+        # Add app-specific environment variables
+        case "$APP_NAME" in
+          "law_monitoring")
+            if [ -n "${{ inputs.data_stage_name }}" ]; then
+              DATA_STAGE_NAME="${{ inputs.data_stage_name }}"
+              if [ -n "${{ inputs.tenant_id }}" ]; then
+                DATA_STAGE_NAME="${DATA_STAGE_NAME}_${{ inputs.tenant_id }}"
+              fi
+              env_vars=$(echo "$env_vars" | jq --arg val "$DATA_STAGE_NAME" '. + {"SERVICE_PHARIA_DATA_STAGE_NAME": $val}')
+            fi
+            if [ -n "${{ inputs.storage_type }}" ]; then
+              env_vars=$(echo "$env_vars" | jq --arg val "${{ inputs.storage_type }}" '. + {"SERVICE_STORAGE_TYPE": $val}')
+            fi
+            if [ -n "${{ inputs.tenant_id }}" ]; then
+              env_vars=$(echo "$env_vars" | jq --arg val "${{ inputs.tenant_id }}" '. + {"SERVICE_TENANT_ID": $val}')
+            fi
+            env_vars=$(echo "$env_vars" | jq --arg val "${{ inputs.enable_partner_button }}" '. + {"SERVICE_ENABLE_PARTNER_BUTTON": $val}')
+            ;;
+          "supplier_analysis"|"agentic_app_template")
+            if [ -n "${{ inputs.serper_api_key }}" ]; then
+              env_vars=$(echo "$env_vars" | jq --arg val "${{ inputs.serper_api_key }}" '. + {"SERPER_API_KEY": $val}')
+            fi
+            if [ -n "${{ inputs.abstract_api_key }}" ]; then
+              env_vars=$(echo "$env_vars" | jq --arg val "${{ inputs.abstract_api_key }}" '. + {"ABSTRACT_API_KEY": $val}')
+            fi
+            ;;
+          "supplier_briefing")
+            if [ -n "${{ inputs.service_studio_url }}" ]; then
+              env_vars=$(echo "$env_vars" | jq --arg val "${{ inputs.service_studio_url }}" '. + {"SERVICE_STUDIO_URL": $val}')
+            fi
+            if [ -n "${{ inputs.service_studio_project_name }}" ]; then
+              env_vars=$(echo "$env_vars" | jq --arg val "${{ inputs.service_studio_project_name }}" '. + {"SERVICE_STUDIO_PROJECT_NAME": $val}')
+            fi
+            ;;
+        esac
+        
+        # Build base deployment config using jq for proper escaping
+        deploy_config=$(jq -n \
+          --arg registry "${{ inputs.image_registry }}" \
+          --arg repository "$APP_NAME" \
+          --arg tag "${{ inputs.image_tag }}" \
+          --argjson env_vars "$env_vars" \
+          '{
+            "image": {
+              "registry": $registry,
+              "repository": $repository,
+              "tag": $tag
+            },
+            "envVars": $env_vars,
+            "resources": {
+              "limits": {
+                "cpu": "1000m",
+                "memory": "2048Mi"
+              },
+              "requests": {
+                "cpu": "500m",
+                "memory": "1024Mi"
+              }
+            },
+            "serviceMonitor": {
+              "enabled": true,
+              "scrapingInterval": "5s"
+            }
+          }')
+        
+        # Add secret environment variables for database access
+        if [ "$APP_NAME" = "law_monitoring" ] && [ -n "${{ inputs.postgres_secret_name }}" ] && [ -n "${{ inputs.postgres_secret_key }}" ]; then
+          secret_env_vars=$(jq -n \
+            --arg secret_name "${{ inputs.postgres_secret_name }}" \
+            --arg secret_key "${{ inputs.postgres_secret_key }}" \
+            '[
+              {
+                "name": "SERVICE_DATABASE_URL",
+                "secret": {
+                  "name": $secret_name,
+                  "key": $secret_key
+                }
+              }
+            ]')
+          deploy_config=$(echo "$deploy_config" | jq --argjson secret_env_vars "$secret_env_vars" '. + {"secretEnvVars": $secret_env_vars}')
+        fi
+        
+        # Use a unique delimiter to avoid conflicts
+        {
+          echo "deployment_config<<DEPLOY_CONFIG_EOF"
+          echo "$deploy_config"
+          echo "DEPLOY_CONFIG_EOF"
+        } >> $GITHUB_OUTPUT
+        
+        echo "Deployment configuration built successfully"
+
+    - name: Deploy usecase
+      id: deploy
+      shell: bash
+      run: |
+        USECASE_ID="${{ inputs.usecase_id }}"
+        AUTH_TOKEN="${{ inputs.auth_token }}"
+        BASE_URL="${{ inputs.api_url }}/api/usecases"
+        CONFIG='${{ steps.build-config.outputs.deployment_config }}'
+        
+        echo "Deploying usecase ID: $USECASE_ID"
+        echo "Registry: ${{ inputs.image_registry }}"
+        echo "Repository: ${{ inputs.app_name }}"
+        echo "Tag: ${{ inputs.image_tag }}"
+        
+        response=$(curl -s -w "HTTPSTATUS:%{http_code}" -X POST \
+          "$BASE_URL/$USECASE_ID/deployments" \
+          -H "Authorization: Bearer $AUTH_TOKEN" \
+          -H "Content-Type: application/json" \
+          -d "{\"config\": $CONFIG}")
+        
+        # Extract HTTP status and body
+        http_code=$(echo "$response" | tr -d '\n' | sed -e 's/.*HTTPSTATUS://')
+        body=$(echo "$response" | sed -e 's/HTTPSTATUS:.*//g')
+        
+        echo "HTTP Status: $http_code"
+        echo "Response Body: $body"
+        
+        if [ "$http_code" -ne 200 ] && [ "$http_code" -ne 201 ] && [ "$http_code" -ne 202 ]; then
+          echo "::error::Deployment failed. HTTP Status: $http_code"
+          echo "::error::Response: $body"
+          echo "success=false" >> $GITHUB_OUTPUT
+          exit 1
+        fi
+        
+        deployment_id=$(echo "$body" | jq -r '.id // empty')
+        if [ -z "$deployment_id" ] || [ "$deployment_id" = "null" ]; then
+          echo "::error::Failed to extract deployment ID from response"
+          echo "::error::Response: $body"
+          echo "success=false" >> $GITHUB_OUTPUT
+          exit 1
+        fi
+        
+        echo "Deployment successful! ID: $deployment_id"
+        echo "deployment_id=$deployment_id" >> $GITHUB_OUTPUT
+        echo "success=true" >> $GITHUB_OUTPUT

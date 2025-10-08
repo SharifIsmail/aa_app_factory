@@ -1,0 +1,36 @@
+1. **SAP Ariba Supplier Risk APIs**  
+   - Risk Category Information API: https://api.sap.com/api/risk_category_information/overview  
+   - Supplier Risk Engagements API: https://help.sap.com/docs/ariba-apis/supplier-risk-engagements-api/supplier-risk-engagements-api  
+
+2. **Coupa Supplier Risk Aware Feed API**  
+   - https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/supplier-risk-aware-feed-api-%28supplier_risk_aware_feed%29  
+
+3. **Locance Supply Chain Visibility APIs**  
+   - https://www.locance.com/industries/supply-chain/  
+
+4. **Dow Jones Risk & Compliance APIs**  
+   - https://developer.dowjones.com/documents/site-docs-risk_and_compliance_apis  
+
+5. **Camms Supplier Risk Management Software API**  
+   - https://cammsgroup.com/solutions/supplier-risk-management-software/  
+
+6. **CreditRiskMonitor SupplyChainMonitor™ API**  
+   - https://www.creditriskmonitor.com/supply-chain/api-integration  
+
+7. **Risk Ledger API**  
+   - https://riskledger.com/resources/20-07-22-risk-ledger-api  
+
+8. **Resilinc EventWatch AI**  
+   - https://www.resilinc.com/  
+
+9. **Owlin Supplier Risk Monitoring API**  
+   - https://owlin.com/solutions/supplier-risk-monitoring/  
+
+10. **Thomson Reuters ONESOURCE Supply Chain Compliance API**  
+   - https://tax.thomsonreuters.com/en/onesource/global-trade-management/supply-chain-compliance  
+
+11. **apexanalytix Supplier Risk Event Monitoring API**  
+   - https://www.apexanalytix.com/solutions/supplier-risk-management/risk-events/  
+
+12. **SupplierGateway API**  
+   - https://www.suppliergateway.com/supplier-risk-management-software/

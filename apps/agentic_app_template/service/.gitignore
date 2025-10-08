@@ -1,0 +1,17 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+/.python-version
+
+# IDE
+.vscode/
+Todo.json
+.idea
+# ignore ui-artifacts folder except for the .gitkeep file
+/ui-artifacts/*
+!/ui-artifacts/.gitkeep

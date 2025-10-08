@@ -1,0 +1,108 @@
+[project]
+name = "supplier-briefing-service"
+license = "Apache-2.0"
+version = "0.1.0"
+authors = [{ name = "Aleph Alpha Engineering", email = "engineering@aleph-alpha.com" }]
+description = "Service for supplier briefing agentic system"
+
+requires-python = ">=3.12,<3.13"
+
+dependencies = [
+    "litellm>=1.61.20",
+    "requests>=2.32.3",
+    "smolagents==1.22.0",
+    "fastapi==0.115.8",
+    "uvicorn==0.34.0",
+    "httpx==0.28.1",
+    "pydantic==2.11.7",
+    "pydantic-settings==2.7.1",
+    "prometheus_fastapi_instrumentator==7.1.0",
+    "loguru>=0.7.3",
+    "pyjwt==2.10.1",
+    "pandas>=2.3.0",
+    "openpyxl>=3.1.5",
+    "pyarrow>=20.0.0",
+    "cachetools>=5.3.3",
+    "diskcache>=5.6.3",
+    "markdownify>=1.1.0",
+    "python-dotenv>=1.0.0",
+    "intelligence-layer @ git+https://github.com/Aleph-Alpha/intelligence-layer-sdk.git@v12.0.1",
+    "wrapt>=1.17.2",
+    "thefuzz>=0.22.1",
+    "google-auth>=2.41.1",
+]
+
+[dependency-groups]
+dev = [
+    "mypy==1.14.1",
+    "pre-commit==4.1.0",
+    "pylama[toml]==8.4.1",
+    "pytest==8.3.4",
+    "types-setuptools==75.8.0.20250110",
+    "setuptools==80.9.0",
+    "pytest-asyncio==0.25.2",
+    "ruff==0.9.4",
+    "types-requests>=2.32.0.20250515",
+    "types-jwt>=0.1.3",
+    "ipykernel>=6.29.5",
+    "pyarrow-stubs>=20.0.0.20250716",
+    "arize-phoenix>=11.10.1",
+    "openinference-instrumentation-smolagents>=0.1.18",
+    "types-cachetools>=6.1.0.20250717",
+    "kubernetes>=34.1.0",
+    "kubernetes-stubs>=22.6.0.post1",
+]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/service", "evaluation"]
+
+[tool.hatch.build.targets.wheel]
+include = ["src/service", "evaluation"]
+
+[tool.hatch.build.targets.wheel.sources]
+"src/service" = "service"
+"evaluation" = "evaluation"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pylama]
+skip = ".cache/*,*/__init__.py,.venv/*,.venv/*"
+ignore = "E501,E203"
+
+[tool.pylama.linter.pycodestyle]
+# https://black.readthedocs.io/en/stable/guides/using_black_with_other_tools.html#pycodestyle
+max_line_length = 88
+ignore = "E203,E701,E704,W503"
+
+[tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = "function"
+
+[project.scripts]
+dev = "service.main:main"
+validate_settings = "service.validate_settings:main"
+data_preparation = "service.data_preparation:data_preparation"
+parquet2excel = "service.data_preparation:convert_parquet_to_excel"
+generate_golden_dataset = "evaluation.golden_dataset_creation.main:main"
+create_dataset = "evaluation.intelligence_layer_eval.dataset_creator:main"
+run_benchmark = "evaluation.intelligence_layer_eval.run_benchmark:main"
+deploy_app = "deployment.deploy:main"
+manage_vertex_secret = "deployment.vertex_secret_manager:main"
+
+[tool.mypy]
+no_implicit_optional = false
+disallow_untyped_defs = true
+mypy_path = "src"
+explicit_package_bases = true
+files = ["src", "evaluation", "tests"]
+
+[[tool.mypy.overrides]]
+module = ["smolagents.*", "pandas", "openpyxl", "diskcache", "thefuzz.*"]
+follow_untyped_imports = true
+
+[tool.ruff.lint]
+select = ["I", "F401"]

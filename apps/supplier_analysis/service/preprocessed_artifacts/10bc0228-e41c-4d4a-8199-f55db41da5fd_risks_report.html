@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shell Petroleum Development Company of Nigeria Risk Assessment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --danger-color: #dc3545;
+            --warning-color: #ffc107;
+            --success-color: #198754;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .header-section {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 5px solid var(--primary-color);
+        }
+        .risk-card {
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        .risk-card:hover {
+            transform: translateY(-5px);
+        }
+        .risk-high {
+            border-top: 5px solid var(--danger-color);
+        }
+        .risk-significant {
+            border-top: 5px solid var(--warning-color);
+        }
+        .risk-moderate {
+            border-top: 5px solid var(--success-color);
+        }
+        .risk-score {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .score-high {
+            color: var(--danger-color);
+        }
+        .score-significant {
+            color: var(--warning-color);
+        }
+        .score-moderate {
+            color: var(--success-color);
+        }
+        .table-risk {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .highlight {
+            background-color: #fffacd;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        .conclusion-section {
+            background-color: #e9ecef;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border-left: 5px solid var(--primary-color);
+        }
+        .section-heading {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <div class="container">
+            <h1 class="display-4"><i class="bi bi-shield-exclamation"></i> Shell Petroleum Development Company of Nigeria Ltd</h1>
+            <p class="lead">Supplier Risk Assessment</p>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row mb-4">
+            <div class="col-lg-12">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h2 class="card-title section-heading">Executive Summary</h2>
+                        <p class="card-text">Shell Petroleum Development Company of Nigeria Limited (SPDC) operates in one of the most complex and high-risk environments in the world. Although Shell has a long-standing presence in Nigeria and a sophisticated governance framework globally, its subsidiary SPDC faces severe challenges related to labor conditions, safety, environmental damage, and corruption in the Niger Delta. Numerous documented violations and systemic issues require careful attention. SPDC is classified as a <strong>high-risk supplier</strong> in this assessment and should be subject to enhanced due diligence and continuous monitoring.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-lg-12">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h2 class="card-title section-heading">Supplier Information</h2>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Name:</strong> Shell Petroleum Development Company of Nigeria Limited (SPDC)</li>
+                            <li class="list-group-item"><strong>Ownership:</strong> Joint Venture operated by Shell plc (30%) with NNPC (55%), TotalEnergies (10%), Eni (5%)</li>
+                            <li class="list-group-item"><strong>Headquarters:</strong> Port Harcourt, Rivers State, Nigeria</li>
+                            <li class="list-group-item"><strong>Operations:</strong> Active in the Niger Delta, with 6,000+ km of pipelines, 87 flow stations, 8 gas plants</li>
+                            <li class="list-group-item"><strong>Business Profile:</strong> Upstream oil and gas exploration, extraction, processing, and export</li>
+                            <li class="list-group-item"><strong>Key Director:</strong> Osagie Okunbor (Managing Director & Country Chair)</li>
+                            <li class="list-group-item"><strong>Years Active:</strong> Since 1936 in Nigeria; over 85 years of operations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-heading mb-4">Summary of Risk Ratings (1-10 scale)</h2>
+        <div class="table-responsive mb-5">
+            <table class="table table-striped table-bordered table-risk">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Risk Dimension</th>
+                        <th>Risk Score</th>
+                        <th>Key Observations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Labor Rights</strong></td>
+                        <td class="score-high">8 (High)</td>
+                        <td>Widespread use of underpaid contract labor, reported anti-union practices, and inadequate worker protections</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Safety Violations</strong></td>
+                        <td class="score-high">8 (High)</td>
+                        <td>Fatal incidents from pipeline explosions, safety equipment issues for contract workers, and insecurity in operating areas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Environmental Issues</strong></td>
+                        <td class="score-high">10 (Critical)</td>
+                        <td>Thousands of spills, court-ordered compensations, major reputational and legal exposure from legacy pollution</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Financial & Corruption</strong></td>
+                        <td class="score-high">9 (High)</td>
+                        <td>Involvement in past grand corruption cases (e.g. OPL 245), high exposure to informal payments and legal risk</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="section-heading mb-4">Key Risk Factors</h2>
+        <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+            <div class="col">
+                <div class="card risk-card risk-high">
+                    <div class="card-body">
+                        <h3 class="card-title">Labor Rights <span class="risk-score score-high">(8/10)</span></h3>
+                        <p class="card-text">Reports from labor groups and investigative journalists show SPDC relies heavily on low-paid contractors with minimal protections. Workers face dismissal threats for unionizing, with inadequate benefits and grievance mechanisms. Allegations indicate systemic labor abuses despite Shell’s global human rights policy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card risk-card risk-high">
+                    <div class="card-body">
+                        <h3 class="card-title">Safety Violations <span class="risk-score score-high">(8/10)</span></h3>
+                        <p class="card-text">The Niger Delta is a high-risk zone due to pipeline sabotage, oil theft, and community unrest. SPDC staff and contractors have died in blasts, and contract workers report poor training and safety gear. Kidnappings and threats are also persistent issues.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card risk-card risk-high">
+                    <div class="card-body">
+                        <h3 class="card-title">Environmental Issues <span class="risk-score score-high">(10/10)</span></h3>
+                        <p class="card-text">SPDC is one of the largest contributors to oil pollution in Nigeria. Thousands of spills have devastated ecosystems and human health. Legal actions have resulted in billion-naira fines and international settlements. Critics accuse Shell of failing to clean up legacy damage promptly or transparently.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card risk-card risk-high">
+                    <div class="card-body">
+                        <h3 class="card-title">Financial & Corruption <span class="risk-score score-high">(9/10)</span></h3>
+                        <p class="card-text">Shell’s operations in Nigeria have been connected to massive corruption allegations, most notably the OPL 245 scandal. Although acquitted in Italy, the reputational risk and regulatory scrutiny remain high. Nigeria's oil sector presents a systemic corruption risk that affects all major players.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-heading mb-4">Country & Industry Risk Overview</h2>
+        <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+            <div class="col">
+                <div class="card risk-card risk-high">
+                    <div class="card-body">
+                        <h3 class="card-title">Country Risk – Nigeria <span class="risk-score score-high">(8/10)</span></h3>
+                        <p class="card-text">
+                            Nigeria presents a highly complex risk environment, especially in extractive sectors:
+                        </p>
+                        <ul>
+                            <li><strong>Corruption:</strong> The petroleum sector has been the center of major corruption scandals. Regulatory opacity and political interference are prevalent.</li>
+                            <li><strong>Security:</strong> Armed militancy, oil theft, and sabotage of energy infrastructure are endemic, particularly in the Niger Delta.</li>
+                            <li><strong>Human Rights:</strong> Documented cases of repression, police violence, and weak judicial enforcement affect communities and worker rights.</li>
+                            <li><strong>Governance:</strong> Environmental remediation and social accountability mechanisms are under-resourced and inconsistently applied.</li>
+                        </ul>
+                        <p class="card-text">
+                            While Nigeria remains a critical energy hub, the reputational and legal risks are elevated, requiring suppliers to adopt strict controls and transparent engagement strategies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card risk-card risk-high">
+                    <div class="card-body">
+                        <h3 class="card-title">Industry Risk – Oil & Gas (Upstream) <span class="risk-score score-high">(9/10)</span></h3>
+                        <p class="card-text">
+                            The upstream petroleum industry, especially in Nigeria, faces intense scrutiny and material risks:
+                        </p>
+                        <ul>
+                            <li><strong>Environmental Risk:</strong> Oil spills, gas flaring, and habitat destruction are frequent; remediation efforts often lag behind impact.</li>
+                            <li><strong>Social Conflict:</strong> Operations in indigenous and marginalized communities fuel longstanding tensions, protests, and litigation.</li>
+                            <li><strong>Worker Safety:</strong> Operations involve hazardous materials, insecure areas, and risks from sabotage and unrest.</li>
+                            <li><strong>Global Pressure:</strong> ESG investors, courts, and NGOs increasingly target oil majors over their conduct in frontier markets.</li>
+                        </ul>
+                        <p class="card-text">
+                            Any engagement with upstream oil & gas suppliers in the Niger Delta should proceed with robust contractual safeguards, public accountability, and third-party verification.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-heading mb-4">LkSG Risk Mapping</h2>
+<div class="card mb-5 shadow-sm">
+    <div class="card-body">
+        <p class="mb-4">This table links key risk areas to due diligence categories defined in the <strong>German Supply Chain Due Diligence Act (LkSG)</strong> and outlines recommended mitigation strategies.</p>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="table-light">
+                    <tr>
+                        <th>LkSG Obligation Area</th>
+                        <th>Observed or Potential Risk</th>
+                        <th>Risk Level</th>
+                        <th>Recommended Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Child labor / forced labor</td>
+                        <td>Alleged use of insecure contract labor, weak enforcement of protections</td>
+                        <td class="text-danger">High</td>
+                        <td>Independent labor audits, contract clauses requiring fair working conditions</td>
+                    </tr>
+                    <tr>
+                        <td>Occupational health & safety</td>
+                        <td>Worker deaths and security incidents related to sabotage and equipment</td>
+                        <td class="text-danger">High</td>
+                        <td>Ongoing site visits, mandatory training, third-party safety verification</td>
+                    </tr>
+                    <tr>
+                        <td>Environmental responsibility</td>
+                        <td>Critical legacy pollution and ongoing spills</td>
+                        <td class="text-danger">Critical</td>
+                        <td>Require remediation reporting, environmental KPIs, and cleanup milestones</td>
+                    </tr>
+                    <tr>
+                        <td>Corruption prevention</td>
+                        <td>Recurrent involvement in high-profile corruption cases</td>
+                        <td class="text-danger">High</td>
+                        <td>Review compliance systems; monitor for adverse legal developments</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="mt-3"><strong>Note:</strong> Due to systemic risks in both the supplier and sector, enhanced diligence measures should be active throughout the relationship lifecycle.</p>
+    </div>
+</div>
+
+
+        <div class="conclusion-section">
+            <h2 class="section-heading">Conclusion & Recommended Actions</h2>
+            <p><strong>Shell Petroleum Development Company of Nigeria Ltd (SPDC)</strong> is classified as a <span class="highlight">high-risk supplier</span> across all major categories of the LkSG Risk Assessment framework. While it is a strategic and capable partner in the energy space, the depth of environmental, social, and governance risks calls for enhanced due diligence, strict contract clauses, and routine on-the-ground monitoring.</p>
+            <ul>
+                <li>Mandate supplier-level social audits and environmental reporting with independent verification</li>
+                <li>Implement ongoing community engagement and impact tracking for operations in the Niger Delta</li>
+                <li>Review anti-corruption and compliance systems annually</li>
+                <li>Apply escalation pathways per LkSG rules if significant incidents occur or legal rulings are issued</li>
+                <li>Review the SPDC risk profile every 6–12 months</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>Shell Nigeria Risk Assessment</h5>
+                    <p>This assessment is part of the LKSG Compliance Framework and is intended to guide procurement decisions and ESG risk management.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Key Sources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.business-humanrights.org/" class="text-white" target="_blank">Business & Human Rights Resource Centre</a></li>
+                        <li><a href="https://www.transparency.org/en/cpi" class="text-white" target="_blank">Transparency International CPI</a></li>
+                        <li><a href="https://www.amnesty.org/en/location/africa/west-and-central-africa/nigeria/" class="text-white" target="_blank">Amnesty International: Nigeria</a></li>
+                        <li><a href="https://www.shell.com.ng/" class="text-white" target="_blank">SPDC Nigeria Official Site</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>© 2025 LKSG Compliance Framework | Supplier Risk Assessment</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

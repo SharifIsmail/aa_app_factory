@@ -1,0 +1,116 @@
+title: "Early Access Deployment Strategy" {
+  near: top-center
+  shape: text
+  style: {
+    font-size: 24
+    bold: true
+  }
+}
+
+# Defining the main components
+Schwarz Group: {
+  shape: rectangle
+  style.multiple: true
+  style.stroke-dash: 3
+  
+  Lidl: {
+    shape: rectangle
+    style.fill: "#e1f5fe"
+  }
+  
+  Kaufland: {
+    shape: rectangle
+    style.fill: "#e1f5fe"
+  }
+  
+  "Other Orgs": {
+    shape: rectangle
+    style.fill: "#e1f5fe"
+  }
+  
+  "Alpha Testers": {
+    shape: person
+    style.fill: "#bbdefb"
+  }
+}
+
+"Aleph Alpha": {
+  shape: rectangle
+  style.stroke-dash: 3
+  
+  "C-Prod Cluster": {
+    shape: rectangle
+    style.fill: "#e8f5e9"
+    
+    "Schwarz Assistant Tenant": {
+      shape: rectangle
+      style.fill: "#c8e6c9"
+      label: "Schwarz Assistant Tenant\n(Stage)"
+    }
+    
+    "Common Tenant": {
+      shape: rectangle
+      style.fill: "#c8e6c9"
+      label: "Common Assistant Tenant\n(Test Environment)"
+    }
+  }
+}
+
+"StackIT PhariaAI Deployment": {
+  shape: rectangle
+  style.stroke-dash: 3
+  
+  
+ "StackIT Infra": {
+  "StackIT": {
+    shape: rectangle
+    style.fill: "#e8f5e9"
+    label: "Pharia Assistant \n(Centrally Managed Production)"
+    }
+ }
+}
+
+
+# Connections
+Schwarz Group."Alpha Testers" -> "Aleph Alpha"."C-Prod Cluster"."Schwarz Assistant Tenant": {
+  label: "Access with\nAssistant Role"
+  style.stroke: "#2196f3"
+  style.stroke-width: 2
+}
+
+"Aleph Alpha"."C-Prod Cluster"."Schwarz Assistant Tenant" -> "StackIT PhariaAI Deployment"."StackIT Infra"."StackIT": {
+  label: "Eventual\nProduction\nDeployment"
+  style.stroke: "#4caf50"
+  style.stroke-dash: 5
+}
+
+Schwarz Group -> "StackIT PhariaAI Deployment"."StackIT Infra"."StackIT": {
+  label: "Production Access\n(Slower iteration)"
+  style.stroke: "#9e9e9e"
+  style.stroke-width: 1
+  style.stroke-dash: 3
+}
+
+"Aleph Alpha"."C-Prod Cluster"."Schwarz Assistant Tenant" -> "Aleph Alpha"."C-Prod Cluster"."Common Tenant": {
+  label: "Testing Flow"
+  style.stroke: "#ff9800"
+}
+
+# Add explanation
+#explanation: |
+#  Early Access Strategy:
+#  - Bypass slower StackIT deployment process
+#  - Deploy on Schwarz-specific tenant on C-prod cluster
+#  - Alpha testers access with Assistant role only
+#  - Enables faster iteration and testing
+#  - C-prod Schwarz tenant acts as Stage environment
+#  - Common tenant serves as test environment
+#  - Central management by StackIT for production 
+#  |
+
+explanation: {
+  shape: text
+  style.font-size: 14
+  style.italic: true
+  near: bottom-center
+}

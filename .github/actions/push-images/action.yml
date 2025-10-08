@@ -1,0 +1,152 @@
+name: 'Push Container Images'
+description: 'Pushes container images to appropriate registries based on branch'
+inputs:
+  app_name:
+    description: 'Application name'
+    required: true
+  image_tag:
+    description: 'Image tag to push'
+    required: true
+  branch_ref:
+    description: 'Git branch reference'
+    required: true
+  # Registry configuration
+  image_registry:
+    description: 'Primary image registry (GitLab)'
+    required: true
+  image_registry_user:
+    description: 'Primary registry username'
+    required: true
+  image_registry_password:
+    description: 'Primary registry password'
+    required: true
+  jfrog_registry:
+    description: 'JFrog customer registry'
+    required: true
+  jfrog_registry_partners:
+    description: 'JFrog partner registry'
+    required: true
+  jfrog_registry_user:
+    description: 'JFrog registry username'
+    required: true
+  jfrog_registry_password:
+    description: 'JFrog registry password'
+    required: true
+  # Release information
+  release_version_tag:
+    description: 'Release version tag (for release branches)'
+    required: false
+outputs:
+  gitlab_latest:
+    description: 'GitLab latest tag pushed'
+    value: ${{ steps.push-gitlab.outputs.latest_tag }}
+  gitlab_main:
+    description: 'GitLab main tag pushed'
+    value: ${{ steps.push-gitlab.outputs.main_tag }}
+  jfrog_tags:
+    description: 'JFrog tags pushed'
+    value: ${{ steps.push-jfrog.outputs.tags_pushed }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Login to GitLab registry
+      shell: bash
+      run: |
+        echo "::group::GitLab registry login"
+        echo "Logging in to ${{ inputs.image_registry }}"
+        podman login --username "${{ inputs.image_registry_user }}" --password "${{ inputs.image_registry_password }}" "${{ inputs.image_registry }}"
+        echo "::notice::GitLab login successful"
+        echo "::endgroup::"
+
+    - name: Push to GitLab registry
+      id: push-gitlab
+      shell: bash
+      run: |
+        echo "::group::Pushing to GitLab registry"
+        
+        TAG="${{ inputs.image_tag }}"
+        REGISTRY="${{ inputs.image_registry }}"
+        APP="${{ inputs.app_name }}"
+        
+        echo "Pushing verified image: ${APP}:${TAG}"
+        
+        # Push with timestamp tag
+        podman push "${APP}:${TAG}" "${REGISTRY}/${APP}:${TAG}"
+        echo "::notice::Push successful: ${REGISTRY}/${APP}:${TAG}"
+        
+        # Push as latest
+        podman tag "${APP}:${TAG}" "${APP}:latest"
+        podman push "${APP}:latest" "${REGISTRY}/${APP}:latest"
+        echo "::notice::Push successful: ${REGISTRY}/${APP}:latest"
+        echo "latest_tag=latest" >> $GITHUB_OUTPUT
+        
+        # Push as main_latest if on main branch
+        if [[ "${{ inputs.branch_ref }}" == "refs/heads/main" ]]; then
+          podman tag "${APP}:${TAG}" "${REGISTRY}/${APP}:main_latest"
+          podman push "${REGISTRY}/${APP}:main_latest"
+          echo "::notice::Push successful: ${REGISTRY}/${APP}:main_latest"
+          echo "main_tag=main_latest" >> $GITHUB_OUTPUT
+        fi
+        
+        echo "::endgroup::"
+
+    - name: Push to JFrog registries
+      id: push-jfrog
+      if: startsWith(inputs.branch_ref, 'refs/heads/release/')
+      shell: bash
+      run: |
+        echo "::group::Pushing to JFrog registries"
+        
+        TAG="${{ inputs.image_tag }}"
+        APP="${{ inputs.app_name }}"
+        JFROG_REGISTRY="${{ inputs.jfrog_registry }}"
+        JFROG_REGISTRY_PARTNERS="${{ inputs.jfrog_registry_partners }}"
+        
+        # Login to JFrog
+        echo "Logging in to JFrog registry: ${JFROG_REGISTRY}"
+        podman login --username "${{ inputs.jfrog_registry_user }}" --password "${{ inputs.jfrog_registry_password }}" "${JFROG_REGISTRY}"
+        
+        # Release branch - push to both customer and partner registries
+        VERSION_TAG="${{ inputs.release_version_tag }}"
+        if [ -z "$VERSION_TAG" ]; then
+          echo "::warning::No release version tag provided, using timestamp"
+          VERSION_TAG="${TAG}"
+        fi
+        
+        echo "Pushing release to JFrog customer registry"
+        JFROG_IMAGE_PATH="${JFROG_REGISTRY}/${APP}"
+        podman tag "${APP}:${TAG}" "${JFROG_IMAGE_PATH}:latest"
+        podman push "${JFROG_IMAGE_PATH}:latest"
+        podman tag "${APP}:${TAG}" "${JFROG_IMAGE_PATH}:${VERSION_TAG}"
+        podman push "${JFROG_IMAGE_PATH}:${VERSION_TAG}"
+        echo "::notice::Push successful: ${JFROG_IMAGE_PATH}:latest, ${JFROG_IMAGE_PATH}:${VERSION_TAG}"
+        PUSHED_TAGS="latest,${VERSION_TAG}"
+        
+        # Push to partner registry for selected apps
+        if [[ "${APP}" =~ ^(supplier_analysis|law_monitoring|agentic_app_template)$ ]]; then
+          echo "Pushing release to JFrog partner registry"
+          echo "Logging in to JFrog partner registry: ${JFROG_REGISTRY_PARTNERS}"
+          podman login --username "${{ inputs.jfrog_registry_user }}" --password "${{ inputs.jfrog_registry_password }}" "${JFROG_REGISTRY_PARTNERS}"
+          
+          PARTNER_IMAGE_PATH="${JFROG_REGISTRY_PARTNERS}/${APP}"
+          podman tag "${APP}:${TAG}" "${PARTNER_IMAGE_PATH}:latest"
+          podman push "${PARTNER_IMAGE_PATH}:latest"
+          podman tag "${APP}:${TAG}" "${PARTNER_IMAGE_PATH}:${VERSION_TAG}"
+          podman push "${PARTNER_IMAGE_PATH}:${VERSION_TAG}"
+          echo "::notice::Push successful to partner registry: ${PARTNER_IMAGE_PATH}:latest, ${PARTNER_IMAGE_PATH}:${VERSION_TAG}"
+          PUSHED_TAGS="${PUSHED_TAGS},partner-latest,partner-${VERSION_TAG}"
+        else
+          echo "::notice::Skipping partner push for ${APP}"
+        fi
+        
+        # Also push release version to GitLab for dev deployment
+        echo "Pushing release version to GitLab registry for dev deployment"
+        GITLAB_IMAGE_PATH="${{ inputs.image_registry }}/${APP}"
+        podman tag "${APP}:${TAG}" "${GITLAB_IMAGE_PATH}:${VERSION_TAG}"
+        podman push "${GITLAB_IMAGE_PATH}:${VERSION_TAG}"
+        podman tag "${APP}:${TAG}" "${GITLAB_IMAGE_PATH}:release-latest"
+        podman push "${GITLAB_IMAGE_PATH}:release-latest"
+        echo "::notice::Push successful to GitLab: ${GITLAB_IMAGE_PATH}:${VERSION_TAG}, ${GITLAB_IMAGE_PATH}:release-latest"
+        
+        echo "tags_pushed=${PUSHED_TAGS}" >> $GITHUB_OUTPUT
+        echo "::endgroup::"

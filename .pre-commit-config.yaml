@@ -1,0 +1,30 @@
+# Runs only for packages or apps that actually have staged changes.
+# ├─ packages/
+# │   └─ shared-frontend/  (TypeScript / Vue)
+# ├─ apps/
+# │   └─ <app-name>/
+# │       ├─ ui/       (TypeScript / Vue)
+# │       └─ service/  (Python)
+# └─ …
+
+minimum_pre_commit_version: "3.4.0"
+
+repos:
+  - repo: local
+    hooks:
+      - id: ui-checks
+        name: "UI – pnpm format + pnpm lint"
+        language: script
+        entry: scripts/precommit-ui-checks.sh
+        pass_filenames: false
+        files: ^(apps/[^/]+/ui/|packages/shared-frontend/)
+        stages: [pre-commit]
+        require_serial: true
+
+      - id: service-checks
+        name: "Service – run lint.sh"
+        language: script
+        entry: scripts/precommit-service-checks.sh
+        pass_filenames: false
+        require_serial: true
+        files: ^apps/[^/]+/service/

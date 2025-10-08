@@ -1,0 +1,39 @@
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+      contents: read
+    outputs:
+      shared-frontend: ${{ steps.filter.outputs.shared-frontend }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # pinned to commit of v3
+        id: filter
+        with:
+          filters: |
+            shared-frontend:
+              - 'packages/shared-frontend/**'
+              - '.github/workflows/applications.yml'
+              - '.github/workflows/workflow-shared-frontend.yml'
+
+  lint_shared_frontend:
+    needs: changes
+    if: ${{ needs.changes.outputs.shared-frontend == 'true' }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/shared-frontend
+    steps:
+      - uses: actions/checkout@v4
+      - run: corepack enable
+      - run: pnpm install
+      - run: pnpm lint
+      - run: pnpm type-check

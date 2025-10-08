@@ -1,0 +1,67 @@
+direction: right
+
+style: {
+  fill: "#fff"
+}
+
+Main: {
+  label: "main (always deployable)"
+  style: {
+    fill: "#81c784"
+    stroke: "#81c784"
+  }
+}
+
+FeatureBranches: {
+  label: "Feature branches (short‑lived)"
+
+  F1: {
+    label: "TBAF-123-monitoring-feature\nImplement feature"
+    style: {
+      fill: "#ef6c00"
+      stroke: "#ef6c00"
+    }
+  }
+  F4: {
+    label: "TBAF-999-new-feature\nFeature work"
+    style: {
+      fill: "#ef6c00"
+      stroke: "#ef6c00"
+    }
+  }
+}
+
+ReleaseBranches: {
+  label: "Release branches (scope freeze)"
+
+  R1: {
+    label: "release/law_monitoring-2025-09-01\nQA fixes, version bump"
+    style: {
+      fill: "#ba68c8"
+      stroke: "#ba68c8"
+    }
+  }
+  R2: {
+    label: "release/supplier_briefing-2025-09-01\nRelease prep, minor fixes"
+    style: {
+      fill: "#ba68c8"
+      stroke: "#ba68c8"
+    }
+  }
+}
+
+NoteGitLab: {
+  label: "On main: push images to GitLab as :<timestamp>, :latest, :main_latest"
+}
+
+NoteJFrog: {
+  label: "On release/*: push images to GitLab & JFrog as :latest and :<YYYY-MM-DD>"
+}
+
+FeatureBranches.F1 -> Main
+Main -> ReleaseBranches.R1
+ReleaseBranches.R1 -> Main
+
+Main -> NoteGitLab
+ReleaseBranches -> NoteJFrog
+

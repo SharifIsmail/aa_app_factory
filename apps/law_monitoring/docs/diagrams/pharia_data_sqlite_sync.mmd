@@ -1,0 +1,54 @@
+
+flowchart TD
+%% ───────────────── COMPONENTS ─────────────────
+    subgraph APP
+        A[Application service]
+    end
+
+    subgraph HybridBackend
+        B[PhariaDataSyncedSqliteStorageBackend]
+        C{{Should<br/>cache?}}
+    end
+
+    subgraph Cache
+        D[SqliteFileCache]
+    end
+
+    subgraph SourceOfTruth
+        E[PhariaDataStorageBackend]
+        F[PhariaData<br/>REST API]
+    end
+
+    subgraph Background
+        G[DatabaseSyncWorker: daily 03:00 UTC]
+        H[SqliteFileCacheSynchronizer]
+    end
+
+%% Background sync
+    B -->|on-init| H
+    G -->|clears cache & triggers sync| D
+    G -->|clears cache & triggers sync| H
+    H -->|list_folders & download| E
+    H -->|save to cache| D
+
+%% ───────────────── SIMPLIFIED FLOWS ─────────────────
+    A -->|load_file / save_file| B
+    B --> C
+    C --> |yes| D
+    C --> |no| E
+    D --> |hit/miss| E
+    E --> |result| B
+    E --> |HTTP GET/POST| F
+
+
+
+%% ───────────────── STYLING ─────────────────
+    classDef comp fill:#B3E5FC,stroke:#333;
+    classDef cache fill:#C8E6C9,stroke:#333;
+    classDef api fill:#E1BEE7,stroke:#333;
+    classDef bg fill:#FFE0B2,stroke:#333;
+    class B,C comp
+    class D cache
+    class E comp
+    class F api
+    class G,H bg

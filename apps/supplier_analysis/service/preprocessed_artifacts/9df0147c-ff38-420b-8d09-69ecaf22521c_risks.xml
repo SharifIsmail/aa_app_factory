@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompanyData>
+    <CompanyIdentity>
+        <Name>
+            <FinalApprovedName>Epyllion Group</FinalApprovedName>
+            <LegalNameVariations>Epyllion Group</LegalNameVariations>
+            <ExactRawData>Epyllion Group</ExactRawData>
+            <Sources>
+                <Source>https://www.epylliongroup.com/</Source>
+                <URL>https://www.epylliongroup.com/</URL>
+                <Source>https://www.linkedin.com/company/epylliongroup</Source>
+                <URL>https://www.linkedin.com/company/epylliongroup</URL>
+                <Source>https://disclosures.ifc.org/project-detail/SII/42000/epyllion-knit</Source>
+                <URL>https://disclosures.ifc.org/project-detail/SII/42000/epyllion-knit</URL>
+                <Source>https://unglobalcompact.org/what-is-gc/participants/16284-Epyllion-Group</Source>
+                <URL>https://unglobalcompact.org/what-is-gc/participants/16284-Epyllion-Group</URL>
+                <Source>https://abstractapi.com/companyenrichment?domain=epylliongroup.com</Source>
+                <URL>https://abstractapi.com/companyenrichment?domain=epylliongroup.com</URL>
+            </Sources>
+            <SourceNotes>Sources are a mix of official company websites, social media, and business directories, providing a good balance of primary and secondary information.</SourceNotes>
+            <ChainOfThoughtReasoning>The final approved name is based on the consistent naming across all sources, with no significant variations found.</ChainOfThoughtReasoning>
+            <Status>OK</Status>
+            <AnyRemainingIssues>No remaining issues with the company name.</AnyRemainingIssues>
+            <ProposedNextSteps>No further actions needed for name verification.</ProposedNextSteps>
+            <Notes>Name verification was straightforward due to the consistency across sources.</Notes>
+            <NameVariationNotes>No significant name variations were found, indicating a strong brand identity.</NameVariationNotes>
+        </Name>
+        <RegistrationDetails>
+            <FinalRegistrationNumber>Not provided</FinalRegistrationNumber>
+            <FinalRegistrationDate>1994</FinalRegistrationDate>
+            <ExactRawData>1994</ExactRawData>
+            <Sources>
+                <Source>https://abstractapi.com/companyenrichment?domain=epylliongroup.com</Source>
+                <URL>https://abstractapi.com/companyenrichment?domain=epylliongroup.com</URL>
+                <Source>https://www.linkedin.com/company/epylliongroup</Source>
+                <URL>https://www.linkedin.com/company/epylliongroup</URL>
+            </Sources>
+            <SourceNotes>Year of founding is confirmed by multiple sources, but exact registration details are not provided.</SourceNotes>
+            <ChainOfThoughtReasoning>The year of founding is used as a proxy for registration date due to the lack of specific registration information.</ChainOfThoughtReasoning>
+            <Status>NO_DATA</Status>
+            <AnyRemainingIssues>Registration number and exact date are not available.</AnyRemainingIssues>
+            <ProposedNextSteps>Attempt to find official registration documents or contact the company directly for more information.</ProposedNextSteps>
+            <Notes>Registration details are incomplete due to the lack of publicly available information.</Notes>
+            <RegistrationNumberNotes>No registration number was found in the available sources.</RegistrationNumberNotes>
+            <RegistrationDateNotes>The year of founding is confirmed, but the exact registration date is not available.</RegistrationDateNotes>
+        </RegistrationDetails>
+        <CompanyStatus>Active</CompanyStatus>
+        <CompanyStatusNotes>The company is actively operating, as indicated by its website and recent updates on social media.</CompanyStatusNotes>
+        <BusinessEntityType>Private Limited Company</BusinessEntityType>
+        <BusinessEntityTypeNotes>The business entity type is inferred from the company's structure and operations but is not explicitly stated in the sources.</BusinessEntityTypeNotes>
+        <SectionStatus>OK</SectionStatus>
+        <Notes>Company identity information is mostly complete, with some gaps in registration details.</Notes>
+        <IdentityVerificationProcess>Verification involved cross-checking information across multiple sources, including official company websites and social media.</IdentityVerificationProcess>
+    </CompanyIdentity>
+
+    <ContactInformation>
+        <Email>info@epylliongroup.com</Email>
+        <EmailNotes>Email address is provided on the company's website and is presumed to be active.</EmailNotes>
+        <Phone>+88-02-9840223</Phone>
+        <PhoneNotes>Phone number is provided on the company's website but has not been verified as active.</PhoneNotes>
+        <Website>https://www.epylliongroup.com</Website>
+        <WebsiteNotes>The website is active and provides comprehensive information about the company.</WebsiteNotes>
+        <SocialMediaProfiles>
+            <Platform>LinkedIn</Platform>
+            <URL>https://www.linkedin.com/company/epylliongroup</URL>
+            <ProfileNotes>The LinkedIn profile is active and provides updates on the company's activities.</ProfileNotes>
+        </SocialMediaProfiles>
+        <Sources>
+            <Source>https://www.epylliongroup.com/contact-us.php</Source>
+            <URL>https://www.epylliongroup.com/contact-us.php</URL>
+            <Source>https://www.epylliongroup.com/</Source>
+            <URL>https://www.epylliongroup.com/</URL>
+        </Sources>
+        <SourceNotes>Sources for contact information are primarily the company's official website and social media profiles.</SourceNotes>
+        <ChainOfThoughtReasoning>Contact information is verified through the company's official channels.</ChainOfThoughtReasoning>
+        <Status>OK</Status>
+        <AnyRemainingIssues>No remaining issues with contact information.</AnyRemainingIssues>
+        <ProposedNextSteps>No further actions needed for contact information verification.</ProposedNextSteps>
+        <SectionStatus>OK</SectionStatus>
+        <Notes>Contact information is readily available and appears to be up-to-date.</Notes>
+        <ContactConsistencyNotes>Contact information is consistent across different sources.</ContactConsistencyNotes>
+    </ContactInformation>
+
+    <Headquarters>
+        <Address>227/A Tejgaon-Gulshan Link Road, Dhaka-1208, Bangladesh</Address>
+        <ExactRawData>227/A Tejgaon-Gulshan Link Road, Dhaka-1208, Bangladesh</ExactRawData>
+        <AddressComponentNotes>No inconsistencies found in the address components.</AddressComponentNotes>
+        <Sources>
+            <Source>https://www.epylliongroup.com/contact-us.php</Source>
+            <URL>https://www.epylliongroup.com/contact-us.php</URL>
+            <Source>https://www.linkedin.com/company/epylliongroup</Source>
+            <URL>https://www.linkedin.com/company/epylliongroup</URL>
+            <Source>https://zoominfo.com/c/epyllion-group/354067119</Source>
+            <URL>https://zoominfo.com/c/epyllion-group/354067119</URL>
+        </Sources>
+        <SourceNotes>Sources confirm the headquarters address consistently.</SourceNotes>
+        <ChainOfThoughtReasoning>The headquarters address is verified through multiple sources, including the company's website and social media.</ChainOfThoughtReasoning>
+        <Status>OK</Status>
+        <AnyRemainingIssues>No remaining issues with the headquarters address.</AnyRemainingIssues>
+        <ProposedNextSteps>No further actions needed for headquarters address verification.</ProposedNextSteps>
+        <SectionStatus>OK</SectionStatus>
+        <Notes>Headquarters address is confirmed through multiple reliable sources.</Notes>
+        <GeographicVerificationNotes>No geographic verification was performed beyond confirming the address through multiple sources.</GeographicVerificationNotes>
+        <HeadquartersHistoryNotes>No information is available on changes in the headquarters location.</HeadquartersHistoryNotes>
+    </Headquarters>
+
+    <LocationsAndOperations>
+        <AdditionalLocations>No additional locations provided.</AdditionalLocations>
+        <AdditionalLocationsNotes>No information is available on additional office locations beyond the headquarters.</AdditionalLocationsNotes>
+        <FactoryLocations>No factory locations provided.</FactoryLocations>
+        <FactoryLocationsNotes>No information is available on factory or production sites.</FactoryLocationsNotes>
+        <ExactRawData>No exact location data beyond headquarters is available.</ExactRawData>
+        <Sources>
+            <Source>https://www.epylliongroup.com/</Source>
+            <URL>https://www.epylliongroup.com/</URL>
+        </Sources>
+        <SourceNotes>Information on locations and operations is limited to the headquarters address.</SourceNotes>
+        <ChainOfThoughtReasoning>Locations and operations information is based on the available data, which is primarily focused on the headquarters.</ChainOfThoughtReasoning>
+        <Status>NO_DATA</Status>
+        <AnyRemainingIssues>Additional locations and factory locations are not available.</AnyRemainingIssues>
+        <ProposedNextSteps>Attempt to find more detailed information on the company's operations and locations.</ProposedNextSteps>
+        <SectionStatus>NEEDS_REVIEW</SectionStatus>
+        <Notes>Information on locations and operations is incomplete.</Notes>
+        <LocationVerificationMethodNotes>No location verification was performed due to the lack of detailed location information.</LocationVerificationMethodNotes>
+        <GeographicDistributionNotes>No information is available to assess the geographic distribution of the company's operations.</GeographicDistributionNotes>
+    </LocationsAndOperations>
+
+    <Industry>
+        <FinalIndustryClassification>Retail Apparel and Fashion</FinalIndustryClassification>
+        <IndustryClassificationNotes>Industry classification is based on the company's products and services.</IndustryClassificationNotes>
+        <MainProductsOrServices>Garments, Textiles</MainProductsOrServices>
+        <ProductsServicesNotes>Products and services are as stated on the company's website and other sources.</ProductsServicesNotes>
+        <Certifications>No certifications provided.</Certifications>
+        <CertificationsOverviewNotes>No information is available on certifications.</CertificationsOverviewNotes>
+        <ExactRawData>Retail Apparel and Fashion</ExactRawData>
+        <Sources>
+            <Source>https://www.linkedin.com/company/epylliongroup</Source>
+            <URL>https://www.linkedin.com/company/epylliongroup</URL>
+            <Source>https://abstractapi.com/companyenrichment?domain=epylliongroup.com</Source>
+            <URL>https://abstractapi.com/companyenrichment?domain=epylliongroup.com</URL>
+        </Sources>
+        <SourceNotes>Industry information is consistent across the available sources.</SourceNotes>
+        <ChainOfThoughtReasoning>Industry classification is based on the products and services offered by the company.</ChainOfThoughtReasoning>
+        <Status>OK</Status>
+        <AnyRemainingIssues>No remaining issues with industry classification.</AnyRemainingIssues>
+        <ProposedNextSteps>No further actions needed for industry classification verification.</ProposedNextSteps>
+        <SectionStatus>OK</SectionStatus>
+        <Notes>Industry information is consistent and well-documented.</Notes>
+        <IndustryTrendsNotes>No information is available on current industry trends and their impact on the company.</IndustryTrendsNotes>
+        <CompetitivePositionNotes>No information is available to assess the company's competitive position within its industry.</CompetitivePositionNotes>
+    </Industry>
+
+    <OwnershipDetails>
+        <ParentCompany>No parent company information provided.</ParentCompany>
+        <ParentCompanyNotes>No information is available on a parent company.</ParentCompanyNotes>
+        <Owner>Mr. Reaz Uddin Al-Mamoon (45.8%), Mr. Md. Kishwar Jahan</Owner>
+        <OwnershipStructureNotes>Ownership structure is based on the available single source.</OwnershipStructureNotes>
+        <KeyDirectors>No key directors information provided.</KeyDirectors>
+        <KeyDirectorsNotes>No information is available on key directors or executives.</KeyDirectorsNotes>
+        <ExactRawData>Mr. Reaz Uddin Al-Mamoon (45.8%), Mr. Md. Kishwar Jahan</ExactRawData>
+        <Sources>
+            <Source>https://disclosures.ifc.org/project-detail/SII/42000/epyllion-knit</Source>
+            <URL>https://disclosures.ifc.org/project-detail/SII/42000/epyllion-knit</URL>
+        </Sources>
+        <SourceNotes>Ownership information is based on a single source and may not be comprehensive or up-to-date.</SourceNotes>
+        <ChainOfThoughtReasoning>Ownership details are as provided by the single available source.</ChainOfThoughtReasoning>
+        <Status>SINGLE_SOURCE</Status>
+        <AnyRemainingIssues>Ownership information is based on a single source and may require further verification.</AnyRemainingIssues>
+        <ProposedNextSteps>Attempt to find more sources to verify and expand on the ownership information.</ProposedNextSteps>
+        <SectionStatus>NEEDS_REVIEW</SectionStatus>
+        <Notes>Ownership information is limited and based on a single source.</Notes>
+        <BeneficialOwnershipNotes>No information is available on beneficial ownership beyond the provided ownership structure.</BeneficialOwnershipNotes>
+        <CorporateGovernanceNotes>No information is available on corporate governance structure or practices.</CorporateGovernanceNotes>
+    </OwnershipDetails>
+
+    <FinancialInformation>
+        <Revenue>$67.5 million</Revenue>
+        <RevenueNotes>Revenue figure is based on the available sources and may not reflect the current financial situation.</RevenueNotes>
+        <ProfitBeforeTax>No profit before tax information provided.</ProfitBeforeTax>
+        <ProfitNotes>No information is available on profit before tax.</ProfitNotes>
+        <MarketValue>No market value information provided.</MarketValue>
+        <MarketValueNotes>No information is available on market value.</MarketValueNotes>
+        <StockInformation>No stock information provided.</StockInformation>
+        <StockPerformanceNotes>No information is available on stock performance.</StockPerformanceNotes>
+        <ExactRawData>$67.5 million</ExactRawData>
+        <Sources>
+            <Source>https://rocketreach.co/epyllion-group-profile_b5dd999ef42e5534</Source>
+            <URL>https://rocketreach.co/epyllion-group-profile_b5dd999ef42e5534</URL>
+            <Source>https://apparelresources.com/business-news/sourcing/epyllion-groups-growth-strategy-less-competition-automation-motivation/</Source>
+            <URL>https://apparelresources.com/business-news/sourcing/epyllion-groups-growth-strategy-less-competition-automation-motivation/</URL>
+        </Sources>
+        <SourceNotes>Financial information is limited and based on the available sources.</SourceNotes>
+        <ChainOfThoughtReasoning>Financial information is as provided by the sources and may require further verification and updating.</ChainOfThoughtReasoning>
+        <Status>OK</Status>
+        <AnyRemainingIssues>Financial information is incomplete and may not reflect the current situation.</AnyRemainingIssues>
+        <ProposedNextSteps>Attempt to find more comprehensive and up-to-date financial information.</ProposedNextSteps>
+        <SectionStatus>NEEDS_REVIEW</SectionStatus>
+        <Notes>Financial information is limited and based on available sources.</Notes>
+        <FinancialHealthNotes>No assessment of financial health can be made due to the lack of comprehensive financial information.</FinancialHealthNotes>
+        <FinancialReportingNotes>No information is available on the quality and transparency of the company's financial reporting.</FinancialReportingNotes>
+    </FinancialInformation>
+
+    <DataAssessmentSummary>
+        <OverallDataQuality>Variable</OverallDataQuality>
+        <DataQualityNotes>Data quality varies across sections, with some information being well-documented and other areas lacking detail or verification.</DataQualityNotes>
+        <MajorGaps>Registration details, locations and operations, ownership structure, and financial information are areas with significant gaps or limitations.</MajorGaps>
+        <DataGapsNotes>These gaps may impact the overall assessment and decision-making processes, as they limit the understanding of the company's operations, structure, and financial situation.</DataGapsNotes>
+        <RecommendedNextSteps>Further research and verification are recommended to address the identified gaps and improve the overall data quality.</RecommendedNextSteps>
+        <NextStepsNotes>Prioritized actions should focus on obtaining official registration documents, detailed location and operations information, comprehensive ownership structure, and up-to-date financial data.</NextStepsNotes>
+        <Notes>The data collection process highlighted the importance of verifying information through multiple sources and the need for more detailed data in several areas.</Notes>
+        <ResearchProcessNotes>The research involved reviewing available sources, including company websites, social media, business directories, and financial reports, with an emphasis on cross-verifying information whenever possible.</ResearchProcessNotes>
+        <ConfidenceLevelNotes>Confidence in the data varies, with higher confidence in areas like company identity and contact information, and lower confidence in areas with limited or single-source information.</ConfidenceLevelNotes>
+        <FinalRecommendationNotes>A comprehensive review and verification process is recommended before making any decisions based on this data, due to the identified gaps and limitations.</FinalRecommendationNotes>
+    </DataAssessmentSummary>
+</CompanyData>

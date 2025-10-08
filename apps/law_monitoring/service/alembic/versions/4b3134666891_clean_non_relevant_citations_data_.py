@@ -1,0 +1,154 @@
+"""clean_non_relevant_citations_data_migration
+
+This data migration optimizes memory usage by cleaning up non-relevant team citations.
+Previously, non-relevant teams stored full Citation objects marked as is_factual=False.
+The frontend filters these out immediately, making them wasteful.
+
+This migration:
+1. Finds all laws with team_relevancy_classification data
+2. For teams marked as is_relevant=False, replaces their citations with empty lists
+3. Preserves all other data unchanged
+
+Benefits:
+- 10-100x memory reduction for non-relevant citations
+- Smaller database records and faster API responses
+- Identical frontend behavior (already filters out non-factual citations)
+
+Revision ID: 4b3134666891
+Revises: 36b04be70fd1
+Create Date: 2025-09-18 15:14:11.440211
+
+"""
+
+from typing import Any, Dict, List, Sequence, Union
+
+import sqlalchemy as sa
+from loguru import logger
+
+from alembic import op
+
+# revision identifiers, used by Alembic.
+revision: str = "4b3134666891"
+down_revision: Union[str, Sequence[str], None] = "36b04be70fd1"
+branch_labels: Union[str, Sequence[str], None] = None
+depends_on: Union[str, Sequence[str], None] = None
+
+
+def clean_team_relevancy_data(
+    team_relevancy_list: List[Dict[str, Any]],
+) -> tuple[List[Dict[str, Any]], Dict[str, Any]]:
+    """Clean team relevancy data by removing citations from non-relevant teams.
+
+    Returns:
+        Tuple of (cleaned_data, statistics)
+    """
+    if not isinstance(team_relevancy_list, list):
+        return team_relevancy_list, {"teams_modified": 0, "citations_removed": 0}
+
+    cleaned_data = []
+    stats = {"teams_modified": 0, "citations_removed": 0}
+
+    for team_data in team_relevancy_list:
+        if not isinstance(team_data, dict):
+            cleaned_data.append(team_data)
+            continue
+
+        team_name = team_data.get("team_name", "Unknown")
+        is_relevant = team_data.get("is_relevant", False)
+        citations = team_data.get("citations", [])
+
+        # Create cleaned version
+        cleaned_team = team_data.copy()
+
+        if not is_relevant and citations:
+            # Replace citations with empty list for non-relevant teams
+            original_count = len(citations) if citations else 0
+            cleaned_team["citations"] = []
+            stats["teams_modified"] += 1
+            stats["citations_removed"] += original_count
+            logger.debug(f"Team '{team_name}': Removed {original_count} citations")
+
+        cleaned_data.append(cleaned_team)
+
+    return cleaned_data, stats
+
+
+def upgrade() -> None:
+    """Data migration: Clean non-relevant citations to optimize memory usage."""
+    connection = op.get_bind()
+
+    # Get the laws table
+    laws_table = sa.table(
+        "law_monitoring_laws",
+        sa.column("law_id", sa.String),
+        sa.column("team_relevancy_classification", sa.JSON),
+        sa.column("status", sa.String),
+    )
+
+    logger.info("Starting non-relevant citations cleanup migration...")
+
+    # Find all laws with team_relevancy_classification data
+    # Note: We don't need to exclude empty arrays since the cleaning logic handles that
+    result = connection.execute(
+        sa.select(
+            laws_table.c.law_id, laws_table.c.team_relevancy_classification
+        ).where(laws_table.c.team_relevancy_classification.isnot(None))
+    )
+
+    total_stats = {
+        "laws_processed": 0,
+        "laws_modified": 0,
+        "teams_modified": 0,
+        "citations_removed": 0,
+    }
+
+    for row in result:
+        law_id = row.law_id
+        team_relevancy_data = row.team_relevancy_classification
+
+        if not team_relevancy_data:
+            continue
+
+        total_stats["laws_processed"] += 1
+
+        # Clean the team relevancy data
+        cleaned_data, law_stats = clean_team_relevancy_data(team_relevancy_data)
+
+        if law_stats["teams_modified"] > 0:
+            total_stats["laws_modified"] += 1
+            total_stats["teams_modified"] += law_stats["teams_modified"]
+            total_stats["citations_removed"] += law_stats["citations_removed"]
+
+            # Update the law with cleaned data
+            connection.execute(
+                sa.update(laws_table)
+                .where(laws_table.c.law_id == law_id)
+                .values(team_relevancy_classification=cleaned_data)
+            )
+
+            logger.info(
+                f"Law {law_id}: Cleaned {law_stats['teams_modified']} teams, "
+                f"removed {law_stats['citations_removed']} citations"
+            )
+
+    logger.success(
+        f"Migration completed: {total_stats['laws_processed']} laws processed, "
+        f"{total_stats['laws_modified']} laws modified, "
+        f"{total_stats['teams_modified']} teams cleaned, "
+        f"{total_stats['citations_removed']} citations removed"
+    )
+
+
+def downgrade() -> None:
+    """Downgrade: This migration cannot be automatically reversed.
+
+    The original citation data was removed for optimization purposes.
+    If needed, citations can be regenerated by re-running the citation tool
+    on the affected laws, but this should not be necessary as the functionality
+    is identical (frontend filters out non-factual citations anyway).
+    """
+    logger.warning(
+        "This data migration cannot be automatically reversed. "
+        "The removed citations were non-factual and filtered out by the frontend anyway. "
+        "If needed, re-run citation generation on affected laws."
+    )

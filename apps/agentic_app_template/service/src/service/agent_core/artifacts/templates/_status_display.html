@@ -1,0 +1,33 @@
+{% macro display_status(status) %}
+    {% if status == "OK" %}
+        <div class="status-badge status-ok">
+            <i class="bi bi-check-circle status-icon"></i>
+            <span class="status-text">OK</span>
+        </div>
+    {% elif status == "Needs Review" %}
+        <div class="status-badge status-needs-review">
+            <i class="bi bi-exclamation-triangle status-icon"></i>
+            <span class="status-text">Needs Review</span>
+        </div>
+    {% elif status == "Error" %}
+        <div class="status-badge status-error">
+            <i class="bi bi-x-circle status-icon"></i>
+            <span class="status-text">Error</span>
+        </div>
+    {% elif status == "No Data" %}
+        <div class="status-badge status-no-data">
+            <i class="bi bi-dash-circle status-icon"></i>
+            <span class="status-text">No Data</span>
+        </div>
+    {% elif status == "Single Source" %}
+        <div class="status-badge status-single-source">
+            <i class="bi bi-info-circle status-icon"></i>
+            <span class="status-text">Single Source</span>
+        </div>
+    {% else %}
+        <div class="status-badge status-no-data">
+            <i class="bi bi-question-circle status-icon"></i>
+            <span class="status-text">{{ status }}</span>
+        </div>
+    {% endif %}
+{% endmacro %}

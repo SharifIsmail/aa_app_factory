@@ -1,0 +1,48 @@
+name: 'Build UI'
+description: 'Builds the UI component for an extensibility app'
+inputs:
+  app_name:
+    description: 'Application name'
+    required: true
+  workspace_path:
+    description: 'Path to workspace root'
+    required: true
+    default: '.'
+outputs:
+  success:
+    description: 'Whether UI build was successful'
+    value: ${{ steps.build.outputs.success }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Enable package manager
+      shell: bash
+      run: corepack enable
+
+    - name: Install workspace dependencies
+      shell: bash
+      working-directory: ${{ inputs.workspace_path }}
+      run: |
+        echo "::group::Installing dependencies"
+        pnpm install
+        echo "::endgroup::"
+
+    - name: Build UI
+      id: build
+      shell: bash
+      working-directory: ${{ inputs.workspace_path }}
+      run: |
+        echo "::group::Building UI for ${{ inputs.app_name }}"
+        
+        if [ -d "./apps/${{ inputs.app_name }}/ui" ]; then
+          echo "🛠  Building UI for ${{ inputs.app_name }}"
+          pnpm --filter "${{ inputs.app_name }}-ui" build
+          echo "success=true" >> $GITHUB_OUTPUT
+          echo "::notice::UI build completed successfully"
+        else
+          echo "::error::No ui folder found for ${{ inputs.app_name }}"
+          echo "success=false" >> $GITHUB_OUTPUT
+          exit 1
+        fi
+        
+        echo "::endgroup::"

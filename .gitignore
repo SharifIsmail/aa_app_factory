@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.egg-info/
+*.egg
+.env
+.venv
+.python-version
+.ipynb_checkpoints
+
+# IDEs and editors
+.idea/
+.vscode/
+
+# OS generated files
+.DS_Store
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# mypy
+.mypy_cache/
+
+# pytest
+.pytest_cache/
+apps/example
+all_usecases.json
+*.actrc
+apps/agentic_app_template/a.json
+apps/agentic_app_template/ui/node_modules/
+apps/law_monitoring/service/.cache
+apps/law_monitoring/service/src/.cache
+apps/law_monitoring/a.json
+apps/supplier_briefing/a.json
+apps/supplier_briefing/b.json
+apps/supplier_briefing/CLAUDE.md
+development_logs/*
+apps/supplier_briefing/development_logs/*
+apps/supplier_briefing/service/evaluation/data/intelligence_layer_eval/*
+
+node_modules/
+dist/
+apps/supplier_briefing/_dev.logs/*

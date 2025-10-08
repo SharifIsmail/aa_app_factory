@@ -1,0 +1,198 @@
+name: Deploy Extensibility Apps (v2 - Composite Actions)
+
+on:
+  workflow_dispatch:
+    inputs:
+      app_name:
+        description: 'Micro-app to deploy'
+        required: true
+        type: choice
+        options:
+          - supplier_analysis
+          - law_monitoring
+          - agentic_app_template
+          - supplier_briefing
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        type: choice
+        options:
+          - c-prod(dev)
+          - schwarz-tenant
+          - PWC
+          - SIT
+      image_tag:
+        description: 'Container image tag/version'
+        required: true
+        type: string
+        default: 'main_latest'
+      tenant_id:
+        description: 'Optional: Tenant ID for multi-tenant deployments'
+        required: false
+        type: string
+
+jobs:
+  check-permissions:
+    name: Check Permissions
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check deployment permissions
+        id: check-deployment-permissions
+        run: |
+          echo "::group::Checking user permissions"
+          PERMISSION_ROLE=$(curl -s \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/collaborators/${{ github.actor }}/permission" | \
+            jq -r '.role_name')
+
+          if [[ "$PERMISSION_ROLE" != "admin" && "$PERMISSION_ROLE" != "maintain" ]]; then
+            echo "::error::User ${{ github.actor }} does not have deployment permissions"
+            echo "::error::Current permission role: $PERMISSION_ROLE"
+            echo "::endgroup::"
+            exit 1
+          fi
+          echo "::notice::User ${{ github.actor }} has deployment permissions (role: $PERMISSION_ROLE)"
+          echo "::endgroup::"
+    outputs:
+      is_admin: ${{ steps.check-deployment-permissions.outcome == 'success' }}
+
+  deploy:
+    name: Deploy ${{ github.event.inputs.app_name }} to ${{ github.event.inputs.environment }}
+    needs: [check-permissions]
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment }}
+    
+    env:
+      APP_NAME: ${{ github.event.inputs.app_name }}
+      ENVIRONMENT: ${{ github.event.inputs.environment }}
+      IMAGE_TAG: ${{ github.event.inputs.image_tag }}
+
+    outputs:
+      DEPLOYMENT_SUCCESS: ${{ steps.deploy.outputs.success }}
+      DEPLOYMENT_ID: ${{ steps.deploy.outputs.deployment_id }}
+      USECASE_ID: ${{ steps.usecase.outputs.usecase_id }}
+      USECASE_NAME: ${{ steps.usecase.outputs.usecase_name }}
+      HEALTH_CHECK_SUCCESS: ${{ steps.health.outputs.success }}
+    
+    concurrency:
+      group: deploy-${{ github.event.inputs.app_name }}-${{ github.event.inputs.environment }}
+      cancel-in-progress: true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Manage usecase
+        id: usecase
+        uses: ./.github/actions/manage-usecase
+        with:
+          app_name: ${{ env.APP_NAME }}
+          api_url: ${{ vars.PHARIAOS_MANAGER_URL }}
+          auth_token: ${{ secrets.SERVICE_AUTHENTICATION_TOKEN }}
+          tenant_id: ${{ github.event.inputs.tenant_id }}
+
+      - name: Deploy usecase
+        id: deploy
+        uses: ./.github/actions/deploy-usecase
+        with:
+          app_name: ${{ env.APP_NAME }}
+          usecase_id: ${{ steps.usecase.outputs.usecase_id }}
+          image_tag: ${{ env.IMAGE_TAG }}
+          api_url: ${{ vars.PHARIAOS_MANAGER_URL }}
+          auth_token: ${{ secrets.SERVICE_AUTHENTICATION_TOKEN }}
+          # Core service URLs
+          kernel_url: ${{ vars.SERVICE_PHARIA_KERNEL_URL }}
+          auth_service_url: ${{ vars.SERVICE_PHARIA_AUTH_SERVICE_URL }}
+          iam_issuer_url: ${{ vars.SERVICE_PHARIA_IAM_ISSUER_URL }}
+          data_url: ${{ vars.SERVICE_PHARIA_DATA_URL }}
+          studio_url: ${{ vars.SERVICE_PHARIA_STUDIO_URL }}
+          inference_api_url: ${{ vars.SERVICE_INFERENCE_API_URL }}
+          completion_model_name: ${{ vars.SERVICE_COMPLETION_MODEL_NAME }}
+          image_registry: ${{ vars.IMAGE_REGISTRY }}
+          tenant_id: ${{ github.event.inputs.tenant_id }}
+          # App-specific inputs (conditional based on app)
+          data_stage_name: ${{ vars.PHARIA_DATA_STAGE_NAME }}
+          storage_type: ${{ vars.STORAGE_TYPE }}
+          enable_partner_button: ${{ vars.SERVICE_ENABLE_PARTNER_BUTTON }}
+          serper_api_key: ${{ secrets.SERPER_API_KEY }}
+          abstract_api_key: ${{ secrets.ABSTRACT_API_KEY }}
+          service_studio_url: ${{ vars.SERVICE_STUDIO_URL }}
+          service_studio_project_name: ${{ vars.SERVICE_STUDIO_PROJECT_NAME }}
+          postgres_secret_name: ${{ secrets.POSTGRES_SECRET_NAME }}
+          postgres_secret_key: ${{ secrets.POSTGRES_SECRET_KEY }}
+
+      - name: Health check
+        id: health
+        if: steps.deploy.outputs.success == 'true'
+        uses: ./.github/actions/health-check
+        with:
+          health_url: ${{ vars.PHARIA_APPS_URL }}/${{ steps.usecase.outputs.usecase_id }}/health
+          auth_token: ${{ secrets.SERVICE_AUTHENTICATION_TOKEN }}
+          max_retries: 5
+          retry_delay: 60
+
+      - name: Deployment summary
+        if: always()
+        run: |
+          echo "::group::Deployment Summary"
+          echo "### 🚀 Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Field | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| **Application** | ${{ env.APP_NAME }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Usecase Name** | ${{ steps.usecase.outputs.usecase_name }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Environment** | ${{ env.ENVIRONMENT }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Image Tag** | ${{ env.IMAGE_TAG }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Deployed By** | ${{ github.actor }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Deployment Time** | $(date -u '+%Y-%m-%d %H:%M:%S UTC') |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Deployment status
+          if [ "${{ steps.deploy.outputs.success }}" = "true" ]; then
+            echo "✅ **Deployment Status**: SUCCESS" >> $GITHUB_STEP_SUMMARY
+            echo "| **Deployment ID** | ${{ steps.deploy.outputs.deployment_id }} |" >> $GITHUB_STEP_SUMMARY
+            echo "| **Usecase ID** | ${{ steps.usecase.outputs.usecase_id }} |" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ **Deployment Status**: FAILED" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          # Health check status
+          if [ "${{ steps.health.outputs.success }}" = "true" ]; then
+            echo "✅ **Health Check**: PASSED" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.deploy.outputs.success }}" = "true" ]; then
+            echo "❌ **Health Check**: FAILED" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⏭️ **Health Check**: SKIPPED (deployment failed)" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "::endgroup::"
+
+      - name: Validate deployment success
+        if: always()
+        run: |
+          echo "::group::Final Validation"
+          
+          # Check if usecase management succeeded
+          if [ "${{ steps.usecase.outcome }}" != "success" ]; then
+            echo "::error::Usecase management failed"
+            exit 1
+          fi
+          
+          # Check if deployment succeeded
+          if [ "${{ steps.deploy.outcome }}" != "success" ] || [ "${{ steps.deploy.outputs.success }}" != "true" ]; then
+            echo "::error::Deployment failed"
+            exit 1
+          fi
+          
+          # Check if health check succeeded (only if deployment succeeded)
+          if [ "${{ steps.deploy.outputs.success }}" = "true" ] && [ "${{ steps.health.outputs.success }}" != "true" ]; then
+            echo "::error::Health check failed - deployment is not healthy"
+            exit 1
+          fi
+          
+          echo "::notice::✅ All deployment steps completed successfully!"
+          echo "::endgroup::"

@@ -1,0 +1,116 @@
+name: 'Manage Usecase'
+description: 'Creates or finds existing usecase with proper error handling'
+inputs:
+  app_name:
+    description: 'Application name'
+    required: true
+  api_url:
+    description: 'Base API URL'
+    required: true
+  auth_token:
+    description: 'Authentication token'
+    required: true
+  tenant_id:
+    description: 'Optional tenant ID for multi-tenant deployments'
+    required: false
+outputs:
+  usecase_id:
+    description: 'ID of the usecase'
+    value: ${{ steps.manage.outputs.usecase_id }}
+  usecase_name:
+    description: 'Display name of the usecase'
+    value: ${{ steps.manage.outputs.usecase_name }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Set usecase name
+      id: set-name
+      shell: bash
+      run: |
+        case "${{ inputs.app_name }}" in
+          "supplier_analysis")
+            USECASE_NAME="Supplier Analysis"
+            ;;
+          "law_monitoring")
+            USECASE_NAME="Law Monitoring"
+            ;;
+          "agentic_app_template")
+            USECASE_NAME="Deep Research"
+            ;;
+          "supplier_briefing")
+            USECASE_NAME="Supplier Briefing"
+            ;;
+          *)
+            echo "::error::Unknown app name: ${{ inputs.app_name }}"
+            exit 1
+            ;;
+        esac
+
+        if [ -n "${{ inputs.tenant_id }}" ]; then
+          USECASE_NAME="$USECASE_NAME (${{ inputs.tenant_id }})"
+        fi
+
+        echo "usecase_name=$USECASE_NAME" >> $GITHUB_OUTPUT
+        echo "Using usecase name: $USECASE_NAME"
+
+    - name: Fetch existing usecases
+      id: fetch
+      uses: ./.github/actions/fetch-usecases
+      with:
+        api_url: ${{ inputs.api_url }}
+        auth_token: ${{ inputs.auth_token }}
+
+    - name: Create or find usecase
+      id: manage
+      shell: bash
+      run: |
+        USECASE_NAME="${{ steps.set-name.outputs.usecase_name }}"
+        AUTH_TOKEN="${{ inputs.auth_token }}"
+        BASE_URL="${{ inputs.api_url }}/api/usecases"
+        EXISTING_USECASES='${{ steps.fetch.outputs.usecases }}'
+        
+        # Check if usecase already exists
+        existing_id=$(echo "$EXISTING_USECASES" | jq -r ".[] | select(.name == \"$USECASE_NAME\") | .id // empty")
+        
+        if [ -n "$existing_id" ]; then
+          echo "Usecase '$USECASE_NAME' already exists with ID: $existing_id"
+          echo "usecase_id=$existing_id" >> $GITHUB_OUTPUT
+          echo "usecase_name=$USECASE_NAME" >> $GITHUB_OUTPUT
+          exit 0
+        fi
+        
+        # Create new usecase
+        echo "Creating new usecase: $USECASE_NAME"
+        response=$(curl -s -w "HTTPSTATUS:%{http_code}" -X POST \
+          "$BASE_URL" \
+          -H "Authorization: Bearer $AUTH_TOKEN" \
+          -H "Content-Type: application/json" \
+          -d "{
+            \"description\": \"description of your usecase application\",
+            \"name\": \"$USECASE_NAME\",
+            \"isPublic\": false
+          }")
+        
+        # Extract HTTP status and body
+        http_code=$(echo "$response" | tr -d '\n' | sed -e 's/.*HTTPSTATUS://')
+        body=$(echo "$response" | sed -e 's/HTTPSTATUS:.*//g')
+        
+        echo "HTTP Status: $http_code"
+        echo "Response Body: $body"
+        
+        if [ "$http_code" -ne 200 ] && [ "$http_code" -ne 201 ]; then
+          echo "::error::Failed to create usecase. HTTP Status: $http_code"
+          echo "::error::Response: $body"
+          exit 1
+        fi
+        
+        usecase_id=$(echo "$body" | jq -r '.id // empty')
+        if [ -z "$usecase_id" ] || [ "$usecase_id" = "null" ]; then
+          echo "::error::Failed to extract usecase ID from response"
+          echo "::error::Response: $body"
+          exit 1
+        fi
+        
+        echo "Created usecase with ID: $usecase_id"
+        echo "usecase_id=$usecase_id" >> $GITHUB_OUTPUT
+        echo "usecase_name=$USECASE_NAME" >> $GITHUB_OUTPUT

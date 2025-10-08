@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="white"/>
+  <rect width="960" height="80" fill="#2c5282"/>
+  <text x="40" y="50" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="white" style="white-space: pre;">Our Solution: An Agentic AI System</text>
+  <rect x="0" y="80" width="960" height="380" fill="white"/>
+  <g transform="translate(40, 110)">
+    <text font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="600" fill="#2c5282" style="white-space: pre;">How It Works</text>
+    <line x1="0" y1="35" x2="380" y2="35" stroke="#e2e8f0" stroke-width="2"/>
+    <g transform="translate(0, 65)">
+      <circle cx="12" cy="12" r="12" fill="#4299e1"/>
+      <text x="12" y="17" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" style="white-space: pre;">🤖</text>
+      <text x="35" y="16" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre;">Multi-agent AI system working in coordinated teams</text>
+      <circle cx="12" cy="46" r="12" fill="#4299e1"/>
+      <text x="12" y="51" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" style="white-space: pre;">🔍</text>
+      <text x="35" y="50" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre;">Specialized agents for different tasks</text>
+      <circle cx="12" cy="80" r="12" fill="#4299e1"/>
+      <text x="12" y="85" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" style="white-space: pre;">📊</text>
+      <text x="35" y="84" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre;">Processes metrics and qualitative events</text>
+      <circle cx="12" cy="114" r="12" fill="#4299e1"/>
+      <text x="12" y="119" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" style="white-space: pre;">🏢</text>
+      <text x="35" y="118" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre;">Three-level assessment: country, industry,</text>
+      <text x="35" y="138" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre;">and supplier-specific risks</text>
+      <circle cx="12" cy="162" r="12" fill="#4299e1"/>
+      <text x="12" y="167" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" style="white-space: pre;">⚙️</text>
+      <text x="35" y="166" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre;">Automated risk scoring and recommendations</text>
+    </g>
+  </g>
+  <line x1="480" y1="110" x2="480" y2="420" stroke="#e2e8f0" stroke-width="2"/>
+  <g transform="translate(510, 110)">
+    <text font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="600" fill="#2c5282" style="white-space: pre;">Key Benefits</text>
+    <line x1="0" y1="35" x2="410" y2="35" stroke="#e2e8f0" stroke-width="2"/>
+    <g transform="translate(0, 65)">
+      <circle cx="12" cy="12" r="12" fill="#48bb78"/>
+      <text x="12" y="17" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" style="white-space: pre;">✓</text>
+      <text x="35" y="16" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre;"><tspan font-weight="bold">Comprehensive:</tspan> Examines lots of data sources</text>
+      <circle cx="12" cy="46" r="12" fill="#48bb78"/>
+      <text x="12" y="51" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" style="white-space: pre;">✓</text>
+      <text x="35" y="50" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre;"><tspan font-weight="bold">Consistent:</tspan> Standardized assessment framework</text>
+      <circle cx="12" cy="80" r="12" fill="#48bb78"/>
+      <text x="12" y="85" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" style="white-space: pre;">✓</text>
+      <text x="35" y="84" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre;"><tspan font-weight="bold">Scalable:</tspan> Minutes instead of days per supplier</text>
+      <circle cx="12" cy="114" r="12" fill="#48bb78"/>
+      <text x="12" y="119" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" style="white-space: pre;">✓</text>
+      <text x="35" y="118" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre;"><tspan font-weight="bold">Evidence-based:</tspan> Full documentation of findings</text>
+      <circle cx="12" cy="148" r="12" fill="#48bb78"/>
+      <text x="12" y="153" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" style="white-space: pre;">✓</text>
+      <text x="35" y="152" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre;"><tspan font-weight="bold">Actionable:</tspan> Clear risk scores and remediation steps</text>
+    </g>
+  </g>
+  <rect x="40" y="430" width="880" height="70" rx="6" fill="#EBF8FF" stroke="#4299e1" stroke-width="1"/>
+  <text x="480" y="470" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="600" fill="#2c5282" text-anchor="middle" style="white-space: pre;" transform="matrix(1, 0, 0, 1, 0.188285, -34.023602)"><tspan x="480" dy="1em">​</tspan>    Turn a long manual process into a quick automated assessment<tspan x="480" dy="1em">​</tspan>  </text>
+  <text x="480" y="484.794" font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="#2d3748" text-anchor="middle" style="white-space: pre; font-size: 18px;">
+    without sacrificing depth or accuracy
+  </text>
+</svg>

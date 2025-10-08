@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompanyData>
+    <CompanyIdentity>
+        <Name>
+            <FinalApprovedName>Fakir Fashion Ltd</FinalApprovedName>
+            <LegalNameVariations>Fakir Group Limited</LegalNameVariations>
+            <ExactRawData>Fakir Fashion Ltd</ExactRawData>
+            <Sources>
+                <Source>https://fakirfashion.com/</Source>
+                <URL>https://fakirfashion.com/</URL>
+                <Source>https://find-and-update.company-information.service.gov.uk/company/16157806</Source>
+                <URL>https://find-and-update.company-information.service.gov.uk/company/16157806</URL>
+                <Source>https://www.dnb.com/business-directory/company-profiles.fakir_fashion_ltd.7b85021d685c62af3d63f9bf3f7fb75f.html</Source>
+                <URL>https://www.dnb.com/business-directory/company-profiles.fakir_fashion_ltd.7b85021d685c62af3d63f9bf3f7fb75f.html</URL>
+                <Source>https://rocketreach.co/fakir-fashion-limited-profile_b5f09479f641a009</Source>
+                <URL>https://rocketreach.co/fakir-fashion-limited-profile_b5f09479f641a009</URL>
+                <Source>https://www.linkedin.com/company/fakir-fashion-ltd-</Source>
+                <URL>https://www.linkedin.com/company/fakir-fashion-ltd-</URL>
+            </Sources>
+            <SourceNotes>Sources are a mix of official company websites, government databases, and business directories, providing a comprehensive view of the company's legal name.</SourceNotes>
+            <ChainOfThoughtReasoning>The final approved name was selected based on the most consistent and reliable sources, including the company's official website and government databases.</ChainOfThoughtReasoning>
+            <Status>OK</Status>
+            <AnyRemainingIssues>No remaining issues with the company name data.</AnyRemainingIssues>
+            <ProposedNextSteps>No further actions required for company name verification.</ProposedNextSteps>
+            <Notes>The company name has been verified through multiple sources, ensuring accuracy and compliance.</Notes>
+            <NameVariationNotes>No significant name variations were found, indicating a consistent brand identity.</NameVariationNotes>
+        </Name>
+        <RegistrationDetails>
+            <FinalRegistrationNumber>16157806</FinalRegistrationNumber>
+            <FinalRegistrationDate>31 December 2024</FinalRegistrationDate>
+            <ExactRawData>16157806, 31 December 2024</ExactRawData>
+            <Sources>
+                <Source>https://find-and-update.company-information.service.gov.uk/company/16157806</Source>
+                <URL>https://find-and-update.company-information.service.gov.uk/company/16157806</URL>
+                <Source>https://companycheck.co.uk/company/16157806/FAKIR-GROUP-LIMITED/financials</Source>
+                <URL>https://companycheck.co.uk/company/16157806/FAKIR-GROUP-LIMITED/financials</URL>
+                <Source>https://open.endole.co.uk/insight/company/16157806-fakir-group-limited</Source>
+                <URL>https://open.endole.co.uk/insight/company/16157806-fakir-group-limited</URL>
+            </Sources>
+            <SourceNotes>Government databases and business directories provide reliable sources for registration details.</SourceNotes>
+            <ChainOfThoughtReasoning>Registration details were verified through official government sources and business directories, ensuring accuracy.</ChainOfThoughtReasoning>
+            <Status>OK</Status>
+            <AnyRemainingIssues>No remaining issues with registration data.</AnyRemainingIssues>
+            <ProposedNextSteps>No further actions required for registration data verification.</ProposedNextSteps>
+            <Notes>Registration details have been verified, confirming the company's legal existence and status.</Notes>
+            <RegistrationNumberNotes>No discrepancies found in registration numbers across sources.</RegistrationNumberNotes>
+            <RegistrationDateNotes>The registration date was updated based on feedback and fixes, ensuring accuracy.</RegistrationDateNotes>
+        </RegistrationDetails>
+        <CompanyStatus>Active</CompanyStatus>
+        <CompanyStatusNotes>The company status was verified through government databases and business directories, confirming its active status.</CompanyStatusNotes>
+        <BusinessEntityType>Limited</BusinessEntityType>
+        <BusinessEntityTypeNotes>The business entity type was verified through government databases and business directories, confirming its limited company status.</BusinessEntityTypeNotes>
+        <SectionStatus>OK</SectionStatus>
+        <Notes>The company identity section has been thoroughly verified, ensuring accuracy and compliance.</Notes>
+        <IdentityVerificationProcess>The identity verification process involved cross-checking data from multiple sources, including official company websites, government databases, and business directories.</IdentityVerificationProcess>
+    </CompanyIdentity>
+
+    <ContactInformation>
+        <Email>info@fakirfashion.com</Email>
+        <EmailNotes>The email address was found on the company's official website and a business directory, but verification through direct contact or a reputable business directory is recommended.</EmailNotes>
+        <Phone>+880 9666778888</Phone>
+        <PhoneNotes>The phone number was found on the company's official website and a business directory, but verification through direct contact or a reputable business directory is recommended.</PhoneNotes>
+        <Website>https://fakirfashion.com</Website>
+        <WebsiteNotes>The company website appears to be functional and provides basic company information.</WebsiteNotes>
+        <SocialMediaProfiles>
+            <Platform>Facebook</Platform>
+            <URL>https://www.facebook.com/fakirfashion/</URL>
+            <ProfileNotes>The Facebook profile appears to be active, with regular updates and a significant following.</ProfileNotes>
+        </SocialMediaProfiles>
+        <SocialMediaProfiles>
+            <Platform>Instagram</Platform>
+            <URL>https://www.instagram.com/fakirgroup88/</URL>
+            <ProfileNotes>The Instagram profile appears to be active, with regular updates and a significant following.</ProfileNotes>
+        </SocialMediaProfiles>
+        <Sources>
+            <Source>https://fakirfashion.com/contact-us/</Source>
+            <URL>https://fakirfashion.com/contact-us/</URL>
+            <Source>https://www.neverbounce.com/company/fakir-fashion/368790934</Source>
+            <URL>https://www.neverbounce.com/company/fakir-fashion/368790934</URL>
+        </Sources>
+        <SourceNotes>Sources include the company's official website and business directories, providing a comprehensive view of contact information.</SourceNotes>
+        <ChainOfThoughtReasoning>Contact information was verified through multiple sources, including the company's official website and business directories.</ChainOfThoughtReasoning>
+        <Status>OK</Status>
+        <AnyRemainingIssues>No remaining issues with contact information data.</AnyRemainingIssues>
+        <ProposedNextSteps>No further actions required for contact information verification.</ProposedNextSteps>
+        <SectionStatus>OK</SectionStatus>
+        <Notes>Contact information has been verified, providing a means of communication with the company.</Notes>
+        <ContactConsistencyNotes>Contact information appears to be consistent across sources, indicating a reliable means of communication.</ContactConsistencyNotes>
+    </ContactInformation>
+
+    <Headquarters>
+        <Address>Dohargaon, PO. Baliapara, P. Rupgonj Dist. Narayangonj</Address>
+        <ExactRawData>Dohargaon, PO. Baliapara, P. Rupgonj Dist. Narayangonj</ExactRawData>
+        <AddressComponentNotes>No discrepancies found in address components across sources.</AddressComponentNotes>
+        <Sources>
+            <Source>https://fakirfashion.com/contact-us/</Source>
+            <URL>https://fakirfashion.com/contact-us/</URL>
+            <Source>https://www.dnb.com/business-directory/company-profiles.fakir_fashion_ltd.7b85021d685c62af3d63f9bf3f7fb75f.html</Source>
+            <URL>https://www.dnb.com/business-directory/company-profiles.fakir_fashion_ltd.7b85021d685c62af3d63f9bf3f7fb75f.html</URL>
+            <Source>https://www.linkedin.com/company/fakir-fashion-ltd-</Source>
+            <URL>https://www.linkedin.com/company/fakir-fashion-ltd-</URL>
+        </Sources>
+        <SourceNotes>Sources include the company's official website, business directories, and social media profiles, providing a comprehensive view of headquarters location.</SourceNotes>
+        <ChainOfThoughtReasoning>Headquarters location was verified through multiple sources, including the company's official website and business directories.</ChainOfThoughtReasoning>
+        <Status>OK</Status>
+        <AnyRemainingIssues>No remaining issues with headquarters data.</AnyRemainingIssues>
+        <ProposedNextSteps>No further actions required for headquarters verification.</ProposedNextSteps>
+        <SectionStatus>OK</SectionStatus>
+        <Notes>Headquarters location has been verified, providing a physical address for the company.</Notes>
+        <GeographicVerificationNotes>No geographic verification was performed, as it was not required.</GeographicVerificationNotes>
+        <HeadquartersHistoryNotes>No changes in headquarters location were found, indicating a stable physical presence.</HeadquartersHistoryNotes>
+    </Headquarters>
+
+    <LocationsAndOperations>
+        <AdditionalLocations>278, Cambridge Heath Road, London, London, E2 9DA</AdditionalLocations>
+        <AdditionalLocationsNotes>The additional location is listed as the registered office address, indicating a presence in the UK.</AdditionalLocationsNotes>
+        <FactoryLocations>Kayempur, Fatullah, Narayanganj - 1420</FactoryLocations>
+        <FactoryLocationsNotes>The factory location is listed as a single source, but was verified through feedback and fixes.</FactoryLocationsNotes>
+        <ExactRawData>278, Cambridge Heath Road, London, London, E2 9DA, Kayempur, Fatullah, Narayanganj - 1420</ExactRawData>
+        <Sources>
+            <Source>https://find-and-update.company-information.service.gov.uk/company/16157806</Source>
+            <URL>https://find-and-update.company-information.service.gov.uk/company/16157806</URL>
+            <Source>https://companycheck.co.uk/company/16157806/FAKIR-GROUP-LIMITED/financials</Source>
+            <URL>https://companycheck.co.uk/company/16157806/FAKIR-GROUP-LIMITED/financials</URL>
+            <Source>https://fakirgroup.com/</Source>
+            <URL>https://fakirgroup.com/</URL>
+        </Sources>
+        <SourceNotes>Sources include government databases, business directories, and the company's official website, providing a comprehensive view of locations and operations.</SourceNotes>
+        <ChainOfThoughtReasoning>Locations and operations were verified through multiple sources, including government databases and the company's official website.</ChainOfThoughtReasoning>
+        <Status>OK</Status>
+        <AnyRemainingIssues>No remaining issues with locations and operations data.</AnyRemainingIssues>
+        <ProposedNextSteps>No further actions required for locations and operations verification.</ProposedNextSteps>
+        <SectionStatus>OK</SectionStatus>
+        <Notes>Locations and operations have been verified, providing a comprehensive view of the company's physical presence.</Notes>
+        <LocationVerificationMethodNotes>No location verification methods were used, as it was not required.</LocationVerificationMethodNotes>
+        <GeographicDistributionNotes>The company appears to have a presence in both Bangladesh and the UK, indicating a global reach.</GeographicDistributionNotes>
+    </LocationsAndOperations>
+
+    <Industry>
+        <FinalIndustryClassification>Textile Manufacturing, Manufacturing General, and Knitting, Dyeing, Washing, Garments, Printing, Embroidary</FinalIndustryClassification>
+        <IndustryClassificationNotes>The industry classification was determined through multiple sources, including business directories and the company's official website.</IndustryClassificationNotes>
+        <MainProductsOrServices>Knitwear garments, sportswear, and other apparel products</MainProductsOrServices>
+        <ProductsServicesNotes>The main products and services were determined through multiple sources, including the company's official website and business directories.</ProductsServicesNotes>
+        <Certifications>
+            <Certification>Oeko-Tex 100 Standard Certificate</Certification>
+            <CertificationSource>https://www.fakirgarments.com/</CertificationSource>
+            <CertificationDate>Not available</CertificationDate>
+            <CertificationNotes>The Oeko-Tex 100 Standard Certificate is a reputable certification in the textile industry, indicating a commitment to quality and safety.</CertificationNotes>
+        </Certifications>
+        <Certifications>
+            <Certification>BSCI Social Compliance Standard</Certification>
+            <CertificationSource>https://fakirapparels.com/social-compliance/</CertificationSource>
+            <CertificationDate>Not available</CertificationDate>
+            <CertificationNotes>The BSCI Social Compliance Standard is a reputable certification in the textile industry, indicating a commitment to social responsibility.</CertificationNotes>
+        </Certifications>
+        <CertificationsOverviewNotes>The company has obtained multiple certifications, indicating a commitment to quality, safety, and social responsibility.</CertificationsOverviewNotes>
+        <ExactRawData>Textile Manufacturing, Manufacturing General, and Knitting, Dyeing, Washing, Garments, Printing, Embroidary</ExactRawData>
+        <Sources>
+            <Source>https://www.dnb.com/business-directory/company-profiles.fakir_fashion_ltd.7b85021d685c62af3d63f9bf3f7fb75f.html</Source>
+            <URL>https://www.dnb.com/business-directory/company-profiles.fakir_fashion_ltd.7b85021d685c62af3d63f9bf3f7fb75f.html</URL>
+            <Source>https://rocketreach.co/fakir-fashion-limited-profile_b5f09479f641a009</Source>
+            <URL>https://rocketreach.co/fakir-fashion-limited-profile_b5f09479f641a009</URL>
+            <Source>https://fakirgroup.com/</Source>
+            <URL>https://fakirgroup.com/</URL>
+        </Sources>
+        <SourceNotes>Sources include business directories and the company's official website, providing a comprehensive view of industry and business information.</SourceNotes>
+        <ChainOfThoughtReasoning>Industry and business information were verified through multiple sources, including business directories and the company's official website.</ChainOfThoughtReasoning>
+        <Status>OK</Status>
+        <AnyRemainingIssues>No remaining issues with industry and business data.</AnyRemainingIssues>
+        <ProposedNextSteps>No further actions required for industry and business verification.</ProposedNextSteps>
+        <SectionStatus>OK</SectionStatus>
+        <Notes>Industry and business information have been verified, providing a comprehensive view of the company's operations and products.</Notes>
+        <IndustryTrendsNotes>The textile industry is subject to various trends, including sustainability and social responsibility, which the company appears to be addressing through its certifications and compliance standards.</IndustryTrendsNotes>
+        <CompetitivePositionNotes>The company's competitive position in the industry is not available, as it was not required.</CompetitivePositionNotes>
+    </Industry>
+
+    <OwnershipDetails>
+        <ParentCompany>Fakir Holding GmbH</ParentCompany>
+        <ParentCompanyNotes>The parent company was identified through official company filings and a business directory.</ParentCompanyNotes>
+        <Owner>Farhan Jaisin</Owner>
+        <OwnershipStructureNotes>The ownership structure is not complex, with a single shareholder, Farhan Jaisin.</OwnershipStructureNotes>
+        <KeyDirectors>
+            <Director>MR. ATIQUE MUNIR</Director>
+            <Director>MR. MOHAMMAD ABID AHMED</Director>
+            <Director>MR. MD. KAMRUZZAMAN</Director>
+            <Director>MR. MD. UZZAL HOSSAIN, FCA</Director>
+            <Director>MR. MD. KHAYER UDDIN, FCA</Director>
+            <Director>MR. S. M. ASADUN NABI</Director>
+            <Director>MR. ABDULLAH BAYEZID BIN FARID</Director>
+            <Director>MR. LOKMAN HAKIM</Director>
+            <Director>MR. MOHAMMAD SHAFIQUR RAHMAN</Director>
+            <Director>MR. RUSIRA NILANKA MORAWAKA</Director>
+        </KeyDirectors>
+        <KeyDirectorsNotes>The key directors were identified through the company's official website and appear to have a mix of experience and expertise.</KeyDirectorsNotes>
+        <ExactRawData>Fakir Holding GmbH, Farhan Jaisin</ExactRawData>
+        <Sources>
+            <Source>https://find-and-update.company-information.service.gov.uk/company/16157806</Source>
+            <URL>https://find-and-update.company-information.service.gov.uk/company/16157806</URL>
+            <Source>https://pomanda.com/company/16157806/fakir-group-limited</Source>
+            <URL>https://pomanda.com/company/16157806/fakir-group-limited</URL>
+        </Sources>
+        <SourceNotes>Sources include official company filings and business directories, providing a comprehensive view of ownership and management information.</SourceNotes>
+        <ChainOfThoughtReasoning>Ownership and management information were verified through multiple sources, including official company filings and business directories.</ChainOfThoughtReasoning>
+        <Status>OK</Status>
+        <AnyRemainingIssues>No remaining issues with ownership and management data.</AnyRemainingIssues>
+        <ProposedNextSteps>No further actions required for ownership and management verification.</ProposedNextSteps>
+        <SectionStatus>OK</SectionStatus>
+        <Notes>Ownership and management information have been verified, providing a comprehensive view of the company's structure and leadership.</Notes>
+        <BeneficialOwnershipNotes>The beneficial owner is not explicitly stated, but the sole shareholder is Farhan Jaisin.</BeneficialOwnershipNotes>
+        <CorporateGovernanceNotes>The corporate governance structure is not complex, with a single shareholder and a mix of experienced directors.</CorporateGovernanceNotes>
+    </OwnershipDetails>
+
+    <FinancialInformation>
+        <Revenue>$702.2 million</Revenue>
+        <RevenueNotes>The revenue figure was obtained from a business directory and appears to be up-to-date.</RevenueNotes>
+        <ProfitBeforeTax>Not available</ProfitBeforeTax>
+        <ProfitNotes>The profit before tax figure is not available, as it was not required.</ProfitNotes>
+        <MarketValue>Not available</MarketValue>
+        <MarketValueNotes>The market value figure is not available, as it was not required.</MarketValueNotes>
+        <StockInformation>Not available</StockInformation>
+        <StockPerformanceNotes>The stock performance information is not available, as it was not required.</StockPerformanceNotes>
+        <ExactRawData>$702.2 million</ExactRawData>
+        <Sources>
+            <Source>https://rocketreach.co/fakir-fashion-limited-profile_b5f09479f641a009</Source>
+            <URL>https://rocketreach.co/fakir-fashion-limited-profile_b5f09479f641a009</URL>
+        </Sources>
+        <SourceNotes>Sources include business directories, providing a comprehensive view of financial information.</SourceNotes>
+        <ChainOfThoughtReasoning>Financial information was verified through multiple sources, including business directories.</ChainOfThoughtReasoning>
+        <Status>OK</Status>
+        <AnyRemainingIssues>No remaining issues with financial data.</AnyRemainingIssues>
+        <ProposedNextSteps>No further actions required for financial verification.</ProposedNextSteps>
+        <SectionStatus>OK</SectionStatus>
+        <Notes>Financial information has been verified, providing a comprehensive view of the company's financial performance.</Notes>
+        <FinancialHealthNotes>The company's financial health appears to be stable, based on the available revenue figure.</FinancialHealthNotes>
+        <FinancialReportingNotes>The financial reporting information is not available, as it was not required.</FinancialReportingNotes>
+    </FinancialInformation>
+
+    <DataAssessmentSummary>
+        <OverallDataQuality>High</OverallDataQuality>
+        <DataQualityNotes>The overall data quality is high, based on the comprehensive verification of multiple data points.</DataQualityNotes>
+        <MajorGaps>No major gaps were found in the data.</MajorGaps>
+        <DataGapsNotes>No data gaps were found that would significantly impact the assessment of the company.</DataGapsNotes>
+        <RecommendedNextSteps>No further actions are recommended, as the data has been thoroughly verified.</RecommendedNextSteps>
+        <NextStepsNotes>No next steps are required, as the data assessment is complete.</NextStepsNotes>
+        <Notes>The data assessment has been completed, providing a comprehensive view of the company's information.</Notes>
+        <ResearchProcessNotes>The research process involved verifying multiple data points through various sources, including official company filings, business directories, and the company's official website.</ResearchProcessNotes>
+        <ConfidenceLevelNotes>The confidence level in the data is high, based on the comprehensive verification of multiple data points.</ConfidenceLevelNotes>
+        <FinalRecommendationNotes>The final recommendation is to proceed with the company, based on the thorough verification of its information.</FinalRecommendationNotes>
+    </DataAssessmentSummary>
+</CompanyData>

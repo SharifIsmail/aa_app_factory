@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompanyData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="companyDataSchema.xsd">
+    <CompanyIdentity>
+        <Name>
+            <FinalApprovedName>Dangi Foods Limited</FinalApprovedName>
+            <LegalNameVariations>Dangi Foods Ltd</LegalNameVariations>
+            <ExactRawData>Dangi Foods Limited</ExactRawData>
+            <SourcesList>
+                <Source>
+                    <Name>dangifoods.com</Name>
+                    <URL>https://dangifoods.com/</URL>
+                </Source>
+                <!-- Additional sources -->
+            </SourcesList>
+            <!-- Other name-related elements -->
+        </Name>
+        <!-- Other company identity elements -->
+    </CompanyIdentity>
+    <ContactInformation>
+        <Email>info@dangifoods.com</Email>
+        <Phone>+234 811 111 0945</Phone>
+        <Website>https://dangifoods.com/</Website>
+        <SocialMedia>
+            <Platform>
+                <Name>LinkedIn</Name>
+                <URL>https://www.linkedin.com/company/dangi-foods-limited</URL>
+            </Platform>
+            <!-- Additional social media platforms -->
+        </SocialMedia>
+        <!-- Other contact information elements -->
+    </ContactInformation>
+    <!-- Other company data sections, with similar adjustments for consistency and clarity -->
+    <Headquarters>
+        <Address>Plot CP 200 Sector Centre B Layout 4,1 Kuje Abuja, Federal Capital Territory, 90000 Nigeria</Address>
+        <!-- Other headquarters elements -->
+    </Headquarters>
+    <LocationsAndOperations>
+        <AdditionalLocationsNotes>No additional locations were found.</AdditionalLocationsNotes>
+        <!-- Other locations and operations elements, adjusted for clarity and consistency -->
+    </LocationsAndOperations>
+    <Industry>
+        <FinalIndustryClassification>Food processing company, Fruit and Vegetable Preserving and Specialty Food Manufacturing, Grocery and Related Product Merchant Wholesalers, Food Manufacturing</FinalIndustryClassification>
+        <!-- Other industry elements, with adjustments for consistency and clarity -->
+    </Industry>
+    <OwnershipDetails>
+        <ParentCompany>Not specified</ParentCompany>
+        <Owner>Michael Oshioke Oghiadomine, Louis Erasor Oghiadomine</Owner>
+        <!-- Other ownership details, adjusted for clarity and consistency -->
+    </OwnershipDetails>
+    <FinancialInformation>
+        <Revenue>$5 million</Revenue>
+        <!-- Other financial information elements, with adjustments for consistency and clarity -->
+    </FinancialInformation>
+    <DataAssessmentSummary>
+        <OverallDataQuality>High</OverallDataQuality>
+        <!-- Other data assessment summary elements, adjusted for clarity and consistency -->
+    </DataAssessmentSummary>
+</CompanyData>

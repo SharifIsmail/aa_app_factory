@@ -1,0 +1,37 @@
+{% macro display_status(status) %}
+    {% set valid_statuses = ['OK', 'NEEDS_REVIEW', 'NO_DATA', 'SINGLE_SOURCE', 'ERROR', 'MANUAL_CHECK'] %}
+    {% if status in valid_statuses %}
+        <div class="status-badge 
+            {% if status == 'OK' %}status-ok
+            {% elif status == 'NEEDS_REVIEW' %}status-needs-review
+            {% elif status == 'NO_DATA' %}status-no-data
+            {% elif status == 'SINGLE_SOURCE' %}status-single-source
+            {% else %}status-error{% endif %}">
+            {% set status_text = {
+                'OK': 'Data Complete',
+                'NEEDS_REVIEW': 'Needs Review',
+                'NO_DATA': 'No Data',
+                'SINGLE_SOURCE': 'Single Source',
+                'ERROR': 'Error',
+                'MANUAL_CHECK': 'Manual Check Required'
+            }[status] %}
+            <span class="status-text">{{ status_text }}</span>
+            {% if status == 'OK' %}
+                <i class="bi bi-check-circle-fill status-icon"></i>
+            {% elif status == 'NEEDS_REVIEW' %}
+                <i class="bi bi-exclamation-triangle-fill status-icon"></i>
+            {% elif status == 'NO_DATA' %}
+                <i class="bi bi-file-earmark-x status-icon"></i>
+            {% elif status == 'SINGLE_SOURCE' %}
+                <i class="bi bi-star status-icon"></i>
+            {% else %}
+                <i class="bi bi-question-circle-fill status-icon"></i>
+            {% endif %}
+        </div>
+    {% else %}
+        <div class="status-badge status-unknown">
+            <span class="status-text">Not sure</span>
+            <i class="bi bi-question-circle-fill status-icon"></i>
+        </div>
+    {% endif %}
+{% endmacro %} 

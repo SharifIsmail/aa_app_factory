@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="white"/>
+  <rect width="960" height="80" fill="#2c5282"/>
+  <text x="40" y="50" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="white" style="white-space: pre;">Phase 2: Company Risks Research</text>
+  <rect x="0" y="80" width="960" height="460" fill="white"/>
+  <text font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="600" fill="#2c5282" style="white-space: pre; font-size: 24px;" x="43.568" y="128.753">The Challenge</text>
+  <line x1="40" y1="145" x2="420" y2="145" stroke="#e2e8f0" stroke-width="2"/>
+  <circle cx="52" cy="187" r="6" fill="#FC8181"/>
+  <text x="70" y="192" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre; font-size: 16px;">Risks exist at multiple levels</text>
+  <circle cx="52" cy="227" r="6" fill="#FC8181"/>
+  <text x="70" y="232" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre; font-size: 16px;">Data sources vary by country/industry</text>
+  <circle cx="52" cy="267" r="6" fill="#FC8181"/>
+  <text x="70" y="272" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre; font-size: 16px;">Qualitative and quantitative data</text>
+  <circle cx="52" cy="307" r="6" fill="#FC8181"/>
+  <text x="70" y="312" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre; font-size: 16px;">Historical incidents hard to verify</text>
+  <rect x="66.261" y="349.745" width="320" height="40" rx="5" fill="#EBF8FF" stroke="#4299e1" stroke-width="1"/>
+  <text x="226.261" y="374.745" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4299e1" text-anchor="middle" style="white-space: pre; font-size: 14px;">Country Risk</text>
+  <rect x="66.261" y="399.745" width="320" height="40" rx="5" fill="#E6FFFA" stroke="#38B2AC" stroke-width="1"/>
+  <text x="226.261" y="424.745" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#38B2AC" text-anchor="middle" style="white-space: pre; font-size: 14px;">Industry Risk</text>
+  <rect x="66.261" y="449.745" width="320" height="40" rx="5" fill="#FFF5F5" stroke="#FC8181" stroke-width="1"/>
+  <text x="226.261" y="474.745" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#FC8181" text-anchor="middle" style="white-space: pre; font-size: 14px;">Supplier-Specific Risk</text>
+  <line x1="480" y1="110" x2="480" y2="420" stroke="#e2e8f0" stroke-width="2"/>
+  <text font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="600" fill="#2c5282" style="white-space: pre; font-size: 24px;" x="514.203" y="130.703">Our Agentic Approach</text>
+  <line x1="510" y1="145" x2="920" y2="145" stroke="#e2e8f0" stroke-width="2"/>
+  <circle cx="540" cy="205" r="25" fill="#38B2AC"/>
+  <text x="540" y="211" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" style="white-space: pre; font-size: 14px;">MA</text>
+  <text x="580" y="200" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#2d3748" style="white-space: pre; font-size: 16px;">MetricsAnalyst Agent</text>
+  <text x="580" y="220" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4a5568" style="white-space: pre; font-size: 14px;">Processes quantitative indicators</text>
+  <text x="580" y="240" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4a5568" style="white-space: pre; font-size: 14px;">and statistical data</text>
+  <circle cx="540" cy="305" r="25" fill="#38B2AC"/>
+  <text x="540" y="311" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" style="white-space: pre; font-size: 14px;">ES</text>
+  <text x="580" y="300" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#2d3748" style="white-space: pre; font-size: 16px;">EventScout Agent</text>
+  <text x="580" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4a5568" style="white-space: pre; font-size: 14px;">Discovers past events, incidents,</text>
+  <text x="580" y="340" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4a5568" style="white-space: pre; font-size: 14px;">and qualitative risk factors</text>
+  <circle cx="540" cy="405" r="25" fill="#38B2AC"/>
+  <text x="540" y="411" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" style="white-space: pre; font-size: 14px;">EI</text>
+  <text x="580" y="400" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#2d3748" style="white-space: pre; font-size: 16px;">EventInvestigator Agent</text>
+  <text x="580" y="420" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4a5568" style="white-space: pre; font-size: 14px;">Verifies and analyzes discovered</text>
+  <text x="580" y="440" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4a5568" style="white-space: pre; font-size: 14px;">events to assess risk impact</text>
+</svg>

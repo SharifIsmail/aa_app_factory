@@ -1,0 +1,67 @@
+"""This file is not actively used by the codebase. The respective query is in the eur_lex_service.py file.
+This serves as a documentation for the query. It provides hardcoded and is ready for consumption by the online virtuoso engine for quick testing.
+https://publications.europa.eu/webapi/rdf/sparql"""
+PREFIX cdm: <http://publications.europa.eu/ontology/cdm#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT 
+    ?work ?title ?pdf_url
+    (GROUP_CONCAT(DISTINCT ?eurovoc_label; separator=" | ") AS ?all_eurovoc_labels)
+    ?document_date ?publication_date ?effect_date ?end_validity_date ?notification_date
+    
+WHERE {
+    # Core query - filter by specific publication date
+    ?work cdm:official-journal-act_date_publication ?publication_date .
+    FILTER(?publication_date = "2025-06-06"^^xsd:date)
+    
+    # === REQUIRED: Title - English preferred, German as backup ===
+    {
+        # Try English first
+        ?expression cdm:expression_belongs_to_work ?work .
+        ?expression cdm:expression_title ?title .
+        ?expression cdm:expression_uses_language ?lang_concept .
+        ?lang_concept dc:identifier "ENG" .
+    }
+    UNION
+    {
+        # Use German only if no English exists for this work
+        ?expression cdm:expression_belongs_to_work ?work .
+        ?expression cdm:expression_title ?title .
+        ?expression cdm:expression_uses_language ?lang_concept .
+        ?lang_concept dc:identifier "DEU" .
+        
+        # Only if no English expression exists
+        FILTER NOT EXISTS {
+            ?eng_expression cdm:expression_belongs_to_work ?work .
+            ?eng_expression cdm:expression_uses_language ?eng_lang .
+            ?eng_lang dc:identifier "ENG" .
+        }
+    }
+    
+    # === DATES ===
+    OPTIONAL { ?work cdm:work_date_document ?document_date }
+    OPTIONAL { ?work cdm:resource_legal_date_entry-into-force ?effect_date }
+    OPTIONAL { ?work cdm:resource_legal_date_end-of-validity ?end_validity_date }
+    OPTIONAL { ?work cdm:resource_legal_date_notification ?notification_date }
+    
+    # Get PDF URL for the selected expression
+    OPTIONAL {
+        ?manifestation cdm:manifestation_manifests_expression ?expression .
+        ?manifestation cdm:manifestation_type "pdfa2a"^^xsd:string .
+        ?item cdm:item_belongs_to_manifestation ?manifestation .
+        BIND(?item AS ?pdf_url)
+    }
+    
+    # Get English EUROVOC descriptors
+    OPTIONAL {
+        ?work cdm:work_is_about_concept_eurovoc ?eurovoc_concept .
+        ?eurovoc_concept skos:prefLabel ?eurovoc_label .
+        FILTER(lang(?eurovoc_label) = "en")
+    }
+}
+GROUP BY ?work ?title ?pdf_url ?document_date ?publication_date ?effect_date ?end_validity_date ?notification_date  
+ORDER BY DESC(?publication_date)
+LIMIT 200

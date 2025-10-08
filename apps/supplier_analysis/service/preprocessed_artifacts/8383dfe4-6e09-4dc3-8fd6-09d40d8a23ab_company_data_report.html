@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Data</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --danger-color: #dc3545;
+            --warning-color: #ffc107;
+            --success-color: #198754;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .header-section {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 5px solid var(--primary-color);
+        }
+
+        .section-heading {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .subsection-title {
+            background-color: #e9ecef;
+            padding: 1rem;
+            font-weight: 600;
+            margin: 0;
+            border-left: 5px solid var(--primary-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-radius: 0.25rem;
+        }
+
+        .company-table {
+            margin-top: 10px;
+            background-color: #ffffff;
+            overflow: hidden;
+            width: 100%;
+            padding: 0px;
+        }
+
+        .company-table th {
+            font-weight: 600;
+            background-color: #fff;
+            color: #333;
+            width: 200px;
+        }
+
+        .company-table td {
+            background-color: #ffffff;
+            font-weight: normal;
+            color: #2c3e50;
+        }
+
+        .table-header {
+            background-color: #f1f3f5;
+        }
+
+        .description-row {
+            background-color: #f8f9fa;
+            color: #555;
+        }
+
+        .see-more-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
+        .see-more-link:hover {
+            text-decoration: underline;
+        }
+
+        .status-box {
+            width: 200px;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .card {
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+            margin-bottom: 20px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            font-size: 0.875rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            gap: 0.5rem;
+            width: 160px;
+        }
+
+        .status-ok {
+            background-color: #d4edda;
+            color: #155724;
+            border-left: 3px solid #28a745;
+        }
+
+        .status-needs-review {
+            background-color: #fff3cd;
+            color: #856404;
+            border-left: 3px solid #ffc107;
+        }
+
+        .status-no-data {
+            background-color: #f8f9fa;
+            color: #6c757d;
+            border-left: 3px solid #6c757d;
+        }
+
+        .status-single-source {
+            background-color: #e2e3e5;
+            color: #383d41;
+            border-left: 3px solid #383d41;
+        }
+
+        .status-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border-left: 3px solid #dc3545;
+        }
+
+        .status-icon {
+            font-size: 1rem;
+        }
+
+        .status-text {
+            vertical-align: middle;
+        }
+
+        .notes-section {
+            background-color: #fEfEfE;
+            padding: 10px 15px;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+
+        .data-label {
+            color: #555;
+            font-style: italic;
+            padding-right: 20px;
+        }
+
+        .notes-table {
+            color: #555;
+            font-style: italic;
+        }
+        
+        
+    </style>
+</head>
+
+
+<body>
+    <div class="header-section">
+        <div class="container">
+            <h1 class="display-4"><i class="bi bi-building"></i> Company Data</h1>
+            <p class="lead">LKSG Compliance Framework</p>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <!-- Overview Section -->
+        <div class="row mb-4">
+            <div class="col-lg-12">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h2 class="card-title section-heading">Overview</h2>
+                        <table class="table company-table">
+                            <tr class="table-header">
+                                <th>Final Approved Name</th>
+                                <td>Ha-Meem Group</td>
+                                <td>
+                                    
+    
+    
+        <div class="status-badge 
+            status-ok
+            ">
+            
+            <span class="status-text">Data Complete</span>
+            
+                <i class="bi bi-check-circle-fill status-icon"></i>
+            
+        </div>
+    
+
+                                </td>
+                                <td>
+                                    <a class="see-more-link" href="#company-identity-name"><i
+                                            class="bi bi-link-45deg"></i> See More</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Legal Name Variations</th>
+                                <td>Ha-meem Group</td>
+                                <td>
+                                    
+    
+    
+        <div class="status-badge 
+            status-ok
+            ">
+            
+            <span class="status-text">Data Complete</span>
+            
+                <i class="bi bi-check-circle-fill status-icon"></i>
+            
+        </div>
+    
+
+                                </td>
+                                <td>
+                                    <a class="see-more-link" href="#company-identity-name"><i
+                                            class="bi bi-link-45deg"></i> See More</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Registration Number</th>
+                                <td>Not available / Not available</td>
+                                <td>
+                                    
+    
+    
+        <div class="status-badge 
+            status-no-data
+            ">
+            
+            <span class="status-text">No Data</span>
+            
+                <i class="bi bi-file-earmark-x status-icon"></i>
+            
+        </div>
+    
+
+                                </td>
+                                <td>
+                                    <a class="see-more-link" href="#registration-details"><i
+                                            class="bi bi-link-45deg"></i> See More</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Company Status</th>
+                                <td>Active</td>
+                                <td>
+                                    
+    
+    
+        <div class="status-badge status-unknown">
+            <span class="status-text">Not sure</span>
+            <i class="bi bi-question-circle-fill status-icon"></i>
+        </div>
+    
+
+                                </td>
+                                <td>
+                                    <a class="see-more-link" href="#company-identity-name"><i class="bi bi-link-45deg"></i> See
+                                        More</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Business Entity Type</th>
+                                <td>Conglomerate in textile and garments sector</td>
+                                <td>
+                                    
+    
+    
+        <div class="status-badge status-unknown">
+            <span class="status-text">Not sure</span>
+            <i class="bi bi-question-circle-fill status-icon"></i>
+        </div>
+    
+
+                                </td>
+                                <td>
+                                    <a class="see-more-link" href="#company-identity-name"><i
+                                            class="bi bi-link-45deg"></i> See More</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Industry Classification</th>
+                                <td>Textile and garments sector</td>
+                                <td>
+                                    
+    
+    
+        <div class="status-badge 
+            status-ok
+            ">
+            
+            <span class="status-text">Data Complete</span>
+            
+                <i class="bi bi-check-circle-fill status-icon"></i>
+            
+        </div>
+    
+
+                                </td>
+                                <td>
+                                    <a class="see-more-link" href="#industry"><i class="bi bi-link-45deg"></i> See
+                                        More</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Products / Services</th>
+                                <td>Readymade garments, denim fabric</td>
+                                <td>
+                                    
+    
+    
+        <div class="status-badge 
+            status-ok
+            ">
+            
+            <span class="status-text">Data Complete</span>
+            
+                <i class="bi bi-check-circle-fill status-icon"></i>
+            
+        </div>
+    
+
+                                </td>
+                                <td><a class="see-more-link" href="#industry"><i class="bi bi-link-45deg"></i> See
+                                        More</a></td>
+                            </tr>
+                            <tr>
+                                <th>Owner(s)</th>
+                                <td>Not available</td>
+                                <td>
+                                    
+    
+    
+        <div class="status-badge 
+            status-needs-review
+            ">
+            
+            <span class="status-text">Needs Review</span>
+            
+                <i class="bi bi-exclamation-triangle-fill status-icon"></i>
+            
+        </div>
+    
+
+                                </td>
+                                <td>
+                                    <a class="see-more-link" href="#ownership-details"><i class="bi bi-link-45deg"></i>
+                                        See More</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Key Directors</th>
+                                <td>AK Azad (Managing Director), Lt. Col. Md. Delwar Hossain PSC (retd.) (Group Deputy Managing Director)</td>
+                                <td>
+                                    
+    
+    
+        <div class="status-badge 
+            status-needs-review
+            ">
+            
+            <span class="status-text">Needs Review</span>
+            
+                <i class="bi bi-exclamation-triangle-fill status-icon"></i>
+            
+        </div>
+    
+
+                                </td>
+                                <td>
+                                    <a class="see-more-link" href="#ownership-details"><i class="bi bi-link-45deg"></i>
+                                        See More</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-heading mb-4">Expanded view</h2>
+
+        <!-- 1. Company Identity -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3 id="company-identity-name"><i class="bi bi-building"></i> Company Identity</h3>
+            </div>
+            <div class="card-body">
+                <table class="table company-table">
+                    <tr>
+                        <th>Status</th>
+                        <td>
+                            
+    
+    
+        <div class="status-badge 
+            status-ok
+            ">
+            
+            <span class="status-text">Data Complete</span>
+            
+                <i class="bi bi-check-circle-fill status-icon"></i>
+            
+        </div>
+    
+
+                        </td>
+                    </tr>
+                    <tr class="table-header">
+                        <th>Final Approved Name</th>
+                        <td style="font-weight: bold;">
+                            Ha-Meem Group
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Legal Name Variations</th>
+                        <td>
+                            Ha-meem Group
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Company Status</th>
+                        <td>Active</td>
+                    </tr>
+                    <tr>
+                        <th>Business Entity Type</th>
+                        <td>Conglomerate in textile and garments sector</td>
+                    </tr>
+                    <tr>
+                        <th>Sources</th>
+                        <td>
+                            <ul>
+                                
+                                <li>
+                                    https://www.hameemgroup.net/: <a href="https://www.hameemgroup.net/" target="_blank">https://www.hameemgroup.net/</a>
+                                </li>
+                                
+                                <li>
+                                    https://en.wikipedia.org/wiki/Ha-meem_Group: <a href="https://en.wikipedia.org/wiki/Ha-meem_Group" target="_blank">https://en.wikipedia.org/wiki/Ha-meem_Group</a>
+                                </li>
+                                
+                                <li>
+                                    https://textilepages.com/ha-meem-group: <a href="https://textilepages.com/ha-meem-group" target="_blank">https://textilepages.com/ha-meem-group</a>
+                                </li>
+                                
+                                <li>
+                                    https://www.dnb.com/business-directory/company-profiles.ha-meem_textiles_limited.be2d419c53fb1141e125547b86b5965f.html: <a href="https://www.dnb.com/business-directory/company-profiles.ha-meem_textiles_limited.be2d419c53fb1141e125547b86b5965f.html" target="_blank">https://www.dnb.com/business-directory/company-profiles.ha-meem_textiles_limited.be2d419c53fb1141e125547b86b5965f.html</a>
+                                </li>
+                                
+                                <li>
+                                    https://www.hameemgroup.net/About.html: <a href="https://www.hameemgroup.net/About.html" target="_blank">https://www.hameemgroup.net/About.html</a>
+                                </li>
+                                
+                                <li>
+                                    https://www.eximpedia.app/companies/ha-meem-group-new-york-us/07496101: <a href="https://www.eximpedia.app/companies/ha-meem-group-new-york-us/07496101" target="_blank">https://www.eximpedia.app/companies/ha-meem-group-new-york-us/07496101</a>
+                                </li>
+                                
+                                <li>
+                                    https://contactout.com/company/Ha-Meem-Group-9895: <a href="https://contactout.com/company/Ha-Meem-Group-9895" target="_blank">https://contactout.com/company/Ha-Meem-Group-9895</a>
+                                </li>
+                                
+                                <li>
+                                    https://digitalmag.theceomagazine.com/delwar-hossain/: <a href="https://digitalmag.theceomagazine.com/delwar-hossain/" target="_blank">https://digitalmag.theceomagazine.com/delwar-hossain/</a>
+                                </li>
+                                
+                                <li>
+                                    https://www.textileinfomedia.com/business-info/Hameem-Group: <a href="https://www.textileinfomedia.com/business-info/Hameem-Group" target="_blank">https://www.textileinfomedia.com/business-info/Hameem-Group</a>
+                                </li>
+                                
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Reasoning</th>
+                        <td>
+                            The final approved name is selected based on the consistency across multiple reliable sources, including the company's official website and reputable industry directories.
+                        </td>
+                    </tr>
+                    <tr class="description-row">
+                        <th>Copy of Source Data</th>
+                        <td>
+                            {'Text': 'Ha-Meem Group', 'Links': ['https://www.hameemgroup.net/', 'https://en.wikipedia.org/wiki/Ha-meem_Group', 'https://textilepages.com/ha-meem-group', 'https://www.dnb.com/business-directory/company-profiles.ha-meem_textiles_limited.be2d419c53fb1141e125547b86b5965f.html', 'https://www.hameemgroup.net/About.html', 'https://www.eximpedia.app/companies/ha-meem-group-new-york-us/07496101', 'https://contactout.com/company/Ha-Meem-Group-9895', 'https://digitalmag.theceomagazine.com/delwar-hossain/', 'https://www.textileinfomedia.com/business-info/Hameem-Group']}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Issues to Be Addressed</th>
+                        <td>
+                            No remaining issues with the company name.
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Proposed Next Steps</th>
+                        <td>
+                            No further steps are proposed for the company name verification.
+                        </td>
+                    </tr>
+                </table>
+
+
+                <div class="notes-section">
+                    <div style="margin-bottom: 10px;"><b><i class="bi bi-info-circle"></i> Notes</b></div>
+
+                    <table class="notes-table">
+                        <tr>
+                            <td class="data-label">Company Identity</td>
+                            <td>The company identity section is largely complete, with the exception of registration details, which are not publicly available.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Name</td>
+                            <td>The company name is consistently represented across all sources, indicating a high level of confidence in the name's accuracy.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Source</td>
+                            <td>Sources are a mix of official company websites, industry directories, and news articles, providing a comprehensive view of the company's name and identity.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Name Variation</td>
+                            <td>No significant name variations were found, suggesting a stable and consistent brand identity.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Business Entity Type</td>
+                            <td>The company operates as a conglomerate, focusing on the textile and garments sector, which suggests a diversified approach within a specific industry.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Identity Verification Process</td>
+                            <td>The verification process involved cross-checking information across multiple sources to confirm the company's name, status, and business entity type.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Company Status</td>
+                            <td>The company is described as active by multiple sources, including its official website and industry directories, indicating ongoing operations.</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Registration Details -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3 id="registration-details"><i class="bi bi-file-earmark-text"></i> Registration Details</h3>
+            </div>
+            <div class="card-body">
+                <table class="table company-table">
+                    <tr>
+                        <th>Status</th>
+                        <td>
+                            
+    
+    
+        <div class="status-badge 
+            status-no-data
+            ">
+            
+            <span class="status-text">No Data</span>
+            
+                <i class="bi bi-file-earmark-x status-icon"></i>
+            
+        </div>
+    
+
+                        </td>
+                    </tr>
+                    <tr class="table-header">
+                        <th>Registration Number</th>
+                        <td>Not available</td>
+                    </tr>
+                    <tr>
+                        <th>Registration Date</th>
+                        <td>Not available</td>
+                    </tr>
+
+                    <tr>
+                        <th>Sources</th>
+                        <td>
+                            <ul>
+                                
+                                <li>
+                                    No URL source found: <a href="No URL source found" target="_blank">No URL source found</a>
+                                </li>
+                                
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Reasoning</th>
+                        <td>
+                            Given the lack of available information, registration details could not be verified through publicly available sources.
+                        </td>
+                    </tr>
+                    <tr class="description-row">
+                        <th>Copy of Source Data</th>
+                        <td>
+                            {'Text': 'Not available', 'Links': ['https://No URL source found']}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Issues to Be Addressed</th>
+                        <td>
+                            Registration number and date are not available, which could be crucial for certain business or legal purposes.
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Proposed Next Steps</th>
+                        <td>
+                            Direct contact with the company or access to private databases may be necessary to obtain registration details.
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="notes-section">
+                    <div style="margin-bottom: 10px;"><b><i class="bi bi-info-circle"></i> Notes</b></div>
+                    
+                    <table class="notes-table">
+                        <tr>
+                            <td class="data-label">Registration Details</td>
+                            <td>The absence of registration information in public sources may indicate privacy measures or the need for specialized access to business registries.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Registration Number</td>
+                            <td>No registration number was found, which could impact the verification of the company's legal status.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Registration Date</td>
+                            <td>No registration date was available, making it difficult to determine the company's age or history.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Source</td>
+                            <td>No reliable sources were found for registration details, indicating a need for further research or direct contact with the company.</td>
+                        </tr>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3 id="contact-information"><i class="bi bi-envelope"></i> Contact Information</h3>
+            </div>
+            <div class="card-body">
+                <table class="table company-table">
+                    <tr>
+                        <th>Status</th>
+                        <td>
+                            
+    
+    
+        <div class="status-badge 
+            status-ok
+            ">
+            
+            <span class="status-text">Data Complete</span>
+            
+                <i class="bi bi-check-circle-fill status-icon"></i>
+            
+        </div>
+    
+
+                        </td>
+                    </tr>
+                    <tr class="table-header">
+                        <th>Email</th>
+                        <td>delwar@hameemgroup.com, delwerp2000@yahoo.com</td>
+                    </tr>
+                    <tr>
+                        <th>Phone</th>
+                        <td>+880-2-8170592, +880-2-8170593, +880-2-8170583</td>
+                    </tr>
+                    <tr>
+                        <th>Website</th>
+                        <td><a href="https://www.hameemgroup.net/" target="_blank">https://www.hameemgroup.net/</a></td>
+                    </tr>
+                    <tr>
+                        <th>Social Media</th>
+                        <td>
+                            
+                                 
+                                <a href="" target="_blank">
+                                    
+                                </a>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Sources</th>
+                        <td>
+                            <ul>
+                                
+                                <li>
+                                    https://www.hameemgroup.net/contact-us.html: <a href="https://www.hameemgroup.net/contact-us.html" target="_blank">https://www.hameemgroup.net/contact-us.html</a>
+                                </li>
+                                
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Reasoning</th>
+                        <td>
+                            Contact information was gathered from the company's website and appears to be the most direct source for this data.
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Issues to Be Addressed</th>
+                        <td>
+                            No issues were found with the contact information available, but its accuracy is unverified.
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Proposed Next Steps</th>
+                        <td>
+                            Verification of contact information through direct contact or additional research may be necessary for confirmation.
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="notes-section">
+                    <div style="margin-bottom: 10px;"><b><i class="bi bi-info-circle"></i> Notes</b></div>
+                    
+                    <table class="notes-table">
+                        <tr>
+                            <td class="data-label">Contact Information</td>
+                            <td>Contact information is available but should be verified for accuracy and responsiveness.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Email</td>
+                            <td>Emails were found on the company's contact page, but their validity or responsiveness is unverified.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Phone</td>
+                            <td>Phone numbers are provided on the company's website, but their accuracy or current status is not confirmed.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Website</td>
+                            <td>The website appears to be active and provides basic information about the company, its products, and contact details.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Social Media</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Source</td>
+                            <td>The primary source for contact information is the company's official website, which may not be comprehensive or up-to-date.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Contact Consistency</td>
+                            <td>Contact information is consistent across the sources that provide it, but this is largely limited to the company's website.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Locations and Operations -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3 id="locations-operations"><i class="bi bi-geo-alt"></i> Locations and Operations</h3>
+            </div>
+            <div class="card-body">
+                <table class="table company-table">
+                    <tr>
+                        <th>Status</th>
+                        <td>
+                            
+    
+    
+        <div class="status-badge 
+            status-needs-review
+            ">
+            
+            <span class="status-text">Needs Review</span>
+            
+                <i class="bi bi-exclamation-triangle-fill status-icon"></i>
+            
+        </div>
+    
+
+                        </td>
+                    </tr>
+                    <tr class="table-header">
+                        <th>Headquarters</th>
+                        <td>387 (South), Tejgaon Industrial Area, Dhaka-1208, Bangladesh</td>
+                    </tr>
+                    <tr>
+                        <th>Additional Locations</th>
+                        <td>Ashulia, Savar</td>
+                    </tr>
+                    <tr>
+                        <th>Factory Locations</th>
+                        <td>Ashulia, Savar</td>
+                    </tr>
+                    <tr>
+                        <th>Sources</th>
+                        <td>
+                            <ul>
+                                
+                                
+                                
+                                    
+                                        <li>
+                                            https://www.hameemgroup.net/: <a href="https://www.hameemgroup.net/" target="_blank">https://www.hameemgroup.net/</a>
+                                        </li>
+                                        
+                                    
+                                
+                                    
+                                        <li>
+                                            https://en.wikipedia.org/wiki/Ha-meem_Group: <a href="https://en.wikipedia.org/wiki/Ha-meem_Group" target="_blank">https://en.wikipedia.org/wiki/Ha-meem_Group</a>
+                                        </li>
+                                        
+                                    
+                                
+                                    
+                                        <li>
+                                            https://textilepages.com/ha-meem-group: <a href="https://textilepages.com/ha-meem-group" target="_blank">https://textilepages.com/ha-meem-group</a>
+                                        </li>
+                                        
+                                    
+                                
+                                    
+                                        <li>
+                                            https://www.dnb.com/business-directory/company-profiles.ha-meem_textiles_limited.be2d419c53fb1141e125547b86b5965f.html: <a href="https://www.dnb.com/business-directory/company-profiles.ha-meem_textiles_limited.be2d419c53fb1141e125547b86b5965f.html" target="_blank">https://www.dnb.com/business-directory/company-profiles.ha-meem_textiles_limited.be2d419c53fb1141e125547b86b5965f.html</a>
+                                        </li>
+                                        
+                                    
+                                
+                                    
+                                        <li>
+                                            https://www.hameemgroup.net/About.html: <a href="https://www.hameemgroup.net/About.html" target="_blank">https://www.hameemgroup.net/About.html</a>
+                                        </li>
+                                        
+                                    
+                                
+                                
+                                
+                                    
+                                        <li>
+                                            https://www.daily-sun.com/post/768448: <a href="https://www.daily-sun.com/post/768448" target="_blank">https://www.daily-sun.com/post/768448</a>
+                                        </li>
+                                        
+                                    
+                                
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Reasoning</th>
+                        <td>
+                            The headquarters' address is verified through multiple sources, ensuring a high level of confidence in its accuracy.<br/>
+                            Locations were identified through a single source, which may not provide a comprehensive view of the company's operations.
+                        </td>
+                    </tr>
+                    <tr class="description-row">
+                        <th>Copy of Source Data</th>
+                        <td>
+                            {'Text': '387 (South), Tejgaon Industrial Area, Dhaka-1208, Bangladesh', 'Links': ['https://www.hameemgroup.net/', 'https://en.wikipedia.org/wiki/Ha-meem_Group', 'https://textilepages.com/ha-meem-group', 'https://www.dnb.com/business-directory/company-profiles.ha-meem_textiles_limited.be2d419c53fb1141e125547b86b5965f.html', 'https://www.hameemgroup.net/About.html']}
+                            {'Text': 'Ashulia, Savar', 'Links': ['https://www.daily-sun.com/post/768448']}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Issues to Be Addressed</th>
+                        <td>
+                            No issues were found with the headquarters' address.
+                            The accuracy and completeness of location information could be improved with additional sources or verification.
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Proposed Next Steps</th>
+                        <td>
+                            No further verification is proposed for the headquarters' address.
+                            Further research or direct confirmation with the company could help verify and expand the list of locations.
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="notes-section">
+                    <div style="margin-bottom: 10px;"><b><i class="bi bi-info-circle"></i> Notes</b></div>
+                    
+                    <table class="notes-table">
+                        <tr>
+                            <td class="data-label">General Notes</td>
+                            <td>
+                                The headquarters' address is well-documented and consistent across sources, indicating a reliable piece of information.
+                                While some location information is available, it is not comprehensive and requires further verification for accuracy and completeness.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Address Details</td>
+                            <td>
+                                The address is consistently reported across multiple sources, suggesting a high degree of accuracy.
+                                These locations are mentioned as part of the company's operations, possibly indicating manufacturing or distribution sites.
+                                Factory locations suggest where the company's production activities are based, which could be important for supply chain and operational considerations.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Source Notes</td>
+                            <td>
+                                Sources include the company's website, industry directories, and Wikipedia, providing a robust confirmation of the headquarters' location.
+                                The source for additional locations is limited, suggesting a need for further research to confirm the company's operational footprint.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Verification Notes</td>
+                            <td>
+                                Geographic verification through mapping services could further confirm the address's accuracy and provide additional context about the location.
+                                Verification of locations could involve cross-checking with multiple sources, including industry reports, news articles, and official company communications.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">History & Distribution</td>
+                            <td>
+                                No information is available on changes to the headquarters' location, suggesting stability in the company's primary location.
+                                The geographic distribution of the company's operations could provide insights into its market reach, supply chain, and strategic positioning.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Industry -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3 id="industry"><i class="bi bi-bar-chart"></i> Industry</h3>
+            </div>
+            <div class="card-body">
+                <table class="table company-table">
+                    <tr>
+                        <th>Status</th>
+                        <td>
+                            
+    
+    
+        <div class="status-badge 
+            status-ok
+            ">
+            
+            <span class="status-text">Data Complete</span>
+            
+                <i class="bi bi-check-circle-fill status-icon"></i>
+            
+        </div>
+    
+
+                        </td>
+                    </tr>
+                    <tr class="table-header">
+                        <th>Industry Classification</th>
+                        <td>Textile and garments sector</td>
+                    </tr>
+                    <tr>
+                        <th>Main Products/Services</th>
+                        <td>Readymade garments, denim fabric</td>
+                    </tr>
+                    <tr>
+                        <th>Certifications</th>
+                        <td>
+                            
+                                
+                                    <p>
+                                        <strong>Not available</strong><br>
+                                        Source: <br>
+                                        Date: 
+                                    </p>
+                                
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Sources</th>
+                        <td>
+                            <ul>
+                                
+                                
+                                    
+                                        <li>
+                                            https://www.hameemgroup.net/: <a href="https://www.hameemgroup.net/" target="_blank">https://www.hameemgroup.net/</a>
+                                        </li>
+                                        
+                                    
+                                
+                                    
+                                        <li>
+                                            https://en.wikipedia.org/wiki/Ha-meem_Group: <a href="https://en.wikipedia.org/wiki/Ha-meem_Group" target="_blank">https://en.wikipedia.org/wiki/Ha-meem_Group</a>
+                                        </li>
+                                        
+                                    
+                                
+                                    
+                                        <li>
+                                            https://textilepages.com/ha-meem-group: <a href="https://textilepages.com/ha-meem-group" target="_blank">https://textilepages.com/ha-meem-group</a>
+                                        </li>
+                                        
+                                    
+                                
+                                    
+                                        <li>
+                                            https://www.dnb.com/business-directory/company-profiles.ha-meem_textiles_limited.be2d419c53fb1141e125547b86b5965f.html: <a href="https://www.dnb.com/business-directory/company-profiles.ha-meem_textiles_limited.be2d419c53fb1141e125547b86b5965f.html" target="_blank">https://www.dnb.com/business-directory/company-profiles.ha-meem_textiles_limited.be2d419c53fb1141e125547b86b5965f.html</a>
+                                        </li>
+                                        
+                                    
+                                
+                                    
+                                        <li>
+                                            https://www.hameemgroup.net/About.html: <a href="https://www.hameemgroup.net/About.html" target="_blank">https://www.hameemgroup.net/About.html</a>
+                                        </li>
+                                        
+                                    
+                                
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Reasoning</th>
+                        <td>
+                            Industry classification is determined based on the company's products and services, as reported by multiple sources.
+                        </td>
+                    </tr>
+                    <tr class="description-row">
+                        <th>Copy of Source Data</th>
+                        <td>
+                            {'Text': 'Textile and garments sector', 'Links': ['https://www.hameemgroup.net/', 'https://en.wikipedia.org/wiki/Ha-meem_Group', 'https://textilepages.com/ha-meem-group', 'https://www.dnb.com/business-directory/company-profiles.ha-meem_textiles_limited.be2d419c53fb1141e125547b86b5965f.html', 'https://www.hameemgroup.net/About.html']}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Issues to Be Addressed</th>
+                        <td>
+                            No issues were found with the industry classification.
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Proposed Next Steps</th>
+                        <td>
+                            No further verification is proposed for the industry classification.
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="notes-section">
+                    <div style="margin-bottom: 10px;"><b><i class="bi bi-info-circle"></i> Notes</b></div>
+                    
+                    <table class="notes-table">
+                        <tr>
+                            <td class="data-label">General Notes</td>
+                            <td>The company's industry classification is well-supported by multiple sources, indicating a high level of confidence in this information.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Industry Classification</td>
+                            <td>The industry classification is based on the company's primary products and services, which are consistently reported across sources.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Products/Services</td>
+                            <td>These products are central to the company's operations and are mentioned in various sources, including the company's website and industry directories.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Certifications</td>
+                            <td>The lack of available certification information may indicate a need for further research or direct inquiry with the company.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Source</td>
+                            <td>Sources consistently report the company's involvement in the textile and garments sector, providing a clear industry classification.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Industry Trends</td>
+                            <td>Understanding industry trends could provide insights into the company's growth prospects, challenges, and strategic positioning within the textile and garments sector.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Competitive Position</td>
+                            <td>The company's competitive position within its industry could be assessed through market share, product quality, pricing strategy, and innovation, among other factors.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ownership Details -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3 id="ownership-details"><i class="bi bi-people"></i> Ownership Details</h3>
+            </div>
+            <div class="card-body">
+                <table class="table company-table">
+                    <tr>
+                        <th>Status</th>
+                        <td>
+                            
+    
+    
+        <div class="status-badge 
+            status-needs-review
+            ">
+            
+            <span class="status-text">Needs Review</span>
+            
+                <i class="bi bi-exclamation-triangle-fill status-icon"></i>
+            
+        </div>
+    
+
+                        </td>
+                    </tr>
+                    <tr class="table-header">
+                        <th>Parent Company</th>
+                        <td>Not available</td>
+                    </tr>
+                    <tr>
+                        <th>Owner</th>
+                        <td>Not available</td>
+                    </tr>
+                    <tr>
+                        <th>Key Directors</th>
+                        <td>AK Azad (Managing Director), Lt. Col. Md. Delwar Hossain PSC (retd.) (Group Deputy Managing Director)</td>
+                    </tr>
+                    <tr>
+                        <th>Sources</th>
+                        <td>
+                            <ul>
+                                
+                                
+                                    
+                                        <li>
+                                            https://www.hameemgroup.net/contact-us.html: <a href="https://www.hameemgroup.net/contact-us.html" target="_blank">https://www.hameemgroup.net/contact-us.html</a>
+                                        </li>
+                                        
+                                    
+                                
+                                    
+                                        <li>
+                                            https://digitalmag.theceomagazine.com/delwar-hossain/: <a href="https://digitalmag.theceomagazine.com/delwar-hossain/" target="_blank">https://digitalmag.theceomagazine.com/delwar-hossain/</a>
+                                        </li>
+                                        
+                                    
+                                
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Reasoning</th>
+                        <td>
+                            Ownership details and key directors are identified through limited sources, indicating a need for further research for a comprehensive understanding.
+                        </td>
+                    </tr>
+                    <tr class="description-row">
+                        <th>Copy of Source Data</th>
+                        <td>
+                            {'Text': 'AK Azad (Managing Director), Lt. Col. Md. Delwar Hossain PSC (retd.) (Group Deputy Managing Director)', 'Links': ['https://www.hameemgroup.net/contact-us.html', 'https://digitalmag.theceomagazine.com/delwar-hossain/']}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Issues to Be Addressed</th>
+                        <td>
+                            The lack of information on the parent company and ownership structure could be significant for certain business or investment decisions.
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Proposed Next Steps</th>
+                        <td>
+                            Direct inquiry with the company or access to private databases may be necessary to obtain detailed ownership information.
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="notes-section">
+                    <div style="margin-bottom: 10px;"><b><i class="bi bi-info-circle"></i> Notes</b></div>
+                    
+                    <table class="notes-table">
+                        <tr>
+                            <td class="data-label">General Notes</td>
+                            <td>While some information on key directors is available, the ownership structure and parent company details are not publicly disclosed, limiting the understanding of the company's governance and control.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Parent Company</td>
+                            <td>No information is available on a parent company, which could indicate that Ha-Meem Group operates independently or the information is not publicly disclosed.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Ownership Structure</td>
+                            <td>No details are available on the ownership structure, which could be important for understanding the company's control, decision-making processes, and potential conflicts of interest.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Key Directors</td>
+                            <td>Key directors are identified, but their roles, responsibilities, and backgrounds could provide additional insights into the company's leadership and governance.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Source</td>
+                            <td>Sources provide some information on key personnel, but the ownership structure and parent company details are not available.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Beneficial Ownership</td>
+                            <td>Identifying beneficial owners could be challenging due to the lack of publicly available information on the company's ownership structure.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Corporate Governance</td>
+                            <td>The company's corporate governance practices, including board composition and executive compensation, are not detailed in publicly available sources.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Financial Information -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3 id="financial-information"><i class="bi bi-cash-stack"></i> Financial Information</h3>
+            </div>
+            <div class="card-body">
+                <table class="table company-table">
+                    <tr>
+                        <th>Status</th>
+                        <td>
+                            
+    
+    
+        <div class="status-badge 
+            status-needs-review
+            ">
+            
+            <span class="status-text">Needs Review</span>
+            
+                <i class="bi bi-exclamation-triangle-fill status-icon"></i>
+            
+        </div>
+    
+
+                        </td>
+                    </tr>
+                    <tr class="table-header">
+                        <th>Revenue</th>
+                        <td>$550 million (turnover)</td>
+                    </tr>
+                    <tr>
+                        <th>Profit Before Tax</th>
+                        <td>Not available</td>
+                    </tr>
+                    <tr>
+                        <th>Market Value</th>
+                        <td>Not available</td>
+                    </tr>
+                    <tr>
+                        <th>Stock Information</th>
+                        <td>Not available</td>
+                    </tr>
+                    <tr>
+                        <th>Sources</th>
+                        <td>
+                            <ul>
+                                
+                                
+                                    
+                                        <li>
+                                            https://www.hameemgroup.net/: <a href="https://www.hameemgroup.net/" target="_blank">https://www.hameemgroup.net/</a>
+                                        </li>
+                                        
+                                    
+                                
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Reasoning</th>
+                        <td>
+                            Financial information is gathered from a single source, which may not provide a complete or up-to-date picture of the company's financial situation.
+                        </td>
+                    </tr>
+                    <tr class="description-row">
+                        <th>Copy of Source Data</th>
+                        <td>
+                            {'Text': '$550 million (turnover)', 'Links': ['https://www.hameemgroup.net/']}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Issues to Be Addressed</th>
+                        <td>
+                            The lack of comprehensive financial information could limit the assessment of the company's financial health, profitability, and growth prospects.
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Proposed Next Steps</th>
+                        <td>
+                            Further research or direct contact with the company may be necessary to obtain more detailed and current financial information.
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="notes-section">
+                    <div style="margin-bottom: 10px;"><b><i class="bi bi-info-circle"></i> Notes</b></div>
+                    
+                    <table class="notes-table">
+                        <tr>
+                            <td class="data-label">General Notes</td>
+                            <td>Financial information is limited and primarily based on a single source, indicating a need for additional research or disclosure to fully understand the company's financial position.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Revenue</td>
+                            <td>Revenue is reported in a single source, which may not reflect the company's current financial situation or provide a comprehensive view of its financial performance.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Profit</td>
+                            <td>No profit information is available, which could be important for assessing the company's financial health and profitability.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Market Value</td>
+                            <td>No market value information is available, which could indicate a private company or limited public disclosure of financial data.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Stock Performance</td>
+                            <td>No stock information is available, suggesting the company may not be publicly traded or the information is not publicly disclosed.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Source</td>
+                            <td>The source for financial information is limited, providing only revenue data and no detailed financial statements or analysis.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Financial Health</td>
+                            <td>The available financial information does not provide a comprehensive view of the company's financial health, making it difficult to assess its stability or growth potential.</td>
+                        </tr>
+                        <tr>
+                            <td class="data-label">Financial Reporting</td>
+                            <td>The company's financial reporting practices, including transparency and timeliness, cannot be fully evaluated due to the limited availability of financial data.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Assessment Summary -->
+        <div class="card mb-4 border-primary">
+            <div class="card-header bg-secondary text-white">
+                <h3 id="data-assessment-summary"><i class="bi bi-clipboard-check"></i> Data Assessment Summary</h3>
+            </div>
+            <div class="card-body">
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-header bg-light">
+                                <p class="mb-0 text-muted"><i class="bi bi-bar-chart"></i> Overall Data Quality</p>
+                            </div>
+                            <div class="card-body">
+                                <strong>The overall data quality is mixed, with some sections having comprehensive and reliable information, while others lack detail or have uncertain accuracy.</strong>
+                                <p class="text-muted">Data quality issues stem from the limited availability of certain types of information, such as financial data, ownership structure, and certification details.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-header bg-light">
+                                <p class="mb-0 text-muted"><i class="bi bi-exclamation-triangle"></i> Major Gaps</p>
+                            </div>
+                            <div class="card-body">
+                                <strong>Major gaps include detailed financial information, ownership structure, parent company details, and comprehensive certification data.</strong>
+                                <p class="text-muted">These gaps could impact the ability to fully assess the company's financial health, governance, and operational capabilities.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-header bg-light">
+                                <p class="mb-0 text-muted"><i class="bi bi-arrow-right-circle"></i> Next Steps</p>
+                            </div>
+                            <div class="card-body">
+                                <strong>Recommended next steps include further research, potentially involving direct contact with the company, to fill in the gaps in information and verify the accuracy of available data.</strong>
+                                <p class="text-muted">Priority should be given to obtaining detailed financial statements, clarifying the ownership structure, and identifying any parent company or significant shareholders.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 mb-4 bg-light rounded">
+                    <h5 class="border-bottom pb-2 mb-3 text-secondary"><i class="bi bi-journal-text"></i> Notes & Observations</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <p class="fw-semibold text-secondary"><i class="bi bi-check-circle"></i> General Assessment</p>
+                                <p>The data collection process highlighted the importance of diverse and reliable sources for each aspect of company data, including financials, ownership, and operations.</p>
+                            </div>
+                            <div class="mb-3">
+                                <p class="fw-semibold text-secondary"><i class="bi bi-search"></i> Research Process</p>
+                                <p>The research process involved a review of publicly available sources, including the company's website, industry directories, and news articles, to gather and verify information.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <p class="fw-semibold text-secondary"><i class="bi bi-shield-check"></i> Confidence Level</p>
+                                <p>The confidence level in the data varies by section, with higher confidence in areas like company identity and industry classification, and lower confidence in areas with limited or no information.</p>
+                            </div>
+                            <div class="mb-3">
+                                <p class="fw-semibold text-secondary"><i class="bi bi-flag"></i> Final Recommendation</p>
+                                <p>A final recommendation would depend on the specific purposes of the data assessment, but generally, caution should be exercised in areas where data is limited or uncertain, and further verification should be sought when possible.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MORE SECTIONS TO BE ADDED... -->
+
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>Company Data</h5>
+                    <p>This company assessment is part of the LKSG Compliance Framework.</p>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>© 2023 LKSG Compliance Framework | Company Data Assessment</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS + dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

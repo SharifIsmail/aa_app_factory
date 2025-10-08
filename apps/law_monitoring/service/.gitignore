@@ -1,0 +1,24 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+/.python-version
+
+# IDE
+.vscode/
+Todo.json
+.idea
+# ignore ui-artifacts folder except for the .gitkeep file
+/ui-artifacts/*
+!/ui-artifacts/.gitkeep
+
+# ignore evaluation dataset folders except for .gitkeep files
+/src/service/evaluation/eval_dataset/*
+!/src/service/evaluation/eval_dataset/.gitkeep
+/src/service/evaluation/labeled_eval_dataset/*
+!/src/service/evaluation/labeled_eval_dataset/.gitkeep
+/src/service/evaluation/intelligence_layer_eval/evaluation_data/datasets/*

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompanyData>
+    <CompanyIdentity>
+        <Name>
+            <FinalApprovedName>Dream Royal Interior Concept Ltd</FinalApprovedName>
+            <LegalNameVariations>DreamRoyal interior concept Ltd</LegalNameVariations>
+            <ExactRawData>Dream Royal Interior Concept Ltd</ExactRawData>
+            <Sources>
+                <Source>Corporate Affairs Commission (CAC) Nigeria</Source>
+                <URL>https://searchapp.cac.gov.ng/company/2025668</URL>
+                <Source>Postapp CAC Nigeria</Source>
+                <URL>https://postapp.cac.gov.ng/search?rc=2025668</URL>
+                <Source>B2BHint</Source>
+                <URL>https://b2bhint.com/en/company/ng/dream-royal-interior-concept-ltd--RC-2025668</URL>
+                <Source>Facebook</Source>
+                <URL>https://www.facebook.com/p/DreamRoyal-interior-concept-Ltd-100064697394413/</URL>
+                <Source>Company Data</Source>
+            </Sources>
+            <SourceNotes>The sources used for the company name are a mix of official government databases, business directories, and social media. The reliability of these sources varies, with government databases being the most authoritative.</SourceNotes>
+            <ChainOfThoughtReasoning>The final approved name was selected based on the consistency across multiple sources, including official government databases and the company's social media presence.</ChainOfThoughtReasoning>
+            <Status>OK</Status>
+            <AnyRemainingIssues>No remaining issues with the company name.</AnyRemainingIssues>
+            <ProposedNextSteps>No further action required for the company name verification.</ProposedNextSteps>
+            <Notes>The company name has been verified through multiple sources, providing a high level of confidence in its accuracy.</Notes>
+            <NameVariationNotes>The variation in the company name (DreamRoyal interior concept Ltd) is noted, but the final approved name (Dream Royal Interior Concept Ltd) is used consistently across official sources.</NameVariationNotes>
+        </Name>
+        <RegistrationDetails>
+            <FinalRegistrationNumber>RC2025668</FinalRegistrationNumber>
+            <FinalRegistrationDate>2023-02-01</FinalRegistrationDate>
+            <ExactRawData>RC2025668, 2023-02-01</ExactRawData>
+            <Sources>
+                <Source>Corporate Affairs Commission (CAC) Nigeria</Source>
+                <URL>https://searchapp.cac.gov.ng/company/2025668</URL>
+                <Source>Postapp CAC Nigeria</Source>
+                <URL>https://postapp.cac.gov.ng/search?rc=2025668</URL>
+                <Source>B2BHint</Source>
+                <URL>https://b2bhint.com/en/company/ng/dream-royal-interior-concept-ltd--RC-2025668</URL>
+                <Source>Company Data</Source>
+                <Source>Facebook</Source>
+                <URL>https://www.facebook.com/p/DreamRoyal-interior-concept-Ltd-100064697394413/</URL>
+            </Sources>
+            <SourceNotes>The registration number and date were verified through official government databases and business directories, providing a high level of confidence in their accuracy.</SourceNotes>
+            <ChainOfThoughtReasoning>The registration details were verified by cross-checking the information across multiple sources, ensuring consistency and accuracy.</ChainOfThoughtReasoning>
+            <Status>OK</Status>
+            <AnyRemainingIssues>No remaining issues with the registration details.</AnyRemainingIssues>
+            <ProposedNextSteps>No further action required for the registration details verification.</ProposedNextSteps>
+            <Notes>The registration details have been verified through multiple sources, providing a high level of confidence in their accuracy.</Notes>
+            <RegistrationNumberNotes>The registration number format (RC2025668) is consistent with the expected format for Nigerian companies.</RegistrationNumberNotes>
+            <RegistrationDateNotes>The registration date (2023-02-01) is recent, indicating a newly established company.</RegistrationDateNotes>
+        </RegistrationDetails>
+        <CompanyStatus>Active</CompanyStatus>
+        <CompanyStatusNotes>The company status was verified through official government databases and business directories, indicating an active status.</CompanyStatusNotes>
+        <BusinessEntityType>LTD</BusinessEntityType>
+        <BusinessEntityTypeNotes>The business entity type (LTD) is consistent with the company's registration details and industry norms.</BusinessEntityTypeNotes>
+        <SectionStatus>OK</SectionStatus>
+        <Notes>The company identity section has been thoroughly verified, with all details confirmed through multiple sources.</Notes>
+        <IdentityVerificationProcess>The identity verification process involved cross-checking the company name, registration details, and business entity type across multiple sources, including official government databases, business directories, and social media.</IdentityVerificationProcess>
+    </CompanyIdentity>
+
+    <ContactInformation>
+        <Email>dreaminterior79@gmail.com</Email>
+        <EmailNotes>The email address was provided by the company and has not been validated through a response or an independent business contact directory.</EmailNotes>
+        <Phone>No available phone number</Phone>
+        <PhoneNotes>No phone number is available for the company.</PhoneNotes>
+        <Website>No available website</Website>
+        <WebsiteNotes>No website is available for the company.</WebsiteNotes>
+        <SocialMediaProfiles>
+            <Platform>Facebook</Platform>
+            <URL>https://www.facebook.com/p/DreamRoyal-interior-concept-Ltd-100064697394413/</URL>
+            <ProfileNotes>The Facebook page is not verified, but it appears to be an official representation of the company.</ProfileNotes>
+        </SocialMediaProfiles>
+        <Sources>
+            <Source>Company Data</Source>
+            <Source>Corporate Affairs Commission (CAC) Nigeria</Source>
+            <URL>https://searchapp.cac.gov.ng/company/2025668</URL>
+            <Source>Postapp CAC Nigeria</Source>
+            <URL>https://postapp.cac.gov.ng/search?rc=2025668</URL>
+        </Sources>
+        <SourceNotes>The contact information sources are limited, and the email address has not been validated.</SourceNotes>
+        <ChainOfThoughtReasoning>The contact information was compiled from available sources, but further validation is required to ensure accuracy and completeness.</ChainOfThoughtReasoning>
+        <Status>NEEDS_REVIEW</Status>
+        <AnyRemainingIssues>The email address and phone number require validation, and the website is not available.</AnyRemainingIssues>
+        <ProposedNextSteps>Validate the email address through a response or an independent business contact directory, and attempt to find a phone number and website for the company.</ProposedNextSteps>
+        <SectionStatus>NEEDS_REVIEW</SectionStatus>
+        <Notes>The contact information section requires further review and validation to ensure accuracy and completeness.</Notes>
+        <ContactConsistencyNotes>The contact information is inconsistent, with some details missing or unverified.</ContactConsistencyNotes>
+    </ContactInformation>
+
+    <Headquarters>
+        <Address>PALM ROAD, 114 PALM ROAD MUSHIN, LAGOS</Address>
+        <ExactRawData>PALM ROAD, 114 PALM ROAD MUSHIN, LAGOS</ExactRawData>
+        <AddressComponentNotes>The address components are consistent, but the address has not been validated through a geographic information system or a business mapping service.</AddressComponentNotes>
+        <Sources>
+            <Source>Facebook</Source>
+            <URL>https://www.facebook.com/p/DreamRoyal-interior-concept-Ltd-100064697394413/</URL>
+            <Source>B2BHint</Source>
+            <URL>https://b2bhint.com/en/company/ng/dream-royal-interior-concept-ltd--RC-2025668</URL>
+            <Source>Company Data</Source>
+        </Sources>
+        <SourceNotes>The address sources are limited, and the address has not been validated through a geographic information system or a business mapping service.</SourceNotes>
+        <ChainOfThoughtReasoning>The address was compiled from available sources, but further validation is required to ensure accuracy and completeness.</ChainOfThoughtReasoning>
+        <Status>NEEDS_REVIEW</Status>
+        <AnyRemainingIssues>The address requires validation through a geographic information system or a business mapping service.</AnyRemainingIssues>
+        <ProposedNextSteps>Validate the address through a geographic information system or a business mapping service.</ProposedNextSteps>
+        <SectionStatus>NEEDS_REVIEW</SectionStatus>
+        <Notes>The headquarters section requires further review and validation to ensure accuracy and completeness.</Notes>
+        <GeographicVerificationNotes>The address has not been validated through a geographic information system or a business mapping service.</GeographicVerificationNotes>
+        <HeadquartersHistoryNotes>No information is available on the company's headquarters history.</HeadquartersHistoryNotes>
+    </Headquarters>
+
+    <LocationsAndOperations>
+        <AdditionalLocations>No available additional locations</AdditionalLocations>
+        <AdditionalLocationsNotes>No additional locations are available for the company.</AdditionalLocationsNotes>
+        <FactoryLocations>No available factory locations</FactoryLocations>
+        <FactoryLocationsNotes>No factory locations are available for the company.</FactoryLocationsNotes>
+        <ExactRawData>No available exact location data</ExactRawData>
+        <Sources>
+            <Source>No available sources</Source>
+        </Sources>
+        <SourceNotes>No sources are available for the locations and operations section.</SourceNotes>
+        <ChainOfThoughtReasoning>The locations and operations section is incomplete due to a lack of available information.</ChainOfThoughtReasoning>
+        <Status>NO_DATA</Status>
+        <AnyRemainingIssues>The locations and operations section requires more information to be complete.</AnyRemainingIssues>
+        <ProposedNextSteps>Attempt to find more information on the company's locations and operations.</ProposedNextSteps>
+        <SectionStatus>NO_DATA</SectionStatus>
+        <Notes>The locations and operations section is incomplete and requires further research.</Notes>
+        <LocationVerificationMethodNotes>No location verification methods have been applied due to a lack of available information.</LocationVerificationMethodNotes>
+        <GeographicDistributionNotes>No geographic distribution information is available for the company.</GeographicDistributionNotes>
+    </LocationsAndOperations>
+
+    <Industry>
+        <FinalIndustryClassification>Interior Design/Construction</FinalIndustryClassification>
+        <IndustryClassificationNotes>The industry classification is based on the company's Facebook page and may not be comprehensive or up-to-date.</IndustryClassificationNotes>
+        <MainProductsOrServices>Interior design, Home furniture, Office furniture, General interior decor</MainProductsOrServices>
+        <ProductsServicesNotes>The main products and services are based on the company's Facebook page and may not be comprehensive or up-to-date.</ProductsServicesNotes>
+        <Certifications>No available certifications</Certifications>
+        <CertificationsOverviewNotes>No certifications are available for the company.</CertificationsOverviewNotes>
+        <ExactRawData>Interior Design/Construction, Interior design, Home furniture, Office furniture, General interior decor</ExactRawData>
+        <Sources>
+            <Source>Facebook</Source>
+            <URL>https://www.facebook.com/p/DreamRoyal-interior-concept-Ltd-100064697394413/</URL>
+            <Source>B2BHint</Source>
+            <URL>https://b2bhint.com/en/company/ng/dream-royal-interior-concept-ltd--RC-2025668</URL>
+            <Source>Company Data</Source>
+        </Sources>
+        <SourceNotes>The industry sources are limited, and the information may not be comprehensive or up-to-date.</SourceNotes>
+        <ChainOfThoughtReasoning>The industry classification and main products and services were compiled from available sources, but further validation is required to ensure accuracy and completeness.</ChainOfThoughtReasoning>
+        <Status>NEEDS_REVIEW</Status>
+        <AnyRemainingIssues>The industry classification and main products and services require validation through more comprehensive and up-to-date sources.</AnyRemainingIssues>
+        <ProposedNextSteps>Validate the industry classification and main products and services through more comprehensive and up-to-date sources.</ProposedNextSteps>
+        <SectionStatus>NEEDS_REVIEW</SectionStatus>
+        <Notes>The industry section requires further review and validation to ensure accuracy and completeness.</Notes>
+        <IndustryTrendsNotes>No industry trends information is available for the company.</IndustryTrendsNotes>
+        <CompetitivePositionNotes>No competitive position information is available for the company.</CompetitivePositionNotes>
+    </Industry>
+
+    <OwnershipDetails>
+        <ParentCompany>No available parent company</ParentCompany>
+        <ParentCompanyNotes>No parent company is available for the company.</ParentCompanyNotes>
+        <Owner>No available owner</Owner>
+        <OwnershipStructureNotes>No ownership structure information is available for the company.</OwnershipStructureNotes>
+        <KeyDirectors>Eze Stanley Amandi</KeyDirectors>
+        <KeyDirectorsNotes>The key director information is based on the company data and may not be comprehensive or up-to-date.</KeyDirectorsNotes>
+        <ExactRawData>Eze Stanley Amandi</ExactRawData>
+        <Sources>
+            <Source>Company Data</Source>
+            <Source>B2BHint</Source>
+            <URL>https://b2bhint.com/en/company/ng/dream-royal-interior-concept-ltd--RC-2025668</URL>
+        </Sources>
+        <SourceNotes>The ownership sources are limited, and the information may not be comprehensive or up-to-date.</SourceNotes>
+        <ChainOfThoughtReasoning>The ownership details were compiled from available sources, but further validation is required to ensure accuracy and completeness.</ChainOfThoughtReasoning>
+        <Status>NEEDS_REVIEW</Status>
+        <AnyRemainingIssues>The ownership details require validation through more comprehensive and up-to-date sources.</AnyRemainingIssues>
+        <ProposedNextSteps>Validate the ownership details through more comprehensive and up-to-date sources.</ProposedNextSteps>
+        <SectionStatus>NEEDS_REVIEW</SectionStatus>
+        <Notes>The ownership section requires further review and validation to ensure accuracy and completeness.</Notes>
+        <BeneficialOwnershipNotes>No beneficial ownership information is available for the company.</BeneficialOwnershipNotes>
+        <CorporateGovernanceNotes>No corporate governance information is available for the company.</CorporateGovernanceNotes>
+    </OwnershipDetails>
+
+    <FinancialInformation>
+        <Revenue>No available revenue</Revenue>
+        <RevenueNotes>No revenue information is available for the company.</RevenueNotes>
+        <ProfitBeforeTax>No available profit before tax</ProfitBeforeTax>
+        <ProfitNotes>No profit information is available for the company.</ProfitNotes>
+        <MarketValue>No available market value</MarketValue>
+        <MarketValueNotes>No market value information is available for the company.</MarketValueNotes>
+        <StockInformation>No available stock information</StockInformation>
+        <StockPerformanceNotes>No stock performance information is available for the company.</StockPerformanceNotes>
+        <ExactRawData>No available exact financial data</ExactRawData>
+        <Sources>
+            <Source>No available sources</Source>
+        </Sources>
+        <SourceNotes>No sources are available for the financial information section.</SourceNotes>
+        <ChainOfThoughtReasoning>The financial information section is incomplete due to a lack of available information.</ChainOfThoughtReasoning>
+        <Status>NO_DATA</Status>
+        <AnyRemainingIssues>The financial information section requires more information to be complete.</AnyRemainingIssues>
+        <ProposedNextSteps>Attempt to find more information on the company's financial performance.</ProposedNextSteps>
+        <SectionStatus>NO_DATA</SectionStatus>
+        <Notes>The financial information section is incomplete and requires further research.</Notes>
+        <FinancialHealthNotes>No financial health information is available for the company.</FinancialHealthNotes>
+        <FinancialReportingNotes>No financial reporting information is available for the company.</FinancialReportingNotes>
+    </FinancialInformation>
+
+    <DataAssessmentSummary>
+        <OverallDataQuality>The overall data quality is moderate, with some sections requiring further review and validation.</OverallDataQuality>
+        <DataQualityNotes>The data quality is affected by the limited availability of sources and the lack of comprehensive information in some sections.</DataQualityNotes>
+        <MajorGaps>The major gaps in the data include the lack of financial information, ownership details, and industry classification validation.</MajorGaps>
+        <DataGapsNotes>The data gaps may impact the overall assessment and decision-making process, and further research is required to fill these gaps.</DataGapsNotes>
+        <RecommendedNextSteps>The recommended next steps include validating the industry classification, ownership details, and financial information through more comprehensive and up-to-date sources.</RecommendedNextSteps>
+        <NextStepsNotes>The next steps should prioritize the validation of critical information and the collection of missing data to ensure a comprehensive understanding of the company.</NextStepsNotes>
+        <Notes>The data assessment summary highlights the need for further review and validation of the company data to ensure accuracy and completeness.</Notes>
+        <ResearchProcessNotes>The research process involved compiling information from available sources, but further research is required to fill the gaps in the data.</ResearchProcessNotes>
+        <ConfidenceLevelNotes>The confidence level in the data is moderate, with some sections requiring further validation to ensure accuracy and completeness.</ConfidenceLevelNotes>
+        <FinalRecommendationNotes>The final recommendation is to proceed with caution and consider further research to validate critical information and collect missing data.</FinalRecommendationNotes>
+    </DataAssessmentSummary>
+</CompanyData>

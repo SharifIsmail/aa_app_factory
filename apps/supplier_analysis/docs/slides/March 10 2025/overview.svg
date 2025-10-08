@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <rect width="960" height="663.335" fill="white" style=""/>
+  <rect width="960" height="80" fill="#172b4d"/>
+  <text x="480" y="50" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="white" text-anchor="middle" style="white-space: pre;">Our Approach: Agent Swarm + Curated Source Database</text>
+  <text font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="600" fill="#2e5698" style="white-space: pre; font-size: 22px;" x="98.643" y="151.529" transform="matrix(0.673424, 0, 0, 0.775548, 62.260517, 5.359509)">Human-Curated Sources Database</text>
+  <rect x="123.626" y="132.828" width="340" height="213.302" rx="10" fill="#EBF8FF" stroke="#4a86e8" stroke-width="2" style=""/>
+  <g transform="matrix(1, 0, 0, 1, 143.626114, 152.828186)">
+    <circle cx="12" cy="12" r="12" fill="#4a86e8"/>
+    <text x="12" y="16" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" style="white-space: pre;">🏢</text>
+    <text x="35" y="16" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#172b4d" font-weight="600" style="white-space: pre;">Government Registries</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 180.153961, 184.018036)">
+    <text font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#4a5568" style="white-space: pre;">• Company registration databases</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 141.710907, 200.085632)">
+    <circle cx="12" cy="12" r="12" fill="#4a86e8"/>
+    <text x="12" y="16" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" style="white-space: pre;">🌐</text>
+    <text x="35" y="16" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#172b4d" font-weight="600" style="white-space: pre;">Global Compliance Indices</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 187.700058, 232.987686)">
+    <text font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#4a5568" style="white-space: pre;">• Corruption Perception Index</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 187.723587, 249.363235)">
+    <text font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#4a5568" style="white-space: pre;">• Global Slavery Index</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 143.261307, 262.647095)">
+    <circle cx="12" cy="12" r="12" fill="#4a86e8"/>
+    <text x="12" y="16" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" style="white-space: pre;">⚖️</text>
+    <text x="35" y="16" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#172b4d" font-weight="600" style="white-space: pre;">Legal Records</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 180.201035, 300.826996)">
+    <text font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#4a5568" style="white-space: pre;">• Sanctions lists (OFAC, EU, UN)</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 182.242752, 319.100098)">
+    <text font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#4a5568" style="white-space: pre;">• Court case databases</text>
+  </g>
+  <text font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="600" fill="#d04423" style="white-space: pre; font-size: 22px;" x="560" y="120" transform="matrix(0.884626, 0, 0, 0.913695, 126.796242, 32.988369)">Internet Sources</text>
+  <ellipse cx="710" cy="250" rx="150" ry="100" fill="#FFF5F5" stroke="#e67c73" stroke-width="2"/>
+  <g transform="matrix(1.271495, 0, 0, 1.278294, 613.046265, 183.012115)" style="">
+    <circle cx="15" cy="15" r="12" fill="#e67c73"/>
+    <text x="15" y="19" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" style="white-space: pre;">📰</text>
+    <text x="35" y="19" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#172b4d" style="white-space: pre;">News</text>
+  </g>
+  <g transform="matrix(1.271495, 0, 0, 1.278294, 715.986145, 184.11412)" style="">
+    <circle cx="15" cy="15" r="12" fill="#e67c73"/>
+    <text x="15" y="19" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" style="white-space: pre;">🏛️</text>
+    <text x="35" y="19" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#172b4d" style="white-space: pre;">NGOs</text>
+  </g>
+  <g transform="matrix(1.271495, 0, 0, 1.278294, 720.907471, 231.626404)" style="">
+    <circle cx="15" cy="15" r="12" fill="#e67c73"/>
+    <text x="15" y="19" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" style="white-space: pre;">🔍</text>
+    <text x="35" y="19" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#172b4d" style="white-space: pre;">Search</text>
+  </g>
+  <g transform="matrix(1.271495, 0, 0, 1.278294, 678.262512, 281.288666)" style="">
+    <circle cx="15" cy="15" r="12" fill="#e67c73"/>
+    <text x="15" y="19" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" style="white-space: pre;">📑</text>
+    <text x="35" y="19" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#172b4d" style="white-space: pre;">Reports</text>
+  </g>
+  <g transform="matrix(1.271495, 0, 0, 1.278294, 597.273132, 238.601852)" style="">
+    <circle cx="15" cy="15" r="12" fill="#e67c73"/>
+    <text x="15" y="19" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" style="white-space: pre;">🌐</text>
+    <text x="35" y="19" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#172b4d" style="white-space: pre;">Web</text>
+  </g>
+  <text x="572.606" y="387.236" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="600" fill="#172b4d" text-anchor="middle" style="white-space: pre; font-size: 22px;">Agent Swarm</text>
+  <circle cx="567.049" cy="494.023" r="100" fill="#F0F4FF" stroke="#172b4d" stroke-width="2" style="" transform="matrix(1.384645, 0, 0, 1, -207.228653, -41.787395)"/>
+  <g transform="matrix(1, 0, 0, 1, 498.601624, 417.760193)">
+    <circle cx="0" cy="0" r="20" fill="#4a86e8"/>
+    <text x="0" y="5" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="white" text-anchor="middle" style="white-space: pre;">🔍</text>
+    <text x="0" y="35" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#172b4d" text-anchor="middle" style="white-space: pre;">Search</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 654.913696, 425.856415)">
+    <circle cx="0" cy="0" r="20" fill="#4a86e8"/>
+    <text x="0" y="5" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="white" text-anchor="middle" style="white-space: pre;">📊</text>
+    <text x="0" y="35" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#172b4d" text-anchor="middle" style="white-space: pre;">Metrics</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 573.868286, 422.295837)">
+    <circle cx="0" cy="0" r="20" fill="#4a86e8"/>
+    <text x="0" y="5" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="white" text-anchor="middle" style="white-space: pre;">📰</text>
+    <text x="0" y="35" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#172b4d" text-anchor="middle" style="white-space: pre;">EventScout</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 629.889526, 484.850311)">
+    <circle cx="0" cy="0" r="20" fill="#4a86e8"/>
+    <text x="0" y="5" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="white" text-anchor="middle" style="white-space: pre;">✓</text>
+    <text x="0" y="35" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#172b4d" text-anchor="middle" style="white-space: pre;">Verify</text>
+  </g>
+  <path d="M 422.195 296.164 C 443.716 318.53 463.89 338.104 482.721 354.879" stroke="#4a86e8" stroke-width="2" fill="none" stroke-dasharray="5,5" style=""/>
+  <polygon points="481.344 361.435 498.508 368.74 489.253 352.691" fill="#4a86e8" style="transform-origin: 487.321px 361.09px;"/>
+  <path d="M 642.944 295.137 C 620.248 313.463 605.118 330.48 597.553 346.189" stroke="#e67c73" stroke-width="2" fill="none" stroke-dasharray="5,5" style="transform-box: fill-box; transform-origin: 50% 50%;" transform="matrix(0.999699, 0.024534, -0.024534, 0.999699, 0, 0)"/>
+  <polygon points="592.159 352.886 602.159 345.886 589.159 342.886" fill="#e67c73"/>
+  <rect x="426.366" y="545.914" width="300" height="25" rx="5" fill="#F0F4FF" stroke="#172b4d" stroke-width="1"/>
+  <text style="fill: rgb(29, 21, 8); font-family: &quot;Segoe UI&quot;, Arial, sans-serif; font-size: 14px; font-weight: 600; text-anchor: middle; white-space: pre;" x="573.847" y="562.282">Comprehensive Risk Assessment</text>
+  <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 28px; font-weight: 700; white-space: pre;" transform="matrix(0.512546, 0, 0, 0.643173, 344.687408, 81.217712)" x="328.496" y="471.374">AI Agents Swarm</text>
+  <g transform="matrix(1, 0, 0, 1, 538.988037, 488.164581)">
+    <circle cx="0" cy="0" r="20" fill="#4a86e8"/>
+    <text x="0" y="5" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="white" text-anchor="middle" style="white-space: pre;">📰</text>
+    <text x="0" y="35" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#172b4d" text-anchor="middle" style="white-space: pre;">EventInvestigator</text>
+  </g>
+</svg>

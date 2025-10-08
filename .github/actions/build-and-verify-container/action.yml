@@ -1,0 +1,220 @@
+name: 'Build and Verify Container'
+description: 'Builds container image and verifies it works correctly'
+inputs:
+  app_name:
+    description: 'Application name'
+    required: true
+  dockerfile_path:
+    description: 'Path to Dockerfile/Containerfile'
+    required: true
+  build_context:
+    description: 'Build context directory'
+    required: true
+  workspace_path:
+    description: 'Path to workspace root'
+    required: true
+    default: '.'
+outputs:
+  image_tag:
+    description: 'Generated image tag'
+    value: ${{ steps.build.outputs.image_tag }}
+  success:
+    description: 'Whether build and verification was successful'
+    value: ${{ steps.verify.outputs.success }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Verify UI artifacts
+      shell: bash
+      run: |
+        echo "::group::Verifying UI artifacts"
+        
+        UI_ARTIFACTS_DIR="${{ inputs.build_context }}/ui-artifacts"
+        
+        if [ ! -d "$UI_ARTIFACTS_DIR" ]; then
+          echo "::error::UI artifacts directory not found: $UI_ARTIFACTS_DIR"
+          exit 1
+        fi
+        
+        if [ ! "$(ls -A $UI_ARTIFACTS_DIR)" ]; then
+          echo "::error::UI artifacts directory is empty: $UI_ARTIFACTS_DIR"
+          exit 1
+        fi
+        
+        if [ ! -f "$UI_ARTIFACTS_DIR/index.html" ]; then
+          echo "::error::Missing index.html in UI artifacts"
+          exit 1
+        fi
+        
+        echo "::notice::UI artifacts verification successful"
+        echo "::endgroup::"
+
+    - name: Build container image
+      id: build
+      shell: bash
+      run: |
+        echo "::group::Building container image"
+        
+        # Use absolute paths to avoid nesting issues
+        BUILD_CONTEXT="${{ inputs.workspace_path }}/${{ inputs.build_context }}"
+        DOCKERFILE_PATH="${{ inputs.workspace_path }}/${{ inputs.dockerfile_path }}"
+        
+        # Generate timestamp tag
+        TAG=$(date +%Y%m%d%H%M%S)
+        echo "image_tag=${TAG}" >> $GITHUB_OUTPUT
+        
+        echo "Building image ${{ inputs.app_name }}:${TAG}"
+        echo "Dockerfile: $DOCKERFILE_PATH"
+        echo "Context: $BUILD_CONTEXT"
+        
+        podman build -f "$DOCKERFILE_PATH" --platform linux/amd64 -t "${{ inputs.app_name }}:${TAG}" "$BUILD_CONTEXT"
+        echo "::notice::Build successful for image ${{ inputs.app_name }}:${TAG}"
+        
+        echo "::endgroup::"
+
+    - name: Verify container startup and health
+      id: verify
+      shell: bash
+      run: |
+        echo "::group::Container verification"
+        
+        TAG="${{ steps.build.outputs.image_tag }}"
+        echo "Verifying container startup for ${{ inputs.app_name }}:${TAG}"
+        
+        # Start PostgreSQL database for apps that need it
+        DB_CONTAINER_ID=""
+        if [ "${{ inputs.app_name }}" == "law_monitoring" ]; then
+          echo "Starting PostgreSQL database for Law Monitoring..."
+          
+          DB_CONTAINER_ID=$(podman run -d \
+            -e POSTGRES_DB=law_monitoring \
+            -e POSTGRES_USER=law_user \
+            -e POSTGRES_PASSWORD=law_password \
+            -p 5432:5432 \
+            postgres:15)
+          
+          echo "PostgreSQL Container ID: $DB_CONTAINER_ID"
+          
+          # Wait for PostgreSQL to be ready
+          echo "Waiting for PostgreSQL to be ready..."
+          for i in {1..30}; do
+            if podman exec "$DB_CONTAINER_ID" pg_isready -U law_user -d law_monitoring; then
+              echo "::notice::PostgreSQL is ready!"
+              break
+            fi
+            
+            if [ $i -eq 30 ]; then
+              echo "::error::PostgreSQL failed to start within timeout"
+              podman logs "$DB_CONTAINER_ID"
+              podman rm -f "$DB_CONTAINER_ID" || true
+              exit 1
+            fi
+            
+            echo "PostgreSQL not ready yet, waiting... (attempt $i/30)"
+            sleep 2
+          done
+        fi
+        
+        # Container configuration
+        CONTAINER_PORT=8080
+        HOST_PORT=8080
+        
+        echo "Starting container on host port: $HOST_PORT"
+        
+        # Start the application container
+        if [ "${{ inputs.app_name }}" == "law_monitoring" ]; then
+          CONTAINER_ID=$(podman run -d -p "$HOST_PORT:$CONTAINER_PORT" \
+            -e "DATABASE_URL=postgresql://law_user:law_password@localhost:5432/law_monitoring" \
+            -e "POSTGRES_HOST=localhost" \
+            -e "POSTGRES_PORT=5432" \
+            -e "POSTGRES_DB=law_monitoring" \
+            -e "POSTGRES_USER=law_user" \
+            -e "POSTGRES_PASSWORD=law_password" \
+            --network=host \
+            "${{ inputs.app_name }}:${TAG}")
+        else
+          CONTAINER_ID=$(podman run -d -p "$HOST_PORT:$CONTAINER_PORT" "${{ inputs.app_name }}:${TAG}")
+        fi
+        
+        echo "Container ID: $CONTAINER_ID"
+        
+        # Wait for container to start
+        echo "Waiting for container to start..."
+        sleep 10
+        
+        # Check if container is still running
+        if ! podman ps --filter "id=$CONTAINER_ID" --format "{{.Status}}" | grep -q "Up"; then
+          echo "::error::Container failed to start or exited unexpectedly"
+          echo "Container logs:"
+          podman logs "$CONTAINER_ID"
+          
+          # Cleanup
+          podman rm -f "$CONTAINER_ID" || true
+          if [ -n "$DB_CONTAINER_ID" ]; then
+            podman rm -f "$DB_CONTAINER_ID" || true
+          fi
+          exit 1
+        fi
+        
+        # Health check with retries
+        echo "Performing health check..."
+        HEALTH_URL="http://localhost:$HOST_PORT/health"
+        HEALTH_CHECK_SUCCESS=false
+        
+        for i in {1..8}; do
+          echo "Health check attempt $i/8..."
+          
+          if curl -f -s --max-time 10 "$HEALTH_URL" > /tmp/health_response.json; then
+            echo "::notice::Health check successful!"
+            
+            # Verify the response contains expected content
+            if jq -e '.status == "ok"' /tmp/health_response.json > /dev/null; then
+              echo "::notice::Health response validation successful"
+              HEALTH_CHECK_SUCCESS=true
+              break
+            else
+              echo "::warning::Health response validation failed - unexpected response format"
+              cat /tmp/health_response.json
+            fi
+          else
+            echo "::warning::Health check failed (attempt $i)"
+            if [ $i -eq 8 ]; then
+              echo "Final attempt - showing detailed error info:"
+              curl -v --max-time 10 "$HEALTH_URL" || true
+              echo "Application logs:"
+              podman logs "$CONTAINER_ID"
+              if [ -n "$DB_CONTAINER_ID" ]; then
+                echo "Database logs:"
+                podman logs "$DB_CONTAINER_ID"
+              fi
+            fi
+          fi
+          
+          # Wait before retrying (except on last attempt)
+          if [ $i -lt 8 ]; then
+            echo "Waiting 20 seconds before retry..."
+            sleep 20
+          fi
+        done
+        
+        # Clean up containers
+        echo "Stopping and removing containers..."
+        podman stop "$CONTAINER_ID" || true
+        podman rm "$CONTAINER_ID" || true
+        
+        if [ -n "$DB_CONTAINER_ID" ]; then
+          podman stop "$DB_CONTAINER_ID" || true
+          podman rm "$DB_CONTAINER_ID" || true
+        fi
+        
+        # Set success based on health check
+        if [ "$HEALTH_CHECK_SUCCESS" = true ]; then
+          echo "success=true" >> $GITHUB_OUTPUT
+          echo "::notice::Container verification successful for ${{ inputs.app_name }}:${TAG}"
+        else
+          echo "success=false" >> $GITHUB_OUTPUT
+          echo "::error::Container verification failed - health check did not succeed"
+          exit 1
+        fi
+        
+        echo "::endgroup::"

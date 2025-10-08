@@ -1,0 +1,30 @@
+---
+description: "Multi-agent system architecture and general guidelines"
+alwaysApply: true
+---
+
+<overview>
+A multi-agent system for answering questions about data in .parquet files
+</overview>
+
+<data-flow>
+1. User initiates query through frontend
+2. Backend assigns UUID and starts background process
+3. Agents collect and analyze data
+4. Results are cached and stored
+5. Frontend displays progress and final reports
+</data-flow>
+
+<evaluation>
+Performance of the agentic system is evaluated via:
+- Example requests with ground truth dataframes + text in `golden_dataset_creation`
+- Evaluation is run through `supplier_briefing_eval_logic.py`
+</evaluation>
+
+<tests>
+Backend tests are contained in `service/tests/` and can be run using pytest with uv:
+```bash
+cd service
+uv run pytest tests/
+```
+</tests>

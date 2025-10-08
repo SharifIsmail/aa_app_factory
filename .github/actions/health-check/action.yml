@@ -1,0 +1,54 @@
+name: 'Health Check with Retry'
+description: 'Performs health check with configurable retry logic'
+inputs:
+  health_url:
+    description: 'Health check endpoint URL'
+    required: true
+  auth_token:
+    description: 'Authentication token'
+    required: true
+  max_retries:
+    description: 'Maximum retry attempts'
+    required: false
+    default: '5'
+  retry_delay:
+    description: 'Delay between retries in seconds'
+    required: false
+    default: '60'
+outputs:
+  success:
+    description: 'Whether health check passed'
+    value: ${{ steps.check.outputs.success }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Perform health check with retry
+      id: check
+      shell: bash
+      run: |
+        max_retries=${{ inputs.max_retries }}
+        delay=${{ inputs.retry_delay }}
+        
+        for i in $(seq 1 $max_retries); do
+          echo "Health check attempt $i/$max_retries..."
+          sleep $delay
+          
+          http_code=$(curl -s -o /dev/null -w "%{response_code}" \
+            -H "Authorization: Bearer ${{ inputs.auth_token }}" \
+            "${{ inputs.health_url }}")
+          
+          echo "HTTP Response Code: $http_code"
+          
+          if [ "$http_code" -eq 200 ]; then
+            echo "::notice::Health check successful!"
+            echo "success=true" >> $GITHUB_OUTPUT
+            exit 0
+          elif [ $i -eq $max_retries ]; then
+            echo "::error::Health check failed after $max_retries attempts"
+            echo "::error::Final HTTP status: $http_code"
+            echo "success=false" >> $GITHUB_OUTPUT
+            exit 1
+          else
+            echo "::warning::Health check failed (attempt $i/$max_retries), retrying in ${delay}s..."
+          fi
+        done

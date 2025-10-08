@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="white"/>
+  <rect width="960" height="80" fill="#2c5282"/>
+  <text x="40" y="50" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="white" style="white-space: pre;">Phase 1: Company Data Gathering</text>
+  <rect x="0" y="80" width="960" height="460" fill="white"/>
+  <g transform="matrix(1, 0, 0, 1, 36.393173, 137.212997)">
+    <text font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="600" fill="#2c5282" style="white-space: pre;">The Challenge</text>
+    <line x1="0" y1="35" x2="380" y2="35" stroke="#e2e8f0" stroke-width="2"/>
+    <g transform="translate(0, 65)">
+      <circle cx="12" cy="12" r="6" fill="#FC8181"/>
+      <text x="30" y="17" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre;">Complex corporate structures</text>
+      <circle cx="12" cy="52" r="6" fill="#FC8181"/>
+      <text x="30" y="57" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre;">Scattered information sources</text>
+      <circle cx="12" cy="92" r="6" fill="#FC8181"/>
+      <text x="30" y="97" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre;">Data reliability varies by country</text>
+      <circle cx="12" cy="132" r="6" fill="#FC8181"/>
+      <text x="30" y="137" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#2d3748" style="white-space: pre;">Manual verification is time-consuming</text>
+      <g transform="matrix(1, 0, 0, 1, 45.681877, 171.16272)">
+        <rect x="0" y="0" width="180" height="100" rx="5" fill="#FFF5F5" stroke="#FC8181" stroke-width="1"/>
+        <text x="90" y="30" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#FC8181" text-anchor="middle" style="white-space: pre;">CONFLICTING DATA</text>
+        <line x1="30" y1="50" x2="150" y2="50" stroke="#FC8181" stroke-width="1" stroke-dasharray="4"/>
+        <text x="90" y="75" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#FC8181" text-anchor="middle" style="white-space: pre;">MISSING INFORMATION</text>
+      </g>
+    </g>
+  </g>
+  <line x1="449.983" y1="132.338" x2="449.983" y2="442.338" stroke="#e2e8f0" stroke-width="2"/>
+  <g transform="matrix(1, 0, 0, 1, 510, 125.54818)">
+    <text font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="600" fill="#2c5282" style="white-space: pre; font-size: 24px;" y="5.19">Our Agentic Approach</text>
+    <line x1="0" y1="35" x2="410" y2="35" stroke="#e2e8f0" stroke-width="2"/>
+    <g transform="matrix(1, 0, 0, 1, 1.800471, 40.858395)">
+      <g>
+        <circle cx="30" cy="30" r="25" fill="#4299e1"/>
+        <text x="30" y="36" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" style="white-space: pre;">1</text>
+        <text x="70" y="25" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#2d3748" style="white-space: pre;">Search Agent</text>
+        <text x="70" y="45" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4a5568" style="white-space: pre;">Discovers information from</text>
+        <text x="70" y="65" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4a5568" style="white-space: pre;">multiple verified sources</text>
+      </g>
+      <line x1="30" y1="60" x2="30" y2="90" stroke="#4299e1" stroke-width="2"/>
+      <polygon points="30,95 25,85 35,85" fill="#4299e1"/>
+      <g transform="translate(0, 100)">
+        <circle cx="30" cy="30" r="25" fill="#4299e1"/>
+        <text x="30" y="36" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" style="white-space: pre;">2</text>
+        <text x="70" y="25" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#2d3748" style="white-space: pre;">Feedback Agent</text>
+        <text x="70" y="45" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4a5568" style="white-space: pre;">Identifies gaps and</text>
+        <text x="70" y="65" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4a5568" style="white-space: pre;">cross-checks data points</text>
+      </g>
+      <line x1="30" y1="160" x2="30" y2="190" stroke="#4299e1" stroke-width="2"/>
+      <polygon points="30,195 25,185 35,185" fill="#4299e1"/>
+      <g transform="translate(0, 200)">
+        <circle cx="30" cy="30" r="25" fill="#4299e1"/>
+        <text x="30" y="36" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" style="white-space: pre;">3</text>
+        <text x="70" y="25" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#2d3748" style="white-space: pre;">Integration Agent</text>
+        <text x="70" y="45" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4a5568" style="white-space: pre;">Combines and validates</text>
+        <text x="70" y="65" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4a5568" style="white-space: pre;">the final company profile</text>
+      </g>
+    </g>
+  </g>
+  <rect x="506.436" y="458.715" width="404.833" height="51.951" rx="6" fill="#EBF8FF" stroke="#4299e1" stroke-width="2" style=""/>
+  <text x="707.657" y="488.785" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#2c5282" text-anchor="middle" style="white-space: pre; font-size: 16px;">Each data point verified from at least two sources</text>
+</svg>

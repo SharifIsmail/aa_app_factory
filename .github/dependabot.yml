@@ -1,0 +1,127 @@
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+version: 2
+
+updates:
+  # Configuration for Law Monitoring
+  #  - two ecosystems: uv and npm
+  #  - runs every Monday at 04:17 UTC
+  #  - perform security and version updates for minor and patch versions only
+  #  - ignore python-liquid as it causes an error during Dependabot runs. Remove this 
+  #    config once IntelligenceLayer dependency is dropped
+  - package-ecosystem: "uv"
+    directory: "/apps/law_monitoring/service"
+    target-branch: "develop-law-monitoring"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "04:17"
+    groups:
+      updates-minor-and-patch:
+        applies-to: version-updates
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+      security-minor-and-patch:
+        applies-to: security-updates
+        patterns:
+          - "*"
+        update-types:
+          - "patch"
+          - "minor"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+      # Validate / remove when we drop Intelligence Layer dependency
+      - dependency-name: "python-liquid"
+
+  - package-ecosystem: "npm"
+    directory: "/apps/law_monitoring/ui"
+    target-branch: "develop-law-monitoring"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "04:17"
+    groups:
+      updates-minor-and-patch:
+        applies-to: version-updates
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+      security-minor-and-patch:
+        applies-to: security-updates
+        patterns:
+          - "*"
+        update-types:
+          - "patch"
+          - "minor"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@aleph-alpha*"
+
+  # Configuration for Supplier Briefing
+  #  - two ecosystems: uv and npm
+  #  - perform security and version updates for minor and patch versions only
+  #  - runs every Monday at 04:17 UTC
+  #  - include packages/shared-frontend as Supplier Briefing depends on shared components
+  - package-ecosystem: "uv"
+    directory: "/apps/supplier_briefing/service"
+    target-branch: "develop-supplier-briefing"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "04:17"
+    groups:
+      updates-minor-and-patch:
+        applies-to: version-updates
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+      security-minor-and-patch:
+        applies-to: security-updates
+        patterns:
+          - "*"
+        update-types:
+          - "patch"
+          - "minor"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+
+  - package-ecosystem: "npm"
+    directories: 
+      - "/apps/supplier_briefing/ui"
+      - "/packages/shared-frontend"
+    target-branch: "develop-supplier-briefing"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "04:17"
+    groups:
+      updates-minor-and-patch:
+        applies-to: version-updates
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+      security-minor-and-patch:
+        applies-to: security-updates
+        patterns:
+          - "*"
+        update-types:
+          - "patch"
+          - "minor"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"] 
+      - dependency-name: "@aleph-alpha*"
+    
+  

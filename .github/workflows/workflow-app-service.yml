@@ -1,0 +1,57 @@
+on:
+  workflow_call:
+    inputs:
+      app:
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+      contents: read
+    outputs:
+      service: ${{ steps.filter.outputs.service }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # pinned to commit of v3
+        id: filter
+        with:
+          filters: |
+            service:
+              - 'apps/${{ inputs.app }}/service/**'
+              - '.github/workflows/applications.yml'
+              - '.github/workflows/workflow-app-service.yml'
+
+  lint:
+    needs: changes
+    if: ${{ needs.changes.outputs.service == 'true' }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: apps/${{ inputs.app }}/service
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@4959332f0f014c5280e7eac8b70c90cb574c9f9b # pinned to commit of v6.6.0
+      - uses: actions/setup-python@v5
+        with:
+          python-version-file: 'apps/${{ inputs.app }}/service/pyproject.toml'
+      - name: Install dependencies
+        run: uv sync --dev
+      - name: Lint
+        run: uv run ruff check .
+      - name: Format
+        run: uv run ruff format --diff .
+      - name: Prepare mypy cache
+        run: mkdir -p "$RUNNER_TEMP/mypy_cache"
+      - name: Check types
+        env:
+          MYPY_CACHE_DIR: ${{ runner.temp }}/mypy_cache
+        run: uv run mypy --install-types --non-interactive .

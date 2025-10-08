@@ -1,0 +1,137 @@
+# Example Grafana Alert Rules for Law Monitoring System
+# Import these rules into Grafana to set up alerting
+
+groups:
+  - name: law-monitoring-workers
+    rules:
+      - alert: WorkerStuckProcessing
+        expr: law_monitoring_worker_active_runs > 0 and (time() - law_monitoring_worker_last_run_timestamp_seconds{status="STARTED"}) > 7200
+        for: 5m
+        labels:
+          severity: warning
+          service: law-monitoring
+        annotations:
+          summary: "Worker {{ $labels.worker_type }} appears to be stuck"
+          description: "Worker {{ $labels.worker_type }} has been running for more than 2 hours without completion"
+
+      - alert: WorkerHighFailureRate
+        expr: rate(law_monitoring_worker_runs_total{status="FAILED"}[10m]) > 0.1
+        for: 5m
+        labels:
+          severity: critical
+          service: law-monitoring
+        annotations:
+          summary: "High failure rate in {{ $labels.worker_type }} worker"
+          description: "{{ $labels.worker_type }} worker is failing at rate {{ $value }} per second"
+
+      - alert: NoDiscoveryRuns
+        expr: (time() - law_monitoring_worker_last_run_timestamp_seconds{worker_type="discovery"}) > 4200
+        for: 10m
+        labels:
+          severity: warning
+          service: law-monitoring
+        annotations:
+          summary: "Discovery worker hasn't run recently"
+          description: "Discovery worker last ran {{ $value }} seconds ago (expected every hour)"
+
+      - alert: ProcessingBacklog
+        expr: law_monitoring_laws_by_status{status="raw"} > 100
+        for: 15m
+        labels:
+          severity: warning
+          service: law-monitoring
+        annotations:
+          summary: "Large backlog of unprocessed laws"
+          description: "{{ $value }} laws are waiting to be processed"
+
+      - alert: HighFailureCountLaws
+        expr: law_monitoring_laws_failure_count{failure_count="2"} > 10
+        for: 5m
+        labels:
+          severity: warning
+          service: law-monitoring
+        annotations:
+          summary: "Many laws are failing multiple times"
+          description: "{{ $value }} laws have failed 2 times and may need attention"
+
+      - alert: PermanentFailures
+        expr: increase(law_monitoring_summary_laws_processed_total{status="failed_permanent"}[1h]) > 5
+        for: 5m
+        labels:
+          severity: critical
+          service: law-monitoring
+        annotations:
+          summary: "High rate of permanent law processing failures"
+          description: "{{ $value }} laws have permanently failed processing in the last hour"
+
+      - alert: DiscoveryFindingNoLaws
+        expr: rate(law_monitoring_discovery_laws_found_total[1h]) == 0
+        for: 2h
+        labels:
+          severity: warning
+          service: law-monitoring
+        annotations:
+          summary: "Discovery worker is finding no new laws"
+          description: "No new laws have been discovered for 2 hours - check EUR-Lex connectivity"
+
+      - alert: DiscoveryHighFailureRate
+        expr: (rate(law_monitoring_discovery_laws_failed_total[10m]) / rate(law_monitoring_discovery_laws_found_total[10m])) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+          service: law-monitoring
+        annotations:
+          summary: "High failure rate in discovery saves"
+          description: "{{ $value | humanizePercentage }} of discovered laws are failing to save"
+
+  - name: law-monitoring-system
+    rules:
+      - alert: MetricsEndpointDown
+        expr: up{job="law-monitoring"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: law-monitoring
+        annotations:
+          summary: "Law monitoring service is down"
+          description: "The law monitoring service metrics endpoint is not responding"
+
+      - alert: SlowLawProcessing
+        expr: histogram_quantile(0.95, sum(rate(law_monitoring_laws_processing_duration_seconds_bucket[10m])) by (le)) > 1800
+        for: 10m
+        labels:
+          severity: warning
+          service: law-monitoring
+        annotations:
+          summary: "Law processing is taking too long"
+          description: "95th percentile processing time is {{ $value }} seconds (>30 minutes)"
+
+# Notification channels configuration (example)
+contact_points:
+  - name: law-monitoring-alerts
+    email:
+      addresses:
+        - admin@company.com
+        - legal-team@company.com
+    slack:
+      url: https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK
+      channel: "#law-monitoring-alerts"
+      title: "Law Monitoring Alert"
+      text: "{{ range .Alerts }}{{ .Annotations.summary }}\n{{ .Annotations.description }}{{ end }}"
+
+# Notification policies
+notification_policies:
+  - receiver: law-monitoring-alerts
+    group_by: ['service', 'severity']
+    group_wait: 10s
+    group_interval: 10s
+    repeat_interval: 1h
+    routes:
+      - match:
+          severity: critical
+        receiver: law-monitoring-alerts
+        repeat_interval: 30m
+      - match:
+          severity: warning
+        receiver: law-monitoring-alerts
+        repeat_interval: 2h

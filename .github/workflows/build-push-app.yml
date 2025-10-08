@@ -1,0 +1,650 @@
+name: Build & Push Service Images for Extensibility Apps
+
+on:
+  push:
+    branches:
+      - main
+      - 'release/**'
+    paths:
+      - 'apps/**'
+  create:
+  pull_request:
+    branches:
+      - main
+      - 'release/**'
+    paths:
+      - 'apps/**'
+  # Allow manual triggering
+  workflow_dispatch:
+    inputs:
+      app_name:
+        description: 'Micro-app to build and push'
+        required: true
+        type: choice
+        options:
+          - supplier_analysis
+          - law_monitoring
+          - agentic_app_template
+          - supplier_briefing
+      force_build:
+        description: 'Force build even if no changes detected'
+        required: false
+        type: boolean
+        default: true
+
+jobs:
+  # Detect which micro-apps have changed
+  detect-changes:
+    if: github.event_name != 'create' || (github.event.ref_type == 'branch' && startsWith(github.event.ref, 'release/'))
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    outputs:
+      affected_apps: ${{ steps.set-apps.outputs.affected_apps }}
+      release_version: ${{ steps.validate-release.outputs.RELEASE_VERSION }}
+      release_label: ${{ steps.validate-release.outputs.RELEASE_LABEL }}
+      release_version_tag: ${{ steps.validate-release.outputs.RELEASE_VERSION_TAG }}
+      app_from_branch: ${{ steps.validate-release.outputs.APP_NAME }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for detecting changes
+
+      - name: Validate release branch name
+        id: validate-release
+        if: startsWith(github.ref, 'refs/heads/release/') || (github.event_name == 'create' && github.event.ref_type == 'branch' && startsWith(github.event.ref, 'release/'))
+        run: |
+          BRANCH_NAME="${{ github.ref_name }}"
+          if [ -z "$BRANCH_NAME" ]; then BRANCH_NAME="${{ github.event.ref }}"; fi
+          echo "Parsing release metadata from branch: $BRANCH_NAME"
+          # Allow optional label(s) after the date, e.g. release/<app>-YYYY-MM-DD-beta-explainability
+          if [[ "$BRANCH_NAME" =~ ^release\/([a-z0-9_\-]+)-([0-9]{4}-[0-9]{2}-[0-9]{2})(-(.+))?$ ]]; then
+            APP_NAME="${BASH_REMATCH[1]}"
+            VERSION_DATE="${BASH_REMATCH[2]}"
+            LABEL_SUFFIX="${BASH_REMATCH[4]}"  # may be empty
+
+            # Build YYMMDD tag from YYYY-MM-DD
+            VERSION_DATE_YYMMDD=$(echo "$VERSION_DATE" | sed -E 's/^[0-9]{2}([0-9]{2})-([0-9]{2})-([0-9]{2})/\1\2\3/')
+            if [ -n "$LABEL_SUFFIX" ]; then
+              RELEASE_VERSION_TAG="${VERSION_DATE_YYMMDD}-${LABEL_SUFFIX}"
+            else
+              RELEASE_VERSION_TAG="${VERSION_DATE_YYMMDD}"
+            fi
+
+            echo "Valid release branch name: app=$APP_NAME date=$VERSION_DATE label=${LABEL_SUFFIX:-none} tag=$RELEASE_VERSION_TAG"
+            echo "APP_NAME=${APP_NAME}" >> $GITHUB_OUTPUT
+            echo "RELEASE_VERSION=${VERSION_DATE}" >> $GITHUB_OUTPUT
+            echo "RELEASE_LABEL=${LABEL_SUFFIX}" >> $GITHUB_OUTPUT
+            echo "RELEASE_VERSION_TAG=${RELEASE_VERSION_TAG}" >> $GITHUB_OUTPUT
+          else
+            echo "Invalid release branch name format. Expected: release/<app-name>-YYYY-MM-DD[-<label>]"
+            exit 1
+          fi
+
+      - name: Detect changed files
+        id: changed-files
+        uses: tj-actions/changed-files@ed68ef82c095e0d48ec87eccea555d944a631a4c # pinned to v46 commit
+        with:
+          files: apps/**
+          dir_names: true
+          dir_names_max_depth: 2
+          json: true
+
+      - name: Set affected apps
+        id: set-apps
+        run: |
+          FORCE_BUILD="${{ github.event.inputs.force_build || 'false' }}"
+          
+          # Priority 1: Manual trigger (workflow_dispatch)
+          if [[ "$FORCE_BUILD" == "true" ]]; then
+            # Use manually specified app, ensuring it's formatted as a JSON array
+            APP_NAME="${{ github.event.inputs.app_name }}"
+            echo "affected_apps=[\"$APP_NAME\"]" >> $GITHUB_OUTPUT
+            echo "Forcing build for app: $APP_NAME"
+          
+          # Priority 2: Release branch - reuse validated app name from validate-release step
+          elif [[ -n "${{ steps.validate-release.outputs.APP_NAME }}" ]]; then
+            DERIVED_APP="${{ steps.validate-release.outputs.APP_NAME }}"
+            echo "Derived app from branch name: $DERIVED_APP"
+            echo "affected_apps=[\"$DERIVED_APP\"]" >> $GITHUB_OUTPUT
+          
+          # Priority 3: File change detection
+          else
+            # Process changed files to get app names
+            CHANGED_FILES='${{ steps.changed-files.outputs.all_changed_files }}'
+
+            # Extract app names from changed files and format as a single-line JSON array
+            # Ensure input to jq is valid JSON; tj-actions/changed-files should provide '[]' if no changes.
+            if [[ -z "$CHANGED_FILES" ]]; then # Should not happen if tj-actions provides '[]' for no changes
+                APPS="[]"
+            else
+                # The sed command is a safeguard for potential non-standard JSON escaping, may not be strictly needed with modern actions.
+                APPS=$(echo "$CHANGED_FILES" | sed 's/\\"/"/g' | jq -c '[.[] | select(startswith("apps/")) | split("/")[1]] | unique')
+            fi
+
+            if [[ "$APPS" == "[]" || "$APPS" == "" ]]; then # APPS == "" could happen if jq fails on malformed input
+              echo "No apps affected by changes."
+              echo "affected_apps=[]" >> $GITHUB_OUTPUT
+            else
+              echo "Affected apps from changes: $APPS"
+              echo "affected_apps=$APPS" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+  # Build, verify, and push the apps in the same job
+  build-verify-push:
+    needs: detect-changes
+    if: needs.detect-changes.outputs.affected_apps != '[]' && needs.detect-changes.outputs.affected_apps != ''
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    outputs:
+      TAG: ${{ steps.build-containerfile.outputs.TAG }}
+      DOCKERFILE_PATH: ${{ steps.build-containerfile.outputs.DOCKERFILE_PATH }}
+      BUILD_CONTEXT: ${{ steps.build-containerfile.outputs.BUILD_CONTEXT }}
+      RELEASE_VERSION: ${{ needs.detect-changes.outputs.release_version }}
+    strategy:
+      matrix:
+        app: ${{ fromJson(needs.detect-changes.outputs.affected_apps) }}
+      fail-fast: false
+
+    env:
+      PHARIAOS_MANAGER_URL: ${{ vars.PHARIAOS_MANAGER_URL }}
+      SERVICE_PHARIA_KERNEL_URL: ${{ vars.PHARIA_KERNEL_URL }}
+      PHARIA_AUTH_SERVICE_URL: ${{ vars.PHARIA_AUTH_SERVICE_URL }}
+      PHARIA_DATA_URL: ${{ vars.PHARIA_DATA_URL }}
+      PHARIA_IAM_ISSUER_URL: ${{ vars.PHARIA_IAM_ISSUER_URL }}
+      SERVICE_PHARIA_STUDIO_URL: ${{ vars.PHARIA_STUDIO_URL}}
+      SERVICE_INFERENCE_API_URL: ${{ vars.SERVICE_INFERENCE_API_URL }}
+      SERVICE_COMPLETION_MODEL_NAME: ${{ vars.SERVICE_COMPLETION_MODEL_NAME }}
+      IMAGE_REGISTRY: ${{ vars.IMAGE_REGISTRY }}
+      JFROG_REGISTRY: ${{ vars.JFROG_REGISTRY }}
+      JFROG_REGISTRY_PARTNERS: ${{ vars.JFROG_REGISTRY_PARTNERS }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Check app directory structure
+        id: check-structure
+        run: |
+          # Check if the app directory exists
+          if [ ! -d "./apps/${{ matrix.app }}" ]; then
+            echo "Error: App directory './apps/${{ matrix.app }}' not found"
+            exit 1
+          fi
+          
+          # Check for service directory
+          if [ -d "./apps/${{ matrix.app }}/service" ]; then
+            echo "service_dir=true" >> $GITHUB_OUTPUT
+          else
+            echo "service_dir=false" >> $GITHUB_OUTPUT
+          fi
+
+          if [ -f "./apps/${{ matrix.app }}/Containerfile" ]; then
+            echo "dockerfile_path=./apps/${{ matrix.app }}/Containerfile" >> $GITHUB_OUTPUT
+            echo "build_context=./apps/${{ matrix.app }}" >> $GITHUB_OUTPUT
+          elif [ -f "./apps/${{ matrix.app }}/service/Containerfile" ]; then
+            echo "dockerfile_path=./apps/${{ matrix.app }}/service/Containerfile" >> $GITHUB_OUTPUT
+            echo "build_context=./apps/${{ matrix.app }}/service" >> $GITHUB_OUTPUT
+          elif [ -f "./apps/${{ matrix.app }}/Dockerfile" ]; then
+            echo "dockerfile_path=./apps/${{ matrix.app }}/Dockerfile" >> $GITHUB_OUTPUT
+            echo "build_context=./apps/${{ matrix.app }}" >> $GITHUB_OUTPUT
+          elif [ -f "./apps/${{ matrix.app }}/service/Dockerfile" ]; then
+            echo "dockerfile_path=./apps/${{ matrix.app }}/service/Dockerfile" >> $GITHUB_OUTPUT
+            echo "build_context=./apps/${{ matrix.app }}/service" >> $GITHUB_OUTPUT
+          else
+            echo "No Containerfile or Dockerfile found for app ${{ matrix.app }}, skipping build"
+            exit 1
+          fi
+
+      - name: Enable package manager
+        run: corepack enable
+
+      - name: Install workspace dependencies
+        run: pnpm install
+
+      - name: Build UI
+        run: |
+          if [ -d "./apps/${{ matrix.app }}/ui" ]; then
+            echo "🛠  Building UI for ${{ matrix.app }}"
+            pnpm --filter "${{ matrix.app }}-ui" build
+          else
+            echo "❌ No ui folder, failing build"
+            exit 1
+          fi
+
+      - name: Generate environment files
+        run: |
+          # Create .env file in the build context directory
+          APP_ENV_DIR="${{ steps.check-structure.outputs.build_context }}"
+          
+          # Check if .env.sample exists to use as a template
+          if [ -f "${APP_ENV_DIR}/.env.sample" ]; then
+            echo "Found .env.sample, using as template"
+            cp "${APP_ENV_DIR}/.env.sample" "${APP_ENV_DIR}/.env"
+          else
+            echo "Creating new .env file"
+            touch "${APP_ENV_DIR}/.env"
+          fi
+          
+          ### Add environment variables from secrets/variables ###
+          # We bake essential env variables at build time to enable container health checks.
+          # At deployment time, all variables can be injected/overridden via curl commands for maximum flexibility.
+          # This enables us to easily deploy across different clusters.
+          echo "\n" >> "${APP_ENV_DIR}/.env"
+          echo "# Generated by GitHub Actions" >> "${APP_ENV_DIR}/.env"
+          echo "# Environment: ${{ github.ref == 'refs/heads/main' && 'production' || 'development' }}" >> "${APP_ENV_DIR}/.env"
+          # Common environment variables
+          echo "APP_ENV=${{ github.ref == 'refs/heads/main' && 'production' || 'development' }}" >> "${APP_ENV_DIR}/.env"
+          echo "DEBUG=${{ github.ref == 'refs/heads/main' && 'false' || 'true' }}" >> "${APP_ENV_DIR}/.env"
+          echo "SERVICE_PHARIA_KERNEL_URL=${{ env.SERVICE_PHARIA_KERNEL_URL }}" >> "${APP_ENV_DIR}/.env"
+          echo "SERVICE_PHARIA_AUTH_SERVICE_URL=${{ env.PHARIA_AUTH_SERVICE_URL }}" >> "${APP_ENV_DIR}/.env"
+          echo "SERVICE_PHARIA_IAM_ISSUER_URL=${{ env.PHARIA_IAM_ISSUER_URL }}" >> "${APP_ENV_DIR}/.env"
+          echo "SERVICE_PHARIA_DATA_URL=${{ env.PHARIA_DATA_URL }}" >> "${APP_ENV_DIR}/.env"
+          echo "SERVICE_INFERENCE_API_URL=${{ env.SERVICE_INFERENCE_API_URL }}" >> "${APP_ENV_DIR}/.env"
+          echo "SERVICE_COMPLETION_MODEL_NAME=${{ env.SERVICE_COMPLETION_MODEL_NAME }}" >> "${APP_ENV_DIR}/.env"
+          echo "SERVICE_AUTHENTICATION_TOKEN=${{ secrets.SERVICE_AUTHENTICATION_TOKEN }}" >> "${APP_ENV_DIR}/.env"
+          
+          # Set App-specific environment variables from secrets
+          if [ "${{ matrix.app }}" == "Supplier Analysis" ]; then
+            echo "Adding supplier_analysis specific variables"
+            echo "SERPER_API_KEY=${{ secrets.SERPER_API_KEY }}" >> "${APP_ENV_DIR}/.env"
+            echo "ABSTRACT_API_KEY=${{ secrets.ABSTRACT_API_KEY }}" >> "${APP_ENV_DIR}/.env"
+          fi
+          if [ "${{ matrix.app }}" == "Deep Search" ]; then
+            echo "SERPER_API_KEY=${{ secrets.SERPER_API_KEY }}" >> "${APP_ENV_DIR}/.env"
+            echo "ABSTRACT_API_KEY=${{ secrets.ABSTRACT_API_KEY }}" >> "${APP_ENV_DIR}/.env"
+          fi
+          
+          # Add more app-specific blocks as needed
+          # elif [ "${{ matrix.app }}" == "another_app" ]; then
+          #   ...
+          
+          echo "Created .env file at ${APP_ENV_DIR}/.env"
+          
+          # Check for lock file and create empty one if needed
+          DOCKERFILE_PATH="${{ steps.check-structure.outputs.dockerfile_path }}"
+          if ! [ -f "${APP_ENV_DIR}/uv.lock" ] && grep -q "uv.lock" "${DOCKERFILE_PATH}"; then
+            echo "Creating empty uv.lock file"
+            touch "${APP_ENV_DIR}/uv.lock"
+          fi
+
+      - name: Build container image
+        id: build-containerfile
+        run: |
+          echo "Building app: ${{ matrix.app }}"
+          echo "Dockerfile path: ${{ steps.check-structure.outputs.dockerfile_path }}"
+          echo "Build context: ${{ steps.check-structure.outputs.build_context }}"
+          
+          # Use absolute paths to avoid nesting issues
+          BUILD_CONTEXT="${{ github.workspace }}/${{ steps.check-structure.outputs.build_context }}"
+          DOCKERFILE_PATH="${{ github.workspace }}/${{ steps.check-structure.outputs.dockerfile_path }}"
+          
+          # timestamp tag
+          TAG=$(date +%Y%m%d%H%M%S)
+          echo "TAG=${TAG}" >> $GITHUB_OUTPUT
+          
+          echo "Building image ${{ matrix.app }}:${TAG}"
+          podman build -f "$DOCKERFILE_PATH" --platform linux/amd64 -t "${{ matrix.app }}:${TAG}" "$BUILD_CONTEXT"
+          echo "Build successful for image ${{ matrix.app }}:${TAG}"
+
+      # parse-release step removed; values emitted earlier by detect-changes
+
+      - name: Verify UI artifacts exist
+        id: verify-ui-artifacts
+        run: |
+          echo "Verifying UI artifacts exist for ${{ matrix.app }}"
+          UI_ARTIFACTS_DIR="${{ steps.check-structure.outputs.build_context }}/ui-artifacts"
+          
+          if [ ! -d "$UI_ARTIFACTS_DIR" ]; then
+            echo "❌ UI artifacts directory not found: $UI_ARTIFACTS_DIR"
+            echo "This indicates the UI build failed to copy artifacts correctly"
+            exit 1
+          fi
+          
+          # Check if directory contains files
+          if [ ! "$(ls -A $UI_ARTIFACTS_DIR)" ]; then
+            echo "❌ UI artifacts directory is empty: $UI_ARTIFACTS_DIR"
+            echo "This indicates the UI build did not generate any output"
+            exit 1
+          fi
+          
+          # Check for essential UI files
+          if [ ! -f "$UI_ARTIFACTS_DIR/index.html" ]; then
+            echo "❌ Missing index.html in UI artifacts"
+            exit 1
+          fi
+          
+          echo "✅ UI artifacts verification successful"
+          echo "Found files in $UI_ARTIFACTS_DIR:"
+          ls -la "$UI_ARTIFACTS_DIR"
+
+      - name: Verify container startup and health
+        id: container-health-check
+        run: |
+          TAG="${{ steps.build-containerfile.outputs.TAG }}"
+          echo "Verifying container startup for ${{ matrix.app }}:${TAG}"
+          
+          # Start PostgreSQL database for apps that need it
+          DB_CONTAINER_ID=""
+          if [ "${{ matrix.app }}" == "law_monitoring" ]; then
+            echo "Starting PostgreSQL database for Law Monitoring..."
+            
+            # Start PostgreSQL container
+            DB_CONTAINER_ID=$(podman run -d \
+              -e POSTGRES_DB=law_monitoring \
+              -e POSTGRES_USER=law_user \
+              -e POSTGRES_PASSWORD=law_password \
+              -p 5432:5432 \
+              postgres:15)
+            
+            echo "PostgreSQL Container ID: $DB_CONTAINER_ID"
+            
+            # Wait for PostgreSQL to be ready
+            echo "Waiting for PostgreSQL to be ready..."
+            for i in {1..30}; do
+              if podman exec "$DB_CONTAINER_ID" pg_isready -U law_user -d law_monitoring; then
+                echo "✅ PostgreSQL is ready!"
+                break
+              fi
+              
+              if [ $i -eq 30 ]; then
+                echo "❌ PostgreSQL failed to start within timeout"
+                podman logs "$DB_CONTAINER_ID"
+                podman rm -f "$DB_CONTAINER_ID" || true
+                exit 1
+              fi
+              
+              echo "PostgreSQL not ready yet, waiting... (attempt $i/30)"
+              sleep 2
+            done
+          fi
+          
+          # Container configuration
+          CONTAINER_PORT=8080
+          HOST_PORT=8080 
+          
+          echo "Starting container on host port: $HOST_PORT"
+          
+          # Start the application container with database connection
+          if [ "${{ matrix.app }}" == "law_monitoring" ]; then
+            CONTAINER_ID=$(podman run -d -p "$HOST_PORT:$CONTAINER_PORT" \
+              -e "DATABASE_URL=postgresql://law_user:law_password@localhost:5432/law_monitoring" \
+              -e "POSTGRES_HOST=localhost" \
+              -e "POSTGRES_PORT=5432" \
+              -e "POSTGRES_DB=law_monitoring" \
+              -e "POSTGRES_USER=law_user" \
+              -e "POSTGRES_PASSWORD=law_password" \
+              --network=host \
+              "${{ matrix.app }}:${TAG}")
+          else
+            CONTAINER_ID=$(podman run -d -p "$HOST_PORT:$CONTAINER_PORT" "${{ matrix.app }}:${TAG}")
+          fi
+          
+          echo "Container ID: $CONTAINER_ID"
+          
+          # Wait for container to start and become ready
+          echo "Waiting for container to start..."
+          sleep 10
+          
+          # Check if container is still running
+          if ! podman ps --filter "id=$CONTAINER_ID" --format "{{.Status}}" | grep -q "Up"; then
+            echo "❌ Container failed to start or exited unexpectedly"
+            echo "Container logs:"
+            podman logs "$CONTAINER_ID"
+            
+            # Cleanup
+            podman rm -f "$CONTAINER_ID" || true
+            if [ -n "$DB_CONTAINER_ID" ]; then
+              podman rm -f "$DB_CONTAINER_ID" || true
+            fi
+            exit 1
+          fi
+          
+          # Attempt health check with retries
+          echo "Performing health check..."
+          HEALTH_URL="http://localhost:$HOST_PORT/health"
+          HEALTH_CHECK_SUCCESS=false
+          
+          for i in {1..8}; do
+            echo "Health check attempt $i/8..."
+          
+            if curl -f -s --max-time 10 "$HEALTH_URL" > /tmp/health_response.json; then
+              echo "✅ Health check successful!"
+              echo "Health response:"
+              cat /tmp/health_response.json
+          
+              # Verify the response contains expected content
+              if jq -e '.status == "ok"' /tmp/health_response.json > /dev/null; then
+                echo "✅ Health response validation successful"
+                HEALTH_CHECK_SUCCESS=true
+                break
+              else
+                echo "⚠️ Health response validation failed - unexpected response format"
+                cat /tmp/health_response.json
+              fi
+            else
+              echo "❌ Health check failed (attempt $i)"
+              if [ $i -eq 8 ]; then
+                echo "Final attempt - showing detailed error info:"
+                curl -v --max-time 10 "$HEALTH_URL" || true
+                echo "Application logs:"
+                podman logs "$CONTAINER_ID"
+                if [ -n "$DB_CONTAINER_ID" ]; then
+                  echo "Database logs:"
+                  podman logs "$DB_CONTAINER_ID"
+                fi
+              fi
+            fi
+          
+            # Wait before retrying (except on last attempt)
+            if [ $i -lt 8 ]; then
+              echo "Waiting 20 seconds before retry..."
+              sleep 20
+            fi
+          done
+          
+          # Clean up containers
+          echo "Stopping and removing containers..."
+          podman stop "$CONTAINER_ID" || true
+          podman rm "$CONTAINER_ID" || true
+          
+          if [ -n "$DB_CONTAINER_ID" ]; then
+            podman stop "$DB_CONTAINER_ID" || true
+            podman rm "$DB_CONTAINER_ID" || true
+          fi
+          
+          # Exit with failure if health check never succeeded
+          if [ "$HEALTH_CHECK_SUCCESS" = false ]; then
+            echo "❌ Container verification failed - health check did not succeed"
+            exit 1
+          fi
+          
+          echo "✅ Container verification successful for ${{ matrix.app }}:${TAG}"
+
+      - name: Login to registry
+        run: |
+          echo "Logging in to ${IMAGE_REGISTRY}"
+          podman login --username "${{ secrets.IMAGE_REGISTRY_USER }}" --password "${{ secrets.IMAGE_REGISTRY_PASSWORD }}" "${IMAGE_REGISTRY}"
+          echo "Login successful"
+
+      - name: Push verified container images
+        id: push
+        run: |
+          TAG="${{ steps.build-containerfile.outputs.TAG }}"
+          echo "Pushing verified image: ${{ matrix.app }}:${TAG}"
+          
+          # Push with timestamp tag
+          podman push "${{ matrix.app }}:${TAG}" "${IMAGE_REGISTRY}/${{ matrix.app }}:${TAG}"
+          echo "Push successful: ${IMAGE_REGISTRY}/${{ matrix.app }}:${TAG}"
+          echo "${{ matrix.app }}_TAG=${TAG}" >> $GITHUB_OUTPUT
+
+          # Promote to latest
+          podman tag "${{ matrix.app }}:${TAG}" "${{ matrix.app }}:latest"
+          podman push "${{ matrix.app }}:latest" "${IMAGE_REGISTRY}/${{ matrix.app }}:latest"
+          echo "Push successful: ${IMAGE_REGISTRY}/${{ matrix.app }}:latest"
+          echo "${{ matrix.app }}_LATEST_TAG=latest" >> $GITHUB_OUTPUT
+
+          echo "Debug: github.ref: ${{ github.ref }}"
+          if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            podman tag "${{ matrix.app }}:${TAG}" "${IMAGE_REGISTRY}/${{ matrix.app }}:main_latest"
+            podman push "${IMAGE_REGISTRY}/${{ matrix.app }}:main_latest"
+            echo "Push successful: ${IMAGE_REGISTRY}/${{ matrix.app }}:main_latest"
+            echo "${{ matrix.app }}_MAIN_LATEST_TAG=main_latest" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Push images to JFrog (Customer and Partner)
+        if: startsWith(github.ref, 'refs/heads/release/')
+        run: |
+          TAG="${{ steps.build-containerfile.outputs.TAG }}"
+          VERSION_TAG="${{ needs.detect-changes.outputs.release_version_tag }}"
+          if [ -z "$VERSION_TAG" ]; then VERSION_TAG="${{ needs.detect-changes.outputs.release_version }}"; fi
+
+          echo "Pushing release image to JFrog (customer registry)"
+          echo "Logging in to JFrog registry: ${JFROG_REGISTRY}"
+          podman login --username "${{ secrets.JFROG_REGISTRY_USER }}" --password "${{ secrets.JFROG_REGISTRY_PASSWORD }}" "${JFROG_REGISTRY}"
+          JFROG_IMAGE_PATH="${JFROG_REGISTRY}/${{ matrix.app }}"
+          podman tag "${{ matrix.app }}:${TAG}" "${JFROG_IMAGE_PATH}:latest"
+          podman push "${JFROG_IMAGE_PATH}:latest"
+          podman tag "${{ matrix.app }}:${TAG}" "${JFROG_IMAGE_PATH}:${VERSION_TAG}"
+          podman push "${JFROG_IMAGE_PATH}:${VERSION_TAG}"
+
+          # Optional partner push for selected apps
+          if [ "${{ matrix.app }}" = "supplier_analysis" ] || [ "${{ matrix.app }}" = "law_monitoring" ] || [ "${{ matrix.app }}" = "agentic_app_template" ]; then
+            echo "Pushing release image to JFrog (partner registry)"
+            echo "Logging in to JFrog registry: ${JFROG_REGISTRY_PARTNERS}"
+            podman login --username "${{ secrets.JFROG_REGISTRY_USER }}" --password "${{ secrets.JFROG_REGISTRY_PASSWORD }}" "${JFROG_REGISTRY_PARTNERS}"
+            PARTNER_IMAGE_PATH="${JFROG_REGISTRY_PARTNERS}/${{ matrix.app }}"
+            podman tag "${{ matrix.app }}:${TAG}" "${PARTNER_IMAGE_PATH}:latest"
+            podman push "${PARTNER_IMAGE_PATH}:latest"
+            podman tag "${{ matrix.app }}:${TAG}" "${PARTNER_IMAGE_PATH}:${VERSION_TAG}"
+            podman push "${PARTNER_IMAGE_PATH}:${VERSION_TAG}"
+          else
+            echo "Skipping partner push for ${{ matrix.app }}"
+          fi
+
+          # Push to GitLab registry for dev environment deployment
+          echo "Pushing release image to GitLab registry for dev deployment"
+          echo "Logging in to GitLab registry: ${IMAGE_REGISTRY}"
+          podman login --username "${{ secrets.IMAGE_REGISTRY_USER }}" --password "${{ secrets.IMAGE_REGISTRY_PASSWORD }}" "${IMAGE_REGISTRY}"
+          GITLAB_IMAGE_PATH="${IMAGE_REGISTRY}/${{ matrix.app }}"
+          
+          # Push with release version tag for dev deployment
+          podman tag "${{ matrix.app }}:${TAG}" "${GITLAB_IMAGE_PATH}:${VERSION_TAG}"
+          podman push "${GITLAB_IMAGE_PATH}:${VERSION_TAG}"
+          echo "Push successful: ${GITLAB_IMAGE_PATH}:${VERSION_TAG}"
+          
+          # Also push as release-latest for easy dev deployment
+          podman tag "${{ matrix.app }}:${TAG}" "${GITLAB_IMAGE_PATH}:release-latest"
+          podman push "${GITLAB_IMAGE_PATH}:release-latest"
+          echo "Push successful: ${GITLAB_IMAGE_PATH}:release-latest"
+
+  # Summarize the build results
+  summary:
+    needs: [detect-changes, build-verify-push]
+    if: always() && needs.detect-changes.outputs.affected_apps != '[]' && needs.detect-changes.outputs.affected_apps != ''
+    permissions: {}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        app: ${{ fromJson(needs.detect-changes.outputs.affected_apps) }}
+    env:
+      IMAGE_REGISTRY: ${{ vars.IMAGE_REGISTRY }}
+      JFROG_REGISTRY: ${{ vars.JFROG_REGISTRY }}
+      JFROG_REGISTRY_PARTNERS: ${{ vars.JFROG_REGISTRY_PARTNERS }}
+    steps:
+      - name: Generate summary
+        run: |
+          echo "## Extensibility Apps Build Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Add build type and release information
+          if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            echo "**Build Type:** Main Branch Build" >> $GITHUB_STEP_SUMMARY
+          elif [[ "${{ github.ref }}" =~ ^refs/heads/release/ ]]; then
+            echo "**Build Type:** Release Build" >> $GITHUB_STEP_SUMMARY
+            RELEASE_VERSION="${{ needs.detect-changes.outputs.release_version }}"
+            RELEASE_VERSION_TAG="${{ needs.detect-changes.outputs.release_version_tag }}"
+            if [[ -n "$RELEASE_VERSION_TAG" ]]; then
+              echo "**Release Version Tag:** $RELEASE_VERSION_TAG" >> $GITHUB_STEP_SUMMARY
+            fi
+            if [[ -n "$RELEASE_VERSION" ]]; then
+              echo "**Release Version (date):** $RELEASE_VERSION" >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "**Build Type:** Development Build" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          echo "### Build Status:" >> $GITHUB_STEP_SUMMARY
+          
+          # Get results from previous jobs
+          BUILD_RESULT="${{ needs.build-verify-push.result }}"
+          
+          if [[ "$BUILD_RESULT" == "success" ]]; then
+            echo "✅ App ${{ matrix.app }} - Build, verification, and push completed successfully" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ App ${{ matrix.app }} - Pipeline failed:" >> $GITHUB_STEP_SUMMARY
+            echo "  - Build, Verify & Push: $BUILD_RESULT" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Pipeline Steps:" >> $GITHUB_STEP_SUMMARY
+          echo "1. 🔨 **Build**: Create container image" >> $GITHUB_STEP_SUMMARY
+          echo "2. 🔍 **Verify**: Test container startup and health endpoint" >> $GITHUB_STEP_SUMMARY
+          echo "3. 🚀 **Push**: Publish verified image to main registry" >> $GITHUB_STEP_SUMMARY
+          if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            echo "4. 📦 **Customer Push**: Publish main_latest to JFrog for customer access" >> $GITHUB_STEP_SUMMARY
+          elif [[ "${{ github.ref }}" =~ ^refs/heads/release/ ]]; then
+            echo "4. 📦 **Release Push**: Publish release images to JFrog (customer and partner registries)" >> $GITHUB_STEP_SUMMARY
+            echo "5. 🔧 **Dev Push**: Publish release images to GitLab for dev environment deployment" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Affected Apps:" >> $GITHUB_STEP_SUMMARY
+          echo "#### ${{ matrix.app }}" >> $GITHUB_STEP_SUMMARY
+          if [[ "$BUILD_RESULT" == "success" ]]; then
+            echo "**Image Tags:**" >> $GITHUB_STEP_SUMMARY
+            echo "- Latest: ${{ matrix.app }}:latest" >> $GITHUB_STEP_SUMMARY
+            echo "- Tagged: ${{ matrix.app }}:${{ needs.build-verify-push.outputs.TAG }}" >> $GITHUB_STEP_SUMMARY
+            if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+              echo "- Main Latest: ${{ matrix.app }}:main_latest" >> $GITHUB_STEP_SUMMARY
+              echo "- JFrog Latest: ${{ matrix.app }}:latest" >> $GITHUB_STEP_SUMMARY
+            elif [[ "${{ github.ref }}" =~ ^refs/heads/release/ ]]; then
+              RELEASE_VERSION="${{ needs.detect-changes.outputs.release_version }}"
+              RELEASE_VERSION_TAG="${{ needs.detect-changes.outputs.release_version_tag }}"
+              echo "- JFrog Latest: ${{ matrix.app }}:latest" >> $GITHUB_STEP_SUMMARY
+              if [[ -n "$RELEASE_VERSION_TAG" ]]; then
+                echo "- JFrog Release: ${{ matrix.app }}:$RELEASE_VERSION_TAG" >> $GITHUB_STEP_SUMMARY
+                echo "- GitLab Release: ${{ matrix.app }}:$RELEASE_VERSION_TAG" >> $GITHUB_STEP_SUMMARY
+              elif [[ -n "$RELEASE_VERSION" ]]; then
+                echo "- JFrog Release: ${{ matrix.app }}:$RELEASE_VERSION" >> $GITHUB_STEP_SUMMARY
+                echo "- GitLab Release: ${{ matrix.app }}:$RELEASE_VERSION" >> $GITHUB_STEP_SUMMARY
+              fi
+              echo "- GitLab Release Latest: ${{ matrix.app }}:release-latest" >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "❌ No images were pushed due to pipeline failure" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Registry Information:" >> $GITHUB_STEP_SUMMARY
+          if [[ "${{ github.ref }}" =~ ^refs/heads/release/ ]]; then
+            echo "**Primary Registry (JFrog Customer):** <${{ env.JFROG_REGISTRY }}>" >> $GITHUB_STEP_SUMMARY
+            echo "**Secondary Registry (JFrog Partner):** <${{ env.JFROG_REGISTRY_PARTNERS }}>" >> $GITHUB_STEP_SUMMARY
+            echo "**Development Registry (Gitlab):** <${{ env.IMAGE_REGISTRY }}>" >> $GITHUB_STEP_SUMMARY
+          elif [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            echo "**Developer Registry (Gitlab):** <${{ env.IMAGE_REGISTRY }}>" >> $GITHUB_STEP_SUMMARY
+            echo "**Customer Registry (JFrog):** <${{ env.JFROG_REGISTRY }}>" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "**Developer Registry (Gitlab):** <${{ env.IMAGE_REGISTRY }}>" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
