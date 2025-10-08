@@ -9,6 +9,7 @@ import os
 import re
 from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
+from html import unescape
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Iterable, Optional, Sequence
@@ -30,7 +31,7 @@ MAX_ITEMS_ENV = "MY_PROVIDER_MAX_ITEMS"
 DEFAULT_MAX_ITEMS = 25
 
 ISO_FORMAT = "%Y-%m-%dT%H:%M:%S%z"
-PDF_HREF_PATTERN = re.compile(r'href=["\']([^"\']+\.pdf)["\']', re.IGNORECASE)
+PDF_HREF_PATTERN = re.compile(r'href=["\']([^"\']+\.pdf[^"\']*)["\']', re.IGNORECASE)
 
 
 def _ensure_timezone(dt: datetime) -> datetime:
@@ -138,9 +139,16 @@ def _parse_pub_date(raw: Optional[str]) -> Optional[datetime]:
 
 def _extract_pdf_url(html: str) -> str:
     match = PDF_HREF_PATTERN.search(html)
-    if match:
-        return match.group(1)
-    return ""
+    if not match:
+        return ""
+
+    raw_url = unescape(match.group(1))
+    # Strip any session identifiers contained as path params (e.g. ;jsessionid=...)
+    from urllib.parse import urlparse, urlunparse
+
+    parsed = urlparse(raw_url)
+    cleaned = parsed._replace(params="", fragment="")
+    return urlunparse(cleaned)
 
 
 def _resolve_feed_urls() -> list[str]:
